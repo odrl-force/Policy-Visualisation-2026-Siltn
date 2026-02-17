@@ -3,6 +3,7 @@
   if (!window.q || !q.body) return;
 
   const body = q.body;
+  const start = Date.now();
 
   // Fill inputs by ID
   for (const fieldId in body) {
@@ -33,25 +34,18 @@
     const consumer = document.getElementById("consumer");
 
     if(typeSwitch.value == "Offer"){
-        provider.style.display = "";
-        provider.setAttribute("required", "true");
+      consumer.value = provider.value;
+      consumer.removeAttribute("disabled");
 
-        consumer.style.display = "none";
-        consumer.removeAttribute("required");
+      provider.value = "https://solidweb.me/Me/"
+      provider.setAttribute("disabled", "true");
     }
-    else if (typeSwitch.value == "Contract"){
-        provider.style.display = "none";
-        provider.removeAttribute("required");
+    else {
+      provider.value = consumer.value;
+      provider.removeAttribute("disabled");
 
-        consumer.style.display = "";
-        consumer.setAttribute("required", "true");
-    }
-    else{
-        provider.style.display = "";
-        provider.setAttribute("required", "true");
-
-        consumer.style.display = "";
-        consumer.setAttribute("required", "true");
+      consumer.value = "https://solidweb.me/Me/"
+      consumer.setAttribute("disabled", "true");
     }
   }
 
@@ -89,7 +83,6 @@
   bindToggle("useEndTime", "EndTime");
   bindToggle("useEvent", "Event");
   bindToggle("useLocation", "Location");
-  bindToggle("usePurpose", "Purpose");
 
   // Submit Form logic
   document.getElementById("policyForm").addEventListener("submit", function (e) {
@@ -97,13 +90,33 @@
 
     const form = e.target;
     const data = {};
+    const permissions = {};
     const requiredFields = form.querySelectorAll("[required]");
 
+    //all required fields since those are dynamic
     for(const input of requiredFields){
       console.log(input.value);
       console.log(input.id);
       data[input.id] = input.value;
     }
+
+    //Tacker of how long it took
+    const length = (Date.now() - start) / 1000;
+    data["Length"] = length;
+
+    //Non required fields
+    permissions["read"] = document.getElementById("permRead").checked;
+    permissions["add"] = document.getElementById("permAdd").checked;
+    permissions["modify"] = document.getElementById("permModify").checked;
+    permissions["manage"] = document.getElementById("permManage").checked;
+    
+    data["permissions"] = permissions;
+
+    data["name"] = document.getElementById("name").value;
+    data["id"] = document.getElementById("id").value;
+    data["description"] = document.getElementById("description").value;
+
+    //save to localStorage
     localStorage.setItem(`question-${q.question}`, JSON.stringify(data));
 
     const policyTranslation = document.getElementById("policyTranslation");

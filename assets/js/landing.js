@@ -3,13 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const introText = document.getElementById("introText");
 
     const params = new URLSearchParams(window.location.search);
-    const lang = params.get("lang") || "en";
-    const group = params.get("group") || "1";
-    const userId = params.get("userid") || "guest";
 
-    localStorage.setItem("lang", lang);
-    localStorage.setItem("group", group);
-    localStorage.setItem("userid", userId);
+    if(localStorage.getItem("userId") == null){
+        lang = params.get("lang") || "en";
+        const group = params.get("group") || "1";
+        const userId = params.get("userid") || "guest";
+        
+        localStorage.setItem("lang", lang.toLowerCase());
+        localStorage.setItem("group", group);
+        localStorage.setItem("userId", userId);
+    }
+
+    lang = localStorage.getItem("lang");
 
     const introTexts = {
         en: "Welcome to the Policy Visualisation Study. Please read the instructions carefully. Click Start when ready.",

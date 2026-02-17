@@ -21,9 +21,13 @@
     color: #1f243d;
 }
 
-#policyForm .field{
-    display: none;
+.required::after {
+  content: "*";
+  color: red;
+  width: 1.5em;
+  margin-right: 1.5em;
 }
+
 
 Form input[type="text"],
 #policyForm input[type="url"],
@@ -79,4 +83,8 @@ Form input[type="text"],
 
 #policyTranslation{
     display: none;
+}
+
+#policyForm #requirements label{
+    display: block;
 }

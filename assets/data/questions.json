@@ -70,15 +70,46 @@
       "instructions": "Edit John Doe’s policy. All fields are pre-filled."
     },
     "body": {
-      "url": "http://policyUrl",
-      "policyType": "Offer",
-      "provider": "http://dataProvider",
-      "duration": "2 days",
+      "restrictions": {
+        "purpose": [
+          "purpose2",
+          "purpose3",
+          "purpose4",
+          "purpose5"
+        ],
+        "useDuration": true,
+        "DurationYear": "0",
+        "DurationMonth": "0",
+        "DurationDay": "0",
+        "DurationHour": "0",
+        "useStartTime": true,
+        "StartTime": "2026-02-18T13:40",
+        "useEndTime": true,
+        "EndTime": "2026-02-28T13:41",
+        "useLocation": true,
+        "Location": "http://location",
+        "useUsage": true,
+        "Usage": "12"
+      },
+      "requirements": {
+        "delete": true,
+        "anonymize": true,
+        "encrypt": true,
+        "notify": true
+      },
+      "permissions": {
+        "permRead": true,
+        "permAdd": true,
+        "permModify": true,
+        "permManage": true
+      },
+      "name": "Name",
+      "id": "Id",
+      "description": "Description",
       "dataUri": "http://dataUri",
-      "EndTime": "2025-11-14T20:13",
-      "useEndTime": true,
-      "Purpose": "purpose3",
-      "usePurpose": true
+      "consumer": "http://consumer",
+      "provider": "https://solidweb.me/Me/",
+      "policyType":"Offer"
     }
   },
     {

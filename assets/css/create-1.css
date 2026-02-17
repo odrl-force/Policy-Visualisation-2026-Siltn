@@ -21,7 +21,7 @@
     color: #1f243d;
 }
 
-.required::after {
+label.required::after {
   content: "*";
   color: red;
   width: 1.5em;
@@ -44,7 +44,6 @@ Form input[type="text"],
     font-size: 1rem;
     color: #1f243d;
     box-sizing: border-box;
-    margin-bottom: 1rem;
 }
 
 #policyForm textarea {
@@ -88,3 +87,15 @@ Form input[type="text"],
 #policyForm #requirements label{
     display: block;
 }
+
+#policyForm div:has(select.ts-hidden-accessible) {
+    position: relative;
+}
+
+#policyForm select.ts-hidden-accessible {
+    position: absolute !important;
+    bottom: 0 !important; 
+    left: 20px !important; 
+    top: auto !important;
+}
+

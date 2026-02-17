@@ -24,7 +24,7 @@
   </div>
 
   <label class="required">Permissions</label>
-  <div class="single-line">
+  <div class="single-line" id="permissions">
     <label for="permRead">Read Data <input type="checkbox" id="permRead"/></label>
     <label for="permAdd">Add Data <input type="checkbox" id="permAdd"/></label>
     <label for="permModify">Modity Data <input type="checkbox" id="permModify"/></label>
@@ -55,15 +55,17 @@
   
   <div id="restrictions">
 
-    <div>  
-      <label for="purpose" class="required">Purpose</label>
-      <select name="purpose" id="purpose" class="field" required>
-        <option value="purpose1">Purpose1</option>
-        <option value="purpose2">Purpose2</option>
-        <option value="purpose3">Purpose3</option>
-        <option value="purpose4">Purpose4</option>
-      </select>
-    </div>
+  <div>  
+    <label for="purpose" class="required">Purpose</label>
+    <select name="purpose" id="purpose" class="field" multiple required>
+      <option value="purpose1">Purpose1</option>
+      <option value="purpose2">Purpose2</option>
+      <option value="purpose3">Purpose3</option>
+      <option value="purpose4">Purpose4</option>
+      <option value="purpose5">Purpose5</option>
+      <option value="purpose6">Purpose6</option>
+    </select>
+  </div>
 
     <div>  
     <label>Time Duration <input type="checkbox" id="useDuration" /></label>
@@ -134,5 +136,3 @@ Data Consumer to use the target asset.The identifier of this
 policy and the target asset are http://example.com/policy/myPolicy
 and http://example.com/data/sample, respectively.</p>
 </div>
-
-<!-- Load the template-specific script -->

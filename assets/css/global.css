@@ -258,3 +258,34 @@ a:hover {
         padding: 2rem;
     }
 }
+
+/* make TS style match other fiels */
+.ts-control {
+    border: 1px solid #b8b8cc !important; 
+    border-radius: 8px !important;
+    padding: 0.7rem 0.9rem !important;
+    background-color: #fafaff !important;
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: #1f243d;
+    box-shadow: none !important;
+}
+
+.ts-dropdown {
+    border-radius: 8px !important;
+    border: 1px solid #b8b8cc !important;
+    overflow: hidden;
+}
+
+.ts-wrapper.focus .ts-control {
+    outline: none !important;
+    border-color: #7C4DFF !important;
+    box-shadow: 0 0 0 2px rgba(124,77,255,0.2) !important;
+}
+
+.ts-control .item {
+    background-color: #7C4DFF !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 4px !important;
+}

@@ -5,25 +5,10 @@
   const body = q.body;
   const start = Date.now();
 
-  // Fill inputs by ID
-  for (const fieldId in body) {
-    const el = document.getElementById(fieldId);
-    if (!el) continue;
-
-    if (el.tagName === "INPUT") {
-      if (el.type === "checkbox") {
-        el.checked = Boolean(body[fieldId]);
-      } else if (el.type === "datetime-local") {
-        el.value = body[fieldId];
-      } else {
-        el.value = body[fieldId];
-      }
-    } else if (el.tagName === "TEXTAREA") {
-      el.value = body[fieldId];
-    } else if (el.tagName === "SELECT") {
-      el.value = body[fieldId];
-    }
-  }
+  // Accesible multi select
+  new TomSelect("#purpose", {
+    plugins: ['remove_button'],
+  });
 
   // Policy type logic
   const typeSwitch = document.getElementById("policyType");
@@ -71,9 +56,7 @@
     update(); // initialize
   }
 
-  bindToggle("useApplication", "Application");
-  bindToggle("useConnector", "Connector");
-  bindToggle("useUsage", "Usage");
+
   bindToggle("useDuration", "Duration");
   bindToggle("useDuration", "DurationYear");
   bindToggle("useDuration", "DurationMonth");
@@ -81,8 +64,52 @@
   bindToggle("useDuration", "DurationHour");
   bindToggle("useStartTime", "StartTime");
   bindToggle("useEndTime", "EndTime");
-  bindToggle("useEvent", "Event");
   bindToggle("useLocation", "Location");
+  bindToggle("useUsage", "Usage");
+
+  function fillFormFromJson(data) {
+  function traverse(obj, prefix = "") {
+    for (const key in obj) {
+      if (typeof obj[key] === "object" && obj[key] !== null && !Array.isArray(obj[key])) {
+        traverse(obj[key], key);
+      } else {
+        const elementId = key;
+        const el = document.getElementById(elementId);
+        
+        if (!el) continue;
+
+        const value = obj[key];
+
+        if (el.tagName === "INPUT") {
+          if (el.type === "checkbox" || el.type === "radio") {
+            el.checked = Boolean(value);
+          } else if (el.type === "datetime-local") {
+            el.value = value;
+          } else {
+            el.value = value;
+          }
+        } else if (el.tagName === "TEXTAREA") {
+          el.value = value;
+        } else if (el.tagName === "SELECT") {
+          if (el.multiple) {
+            if (Array.isArray(value)) {
+              Array.from(el.options).forEach(option => {
+                option.selected = value.includes(option.value);
+              });
+            }
+          } else {
+            el.value = value;
+          }
+        }
+      }
+    }
+  }
+
+  traverse(data);
+}
+  if(body){
+    fillFormFromJson(body);
+}
 
   // Submit Form logic
   document.getElementById("policyForm").addEventListener("submit", function (e) {
@@ -90,31 +117,53 @@
 
     const form = e.target;
     const data = {};
-    const permissions = {};
-    const requiredFields = form.querySelectorAll("[required]");
+    const perm = {};
+    const req = {}
+    const rest = {}
+    const permissions = document.querySelectorAll("#permissions *");
+    const requirements = document.querySelectorAll("#requirements *");
+    const restrictions = document.querySelectorAll("#restrictions [required]");
 
-    //all required fields since those are dynamic
-    for(const input of requiredFields){
-      console.log(input.value);
-      console.log(input.id);
-      data[input.id] = input.value;
+    //all enabeled restriction fields
+    for (const input of restrictions) {
+        if (input.tagName === "SELECT" && input.multiple) {
+            // Handle Multi-Select
+            const selectedValues = Array.from(input.selectedOptions).map(option => option.value);
+            rest[input.id] = selectedValues;
+        } else {
+            // Handle standard inputs
+            rest[input.id] = input.value;
+        }
     }
+
+    data["restrictions"] = rest;
+
+    //all requirements
+    for(const input of requirements){
+      req[input.id] = input.checked;
+    }
+
+    data["requirements"] = req;
 
     //Tacker of how long it took
     const length = (Date.now() - start) / 1000;
-    data["Length"] = length;
+    data["length"] = length;
 
-    //Non required fields
-    permissions["read"] = document.getElementById("permRead").checked;
-    permissions["add"] = document.getElementById("permAdd").checked;
-    permissions["modify"] = document.getElementById("permModify").checked;
-    permissions["manage"] = document.getElementById("permManage").checked;
+    //permissions
+    for(const input of permissions){
+      perm[input.id] = input.checked;
+    }
+
     
-    data["permissions"] = permissions;
+    data["permissions"] = perm;
 
     data["name"] = document.getElementById("name").value;
     data["id"] = document.getElementById("id").value;
     data["description"] = document.getElementById("description").value;
+    data["udataUri"] = document.getElementById("dataUri").value;
+    data["provider"] = document.getElementById("provider").value;
+    data["consumer"] = document.getElementById("consumer").value;
+    data["policyType"] = document.getElementById("policyType").value;
 
     //save to localStorage
     localStorage.setItem(`question-${q.question}`, JSON.stringify(data));

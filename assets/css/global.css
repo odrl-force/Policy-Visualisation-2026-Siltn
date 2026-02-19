@@ -289,3 +289,19 @@ a:hover {
     border: none !important;
     border-radius: 4px !important;
 }
+
+.ts-dropdown .optgroup-header {
+    letter-spacing: 0.05rem;
+    font-weight: 800 !important;
+    border-bottom: 2px dotted #b8b8cc;
+    margin-bottom: 4px;
+}
+
+.ts-dropdown .optgroup {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.ts-dropdown .optgroup:last-child {
+    border-bottom: none;
+}

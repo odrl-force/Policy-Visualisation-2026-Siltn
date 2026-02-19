@@ -90,15 +90,24 @@ document.addEventListener("DOMContentLoaded", async () => {
       };
     }
 
-    const script = document.createElement("script");
+  const injectScript = (src, callback) => {
+      const s = document.createElement("script");
+      s.src = src;
+      s.async = false;
+      if (callback) s.onload = callback;
+      main.appendChild(s);
+  };
 
-    if(q.type == "review"){
-      script.src = `assets/templates/${q.type}.js`;
-    }
-    else{ 
-      script.src = `assets/templates/group-${group}/${q.type}.js`;
-    }
-    main.appendChild(script);
+  if (q.type === "review") {
+      injectScript(`assets/templates/${q.type}.js`);
+  } else {
+      const varPath = `assets/templates/group-${group}/${q.type}-var-${lang}.js`;
+      const logicPath = `assets/templates/group-${group}/${q.type}.js`;
+
+      injectScript(varPath, function() {
+          injectScript(logicPath);
+      });
+  }
   }
 
   nextButton.addEventListener("click", () => {

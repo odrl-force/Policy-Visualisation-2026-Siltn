@@ -70,7 +70,7 @@
       "instructions": "Edit John Doe’s policy. All fields are pre-filled."
     },
     "body": {
-      "restrictions": {
+      "constraints": {
         "purpose": [
           "purpose2",
           "purpose3",
@@ -91,7 +91,7 @@
         "useUsage": true,
         "Usage": "12"
       },
-      "requirements": {
+      "duties": {
         "delete": true,
         "anonymize": true,
         "encrypt": true,

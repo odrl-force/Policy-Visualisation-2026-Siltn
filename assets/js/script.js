@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (q.type === "review") {
       injectScript(`assets/templates/${q.type}.js`);
   } else {
-      const varPath = `assets/templates/group-${group}/${q.type}-var-${lang}.js`;
+      const varPath = `assets/templates/group-${group}/var-${lang}.js`;
       const logicPath = `assets/templates/group-${group}/${q.type}.js`;
 
       injectScript(varPath, function() {

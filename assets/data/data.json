@@ -1,0 +1,21 @@
+[
+  {
+    "name": "JaneDoe",
+    "children": [
+      {
+        "name": "Images",
+        "children": [
+          { "name": "vacation.jpg" },
+          { "name": "profile.png" }
+        ]
+      },
+      {
+        "name": "medicalData",
+        "children": [] 
+      },
+      {
+        "name": "medicalData"
+      }
+    ]
+  }
+]

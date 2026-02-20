@@ -45,9 +45,33 @@
     }
   });
 
+  //permissions validation
+  document.querySelectorAll('input[name="permission"]').forEach(cb => {
+    cb.addEventListener("change", function () {
+      const checkboxes = document.querySelectorAll('input[name="permission"]');
+      const firstCheckbox = checkboxes[0];
+
+      const oneChecked = Array.from(checkboxes).some(cb => cb.checked);
+
+      if (oneChecked) {
+        firstCheckbox.setCustomValidity("");
+      }
+    });
+  });
+
   // Submit Form logic
   document.getElementById("policyForm").addEventListener("submit", function (e) {
     e.preventDefault();
+    const checkboxes = document.querySelectorAll('input[name="permission"]');
+    oneChecked = [...checkboxes].some(cb => cb.checked);
+
+    checkboxes[0].setCustomValidity(
+      oneChecked ? "" : "Please select at least one option."
+    );
+
+    if (!oneChecked) {
+      checkboxes[0].reportValidity();
+    }
 
     const form = e.target;
     const data = {};
@@ -196,104 +220,4 @@ function joinList(arr) {
     const arrCopy = [...arr]; // Copy to avoid mutating original
     const last = arrCopy.pop();
     return arrCopy.join(", ") + " and " + last;
-}
-
-function generatePolicyText(p) {
-    if (!p) return "No policy data provided.";
-    const con = p.constraints || {};
-
-    //Base
-    const perms = p.permissions || {};
-    const allowedActions = Object.entries(perms)
-        .filter(([_, val]) => val === true)
-        .map(([key]) => key.replace('perm', '').toLowerCase());
-    const actionsText = allowedActions.length > 0 ? joinList(allowedActions) : "access";
-
-    //Purpose
-    const purposes = con.purpose || [];
-    let purposeSection = "";
-    if (purposes.length > 0) {
-        purposeSection = `<p>They can only use the data for the following purposes:</p><ul>${purposes.map(pt => `<li>${pt}</li>`).join('')}</ul>`;
-    }
-
-    //Time restrictions
-    let timeText = "";
-
-    const durFields = ['DurationYear', 'DurationMonth', 'DurationDay', 'DurationHour'];
-    const isDurationPresent = durFields.some(key => con[key] !== undefined && con[key] !== null && con[key] !== "");
-
-    let totalDurationMs = Infinity;
-    let durParts = [];
-
-    if (isDurationPresent) {
-        const durY = (parseInt(con.DurationYear) || 0) * 31536000000;
-        const durM = (parseInt(con.DurationMonth) || 0) * 2628000000;
-        const durD = (parseInt(con.DurationDay) || 0) * 86400000;
-        const durH = (parseInt(con.DurationHour) || 0) * 3600000;
-        totalDurationMs = durY + durM + durD + durH;
-
-        if (parseInt(con.DurationYear) > 0) durParts.push(`${con.DurationYear} years`);
-        if (parseInt(con.DurationMonth) > 0) durParts.push(`${con.DurationMonth} months`);
-        if (parseInt(con.DurationDay) > 0) durParts.push(`${con.DurationDay} days`);
-        if (parseInt(con.DurationHour) > 0) durParts.push(`${con.DurationHour} hours`);
-    }
-
-    const hasEnd = con.EndTime && con.EndTime !== "";
-    const rangeMs = hasEnd ? (new Date(con.EndTime) - new Date(con.StartTime)) : Infinity;
-
-    const startStr = new Date(con.StartTime).toLocaleString([], { dateStyle: 'short', timeStyle: 'short' });
-
-    if (!isDurationPresent && !hasEnd) {
-        timeText = `<p>The access starts on <strong>${startStr}</strong>.</p>`;
-    }
-    else if (totalDurationMs <= rangeMs) {
-        if (totalDurationMs === 0) {
-            timeText = `<p>This agreement grants <strong>no access</strong> (duration is 0).</p>`;
-        } else {
-            timeText = `<p>The agreement grants access for <strong>${joinList(durParts)}</strong> (starting ${startStr}).</p>`;
-        }
-    }
-    else {
-        const endStr = new Date(con.EndTime).toLocaleString([], { dateStyle: 'short', timeStyle: 'short' });
-        timeText = `<p>This access is valid from <strong>${startStr}</strong> until <strong>${endStr}</strong>.</p>`;
-    }
-
-    //Restrictions
-    let extraRestrictions = "";
-    if (con.Usage && con.Usage !== "0") {
-        extraRestrictions += `<p>Usage is limited to a maximum of <strong>${con.Usage}</strong> uses.</p>`;
-    }
-    if (con.Location) {
-        extraRestrictions += `<p>Access is restricted to the location: <strong>${con.Location}</strong>.</p>`;
-    }
-
-    //Duties
-    const dutyMap = {
-        delete: "delete all data when access is revoked",
-        anonymize: "ensure the data is anonymized",
-        encrypt: "keep the data encrypted",
-        notify: "notify you whenever the data is accessed"
-    };
-
-    const activeDutyTexts = Object.entries(p.duties || {})
-        .filter(([_, val]) => val === true)
-        .map(([key]) => dutyMap[key]);
-    
-    let dutySection = "";
-    if (activeDutyTexts.length > 0) {
-        dutySection = `<p>Regarding duties, they are required to <strong>${joinList(activeDutyTexts)}</strong>.</p>`;
-    }
-
-    //Assembly
-    return `
-      <div class="policy-summary">
-        <p>This policy (ID: <strong>${p.id}</strong>) entails access to <strong>${p.udataUri || 'the data'}</strong> for the consumer <strong>${p.consumer || 'the consumer'}</strong>.</p>
-        <p>They are allowed to <strong>${actionsText}</strong> the data, which is provided by <strong>${p.provider || 'the provider'}</strong>.</p>
-        
-        ${purposeSection}
-        ${timeText}
-        ${extraRestrictions}
-        ${dutySection}
-      </div>
-    `;
 }

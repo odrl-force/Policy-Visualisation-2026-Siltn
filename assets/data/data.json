@@ -14,7 +14,26 @@
         "children": [] 
       },
       {
-        "name": "medicalData"
+        "name": "clutter"
+      }
+    ]
+  },
+  {
+    "name": "AliceSmith",
+    "children": [
+      {
+        "name": "Images",
+        "children": [
+          { "name": "vacation.jpg" },
+          { "name": "profile.png" }
+        ]
+      },
+      {
+        "name": "medicalData",
+        "children": [] 
+      },
+      {
+        "name": "clutter"
       }
     ]
   }

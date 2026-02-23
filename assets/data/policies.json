@@ -1,2 +1,226 @@
-[       
+[
+    {
+        "permissions": {
+            "permRead": true,
+            "permAdd": true,
+            "permModify": true,
+            "permManage": true
+        },
+        "constraints": {
+            "purpose": [
+                "all"
+            ],
+            "DurationYear": "0",
+            "DurationMonth": "1",
+            "DurationDay": "0",
+            "DurationHour": "0",
+            "StartTime": "2026-02-23T09:41"
+        },
+        "duties": {
+            "delete": false,
+            "anonymize": false,
+            "encrypt": false,
+            "notify": true
+        },
+        "length": 287.535,
+        "name": "ManageMother",
+        "id": "p-1481",
+        "description": "Manage everything for my mother",
+        "udataUri": "https://solidweb.me/JaneDoe",
+        "provider": "https://solidweb.me/JaneDoe/profile/card",
+        "consumer": "https://solidweb.me/AliceSmith/profile/card",
+        "policyType": "Request"
+    },
+    {
+        "permissions": {
+            "permRead": true,
+            "permAdd": false,
+            "permModify": false,
+            "permManage": false
+        },
+        "constraints": {
+            "purpose": [
+                "all"
+            ],
+            "DurationYear": "0",
+            "DurationMonth": "1",
+            "DurationDay": "0",
+            "DurationHour": "0",
+            "StartTime": "2026-02-23T09:41"
+        },
+        "duties": {
+            "delete": false,
+            "anonymize": false,
+            "encrypt": false,
+            "notify": false
+        },
+        "length": 287.535,
+        "name": "",
+        "id": "p-1480",
+        "description": "",
+        "udataUri": "https://solidweb.me/JaneDoe",
+        "provider": "https://solidweb.me/JaneDoe/profile/card",
+        "consumer": "https://solidweb.me/BobFurgersonns/profile/card",
+        "policyType": "Request"
+    },
+    {
+        "permissions": {
+            "permRead": true,
+            "permAdd": true,
+            "permModify": false,
+            "permManage": false
+        },
+        "constraints": {
+            "purpose": [
+                "all"
+            ],
+            "DurationYear": "0",
+            "DurationMonth": "1",
+            "DurationDay": "0",
+            "DurationHour": "0",
+            "StartTime": "2026-02-23T09:41"
+        },
+        "duties": {
+            "delete": false,
+            "anonymize": false,
+            "encrypt": false,
+            "notify": false
+        },
+        "length": 287.535,
+        "name": "",
+        "id": "p-1480",
+        "description": "",
+        "udataUri": "https://solidweb.me/JaneDoe",
+        "provider": "https://solidweb.me/JaneDoe/profile/card",
+        "consumer": "https://solidweb.me/CarolCoraline/profile/card",
+        "policyType": "Request"
+    },
+    {
+        "permissions": {
+            "permRead": true,
+            "permAdd": true,
+            "permModify": true,
+            "permManage": false
+        },
+        "constraints": {
+            "purpose": [
+                "all"
+            ],
+            "DurationYear": "0",
+            "DurationMonth": "1",
+            "DurationDay": "0",
+            "DurationHour": "0",
+            "StartTime": "2026-02-23T09:41"
+        },
+        "duties": {
+            "delete": false,
+            "anonymize": false,
+            "encrypt": false,
+            "notify": false
+        },
+        "length": 287.535,
+        "name": "ManageMother",
+        "id": "p-1481",
+        "description": "Manage everything for my mother",
+        "udataUri": "https://solidweb.me/JaneDoe/Images",
+        "provider": "https://solidweb.me/JaneDoe/profile/card",
+        "consumer": "https://solidweb.me/AliceSmith/profile/card",
+        "policyType": "Request"
+    },
+    {
+        "permissions": {
+            "permRead": false,
+            "permAdd": true,
+            "permModify": false,
+            "permManage": false
+        },
+        "constraints": {
+            "purpose": [
+                "all"
+            ],
+            "DurationYear": "0",
+            "DurationMonth": "1",
+            "DurationDay": "0",
+            "DurationHour": "0",
+            "StartTime": "2026-02-23T09:41"
+        },
+        "duties": {
+            "delete": false,
+            "anonymize": false,
+            "encrypt": false,
+            "notify": false
+        },
+        "length": 287.535,
+        "name": "",
+        "id": "p-1480",
+        "description": "",
+        "udataUri": "https://solidweb.me/JaneDoe/Images",
+        "provider": "https://solidweb.me/JaneDoe/profile/card",
+        "consumer": "https://solidweb.me/BobFurgersonns/profile/card",
+        "policyType": "Request"
+    },
+    {
+        "permissions": {
+            "permRead": false,
+            "permAdd": true,
+            "permModify": false,
+            "permManage": false
+        },
+        "constraints": {
+            "purpose": [
+                "all"
+            ],
+            "DurationYear": "0",
+            "DurationMonth": "1",
+            "DurationDay": "0",
+            "DurationHour": "0",
+            "StartTime": "2026-02-23T09:41"
+        },
+        "duties": {
+            "delete": false,
+            "anonymize": false,
+            "encrypt": false,
+            "notify": false
+        },
+        "length": 287.535,
+        "name": "",
+        "id": "p-1480",
+        "description": "",
+        "udataUri": "https://solidweb.me/JaneDoe/Images",
+        "provider": "https://solidweb.me/JaneDoe/profile/card",
+        "consumer": "https://solidweb.me/CarolCoraline/profile/card",
+        "policyType": "Request"
+    },
+    {
+        "permissions": {
+            "permRead": false,
+            "permAdd": true,
+            "permModify": false,
+            "permManage": false
+        },
+        "constraints": {
+            "purpose": [
+                "all"
+            ],
+            "DurationYear": "0",
+            "DurationMonth": "1",
+            "DurationDay": "0",
+            "DurationHour": "0",
+            "StartTime": "2026-02-23T09:41"
+        },
+        "duties": {
+            "delete": false,
+            "anonymize": false,
+            "encrypt": false,
+            "notify": false
+        },
+        "length": 287.535,
+        "name": "",
+        "id": "p-1480",
+        "description": "",
+        "udataUri": "https://solidweb.me/AliceSmith/Images",
+        "provider": "https://solidweb.me/AliceSmith/profile/card",
+        "consumer": "https://solidweb.me/CarolCoraline/profile/card",
+        "policyType": "Request"
+    }
 ]

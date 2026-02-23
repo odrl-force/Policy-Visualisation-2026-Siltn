@@ -5,6 +5,13 @@
   <label for="dataUri" class="required">Data URI</label>
   <input required type="url" id="dataUri" placeholder="e.g. http://example.com/ids/data/abc" />
 
+  <div>
+    <label>Policy Type</label>
+    <select id="policyType">
+      <option value="Offer">Offer</option>
+      <option value="Request">Request</option>
+    </select>
+  </div>
   <div class="single-line">
     <div>
       <label for="provider" class="required">Data Provider</label>
@@ -13,13 +20,6 @@
     <div>
       <label for="consumer" class="required">Data Consumer</label>
       <input required type="url" id="consumer" placeholder="e.g. http://dataconsumer" />
-    </div>
-    <div>
-      <label>Policy Type</label>
-      <select id="policyType">
-        <option value="Offer">Offer</option>
-        <option value="Request">Request</option>
-      </select>
     </div>
   </div>
 

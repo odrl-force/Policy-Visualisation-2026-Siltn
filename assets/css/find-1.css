@@ -65,8 +65,17 @@
     color: #fff;
     padding: 0.75rem;
     text-align: left;
+}
+
+#policies table tr:nth-child(1) th {
     position: sticky;
     top: 0;
+    z-index: 3;
+}
+
+#policies table tr:nth-child(2) th {
+    position: sticky;
+    top: 41px;
     z-index: 2;
 }
 
@@ -82,11 +91,4 @@
 
 #find-1 tr:hover {
     background-color: rgba(0, 0, 0, 0.15);
-}
-
-#find-1 .enter-btn {
-    padding: 8px 16px;
-    font-size: 0.85rem;
-    margin: 0;
-    display: inline-block;
 }

@@ -202,22 +202,14 @@ function togglePolicyType() {
     consumer.value = provider.value;
     consumer.removeAttribute("disabled");
 
-    provider.value = "https://solidweb.me/Me/"
+    provider.value = "https://solidweb.me/AliceSmith/profile/card#me"
     provider.setAttribute("disabled", "true");
   }
   else {
     provider.value = consumer.value;
     provider.removeAttribute("disabled");
 
-    consumer.value = "https://solidweb.me/Me/"
+    consumer.value = "https://solidweb.me/AliceSmith/profile/card#me"
     consumer.setAttribute("disabled", "true");
   }
-}
-
-function joinList(arr) {
-    if (!arr || arr.length === 0) return "";
-    if (arr.length === 1) return arr[0];
-    const arrCopy = [...arr]; // Copy to avoid mutating original
-    const last = arrCopy.pop();
-    return arrCopy.join(", ") + " and " + last;
 }

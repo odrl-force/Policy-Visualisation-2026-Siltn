@@ -119,3 +119,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Initial load
   loadQuestion(currentIndex);
 });
+
+function joinList(arr) {
+    if (!arr || arr.length === 0) return "";
+    if (arr.length === 1) return arr[0];
+    const arrCopy = [...arr]; // Copy to avoid mutating original
+    const last = arrCopy.pop();
+    return arrCopy.join(", ") + " and " + last;
+}

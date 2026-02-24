@@ -1,5 +1,20 @@
 [
   {
+    "question": 2,
+    "title": "Find a policy",
+    "type": "find",
+    "sidebar": {
+      "instructions": "Select all actors who can access this policy.",
+      "select": {
+        "title": "Actors",
+        "options": ["Alice", "Bob", "Charlie", "David"]
+      }
+    },
+    "body": {}
+  },
+
+
+  {
     "question": 1,
     "title": "Create a policy",
     "type": "create",

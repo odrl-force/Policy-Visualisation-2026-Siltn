@@ -92,3 +92,16 @@
 #find-1 tr:hover {
     background-color: rgba(0, 0, 0, 0.15);
 }
+
+#find-1 .breadcrumb-link {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#find-1 .empty-placeholder {
+    padding: 30px;
+    text-align: center;
+    color: #888;
+    font-style: italic;
+}

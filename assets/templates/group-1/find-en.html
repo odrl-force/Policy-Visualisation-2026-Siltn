@@ -1,7 +1,6 @@
 <div id="find-1">
-    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
-        <button id="back-btn">⬅ Back</button>
-        <h2 id="path">/</h2>
+    <div>
+        <div id="path"></div>
     </div>
 
     <div class="content">
@@ -10,36 +9,26 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>AccessTier</th>
-                        <th></th>
+                        <th>Access Level</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    </tbody>
+                <tbody></tbody>
             </table>
         </div>
-            <div id="policies" class="scrollable">
-                <table>
-                    <tr>
-                        <th>No file selected</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>User</th>
-                        <th>Read</th>
-                        <th>Add</th>
-                        <th>Modify</th>
-                        <th>Manage</th>
-                    </tr>
 
-                </table>
-            </div>
+        <div id="policies" class="scrollable">
+            <table id="policies-table">
+                <tbody>
+                    <tr>
+                        <td class="empty-placeholder">Select a file to view its permissions.</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    <div>
-        <div id="summary">
-        </div>
+    </div>
+
+    <div id="summary">
+        <p class="empty-placeholder">Detailed explanation will appear here.</p>
     </div>
 </div>

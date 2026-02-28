@@ -1,39 +1,198 @@
 [
   {
     "name": "JaneDoe",
+    "description": "Root pod folder containing all personal, private and public data of Jane Doe.",
     "children": [
       {
-        "name": "Images",
+        "name": "Personal",
+        "description": "Personal information and documents belonging to Jane Doe.",
         "children": [
-          { "name": "vacation.jpg" },
-          { "name": "profile.png" }
+          {
+            "name": "Contact",
+            "description": "Contact information for Jane Doe used for communication and identification.",
+            "children": [
+              { "name": "address.ttl", "description": "Official home address of Jane Doe." },
+              { "name": "email.txt", "description": "Primary email address of Jane Doe." },
+              { "name": "phone.ttl", "description": "Jane Doe’s phone number and contact details." },
+              { "name": "emergency_contacts.json", "description": "People to contact in case of emergency." }
+            ]
+          },
+          {
+            "name": "General",
+            "description": "Official identity and general profile documents.",
+            "children": [
+              { "name": "ID_card.pdf", "description": "Scan of Jane Doe’s national ID card." },
+              { "name": "BirthCert.pdf", "description": "Jane Doe’s birth certificate." },
+              { "name": "Nationality.ttl", "description": "Document recording Jane Doe’s nationality." }
+            ]
+          },
+          {
+            "name": "Medical",
+            "description": "All medical data related to Jane Doe, organized by year.",
+            "children": [
+              { "name": "2020", "description": "Medical files for the year 2020.", "children": [] },
+              { "name": "2021", "description": "Medical files for the year 2021.", "children": [] },
+              { "name": "2022", "description": "Medical files for the year 2022.", "children": [] },
+              { "name": "2023", "description": "Medical files for the year 2023.", "children": [] },
+              { "name": "2024", "description": "Medical files for the year 2024.", "children": [] },
+              { "name": "2025", "description": "Medical files for the year 2025.", "children": [] },
+              {
+                "name": "2026",
+                "description": "Medical files for the year 2026.",
+                "children": [
+                  { "name": "Foot_XRay.png", "description": "X-ray image of Jane Doe’s foot." },
+                  { "name": "Nursing_Log.json", "description": "Care notes and records from nursing visits." },
+                  { "name": "Medication_Schedule.pdf", "description": "Prescribed medication schedule for Jane Doe." },
+                  { "name": "Physio_Notes.ttl", "description": "Physical therapy notes for Jane Doe." },
+                  { "name": "Blood_Pressure_Jan.csv", "description": "Blood pressure measurements for January 2026." }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Legal",
+            "description": "Legal documentation and agreements.",
+            "children": [
+              { "name": "PowerOfAttorney.pdf", "description": "Legal authorization for another person to act on Jane Doe’s behalf." },
+              { "name": "Will_Draft.pdf", "description": "Draft version of Jane Doe’s last will." },
+              { "name": "Insurance_Contracts", "description": "Folder containing insurance-related documents." }
+            ]
+          },
+          {
+            "name": "Preferences",
+            "description": "Personal preference files such as dietary or cultural preferences.",
+            "children": [
+              { "name": "Dietary_Needs.json", "description": "Dietary restrictions and preferences." },
+              { "name": "Religious_Affiliation.ttl", "description": "Religious beliefs or affiliations of Jane Doe." }
+            ]
+          },
+          {
+            "name": "Statistics",
+            "description": "Health and activity statistics for Jane Doe.",
+            "children": [
+              { "name": "Daily_Steps.json", "description": "Daily step counts and movement data." },
+              { "name": "Sleep_Data.csv", "description": "Sleep cycle and duration data." }
+            ]
+          }
         ]
       },
       {
-        "name": "medicalData",
-        "children": [] 
+        "name": "Private",
+        "description": "Sensitive private files restricted to Jane Doe.",
+        "children": [
+          {
+            "name": "Finances",
+            "description": "Financial documents such as pension or tax data.",
+            "children": [
+              { "name": "Pension_Statements.pdf", "description": "Summary of pension contributions and statements." },
+              { "name": "Bank_Tax_Records.json", "description": "Bank-related tax reporting files." }
+            ]
+          },
+          { "name": "Passwords_Vault.txt", "description": "Highly sensitive password storage file." }
+        ]
       },
       {
-        "name": "clutter"
+        "name": "Public",
+        "description": "Files intended to be publicly visible.",
+        "children": [
+          { "name": "Public_Profile.ttl", "description": "Public-facing profile information." },
+          { "name": "Avatar.png", "description": "Public avatar image for Jane Doe." }
+        ]
       }
     ]
-  },
+  },  
   {
     "name": "AliceSmith",
+    "description": "Root pod folder containing all personal, private and public data of Alice Smith.",
     "children": [
       {
-        "name": "Images",
+        "name": "Personal",
+        "description": "Personal information and documents belonging to Alice Smith.",
         "children": [
-          { "name": "vacation.jpg" },
-          { "name": "profile.png" }
+          {
+            "name": "Housing",
+            "description": "Documents for rental history and residential administration.",
+            "children": [
+              {
+                "name": "Old_Rental_Gent",
+                "description": "Documents related to Alice’s previous apartment in Gent.",
+                "children": [
+                  { "name": "Lease_2022.pdf", "description": "Lease contract for Alice’s old Gent apartment." },
+                  { "name": "Deposit_Receipt.png", "description": "Proof of rental deposit payment." },
+                  { "name": "Landlord_Comm.log", "description": "Communication log with the landlord." }
+                ]
+              },
+              {
+                "name": "New_Home_Childhood",
+                "description": "Files for Alice’s new home.",
+                "children": [
+                  { "name": "Deed_Transfer.pdf", "description": "Official deed transfer document for the new home." },
+                  { "name": "District_Registration.ttl", "description": "Registration information for the local district." },
+                  { "name": "Utility_Setup.json", "description": "Setup details for utilities at the new address." }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Commercial",
+            "description": "Commercial and loyalty-related personal documents.",
+            "children": [
+              { "name": "Loyalty_Cards.json", "description": "Digital loyalty card information." },
+              { "name": "Shopping_History.db", "description": "Database of historical purchases." },
+              { "name": "Subscription_List.json", "description": "List of service subscriptions." },
+              { "name": "Receipts_Digital", "description": "Collection of digital receipts." }
+            ]
+          },
+          {
+            "name": "Work",
+            "description": "Employment and payroll documents.",
+            "children": [
+              { "name": "Employment_Contract.pdf", "description": "Work contract for Alice Smith." },
+              { "name": "Payslips_2026.zip", "description": "Payslips for the year 2026." }
+            ]
+          },
+          {
+            "name": "Medical",
+            "description": "Medical data belonging to Alice Smith.",
+            "children": [
+              { "name": "General_Health_Profile.ttl", "description": "General health profile summary." },
+              { "name": "Dentist_Jan_2026.pdf", "description": "Dentist appointment record for January 2026." },
+              { "name": "Prenatal_Archive", "description": "Archive of prenatal medical documents." }
+            ]
+          },
+          {
+            "name": "Contact",
+            "description": "Contact information for Alice Smith.",
+            "children": [
+              { "name": "address.ttl", "description": "Official home address of Alice Smith." },
+              { "name": "email.txt", "description": "Primary email address." },
+              { "name": "phone.ttl", "description": "Phone number and contact data." },
+              { "name": "emergency_contacts.json", "description": "Emergency contact list for Alice." }
+            ]
+          }
         ]
       },
       {
-        "name": "medicalData",
-        "children": [] 
+        "name": "Private",
+        "description": "Highly sensitive private files accessible only to Alice Smith.",
+        "children": [
+          {
+            "name": "Taxes",
+            "description": "Tax-related private documents.",
+            "children": [
+              { "name": "Return_2025.pdf", "description": "Tax return filing for 2025." }
+            ]
+          },
+          { "name": "Bank_Credentials", "description": "Sensitive banking credentials folder." }
+        ]
       },
       {
-        "name": "clutter"
+        "name": "Public",
+        "description": "Files meant for public visibility.",
+        "children": [
+          { "name": "CV_Public.pdf", "description": "Public résumé for Alice Smith." },
+          { "name": "Portfolio.link", "description": "Portfolio link or homepage reference." }
+        ]
       }
     ]
   }

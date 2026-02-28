@@ -31,7 +31,7 @@
     optgroupField: 'group',
     labelField: 'name',
     valueField: 'value',
-    searchField: ['name', 'desc'],
+    searchField: ['name', 'desc', 'value'],
     render: {
         optgroup_header: function(data, escape) {
             return '<div class="optgroup-header" style="font-weight:bold; color:#333;">' + escape(data.label) + '</div>';

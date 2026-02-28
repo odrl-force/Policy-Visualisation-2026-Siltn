@@ -1,139 +1,170 @@
 [
   {
-    "question": 2,
-    "title": "Find a policy",
-    "type": "find",
-    "sidebar": {
-      "instructions": "Select all actors who can access this policy.",
-      "select": {
-        "title": "Actors",
-        "options": ["Alice", "Bob", "Charlie", "David"]
-      }
-    },
-    "body": {}
-  },
-
-
-  {
     "question": 1,
-    "title": "Create a policy",
+    "title": "Access Delegation",
     "type": "create",
     "sidebar": {
-      "instructions": "Add John Doe. Make sure all fields are filled correctly.",
-      "elements": {
-        "name": "",
-        "address": "",
-        "duration": ""
-      }
+      "instructions": "In order to manage your mother’s data, you need to request management permission for her profile for a duration of 2 days.",
+      "params": [
+        { "label": "Target Data", "value": "https://solidweb.me/Mother/profile/card#me" },
+        { "label": "Consumer", "value": "https://solidweb.me/Me/profile/card#me" },
+        { "label": "Purpose", "value": "dpv:AccountManagement" },
+        { "label": "Duration", "value": "2 Days" }
+      ]
     },
     "body": {
-      "name": "",
-      "address": "",
-      "duration": ""
+      "permissions": { "permManage": true },
+      "constraints": { "purpose": ["dpv:AccountManagement"], "DurationDay": "2" },
+      "udataUri": "https://solidweb.me/Mother/profile/card#me"
     }
   },
   {
     "question": 1,
-    "title": "Create a policy",
+    "title": "Task Review",
     "type": "review",
-    "sidebar": {
-      "instructions": "Add John Doe. Make sure all fields are filled correctly.",
-      "elements": {
-        "name": "",
-        "address": "",
-        "duration": ""
-      }
-    },
-    "body": {
-      "name": "",
-      "address": "",
-      "duration": ""
-    }
-  },
-
-
-  {
-    "question": 2,
-    "title": "Find a policy",
-    "type": "find",
-    "sidebar": {
-      "instructions": "Select all actors who can access this policy.",
-      "select": {
-        "title": "Actors",
-        "options": ["Alice", "Bob", "Charlie", "David"]
-      }
-    },
-    "body": {}
+    "sidebar": { "instructions": "Overall, how difficult or easy did you find this task?" },
+    "body": { "scale": "1-7", "labels": ["Very Difficult", "Very Easy"] }
   },
   {
     "question": 2,
-    "title": "Find a policy",
-    "type": "review",
-    "sidebar": {
-      "instructions": "Select all actors who can access this policy."
-    },
-    "body": {}
-  },
-
-
-
-  {
-    "question": 3,
-    "title": "Edit a policy",
+    "title": "Physiotherapist Access",
     "type": "create",
     "sidebar": {
-      "instructions": "Edit John Doe’s policy. All fields are pre-filled."
+      "instructions": "Give the Physiotherapist access to your mother's medical folder for 1 month so she can review history and add new logs.",
+      "params": [
+        { "label": "Physiotherapist URL", "value": "https://solidweb.me/PhysioCare/profile/card#me" },
+        { "label": "Folder", "value": "https://solidweb.me/Mother/medical/logs/" },
+        { "label": "Purpose", "value": "sector-health:HealthcareServiceManagement" }
+      ]
     },
     "body": {
-      "constraints": {
-        "purpose": [
-          "purpose2",
-          "purpose3",
-          "purpose4",
-          "purpose5"
-        ],
-        "useDuration": true,
-        "DurationYear": "0",
-        "DurationMonth": "0",
-        "DurationDay": "0",
-        "DurationHour": "0",
-        "useStartTime": true,
-        "StartTime": "2026-02-18T13:40",
-        "useEndTime": true,
-        "EndTime": "2026-02-28T13:41",
-        "useLocation": true,
-        "Location": "http://location",
-        "useUsage": true,
-        "Usage": "12"
-      },
-      "duties": {
-        "delete": true,
-        "anonymize": true,
-        "encrypt": true,
-        "notify": true
-      },
-      "permissions": {
-        "permRead": true,
-        "permAdd": true,
-        "permModify": true,
-        "permManage": true
-      },
-      "name": "Name",
-      "id": "Id",
-      "description": "Description",
-      "dataUri": "http://dataUri",
-      "consumer": "http://consumer",
-      "provider": "https://solidweb.me/Me/",
-      "policyType":"Offer"
+      "permissions": { "permRead": true, "permAdd": true },
+      "constraints": { "purpose": ["sector-health:HealthcareServiceManagement"], "DurationMonth": "1" },
+      "udataUri": "https://solidweb.me/Mother/medical/logs/"
     }
   },
-    {
+  {
     "question": 3,
-    "title": "Edit a policy",
-    "type": "review",
+    "title": "Extend Nursery Access",
+    "type": "create",
     "sidebar": {
-    "instructions": "Edit John Doe’s policy. All fields are pre-filled."
+      "instructions": "The nursery already has access for the month, but she is staying indefinitely. Update their access to 1 year.",
+      "params": [
+        { "label": "Nursery URL", "value": "https://solidweb.me/ElderCare_Nursery/profile/card#me" },
+        { "label": "Purpose", "value": "sector-health:HealthcareManagement" },
+        { "label": "Duration", "value": "1 Year" }
+      ]
+    },
+    "body": {
+      "permissions": { "permRead": true, "permAdd": true, "permModify": true, "permManage": true },
+      "constraints": { "purpose": ["sector-health:HealthcareManagement"], "DurationYear": "1" },
+      "udataUri": "https://solidweb.me/Mother/medical/"
+    }
+  },
+  {
+    "question": 4,
+    "title": "Audit Advertising Access",
+    "type": "find",
+    "sidebar": {
+      "instructions": "Find and select any actor who currently has access for the purpose of Advertising or Marketing.",
+      "select": {
+        "title": "Actors",
+        "options": ["Doctor", "InsuranceCorp", "DataBroker_X", "FoodDelivery_Service"]
+      }
     },
     "body": {}
+  },
+  {
+    "question": 5,
+    "title": "Research Participation",
+    "type": "create",
+    "sidebar": {
+      "instructions": "Add a policy allowing the University Research team to utilize health data for the 'Care Benefits' study for 1 year.",
+      "params": [
+        { "label": "Researcher URL", "value": "https://solidweb.me/UniResearch/profile/card#me" },
+        { "label": "Purpose", "value": "sector-health:ResearchDevelopment" },
+        { "label": "Data", "value": "https://solidweb.me/Mother/medical/vitals" }
+      ]
+    },
+    "body": {
+      "constraints": { "purpose": ["sector-health:ResearchDevelopment"], "DurationYear": "1" }
+    }
+  },
+  {
+    "question": 6,
+    "title": "Remove Legacy Access",
+    "type": "find",
+    "sidebar": {
+      "instructions": "The 'Witgelekruis' no longer visits. Find their access rule and identify which data they still have access to.",
+      "select": {
+        "title": "Data Folders",
+        "options": ["/Mother/medical/logs", "/Mother/profile", "/Home/sensors", "/Me/contacts"]
+      }
+    },
+    "body": {}
+  },
+  {
+    "question": 7,
+    "title": "Insurance Verification",
+    "type": "create",
+    "sidebar": {
+      "instructions": "The insurer needs access to medical data about the foot injury for 1 month to calculate compensation.",
+      "params": [
+        { "label": "Insurer URL", "value": "https://solidweb.me/HealthInsure_Global/profile/card#me" },
+        { "label": "Purpose", "value": "sector-health:InsuranceManagement" },
+        { "label": "Target", "value": "https://solidweb.me/Mother/medical/foot_injury" }
+      ]
+    },
+    "body": {
+      "constraints": { "purpose": ["sector-health:InsuranceManagement"], "DurationMonth": "1" }
+    }
+  },
+  {
+    "question": 8,
+    "title": "Landlord Transition",
+    "type": "create",
+    "sidebar": {
+      "instructions": "Update your old landlord's access so it expires at the end of this month. Also, add access to your contact info for 6 months.",
+      "params": [
+        { "label": "Landlord URL", "value": "https://solidweb.me/Rental_Mgmt/profile/card#me" },
+        { "label": "Contact Info", "value": "https://solidweb.me/Me/profile/contact" },
+        { "label": "Purpose", "value": "dpv:LegalCompliance" }
+      ]
+    },
+    "body": {
+      "constraints": { "purpose": ["dpv:LegalCompliance"], "DurationMonth": "6" }
+    }
+  },
+  {
+    "question": 9,
+    "title": "District Constraint",
+    "type": "create",
+    "sidebar": {
+      "instructions": "Update the City access so that only officials within your specific district (Spatial Constraint) can access your home info.",
+      "params": [
+        { "label": "City URL", "value": "https://solidweb.me/City_Admin/profile/card#me" },
+        { "label": "Location URI", "value": "https://solidweb.me/Locations/District_9" },
+        { "label": "Purpose", "value": "dpv:PublicBenefit" }
+      ]
+    },
+    "body": {
+      "constraints": { "Location": "https://solidweb.me/Locations/District_9" }
+    }
+  },
+  {
+    "question": 10,
+    "title": "Food Delivery Service",
+    "type": "create",
+    "sidebar": {
+      "instructions": "Give the delivery service access to your dietary data and name. This should refresh monthly upon payment.",
+      "params": [
+        { "label": "Delivery URL", "value": "https://solidweb.me/FastFood_Service/profile/card#me" },
+        { "label": "Purpose", "value": "dpv:ServicePersonalisation" },
+        { "label": "Data", "value": "https://solidweb.me/Me/dietary_preferences" }
+      ]
+    },
+    "body": {
+      "constraints": { "purpose": ["dpv:ServicePersonalisation"], "DurationMonth": "1" }
+    }
   }
 ]

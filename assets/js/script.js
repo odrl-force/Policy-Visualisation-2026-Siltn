@@ -62,6 +62,21 @@ document.addEventListener("DOMContentLoaded", async () => {
             `;
         }
 
+        if (q.sidebar?.params) {
+            sidebarHtml += `<div class="params-container">`;
+            sidebarHtml += `<p class="params-title">Reference Data (Click to copy):</p>`;
+            q.sidebar.params.forEach(p => {
+                sidebarHtml += `
+                    <div class="param-item" onclick="copyText('${p.value}', this)">
+                        <span class="param-label">${p.label}:</span>
+                        <code class="param-value">${p.value}</code>
+                        <span class="copy-status">Copied!</span>
+                    </div>
+                `;
+            });
+            sidebarHtml += `</div>`;
+        }
+
     sidebar.innerHTML = sidebarHtml;
 
     var multi = document.getElementById("actors");
@@ -126,4 +141,17 @@ function joinList(arr) {
     const arrCopy = [...arr]; // Copy to avoid mutating original
     const last = arrCopy.pop();
     return arrCopy.join(", ") + " and " + last;
+}
+
+function copyText(text, element) {
+    navigator.clipboard.writeText(text).then(() => {
+        const status = element.querySelector('.copy-status');
+        status.classList.add('visible');
+        
+        setTimeout(() => {
+            status.classList.remove('visible');
+        }, 1500);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
 }

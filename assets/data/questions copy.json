@@ -1,0 +1,144 @@
+[
+  {
+    "question": 2,
+    "title": "Find a policy",
+    "type": "find",
+    "sidebar": {
+      "instructions": "Select all actors who can access this policy.",
+      "select": {
+        "title": "Actors",
+        "options": ["Alice", "Bob", "Charlie", "David"]
+      },
+      "params": [
+      { "label": "Name", "value": "John Doe" },
+      { "label": "Address", "value": "123 Apple St" },
+      { "label": "Duration", "value": "12 Months" }
+    ]
+    },
+    "body": {}
+  },
+
+
+  {
+    "question": 1,
+    "title": "Create a policy",
+    "type": "create",
+    "sidebar": {
+      "instructions": "Add John Doe. Make sure all fields are filled correctly.",
+      "elements": {
+        "name": "",
+        "address": "",
+        "duration": ""
+      }
+    },
+    "body": {
+      "name": "",
+      "address": "",
+      "duration": ""
+    }
+  },
+  {
+    "question": 1,
+    "title": "Create a policy",
+    "type": "review",
+    "sidebar": {
+      "instructions": "Add John Doe. Make sure all fields are filled correctly.",
+      "elements": {
+        "name": "",
+        "address": "",
+        "duration": ""
+      }
+    },
+    "body": {
+      "name": "",
+      "address": "",
+      "duration": ""
+    }
+  },
+
+
+  {
+    "question": 2,
+    "title": "Find a policy",
+    "type": "find",
+    "sidebar": {
+      "instructions": "Select all actors who can access this policy.",
+      "select": {
+        "title": "Actors",
+        "options": ["Alice", "Bob", "Charlie", "David"]
+      }
+    },
+    "body": {}
+  },
+  {
+    "question": 2,
+    "title": "Find a policy",
+    "type": "review",
+    "sidebar": {
+      "instructions": "Select all actors who can access this policy."
+    },
+    "body": {}
+  },
+
+
+
+  {
+    "question": 3,
+    "title": "Edit a policy",
+    "type": "create",
+    "sidebar": {
+      "instructions": "Edit John Doe’s policy. All fields are pre-filled."
+    },
+    "body": {
+      "constraints": {
+        "purpose": [
+          "purpose2",
+          "purpose3",
+          "purpose4",
+          "purpose5"
+        ],
+        "useDuration": true,
+        "DurationYear": "0",
+        "DurationMonth": "0",
+        "DurationDay": "0",
+        "DurationHour": "0",
+        "useStartTime": true,
+        "StartTime": "2026-02-18T13:40",
+        "useEndTime": true,
+        "EndTime": "2026-02-28T13:41",
+        "useLocation": true,
+        "Location": "http://location",
+        "useUsage": true,
+        "Usage": "12"
+      },
+      "duties": {
+        "delete": true,
+        "anonymize": true,
+        "encrypt": true,
+        "notify": true
+      },
+      "permissions": {
+        "permRead": true,
+        "permAdd": true,
+        "permModify": true,
+        "permManage": true
+      },
+      "name": "Name",
+      "id": "Id",
+      "description": "Description",
+      "dataUri": "http://dataUri",
+      "consumer": "http://consumer",
+      "provider": "https://solidweb.me/Me/",
+      "policyType":"Offer"
+    }
+  },
+    {
+    "question": 3,
+    "title": "Edit a policy",
+    "type": "review",
+    "sidebar": {
+    "instructions": "Edit John Doe’s policy. All fields are pre-filled."
+    },
+    "body": {}
+  }
+]

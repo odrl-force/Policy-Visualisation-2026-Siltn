@@ -65,6 +65,10 @@
     color: #fff;
     padding: 0.75rem;
     text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-left: none;
 }
 
 #policies table tr:nth-child(1) th {
@@ -99,9 +103,93 @@
     text-decoration: underline;
 }
 
+#find-1 #path{
+    margin-bottom: 1em;
+}
+
 #find-1 .empty-placeholder {
     padding: 30px;
     text-align: center;
     color: #888;
     font-style: italic;
+}
+
+#find-1 tr td:first-child {
+    box-shadow: inset 5px 0 0 0 #e0e0e0;
+}
+
+#find-1 .selected td:first-child{
+    box-shadow: inset 5px 0 0 0 #7C4DFF;
+}
+
+#find-1 .selected{
+    background-color: #e0e0e0;
+}
+
+#find-1 .sub-policy-row td:first-child {
+    padding-left: 25px; 
+    box-shadow: inset 5px 0 0 0 #7C4DFF;
+}
+
+#find-1 #policies-table thead tr:nth-child(1) th {
+    top: 0;
+    z-index: 11;
+}
+#find-1 #policies-table thead tr:nth-child(2) th {
+    top: 41px;
+    z-index: 10;
+}
+
+
+#find-1 .user-main-row td strong,
+#find-1 .sub-policy-row td strong {
+    display: block;
+    margin-bottom: 2px;
+}
+
+#find-1 .user-main-row td span,
+#find-1 .sub-policy-row td span {
+    font-size: 0.75em;
+    color: #666;
+    display: block;
+    line-height: 1.2;
+}
+
+#find-1 .sub-policy-row {
+    background-color: #f4effc;
+}
+
+/* === Tabs (accessibility-friendly) === */
+#find-1 .view-tabs {
+  display: inline-flex;
+  gap: 8px;
+  margin: 0 0 10px 0;
+}
+
+#find-1 .view-tab {
+  background: #f6f3ff;
+  color: #4a3dbb;
+  border: 2px solid #7C4DFF;
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#find-1 .view-tab.selected {
+  background: #7C4DFF;
+  color: #fff;
+  box-shadow: 0 0 0 3px #e8e0ff;
+}
+
+#find-1 .view-tab:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px #bfb2ff;
+}
+
+#find-1 .file-desc {
+  font-size: 0.80rem;
+  color: #666;
+  margin-top: 3px;
+  display: block;
 }

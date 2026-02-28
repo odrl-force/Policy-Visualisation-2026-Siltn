@@ -3,12 +3,21 @@
         <div id="path"></div>
     </div>
 
+<div class="view-tabs" role="tablist" aria-label="View mode">
+  <button id="tab-file" role="tab" aria-selected="true" class="view-tab selected">
+    File View
+  </button>
+  <button id="tab-person" role="tab" aria-selected="false" class="view-tab">
+    Person View
+  </button>
+</div>
+
     <div class="content">
         <div id="files" class="scrollable">
             <table id="files-table">
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Filename</th>
                         <th>Access Level</th>
                         <th>Actions</th>
                     </tr>
@@ -19,9 +28,17 @@
 
         <div id="policies" class="scrollable">
             <table id="policies-table">
-                <tbody>
+                <thead>
+                    <tr class="table-title-row"><th colspan="6" id="policy-title">Access Rules: No file selected</th></tr>
                     <tr>
-                        <td class="empty-placeholder">Select a file to view its permissions.</td>
+                        <th>User / Context</th>
+                        <th>Read</th><th>Add</th><th>Edit</th><th>Control</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="policy-body">
+                    <tr>
+                        <td class="empty-placeholder" colspan="6">Select a file to view its permissions.</td>
                     </tr>
                 </tbody>
             </table>

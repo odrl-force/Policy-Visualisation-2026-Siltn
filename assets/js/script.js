@@ -65,10 +65,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (q.sidebar?.params) {
             sidebarHtml += `<div class="params-container">`;
             sidebarHtml += `<p class="params-title">Reference Data (Click to copy):</p>`;
+            
             q.sidebar.params.forEach(p => {
                 sidebarHtml += `
-                    <div class="param-item" onclick="copyText('${p.value}', this)">
-                        <span class="param-label">${p.label}:</span>
+                    <div class="param-item" onclick="copyText('${p.value}', this)" data-label="${p.label}">
+                        <span class="param-label">${p.label}</span>
                         <code class="param-value">${p.value}</code>
                         <span class="copy-status">Copied!</span>
                     </div>
@@ -127,7 +128,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   nextButton.addEventListener("click", () => {
     currentIndex++;
-    nextButton.disabled = true;
+    //nextButton.disabled = true;
     loadQuestion(currentIndex);
   });
 

@@ -6,12 +6,34 @@
   const body = q.body;
   const start = Date.now();
 
+  document.getElementById("provider").value = "https://AliceSmith/profile/card#me";
+
   // Policy type logic
   document.getElementById("policyType").addEventListener("change", togglePolicyType);
   togglePolicyType();
   
+  // Accesible multi select
+  const purposeSelect = new TomSelect('#purpose', {
+      plugins: ['remove_button'],
+      options: PURPOSES.options,
+      optgroups: PURPOSES.groups,
+      optgroupField: 'group',
+      labelField: 'name',
+      valueField: 'value',
+      searchField: ['name', 'desc', 'value'],
+      render: {
+          optgroup_header: data => `<div class="optgroup-header">${data.label}</div>`,
+          option: data => `<div><strong>${data.name}</strong><div>${data.desc}</div></div>`
+      },
+      onInitialize() {
+          this.initialized = true;
+      }
+    });
+    
+  document.getElementById("purpose").tomselect = purposeSelect;
+    
   fillFormFromJson(body);
-
+  
   bindToggle("useDuration", "Duration");
   bindToggle("useDuration", "DurationYear");
   bindToggle("useDuration", "DurationMonth");
@@ -21,43 +43,21 @@
   bindToggle("useEndTime", "EndTime");
   bindToggle("useLocation", "Location");
   bindToggle("useUsage", "Usage");
-
-
-  // Accesible multi select
-  new TomSelect('#purpose', {
-    plugins: ['remove_button'],
-    options: PURPOSES.options,
-    optgroups: PURPOSES.groups,
-    optgroupField: 'group',
-    labelField: 'name',
-    valueField: 'value',
-    searchField: ['name', 'desc', 'value'],
-    render: {
-        optgroup_header: function(data, escape) {
-            return '<div class="optgroup-header" style="font-weight:bold; color:#333;">' + escape(data.label) + '</div>';
-        },
-        option: function(data, escape) {
-            return '<div>' +
-                        '<strong>' + escape(data.name) + '</strong>' +
-                        '<div class="text-muted" style="font-size:0.8em;">' + escape(data.desc) + '</div>' +
-                    '</div>';
-        }
-    }
-  });
-
+  
   //permissions validation
   document.querySelectorAll('input[name="permission"]').forEach(cb => {
     cb.addEventListener("change", function () {
       const checkboxes = document.querySelectorAll('input[name="permission"]');
       const firstCheckbox = checkboxes[0];
-
+      
       const oneChecked = Array.from(checkboxes).some(cb => cb.checked);
-
+      
       if (oneChecked) {
         firstCheckbox.setCustomValidity("");
       }
     });
   });
+  
 
   // Submit Form logic
   document.getElementById("policyForm").addEventListener("submit", function (e) {
@@ -113,7 +113,7 @@
     data["name"] = document.getElementById("name").value;
     data["id"] = document.getElementById("id").value|| "p-1482";
     data["description"] = document.getElementById("description").value;
-    data["udataUri"] = document.getElementById("dataUri").value;
+    data["dataUri"] = document.getElementById("dataUri").value;
     data["provider"] = document.getElementById("provider").value;
     data["consumer"] = document.getElementById("consumer").value;
     data["policyType"] = document.getElementById("policyType").value;
@@ -176,16 +176,34 @@ function fillFormFromJson(data) {
         } else if (el.tagName === "TEXTAREA") {
           el.value = value;
         } else if (el.tagName === "SELECT") {
-          if (el.multiple) {
-            if (Array.isArray(value)) {
-              Array.from(el.options).forEach(option => {
-                option.selected = value.includes(option.value);
-              });
+        if (el.tomselect) {
+            const ts = el.tomselect;
+            function applyValues() {
+                if (ts.initialized) {
+                    if (el.multiple && Array.isArray(value)) {
+                        ts.setValue(value, true);
+                    } else {
+                        ts.setValue([value], true);
+                    }
+                } else {
+                    // Retry until TomSelect fully initializes
+                    setTimeout(applyValues, 30);
+                }
             }
-          } else {
-            el.value = value;
-          }
+
+            applyValues();
+
+        } else {
+            // fallback for normal <select>
+            if (el.multiple && Array.isArray(value)) {
+                Array.from(el.options).forEach(opt => opt.selected = value.includes(opt.value));
+            } else {
+                el.value = value;
+            }
         }
+
+        el.dispatchEvent(new Event("change", { bubbles: true }));
+    }
       }
     }
   }
@@ -197,19 +215,15 @@ function togglePolicyType() {
   const typeSwitch = document.getElementById("policyType");
   const provider = document.getElementById("provider");
   const consumer = document.getElementById("consumer");
-
+  const temp = consumer.value;
+  consumer.value = provider.value;
+  provider.value = temp
   if(typeSwitch.value == "Offer"){
-    consumer.value = provider.value;
     consumer.removeAttribute("disabled");
-
-    provider.value = "https://solidweb.me/AliceSmith/profile/card#me"
     provider.setAttribute("disabled", "true");
   }
   else {
-    provider.value = consumer.value;
     provider.removeAttribute("disabled");
-
-    consumer.value = "https://solidweb.me/AliceSmith/profile/card#me"
     consumer.setAttribute("disabled", "true");
   }
 }

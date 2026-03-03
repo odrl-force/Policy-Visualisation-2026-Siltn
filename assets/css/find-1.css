@@ -27,10 +27,18 @@
 }
 
 #find-1 .scrollable {
-    flex: 1;
     overflow-y: auto;
     background: white;
     border-radius: 6px;
+}
+
+#find-1 .scrollable:first-child {
+    flex: 0 0 auto;
+    min-width: 200px;
+}
+
+#find-1 .scrollable:last-child {
+    flex: 1;
 }
 
 #find-1 .dot {

@@ -191,7 +191,8 @@
         "description": "Files meant for public visibility.",
         "children": [
           { "name": "CV_Public.pdf", "description": "Public résumé for Alice Smith." },
-          { "name": "Portfolio.link", "description": "Portfolio link or homepage reference." }
+          { "name": "Portfolio.link", "description": "Portfolio link or homepage reference." },
+          { "name": "shared", "description": "Shared folder of alice and her friends"}
         ]
       }
     ]

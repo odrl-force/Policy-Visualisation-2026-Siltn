@@ -144,7 +144,7 @@
         const policyTitle = document.getElementById("policy-title");
         const tbody = document.getElementById("policy-body");
         const itemUri = getItemUri(item, navigationStack);
-        const relevant = allPolicies.filter(p => itemUri.startsWith(p.udataUri));
+        const relevant = allPolicies.filter(p => itemUri.startsWith(p.dataUri));
 
         policyTitle.innerHTML = `Access Rules: ${item.name}`;
 
@@ -192,8 +192,8 @@
 
         const resourceMap = {};
         user.policies.forEach(p => {
-            if (!resourceMap[p.udataUri]) resourceMap[p.udataUri] = [];
-            resourceMap[p.udataUri].push(p);
+            if (!resourceMap[p.dataUri]) resourceMap[p.dataUri] = [];
+            resourceMap[p.dataUri].push(p);
         });
 
         Object.keys(resourceMap).forEach((uri, rIdx) => {
@@ -252,8 +252,8 @@
             
             let sourceTitle = p.name || "Access Rule";
             if (itemUri) {
-                const isDirect = p.udataUri === itemUri;
-                const folderName = p.udataUri.split('/').pop() || "parent folder";
+                const isDirect = p.dataUri === itemUri;
+                const folderName = p.uataUri.split('/').pop() || "parent folder";
                 sourceTitle = isDirect ? "Direct Permission" : `From ${folderName}`;
             }
 
@@ -378,7 +378,7 @@
             }
         };
         collectChildrenUris(item, getFullPath(item, currentStack));
-        const relevant = allPolicies.filter(p => allUris.includes(p.udataUri));
+        const relevant = allPolicies.filter(p => allUris.includes(p.dataUri));
         let maxRank = 1; 
         relevant.forEach(p => {
             if (p.permissions.permManage) maxRank = Math.max(maxRank, 4);

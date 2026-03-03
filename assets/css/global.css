@@ -309,59 +309,72 @@ a:hover {
 .params-container {
     margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px solid #eee;
+    border-top: 2px solid #eee;
 }
 
 .params-title {
     font-size: 0.85rem;
     font-weight: bold;
-    color: #666;
-    margin-bottom: 8px;
+    color: #202542;
+    margin-bottom: 12px;
 }
 
 .param-item {
     position: relative;
-    background: #f4f4f9;
+    background: #ffffff;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 8px 10px;
-    margin-bottom: 8px;
+    border-left: 4px solid #7C4DFF; /* Visual cue for interactive items */
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
     cursor: pointer;
-    transition: background 0.2s;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* Stack label over value */
+    gap: 4px;
+    transition: all 0.2s ease;
 }
 
 .param-item:hover {
-    background: #eef2ff;
-    border-color: #4f46e5;
+    background: #f8f7ff;
+    border-color: #7C4DFF;
+    transform: translateX(2px); /* Subtle "lift" on hover */
 }
 
 .param-label {
-    font-size: 0.75rem;
-    color: #555;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
 }
 
 .param-value {
-    font-family: monospace;
-    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
     color: #111;
+    word-break: break-all; /* THE FIX: Forces long URLs to wrap */
+    white-space: normal;
+    line-height: 1.4;
+    background: none;
+    padding: 0;
 }
 
 .copy-status {
     position: absolute;
-    right: 10px;
-    background: #4f46e5;
+    top: 8px;
+    right: 8px;
+    background: #10b981;
     color: white;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     padding: 2px 6px;
-    border-radius: 3px;
+    border-radius: 4px;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s;
+    transition: all 0.2s ease;
+    transform: translateY(4px);
 }
 
 .copy-status.visible {
     opacity: 1;
+    transform: translateY(0);
 }

@@ -599,7 +599,7 @@ function generatePolicyText(p) {
     //Assembly
     return `
       <div class="policy-summary">
-        <p>This policy (ID: <strong>${p.id}</strong>) entails access to <strong>${p.udataUri || 'the data'}</strong> for the consumer <strong>${p.consumer || 'the consumer'}</strong>.</p>
+        <p>This policy (ID: <strong>${p.id}</strong>) entails access to <strong>${p.dataUri || 'the data'}</strong> for the consumer <strong>${p.consumer || 'the consumer'}</strong>.</p>
         <p>They are allowed to <strong>${actionsText}</strong> the data, which is provided by <strong>${p.provider || 'the provider'}</strong>.</p>
         
         ${purposeSection}

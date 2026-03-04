@@ -796,7 +796,7 @@
     "title": "Find intrusive policies (Manage access)",
     "type": "find",
     "sidebar": {
-      "instructions": "Some policies may unintentionally grant highly intrusive permissions. Review all existing policies and identify any that allow an actor to <b>manage</b> access. This includes <b>modifying who can access data</b> or <b>changing existing permissions</b>. Managing access is a powerful capability and often <b>unnecessary</b> for most actors. Select <b>all</b> policies that include this intrusive permission.",
+      "instructions": "Some policies may unintentionally grant highly intrusive permissions. Review all existing policies and identify any that allow an actor to <b>manage</b> access. Managing access is a powerful capability and often <b>unnecessary</b> for most actors. Select <b>all</b> policies that include this intrusive permission.",
       "select": {
         "title": "Policies",
         "options": []
@@ -859,7 +859,7 @@
     "title": "Find purposes for which the landlord may contact Alice",
     "type": "find",
     "sidebar": {
-      "instructions": "As prviously mentioned Alice's former landlord (Mr. Lambert) can still contact her if nessecary. What are the <b>purposes</b> he could contact her for?",
+      "instructions": "As perviously mentioned Alice's former landlord (Mr. Lambert) can still contact her if nessecary. What are the <b>purposes</b> he could contact her for?",
       "params": [
         {
           "label": "Landlord – Mr. Lambert",
@@ -886,7 +886,7 @@
     "title": "Find actors who can edit files",
     "type": "find",
     "sidebar": {
-      "instructions": "Editing permissions can significantly impact data integrity and privacy. Review all policies to identify every actor who has <b>modify</b> permissions on <b>any file</b>. These permissions allow the actor to alter existing content. List <b>all actors</b> who can modify at least one file.",
+      "instructions": "Editing permissions can significantly impact data integrity and privacy. List every actor who has <b>modify</b> permissions on <b>any file</b>. These permissions allow the actor to alter existing content. List <b>all actors</b> who can modify at least one file.",
       "select": {
         "title": "Actors",
         "options": []
@@ -926,7 +926,7 @@
     "title": "Find who can contact Alice only from inside Belgium",
     "type": "find",
     "sidebar": {
-      "instructions": "Some policies include geographic restrictions that limit access to actors' physical location'. List all actors who can only access your (Alice Smith) <b>contact information</> while they are inside <b>Belgium</b>.",
+      "instructions": "Some policies include geographic restrictions that limit access to actors' physical location'. List all actors who can only access your (Alice Smith) <b>contact information</b> while they are inside <b>Belgium</b>.",
       "params": [
         {
           "label": "Location – Belgium",

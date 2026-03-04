@@ -22,7 +22,7 @@ var PURPOSES = {
     options: [
         {
             group: '', 
-            value: 'all', 
+            value: 'all:all', 
             name: 'All', 
             desc: 'No purpose limitations' 
         },

@@ -1,6 +1,6 @@
 [
   {
-    "name": "Delegation Alice manages Jane",
+    "name": "Delegation: Alice manages Jane (2 months)",
     "provider": "https://solidweb.me/JaneDoe/profile/card",
     "consumer": "https://solidweb.me/AliceSmith/profile/card",
     "permissions": {
@@ -13,32 +13,125 @@
       "purpose": [
         "dpv:AccountManagement"
       ],
-      "useDuration": true,
-      "DurationMonth": 2
+
+      "DurationMonth": 2,
+
+      "StartTime": "2026-03-04T09:00"
     },
     "dataUri": "https://solidweb.me/JaneDoe",
-    "id": "p-0001"
+    "id": "p-0001",
+    "createdAt": "2026-03-04"
   },
   {
-    "name": "Carecenter extended",
+    "name": "Doctor – read all:all medical (root)",
     "provider": "https://solidweb.me/JaneDoe/profile/card",
-    "consumer": "https://solidweb.me/carecenter-the-tree/profile/card",
+    "consumer": "https://solidweb.me/doctor-van-der-velden/profile/card",
     "permissions": {
-      "permRead": true,
-      "permAdd": true
+      "permRead": true
     },
     "constraints": {
       "purpose": [
         "sector-health:HealthcareServiceManagement"
       ],
-      "useEndTime": true,
-      "EndTime": "2026-12-31T23:59"
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2020-03-01T00:00"
     },
     "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical",
-    "id": "p-0002"
+    "id": "p-0002",
+    "createdAt": "2020-03-01"
   },
   {
-    "name": "Doctor full access 2026",
+    "name": "Nurse Evy – read all:all medical (root)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/nurse-evy/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "sector-health:HealthcareServiceManagement"
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2020-03-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical",
+    "id": "p-0003",
+    "createdAt": "2020-03-01"
+  },
+  {
+    "name": "Physio – read all:all medical (root)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/physio-movewell/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "sector-health:HealthcareServiceManagement"
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2020-03-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical",
+    "id": "p-0004",
+    "createdAt": "2020-03-01"
+  },
+  {
+    "name": "Care Center – read all:all medical (root)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/carecenter-the-tree/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "sector-health:HealthcareServiceManagement"
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2020-03-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical",
+    "id": "p-0005",
+    "createdAt": "2020-03-01"
+  },
+  {
+    "name": "Dietician – read all:all medical (root)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/dietician-green-plate/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "sector-health:HealthcareServiceManagement"
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2020-03-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical",
+    "id": "p-0006",
+    "createdAt": "2020-03-01"
+  },
+  {
+    "name": "WitGeleKruis – read all:all medical (root)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/wit-gele-kruis/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "sector-health:HealthcareServiceManagement"
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2020-03-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical",
+    "id": "p-0007",
+    "createdAt": "2020-03-01"
+  },
+  {
+    "name": "Doctor – write medical 2026",
     "provider": "https://solidweb.me/JaneDoe/profile/card",
     "consumer": "https://solidweb.me/doctor-van-der-velden/profile/card",
     "permissions": {
@@ -48,32 +141,37 @@
     },
     "constraints": {
       "purpose": [
-        "sector-health:HealthcareServiceManagement",
-        "sector-health:Optimisation"
-      ]
+        "sector-health:HealthcareServiceManagement"
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2026-01-01T00:00"
     },
     "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical/2026",
-    "id": "p-0003"
+    "id": "p-0008",
+    "createdAt": "2026-01-01"
   },
   {
-    "name": "Nurse log only",
+    "name": "Nurse Evy – write medical 2026",
     "provider": "https://solidweb.me/JaneDoe/profile/card",
     "consumer": "https://solidweb.me/nurse-evy/profile/card",
     "permissions": {
       "permRead": true,
       "permAdd": true,
-      "permModify": false
+      "permModify": true
     },
     "constraints": {
       "purpose": [
         "sector-health:HealthcareServiceManagement"
-      ]
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2026-01-01T00:00"
     },
-    "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Nursing_Log.json",
-    "id": "p-0004"
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical/2026",
+    "id": "p-0009",
+    "createdAt": "2026-01-01"
   },
   {
-    "name": "Physio access 2026",
+    "name": "Physio – write medical 2026",
     "provider": "https://solidweb.me/JaneDoe/profile/card",
     "consumer": "https://solidweb.me/physio-movewell/profile/card",
     "permissions": {
@@ -84,13 +182,379 @@
     "constraints": {
       "purpose": [
         "sector-health:HealthcareServiceManagement"
-      ]
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2026-01-01T00:00"
     },
     "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical/2026",
-    "id": "p-0005"
+    "id": "p-0010",
+    "createdAt": "2026-01-01"
   },
   {
-    "name": "AG Health foot injury",
+    "name": "Care Center – write medical 2026",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/carecenter-the-tree/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true,
+      "permModify": true
+    },
+    "constraints": {
+      "purpose": [
+        "sector-health:HealthcareServiceManagement"
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2026-01-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical/2026",
+    "id": "p-0011",
+    "createdAt": "2026-01-01"
+  },
+  {
+    "name": "Dietician – write medical 2026",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/dietician-green-plate/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true,
+      "permModify": true
+    },
+    "constraints": {
+      "purpose": [
+        "sector-health:HealthcareServiceManagement"
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2026-01-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical/2026",
+    "id": "p-0012",
+    "createdAt": "2026-01-01"
+  },
+  {
+    "name": "WitGeleKruis – write medical 2026",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/wit-gele-kruis/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true,
+      "permModify": true
+    },
+    "constraints": {
+      "purpose": [
+        "sector-health:HealthcareServiceManagement"
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2026-01-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical/2026",
+    "id": "p-0013",
+    "createdAt": "2026-01-01"
+  },
+  {
+    "name": "Nurse Evy – manage Nursing Log 2026",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/nurse-evy/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true,
+      "permModify": true
+    },
+    "constraints": {
+      "purpose": [
+        "sector-health:HealthcareServiceManagement"
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2026-01-05T07:30"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Nursing_Log.json",
+    "id": "p-0014"
+  },
+  {
+    "name": "WitGeleKruis – manage Nursing Log 2026",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/wit-gele-kruis/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true,
+      "permModify": true
+    },
+    "constraints": {
+      "purpose": [
+        "sector-health:HealthcareServiceManagement"
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2026-01-05T07:30"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Nursing_Log.json",
+    "id": "p-0015"
+  },
+  {
+    "name": "Public read access (everyone)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/public/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "all:all"
+      ],
+
+      "StartTime": "2021-06-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Public",
+    "id": "p-0016",
+    "createdAt": "2021-06-01"
+  },
+  {
+    "name": "Contact info – read access (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/ah-belgium/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
+    "id": "p-0017"
+  },
+  {
+    "name": "Contact info – read access (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/bpost/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
+    "id": "p-0019"
+  },
+  {
+    "name": "Contact info – read access (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/carrefour-belgium/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
+    "id": "p-0020"
+  },
+  {
+    "name": "Contact info – read access (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/colruyt/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
+    "id": "p-0021"
+  },
+  {
+    "name": "Contact info – read access (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/delhaize/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
+    "id": "p-0023"
+  },
+  {
+    "name": "Contact info – read access (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/farmfresh-veggies/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
+    "id": "p-0024"
+  },
+  {
+    "name": "Contact info – read access (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/okay-delivery/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
+    "id": "p-0026"
+  },
+  {
+    "name": "Contact info – read access (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/doctor-van-der-velden/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
+    "id": "p-0027"
+  },
+  {
+    "name": "Contact info – read access (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/nurse-evy/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
+    "id": "p-0028"
+  },
+  {
+    "name": "Contact info – read access (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/physio-movewell/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
+    "id": "p-0029"
+  },
+  {
+    "name": "Contact info – read access (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/carecenter-the-tree/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
+    "id": "p-0030"
+  },
+  {
+    "name": "Contact info – read access (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/dietician-green-plate/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
+    "id": "p-0031"
+  },
+  {
+    "name": "Contact info – read access (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/wit-gele-kruis/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
+    "id": "p-0032"
+  },
+  {
+    "name": "Contact info – read access (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/countrybank/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
+    "id": "p-0033"
+  },
+  {
+    "name": "Contact info – read access (Jane)",
     "provider": "https://solidweb.me/JaneDoe/profile/card",
     "consumer": "https://solidweb.me/insurance-ag-health/profile/card",
     "permissions": {
@@ -98,467 +562,1447 @@
     },
     "constraints": {
       "purpose": [
-        "sector-health:InsuranceManagement"
+        "dpv:CustomerCare"
       ],
-      "useEndTime": true,
-      "EndTime": "2026-04-03T00:00"
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00"
     },
-    "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Foot_XRay.png",
-    "duties": {
-      "delete": true
-    },
-    "id": "p-0006"
-  },
-  {
-    "name": "Store contact Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/ah-belgium/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:ServicePersonalisation"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0007"
-  },
-  {
-    "name": "Store email marketing Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/ah-belgium/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:Marketing"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
-    "id": "p-0008"
-  },
-  {
-    "name": "Store shopping Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/ah-belgium/profile/card",
-    "permissions": {
-      "permRead": true,
-      "permAdd": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
-    "id": "p-0009"
-  },
-  {
-    "name": "Store contact Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/bolcom/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:ServicePersonalisation"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0010"
-  },
-  {
-    "name": "Store email marketing Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/bolcom/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:Marketing"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
-    "id": "p-0011"
-  },
-  {
-    "name": "Store shopping Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/bolcom/profile/card",
-    "permissions": {
-      "permRead": true,
-      "permAdd": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
-    "id": "p-0012"
-  },
-  {
-    "name": "Store contact Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/bpost/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:ServicePersonalisation"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0013"
-  },
-  {
-    "name": "Store email marketing Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/bpost/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:Marketing"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
-    "id": "p-0014"
-  },
-  {
-    "name": "Store shopping Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/bpost/profile/card",
-    "permissions": {
-      "permRead": true,
-      "permAdd": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
-    "id": "p-0015"
-  },
-  {
-    "name": "Store contact Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/carrefour-belgium/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:ServicePersonalisation"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0016"
-  },
-  {
-    "name": "Store email marketing Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/carrefour-belgium/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:Marketing"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
-    "id": "p-0017"
-  },
-  {
-    "name": "Store shopping Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/carrefour-belgium/profile/card",
-    "permissions": {
-      "permRead": true,
-      "permAdd": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
-    "id": "p-0018"
-  },
-  {
-    "name": "Store contact Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/colruyt/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:ServicePersonalisation"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0019"
-  },
-  {
-    "name": "Store email marketing Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/colruyt/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:Marketing"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
-    "id": "p-0020"
-  },
-  {
-    "name": "Store shopping Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/colruyt/profile/card",
-    "permissions": {
-      "permRead": true,
-      "permAdd": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
-    "id": "p-0021"
-  },
-  {
-    "name": "Store contact Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/coolblue/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:ServicePersonalisation"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0022"
-  },
-  {
-    "name": "Store email marketing Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/coolblue/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:Marketing"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
-    "id": "p-0023"
-  },
-  {
-    "name": "Store shopping Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/coolblue/profile/card",
-    "permissions": {
-      "permRead": true,
-      "permAdd": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
-    "id": "p-0024"
-  },
-  {
-    "name": "Store contact Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/delhaize/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:ServicePersonalisation"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0025"
-  },
-  {
-    "name": "Store email marketing Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/delhaize/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:Marketing"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
-    "id": "p-0026"
-  },
-  {
-    "name": "Store shopping Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/delhaize/profile/card",
-    "permissions": {
-      "permRead": true,
-      "permAdd": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
-    "id": "p-0027"
-  },
-  {
-    "name": "Store contact Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/farmfresh-veggies/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:ServicePersonalisation"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0028"
-  },
-  {
-    "name": "Store email marketing Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/farmfresh-veggies/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:Marketing"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
-    "id": "p-0029"
-  },
-  {
-    "name": "Store shopping Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/farmfresh-veggies/profile/card",
-    "permissions": {
-      "permRead": true,
-      "permAdd": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
-    "id": "p-0030"
-  },
-  {
-    "name": "Store contact Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/food-delivery-lotus/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:ServicePersonalisation"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0031"
-  },
-  {
-    "name": "Store email marketing Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/food-delivery-lotus/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:Marketing"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
-    "id": "p-0032"
-  },
-  {
-    "name": "Store shopping Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/food-delivery-lotus/profile/card",
-    "permissions": {
-      "permRead": true,
-      "permAdd": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
-    "id": "p-0033"
-  },
-  {
-    "name": "Store contact Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/okay-delivery/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:ServicePersonalisation"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
     "id": "p-0034"
   },
   {
-    "name": "Store email marketing Alice",
+    "name": "Contact info – read access (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/insurance-kbc-home/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
+    "id": "p-0035"
+  },
+  {
+    "name": "Contact info – read access (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/city-of-bruges/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact",
+    "id": "p-0036"
+  },
+  {
+    "name": "Email – read for marketing (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/ah-belgium/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:Marketing"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:05",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact/email.txt",
+    "id": "p-0038"
+  },
+  {
+    "name": "Email – read for marketing (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/bpost/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:Marketing"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:05",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact/email.txt",
+    "id": "p-0040"
+  },
+  {
+    "name": "Email – read for marketing (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/carrefour-belgium/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:Marketing"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:05",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact/email.txt",
+    "id": "p-0041"
+  },
+  {
+    "name": "Email – read for marketing (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/colruyt/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:Marketing"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:05",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact/email.txt",
+    "id": "p-0042"
+  },
+  {
+    "name": "Email – read for marketing (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/delhaize/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:Marketing"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:05",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact/email.txt",
+    "id": "p-0044"
+  },
+  {
+    "name": "Email – read for marketing (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/farmfresh-veggies/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:Marketing"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:05",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact/email.txt",
+    "id": "p-0045"
+  },
+  {
+    "name": "Email – read for marketing (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/okay-delivery/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:Marketing"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:05",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Contact/email.txt",
+    "id": "p-0047"
+  },
+  {
+    "name": "Shopping history – read+append (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/ah-belgium/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2022-01-10T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Commercial/Shopping_History.db",
+    "id": "p-0048"
+  },
+  {
+    "name": "Receipts – upload only (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/ah-belgium/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2022-01-10T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Commercial/Receipts_Digital",
+    "id": "p-0049"
+  },
+  {
+    "name": "Shopping history – read+append (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/bpost/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2022-01-10T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Commercial/Shopping_History.db",
+    "id": "p-0052"
+  },
+  {
+    "name": "Receipts – upload only (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/bpost/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2022-01-10T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Commercial/Receipts_Digital",
+    "id": "p-0053"
+  },
+  {
+    "name": "Shopping history – read+append (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/carrefour-belgium/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2022-01-10T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Commercial/Shopping_History.db",
+    "id": "p-0054"
+  },
+  {
+    "name": "Receipts – upload only (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/carrefour-belgium/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2022-01-10T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Commercial/Receipts_Digital",
+    "id": "p-0055"
+  },
+  {
+    "name": "Shopping history – read+append (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/colruyt/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2022-01-10T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Commercial/Shopping_History.db",
+    "id": "p-0056"
+  },
+  {
+    "name": "Receipts – upload only (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/colruyt/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2022-01-10T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Commercial/Receipts_Digital",
+    "id": "p-0057"
+  },
+  {
+    "name": "Shopping history – read+append (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/delhaize/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2022-01-10T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Commercial/Shopping_History.db",
+    "id": "p-0060"
+  },
+  {
+    "name": "Receipts – upload only (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/delhaize/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2022-01-10T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Commercial/Receipts_Digital",
+    "id": "p-0061"
+  },
+  {
+    "name": "Shopping history – read+append (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/farmfresh-veggies/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2022-01-10T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Commercial/Shopping_History.db",
+    "id": "p-0062"
+  },
+  {
+    "name": "Receipts – upload only (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/farmfresh-veggies/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2022-01-10T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Commercial/Receipts_Digital",
+    "id": "p-0063"
+  },
+  {
+    "name": "Shopping history – read+append (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/okay-delivery/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2022-01-10T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Commercial/Shopping_History.db",
+    "id": "p-0066"
+  },
+  {
+    "name": "Receipts – upload only (Jane)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/okay-delivery/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2022-01-10T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Commercial/Receipts_Digital",
+    "id": "p-0067"
+  },
+  {
+    "name": "Care Center – read PowerOfAttorney",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/carecenter-the-tree/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2026-03-01T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Legal/PowerOfAttorney.pdf",
+    "id": "p-0068"
+  },
+  {
+    "name": "Read ID card (general)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/doctor-van-der-velden/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2020-05-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/General/ID_card.pdf",
+    "id": "p-0069"
+  },
+  {
+    "name": "Read ID card (general)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/nurse-evy/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2020-05-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/General/ID_card.pdf",
+    "id": "p-0070"
+  },
+  {
+    "name": "Read ID card (general)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/physio-movewell/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2020-05-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/General/ID_card.pdf",
+    "id": "p-0071"
+  },
+  {
+    "name": "Read ID card (general)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/carecenter-the-tree/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2020-05-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/General/ID_card.pdf",
+    "id": "p-0072"
+  },
+  {
+    "name": "Read ID card (general)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/dietician-green-plate/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2020-05-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/General/ID_card.pdf",
+    "id": "p-0073"
+  },
+  {
+    "name": "Read ID card (general)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/city-of-bruges/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2020-05-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/General/ID_card.pdf",
+    "id": "p-0074"
+  },
+  {
+    "name": "Read birth certificate (general)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/doctor-van-der-velden/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2020-05-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/General/BirthCert.pdf",
+    "id": "p-0076"
+  },
+  {
+    "name": "Read birth certificate (general)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/nurse-evy/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2020-05-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/General/BirthCert.pdf",
+    "id": "p-0077"
+  },
+  {
+    "name": "Read birth certificate (general)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/physio-movewell/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2020-05-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/General/BirthCert.pdf",
+    "id": "p-0078"
+  },
+  {
+    "name": "Read birth certificate (general)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/carecenter-the-tree/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2020-05-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/General/BirthCert.pdf",
+    "id": "p-0079"
+  },
+  {
+    "name": "Read birth certificate (general)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/dietician-green-plate/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2020-05-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/General/BirthCert.pdf",
+    "id": "p-0080"
+  },
+  {
+    "name": "Read birth certificate (general)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/city-of-bruges/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2020-05-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/General/BirthCert.pdf",
+    "id": "p-0081"
+  },
+  {
+    "name": "Care Center – read Dietary Needs",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/carecenter-the-tree/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "sector-health:HealthcareServiceManagement"
+      ],
+
+      "StartTime": "2026-03-01T09:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Preferences/Dietary_Needs.json",
+    "id": "p-0083"
+  },
+  {
+    "name": "Dietician – manage Dietary Needs",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/dietician-green-plate/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true,
+      "permModify": true
+    },
+    "constraints": {
+      "purpose": [
+        "sector-health:HealthcareServiceManagement"
+      ],
+
+      "StartTime": "2026-03-03T10:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Preferences/Dietary_Needs.json",
+    "id": "p-0084"
+  },
+  {
+    "name": "UGent – read Sleep Data (research)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/ugent-research/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:ScientificResearch"
+      ],
+
+      "DurationYear": "1",
+
+      "StartTime": "2026-03-04T11:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Statistics/Sleep_Data.csv",
+    "id": "p-0085",
+    "duties": {
+      "anonymize": true,
+      "delete": true
+    },
+    "createdAt": "2026-03-04"
+  },
+  {
+    "name": "UGent – read Daily Steps (research)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/ugent-research/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:ScientificResearch"
+      ],
+
+      "DurationYear": "1",
+
+      "StartTime": "2026-03-04T11:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Statistics/Daily_Steps.json",
+    "id": "p-0086",
+    "duties": {
+      "anonymize": true
+    },
+    "createdAt": "2026-03-04"
+  },
+  {
+    "name": "Smartwatch – upload only to Statistics",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/acme-smartwatch/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:ServiceProvision"
+      ],
+
+      "StartTime": "2025-12-01T08:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Statistics",
+    "id": "p-0087"
+  },
+  {
+    "name": "Insurer – read Insurance Contracts (KBC)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/insurance-kbc-home/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2025-01-15T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Legal/Insurance_Contracts",
+    "id": "p-0088"
+  },
+  {
+    "name": "Insurer – read Insurance Contracts (AG Health)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/insurance-ag-health/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2025-01-15T00:00"
+    },
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Legal/Insurance_Contracts",
+    "id": "p-0089"
+  },
+  {
+    "name": "Public read access (everyone)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/public/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "all:all"
+      ],
+
+      "StartTime": "2021-06-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Public",
+    "id": "p-0090"
+  },
+  {
+    "name": "Shared – access for Carol Green",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/carol-green/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true,
+      "permModify": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:NonCommercialPurpose"
+      ],
+
+      "StartTime": "2022-06-01T10:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Public/shared",
+    "id": "p-0091"
+  },
+  {
+    "name": "Shared – access for Dave Black",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/dave-black/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true,
+      "permModify": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:NonCommercialPurpose"
+      ],
+
+      "StartTime": "2022-06-01T10:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Public/shared",
+    "id": "p-0092"
+  },
+  {
+    "name": "Alice GP – read all:all medical (root)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/doctor-verbeeck/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "sector-health:HealthcareServiceManagement"
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2024-01-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Medical",
+    "id": "p-0093"
+  },
+  {
+    "name": "Alice GP – write medical (current)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/doctor-verbeeck/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true,
+      "permModify": true
+    },
+    "constraints": {
+      "purpose": [
+        "sector-health:HealthcareServiceManagement"
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2026-01-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Medical",
+    "id": "p-0094"
+  },
+  {
+    "name": "Alice Dentist – read all:all medical (root)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/dentist-bruges-smile/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "sector-health:HealthcareServiceManagement"
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2024-01-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Medical",
+    "id": "p-0095"
+  },
+  {
+    "name": "Alice Dentist – write medical (current)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/dentist-bruges-smile/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true,
+      "permModify": true
+    },
+    "constraints": {
+      "purpose": [
+        "sector-health:HealthcareServiceManagement"
+      ],
+      "EndTime": "2026-12-31T23:59:59",
+      "StartTime": "2026-01-01T00:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Medical",
+    "id": "p-0096"
+  },
+  {
+    "name": "Employer – read employment contract",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/acme-corp/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:HumanResourceManagement"
+      ],
+
+      "StartTime": "2024-03-01T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Work/Employment_Contract.pdf",
+    "id": "p-0097"
+  },
+  {
+    "name": "Bank – read employment contract",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/countrybank/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2024-03-01T09:05"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Work/Employment_Contract.pdf",
+    "id": "p-0098"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/ah-belgium/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0099"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/bolcom/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0100"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/bpost/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0101"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/carrefour-belgium/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0102"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/colruyt/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0103"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/coolblue/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0104"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/delhaize/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0105"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/food-delivery-lotus/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0107"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/okay-delivery/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0108"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/doctor-van-der-velden/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0109"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/nurse-evy/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0110"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/physio-movewell/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0111"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/carecenter-the-tree/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0112"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/dietician-green-plate/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0113"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/countrybank/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0114"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/insurance-ag-health/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0115"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/insurance-kbc-home/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0116"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/city-of-bruges/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe/Belgium/Bruges"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0117"
+  },
+  {
+    "name": "Contact info – read access (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/city-of-ghent/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe/Belgium/Ghent"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
+    "id": "p-0118"
+  },
+  {
+    "name": "Email – read for marketing (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/ah-belgium/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:Marketing"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:05",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
+    "id": "p-0119"
+  },
+  {
+    "name": "Email – read for marketing (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/bolcom/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:Marketing"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:05",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
+    "id": "p-0120"
+  },
+  {
+    "name": "Email – read for marketing (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/bpost/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:Marketing"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:05",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
+    "id": "p-0121"
+  },
+  {
+    "name": "Email – read for marketing (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/carrefour-belgium/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:Marketing"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:05",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
+    "id": "p-0122"
+  },
+  {
+    "name": "Email – read for marketing (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/colruyt/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:Marketing"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:05",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
+    "id": "p-0123"
+  },
+  {
+    "name": "Email – read for marketing (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/coolblue/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:Marketing"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:05",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
+    "id": "p-0124"
+  },
+  {
+    "name": "Email – read for marketing (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/delhaize/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:Marketing"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:05",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
+    "id": "p-0125"
+  },
+  {
+    "name": "Email – read for marketing (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/food-delivery-lotus/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:Marketing"
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:05",
+      "Location": "http://Europe/Belgium"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
+    "id": "p-0127"
+  },
+  {
+    "name": "Email – read for marketing (Alice)",
     "provider": "https://solidweb.me/AliceSmith/profile/card",
     "consumer": "https://solidweb.me/okay-delivery/profile/card",
     "permissions": {
@@ -567,13 +2011,320 @@
     "constraints": {
       "purpose": [
         "dpv:Marketing"
-      ]
+      ],
+      "DurationYear": "10",
+      "StartTime": "2021-07-01T09:05",
+      "Location": "http://Europe/Belgium"
     },
     "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact/email.txt",
-    "id": "p-0035"
+    "id": "p-0128"
   },
   {
-    "name": "Store shopping Alice",
+    "name": "Shopping history – read+append (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/ah-belgium/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2021-01-05T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
+    "id": "p-0129"
+  },
+  {
+    "name": "Receipts – upload only (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/ah-belgium/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2021-01-05T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Receipts_Digital",
+    "id": "p-0130"
+  },
+  {
+    "name": "Shopping history – read+append (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/bolcom/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2021-01-05T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
+    "id": "p-0131"
+  },
+  {
+    "name": "Receipts – upload only (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/bolcom/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2021-01-05T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Receipts_Digital",
+    "id": "p-0132"
+  },
+  {
+    "name": "Shopping history – read+append (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/bpost/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2021-01-05T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
+    "id": "p-0133"
+  },
+  {
+    "name": "Receipts – upload only (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/bpost/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2021-01-05T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Receipts_Digital",
+    "id": "p-0134"
+  },
+  {
+    "name": "Shopping history – read+append (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/carrefour-belgium/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2021-01-05T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
+    "id": "p-0135"
+  },
+  {
+    "name": "Receipts – upload only (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/carrefour-belgium/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2021-01-05T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Receipts_Digital",
+    "id": "p-0136"
+  },
+  {
+    "name": "Shopping history – read+append (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/colruyt/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2021-01-05T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
+    "id": "p-0137"
+  },
+  {
+    "name": "Receipts – upload only (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/colruyt/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2021-01-05T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Receipts_Digital",
+    "id": "p-0138"
+  },
+  {
+    "name": "Shopping history – read+append (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/coolblue/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2021-01-05T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
+    "id": "p-0139"
+  },
+  {
+    "name": "Receipts – upload only (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/coolblue/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2021-01-05T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Receipts_Digital",
+    "id": "p-0140"
+  },
+  {
+    "name": "Shopping history – read+append (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/delhaize/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2021-01-05T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
+    "id": "p-0141"
+  },
+  {
+    "name": "Receipts – upload only (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/delhaize/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2021-01-05T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Receipts_Digital",
+    "id": "p-0142"
+  },
+  {
+    "name": "Shopping history – read+append (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/food-delivery-lotus/profile/card",
+    "permissions": {
+      "permRead": true,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2021-01-05T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
+    "id": "p-0145"
+  },
+  {
+    "name": "Receipts – upload only (Alice)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/food-delivery-lotus/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:CustomerCare",
+        "dpv:AccountManagement"
+      ],
+
+      "StartTime": "2021-01-05T09:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Receipts_Digital",
+    "id": "p-0146"
+  },
+  {
+    "name": "Shopping history – read+append (Alice)",
     "provider": "https://solidweb.me/AliceSmith/profile/card",
     "consumer": "https://solidweb.me/okay-delivery/profile/card",
     "permissions": {
@@ -584,79 +2335,52 @@
       "purpose": [
         "dpv:CustomerCare",
         "dpv:AccountManagement"
-      ]
+      ],
+
+      "StartTime": "2021-01-05T09:00"
     },
     "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
-    "id": "p-0036"
+    "id": "p-0147"
   },
   {
-    "name": "Friend contact Alice",
+    "name": "Receipts – upload only (Alice)",
     "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/city-of-aalter/profile/card",
+    "consumer": "https://solidweb.me/okay-delivery/profile/card",
     "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0037"
-  },
-  {
-    "name": "Friend shared Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/city-of-aalter/profile/card",
-    "permissions": {
-      "permRead": true,
-      "permAdd": true,
-      "permModify": true
+      "permRead": false,
+      "permAdd": true
     },
     "constraints": {
       "purpose": [
         "dpv:CustomerCare",
         "dpv:AccountManagement"
-      ]
+      ],
+
+      "StartTime": "2021-01-05T09:00"
     },
-    "dataUri": "https://solidweb.me/AliceSmith/Public/shared",
-    "id": "p-0038"
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Receipts_Digital",
+    "id": "p-0148"
   },
   {
-    "name": "Friend contact Alice",
+    "name": "Landlord – read old rental documents",
     "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/city-of-bruges/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0039"
-  },
-  {
-    "name": "Friend shared Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/city-of-bruges/profile/card",
+    "consumer": "https://solidweb.me/landlord-mr-lambert/profile/card",
     "permissions": {
       "permRead": true,
-      "permAdd": true,
-      "permModify": true
+      "permAdd": true
     },
     "constraints": {
       "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2025-01-01T00:00"
     },
-    "dataUri": "https://solidweb.me/AliceSmith/Public/shared",
-    "id": "p-0040"
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Housing/Old_Rental_Gent",
+    "id": "p-0149"
   },
   {
-    "name": "Friend contact Alice",
+    "name": "City Ghent – read old rental documents",
     "provider": "https://solidweb.me/AliceSmith/profile/card",
     "consumer": "https://solidweb.me/city-of-ghent/profile/card",
     "permissions": {
@@ -664,98 +2388,70 @@
     },
     "constraints": {
       "purpose": [
-        "dpv:CustomerCare"
-      ]
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2025-01-02T00:00"
     },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0041"
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Housing/Old_Rental_Gent",
+    "id": "p-0150"
   },
   {
-    "name": "Friend shared Alice",
+    "name": "City Bruges – read old rental documents",
     "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/city-of-ghent/profile/card",
-    "permissions": {
-      "permRead": true,
-      "permAdd": true,
-      "permModify": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Public/shared",
-    "id": "p-0042"
-  },
-  {
-    "name": "Friend contact Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/countrybank/profile/card",
+    "consumer": "https://solidweb.me/city-of-bruges/profile/card",
     "permissions": {
       "permRead": true
     },
     "constraints": {
       "purpose": [
-        "dpv:CustomerCare"
-      ]
+        "dpv:LegalCompliance"
+      ],
+
+      "StartTime": "2025-01-02T00:00"
     },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0043"
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Housing/Old_Rental_Gent",
+    "id": "p-0151"
   },
-  {
-    "name": "Friend shared Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/countrybank/profile/card",
-    "permissions": {
-      "permRead": true,
-      "permAdd": true,
-      "permModify": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Public/shared",
-    "id": "p-0044"
-  },
-  {
-    "name": "Friend contact Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/fluvius-energy/profile/card",
+    {
+    "name": "farmfresh-veggies – read Dietary Needs",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/farmfresh-veggies/profile/card",
     "permissions": {
       "permRead": true
     },
     "constraints": {
       "purpose": [
-        "dpv:CustomerCare"
-      ]
+        "sector-health:HealthcareServiceManagement"
+      ],
+
+      "StartTime": "2026-03-04T09:00"
     },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0045"
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Preferences/Dietary_Needs.json",
+    "id": "p-0152"
   },
   {
-    "name": "Friend shared Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/fluvius-energy/profile/card",
+    "name": "Intruder",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/GhentDataCollection/profile/card",
     "permissions": {
       "permRead": true,
       "permAdd": true,
-      "permModify": true
+      "permModify": true,
+      "permManage": true
     },
     "constraints": {
       "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
+        "all:all"
+      ],
+
+      "StartTime": "2025-01-15T00:00"
     },
-    "dataUri": "https://solidweb.me/AliceSmith/Public/shared",
-    "id": "p-0046"
+    "dataUri": "https://solidweb.me/JaneDoe/Private",
+    "id": "p-0153"
   },
   {
-    "name": "Friend contact Alice",
+    "name": "Contact info – Landlord (Alice)",
     "provider": "https://solidweb.me/AliceSmith/profile/card",
     "consumer": "https://solidweb.me/landlord-mr-lambert/profile/card",
     "permissions": {
@@ -763,127 +2459,60 @@
     },
     "constraints": {
       "purpose": [
-        "dpv:CustomerCare"
-      ]
+        "dpv:CustomerCare", "dpv:LegalCompliance"
+      ],
+      "DurationMonth": "6",
+      "StartTime": "2021-07-01T09:00",
+      "Location": "http://Europe/Belgium"
     },
     "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0047"
+    "id": "p-0154"
   },
   {
-    "name": "Friend shared Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/landlord-mr-lambert/profile/card",
-    "permissions": {
-      "permRead": true,
-      "permAdd": true,
-      "permModify": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Public/shared",
-    "id": "p-0048"
-  },
-  {
-    "name": "Friend contact Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/proximus-internet/profile/card",
+    "name": "UGent – read Medical Data (research)",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/ugent-research/profile/card",
     "permissions": {
       "permRead": true
     },
     "constraints": {
       "purpose": [
-        "dpv:CustomerCare"
-      ]
+        "dpv:ScientificResearch"
+      ],
+
+      "DurationYear": "1",
+
+      "StartTime": "2026-03-04T11:00"
     },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0049"
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical",
+    "id": "p-0155",
+    "duties": {
+      "anonymize": true,
+      "encrypt": true
+    },
+    "createdAt": "2026-03-02"
   },
   {
-    "name": "Friend shared Alice",
+    "name": "UGent – read Medical Data (research)",
     "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/proximus-internet/profile/card",
-    "permissions": {
-      "permRead": true,
-      "permAdd": true,
-      "permModify": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Public/shared",
-    "id": "p-0050"
-  },
-  {
-    "name": "Friend contact Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/public/profile/card",
+    "consumer": "https://solidweb.me/ugent-research/profile/card",
     "permissions": {
       "permRead": true
     },
     "constraints": {
       "purpose": [
-        "dpv:CustomerCare"
-      ]
+        "dpv:ScientificResearch"
+      ],
+
+      "DurationYear": "1",
+
+      "StartTime": "2026-01-04T11:00"
     },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0051"
-  },
-  {
-    "name": "Friend shared Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/public/profile/card",
-    "permissions": {
-      "permRead": true,
-      "permAdd": true,
-      "permModify": true
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Medical",
+    "id": "p-0155",
+    "duties": {
+      "delete": true
     },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Public/shared",
-    "id": "p-0052"
-  },
-  {
-    "name": "Friend contact Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/telenet/profile/card",
-    "permissions": {
-      "permRead": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",
-    "id": "p-0053"
-  },
-  {
-    "name": "Friend shared Alice",
-    "provider": "https://solidweb.me/AliceSmith/profile/card",
-    "consumer": "https://solidweb.me/telenet/profile/card",
-    "permissions": {
-      "permRead": true,
-      "permAdd": true,
-      "permModify": true
-    },
-    "constraints": {
-      "purpose": [
-        "dpv:CustomerCare",
-        "dpv:AccountManagement"
-      ]
-    },
-    "dataUri": "https://solidweb.me/AliceSmith/Public/shared",
-    "id": "p-0054"
+    "createdAt": "2026-01-02"
   }
 ]

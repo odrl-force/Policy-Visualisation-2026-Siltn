@@ -57,6 +57,7 @@
 
 /* ----- Conors ----- */
 #find-1 .dot.green  { background-color: #2E8540; }
+#find-1 .dot.grey  { background-color: #999999; }
 #find-1 .dot.yellow { background-color: #F6A600; }
 #find-1 .dot.orange { background-color: #D97904; }
 #find-1 .dot.red    { background-color: #C62828; }

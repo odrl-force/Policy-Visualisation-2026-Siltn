@@ -60,17 +60,19 @@
         });
     }
 
-    // --- Core Rendering Logic ---
     function renderView() {
-        const thead = document.querySelector("#files-table thead tr");
-        // SWITCH CASE ADDED HERE
+        const leftThead = document.querySelector("#files-table thead tr");
+        const rightLabelHeader = document.querySelector("#policies-table thead tr:nth-child(2) th:first-child");
+
         switch (currentView) {
             case "file":
-                thead.innerHTML = `<th>Filename</th><th>Access Level</th><th>Actions</th>`;
+                leftThead.innerHTML = `<th>Filename</th><th>Access Level</th><th>Actions</th>`;
+                if (rightLabelHeader) rightLabelHeader.innerText = "Consumer";
                 renderFiles();
                 break;
             case "person":
-                thead.innerHTML = `<th>User</th><th>Access Level</th><th>Action</th>`;
+                leftThead.innerHTML = `<th>Consumer</th><th>Access Level</th><th>Action</th>`;
+                if (rightLabelHeader) rightLabelHeader.innerText = "Context";
                 renderPersons();
                 break;
         }
@@ -78,7 +80,10 @@
 
     function renderFiles() {
         const tbody = document.querySelector("#files-table tbody");
-        const currentItems = navigationStack.length === 0 ? fullStructure : (navigationStack[navigationStack.length - 1].children || []);
+        let currentItems = navigationStack.length === 0 ? fullStructure : (navigationStack[navigationStack.length - 1].children || []);
+        
+        currentItems = [...currentItems].sort((a, b) => a.name.localeCompare(b.name));
+
         updateBreadcrumbs();
         tbody.innerHTML = "";
         
@@ -113,16 +118,18 @@
         tbody.innerHTML = "";
 
         const aggregatedUsers = aggregatePoliciesByUser(allPolicies);
+        
+        aggregatedUsers.sort((a, b) => a.name.localeCompare(b.name));
 
         aggregatedUsers.forEach((user, index) => {
-            let maxRank = 1;
+            let maxRank = 0;
             user.policies.forEach(p => {
                 if (p.permissions.permManage) maxRank = Math.max(maxRank, 4);
                 else if (p.permissions.permModify) maxRank = Math.max(maxRank, 3);
                 else if (p.permissions.permAdd) maxRank = Math.max(maxRank, 2);
                 else if (p.permissions.permRead) maxRank = Math.max(maxRank, 1);
             });
-            const tiers = { 1: { label: "Can View", color: "green" }, 2: { label: "Can Add", color: "yellow" }, 3: { label: "Can Edit", color: "orange" }, 4: { label: "Full Control", color: "red" } };
+            const tiers = { 0: { label: "No Policies", color: "grey" }, 1: { label: "Can View", color: "green" }, 2: { label: "Can Add", color: "yellow" }, 3: { label: "Can Edit", color: "orange" }, 4: { label: "Full Control", color: "red" } };
             const tier = tiers[maxRank];
 
             const row = document.createElement("tr");
@@ -155,6 +162,8 @@
 
         tbody.innerHTML = "";
         const aggregatedUsers = aggregatePoliciesByUser(relevant);
+        
+        aggregatedUsers.sort((a, b) => a.name.localeCompare(b.name));
 
         aggregatedUsers.forEach((user, uIdx) => {
             const row = document.createElement("tr");
@@ -187,6 +196,7 @@
     function renderPoliciesForPerson(user) {
         const policyTitle = document.getElementById("policy-title");
         const tbody = document.getElementById("policy-body");
+        
         policyTitle.innerHTML = `Access for User: ${user.name}`;
         tbody.innerHTML = "";
 
@@ -196,7 +206,9 @@
             resourceMap[p.dataUri].push(p);
         });
 
-        Object.keys(resourceMap).forEach((uri, rIdx) => {
+        const sortedUris = Object.keys(resourceMap).sort((a, b) => a.localeCompare(b));
+
+        sortedUris.forEach((uri, rIdx) => {
             const policies = resourceMap[uri];
             const hasMany = policies.length > 1;
             const fileName = uri.split('/').pop();
@@ -241,7 +253,7 @@
             }
         });
 
-        window.currentPersonView = Object.values(resourceMap);
+        window.currentPersonView = sortedUris.map(uri => resourceMap[uri]);
     }
 
     function renderSubRows(policies, uIdx, tbody, itemUri) {
@@ -253,7 +265,7 @@
             let sourceTitle = p.name || "Access Rule";
             if (itemUri) {
                 const isDirect = p.dataUri === itemUri;
-                const folderName = p.uataUri.split('/').pop() || "parent folder";
+                const folderName = p.dataUri.split('/').pop() || "parent folder";
                 sourceTitle = isDirect ? "Direct Permission" : `From ${folderName}`;
             }
 
@@ -280,7 +292,9 @@
         row.classList.add("selected");
 
         if (currentView === "file") {
-            const currentItems = navigationStack.length === 0 ? fullStructure : (navigationStack[navigationStack.length - 1].children || []);
+            let currentItems = navigationStack.length === 0 ? fullStructure : (navigationStack[navigationStack.length - 1].children || []);
+            currentItems = [...currentItems].sort((a, b) => a.name.localeCompare(b.name));
+            
             const item = currentItems[idx];
             if (e.target.classList.contains("enter-btn")) {
                 navigationStack.push(item);
@@ -292,6 +306,7 @@
         } else {
             if (e.target.classList.contains("view-person-btn")) {
                 const users = aggregatePoliciesByUser(allPolicies);
+                users.sort((a, b) => a.name.localeCompare(b.name));
                 renderPoliciesForPerson(users[idx]);
             }
         }
@@ -305,7 +320,7 @@
         if (currentView === "file") {
             contextData = window.currentPolicyView[uIdx].policies;
         } else {
-            contextData = window.currentPersonView[uIdx]; // In person view, grouped by resource array
+            contextData = window.currentPersonView[uIdx]; 
         }
 
         if (e.target.classList.contains("main-action-btn")) {
@@ -379,20 +394,21 @@
         };
         collectChildrenUris(item, getFullPath(item, currentStack));
         const relevant = allPolicies.filter(p => allUris.includes(p.dataUri));
-        let maxRank = 1; 
+        let maxRank = 0; 
         relevant.forEach(p => {
             if (p.permissions.permManage) maxRank = Math.max(maxRank, 4);
             else if (p.permissions.permModify) maxRank = Math.max(maxRank, 3);
             else if (p.permissions.permAdd) maxRank = Math.max(maxRank, 2);
             else if (p.permissions.permRead) maxRank = Math.max(maxRank, 1);
         });
-                const tiers = {
+        const tiers = {
+            0: { label: "No Policies", color: "grey" },
             1: { label: "Can View", color: "green" },
             2: { label: "Can Add", color: "yellow" },
             3: { label: "Can Edit", color: "orange" },
             4: { label: "Full Control", color: "red" }
         };
-                return tiers[maxRank];
+        return tiers[maxRank];
     }
 
     function updateBreadcrumbs() {

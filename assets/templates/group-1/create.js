@@ -5,12 +5,12 @@
 
   const body = q.body;
   const start = Date.now();
-
-  document.getElementById("provider").value = "https://AliceSmith/profile/card#me";
-
+  
   // Policy type logic
   document.getElementById("policyType").addEventListener("change", togglePolicyType);
   togglePolicyType();
+  
+  document.getElementById("provider").value = "https://AliceSmith/profile/card#me";
   
   // Accesible multi select
   const purposeSelect = new TomSelect('#purpose', {

@@ -1,99 +1,103 @@
-<div id="find-1">
-      <h1>CREATE VERSION 2</h1>
-    <p>/home</p>
-        <div class="content">
-            <div class="scrollable">
-                <table>
-                    <tr>
-                        <th>Name</th>
-                        <th>AccessTier</th>
-                        <th></th>
-                    </tr>
-                    <tr class="green">
-                        <td>filename</td>
-                        <td class="flex"><div aria-hidden="true" class="dot green"></div>Read Data</td>
-                        <td><button>View Files</button></td>
-                    </tr>
-                    <tr class="yellow">
-                        <td>filename</td>
-                        <td class="flex"><div aria-hidden="true" class="dot yellow"></div>Add Data</td>
-                        <td><button>View Files</button></td>
-                    </tr>
-                    <tr class="orange">
-                        <td>filename</td>
-                        <td class="flex"><div aria-hidden="true" class="dot orange"></div>Modify Data</td>
-                        <td><button>View Files</button></td>
-                    </tr>
-                    <tr class="red">
-                        <td>filename</td>
-                        <td class="flex"><div aria-hidden="true" class="dot red"></div>Manage permissions</td>
-                        <td><button>View Files</button></td>
-                    </tr>
-                </table>
+<div id="find-2">
+    <div class="audit-controls">
+        <div class="ctrl-lane">
+            <div class="field-stack flex-2">
+                <span class="label">Global Search (Full URI, ID, or Name)</span>
+                <input type="text" id="global-search" placeholder="Paste URI or search name...">
             </div>
-            <div class="scrollable">
-                <table>
-                    <tr>
-                        <th>FileName</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>User</th>
-                        <th>Read</th>
-                        <th>Add</th>
-                        <th>Modify</th>
-                        <th>Manage</th>
-                    </tr>
-                    <tr>
-                        <td>Alice</td>
-                        <td>✓</td>
-                        <td>X</td>
-                        <td>X</td>
-                        <td>X</td>
-                    </tr>
-                    <tr>
-                        <td>Bob</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>X</td>
-                    </tr>
-                                        <tr>
-                        <td>Alice</td>
-                        <td>✓</td>
-                        <td>X</td>
-                        <td>X</td>
-                        <td>X</td>
-                    </tr>
-                    <tr>
-                        <td>Bob</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>X</td>
-                    </tr>
-                                        <tr>
-                        <td>Alice</td>
-                        <td>✓</td>
-                        <td>X</td>
-                        <td>X</td>
-                        <td>X</td>
-                    </tr>
-                    <tr>
-                        <td>Bob</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>X</td>
-                    </tr>
-                </table>
+            <div class="field-stack flex-3">
+                <span class="label">Purpose Filter</span>
+                <select id="purpose-select" multiple></select>
             </div>
         </div>
-    <div>
-        <h3>Specific Policy Info</h3>
-          <p>A data provider is an party that is issuing the rule. Here the provider is myCompany party. This party is either the Data Owner or the Data Provider of the specified data asset. In this Policy OFFER example, the permission rule allows the Data Consumer to use the target asset.The identifier of this policy and the target asset are http://example.com/policy/myPolicy and http://example.com/data/sample, respectively.</p>
+
+        <hr class="ctrl-divider">
+        <div class="single-line">
+                <div class="field-stack">
+                <span class="label">Access Tiers</span>
+                    <div class="option-row">
+                        <label><input type="checkbox" class="filter-check" data-type="perm" data-val="permRead"> Read</label>
+                        <label><input type="checkbox" class="filter-check" data-type="perm" data-val="permAdd"> Add</label>
+                        <label><input type="checkbox" class="filter-check" data-type="perm" data-val="permModify"> Edit</label>
+                        <label><input type="checkbox" class="filter-check" data-type="perm" data-val="permManage"> Manage</label>
+                </div>
+            </div>
+            <div class="field-stack">
+                <span class="label">Obligations</span>
+                <div class="option-row">
+                    <label><input type="checkbox" class="filter-check" data-type="duty" data-val="delete"> Delete</label>
+                    <label><input type="checkbox" class="filter-check" data-type="duty" data-val="anonymize"> Anonymize</label>
+                    <label><input type="checkbox" class="filter-check" data-type="duty" data-val="encrypt"> Encrypt</label>
+                    <label><input type="checkbox" class="filter-check" data-type="duty" data-val="notify"> Notify</label>
+                </div>
+            </div>
+        </div>
+
+        <hr class="ctrl-divider">
+
+        <div class="ctrl-lane context-lane">
+            <div class="field-stack">
+                <span class="label">Start Constraint</span>
+                <div class="input-group">
+                    <select id="start-logic">
+                        <option value="any">Any Time</option>
+                        <option value="after">After</option>
+                        <option value="before">Before</option>
+                        <option value="exact">On Date</option>
+                    </select>
+                    <input type="date" id="start-date">
+                </div>
+            </div>
+            <div class="field-stack">
+                <span class="label">End / Validity</span>
+                <div class="input-group">
+                    <select id="end-logic">
+                        <option value="any">Any Time</option>
+                        <option value="after">Valid After</option>
+                        <option value="before">Expires Before</option>
+                        <option value="exact">Expires On</option>
+                    </select>
+                    <input type="date" id="end-date">
+                </div>
+            </div>
+            <div class="field-stack">
+                <span class="label">Location</span>
+                <input type="text" id="filter-location" placeholder="e.g. Belgium">
+            </div>
+            <div class="field-stack">
+                <span class="label">Max Uses</span>
+                <input type="number" id="filter-usage" placeholder="0">
+            </div>
+        </div>
+    </div>
+
+    <div class="audit-results">
+        <table id="master-table">
+            <thead>
+                <tr>
+                    <th style="width: 80px;">ID</th>
+                    <th style="width: 25%;">Resource Context</th>
+                    <th style="width: 15%;">Consumer</th>
+                    <th style="width: 18%;">Purpose</th>
+                    <th>Permissions & Duties</th>
+                    <th style="width: 100px;">Audit</th>
+                </tr>
+            </thead>
+            <tbody id="audit-tbody"></tbody>
+        </table>
+    </div>
+
+    <div class="audit-nav">
+        <div id="status-text">0 rules found</div>
+        <div class="pager-btns">
+            <button id="prev-btn">Previous</button>
+            <span id="page-label">Page 1</span>
+            <button id="next-btn">Next</button>
+        </div>
+    </div>
+
+    <div id="summary-display">
+        <div class="summary-title">Selected Rule Explanation</div>
+        <div id="summary-content" class="empty">Detailed summary will appear here.</div>
     </div>
 </div>

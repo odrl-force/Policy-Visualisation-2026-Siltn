@@ -341,13 +341,9 @@
     });
 
     function updateSummary(policy) {
-        const summaryDiv = document.getElementById("summary");
-        if (typeof generatePolicyText === "function") {
-            summaryDiv.innerHTML = `<h3>Policy Details</h3><div class="summary-card">${generatePolicyText(policy)}</div>`;
-        } else {
-            summaryDiv.innerHTML = `<h3>Policy Details</h3><p>${policy.name || 'Unnamed policy'}</p>`;
-        }
-        summaryDiv.scrollIntoView({ behavior: 'smooth' });
+        const summary = document.getElementById("summary-content");
+        summary.innerHTML = generatePolicyText(policy);
+        summary.scrollIntoView({ behavior: 'smooth' });
     }
 
     function aggregatePoliciesByUser(policies) {
@@ -437,7 +433,7 @@
     function resetPolicies() {
         document.getElementById("policy-title").innerHTML = '<th colspan="6">Access Rules: No Selection</th>';
         document.getElementById("policy-body").innerHTML = '<tr><td class="empty-placeholder" colspan="6">Select an item to view permissions.</td></tr>';
-        document.getElementById("summary").innerHTML = '<p class="empty-placeholder">Detailed explanation will appear here.</p>';
+        document.getElementById("summary-display").innerHTML = '<div class="summary-title">Selected Rule Explanation</div><div id="summary-content" class="empty">Detailed summary will appear here.</div>';
         window.currentPolicyView = null;
         window.currentPersonView = null;
     }

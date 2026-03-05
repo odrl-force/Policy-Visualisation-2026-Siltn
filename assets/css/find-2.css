@@ -1,0 +1,58 @@
+#find-2 {
+    font-family: 'Inter', -apple-system, sans-serif;
+    padding: 20px;
+    background: #fdfdfd;
+    color: #333;
+}
+
+#find-2 .audit-controls {
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#find-2 .ctrl-lane { display: flex; gap: 20px; width: 100%; }
+#find-2 .ctrl-divider { border: 0; border-top: 1px solid #eee; margin: 8px 0; }
+#find-2 .field-stack { display: flex; flex-direction: column; gap: 6px; }
+#find-2 .flex-2 { flex: 2; }
+#find-2 .flex-3 { flex: 3; }
+
+#find-2 .label { font-weight: 800; font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+
+#find-2 #global-search { padding: 10px; font-size: 1rem; border: 2px solid #7C4DFF; border-radius: 6px; width: 100%; box-sizing: border-box; }
+
+#find-2 .option-row { display: flex; gap: 15px; background: #f8f9fa; padding: 10px 15px; border-radius: 6px; border: 1px solid #eee; width: fit-content; }
+
+#find-2 .context-lane { display: grid; grid-template-columns: 1.5fr 1.5fr 1fr 0.5fr; gap: 15px; align-items: flex-end; }
+
+#find-2 .res-pod { color:#7C4DFF; }
+
+#find-2 .input-group { display: flex; gap: 2px; }
+#find-2 .input-group select, #find-2 .input-group input, #find-2 #filter-location, #find-2 #filter-usage {
+    padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 0.85rem;
+}
+
+#find-2 .audit-results { background: white; border: 1px solid #e1e4e8; border-radius: 10px; max-height: 400px; overflow-y: auto; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+
+#find-2 table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+#find-2 th { background: #7C4DFF; color: white; padding: 12px; font-size: 0.75rem; position: sticky; top: 0; z-index: 10; text-align: left; text-transform: uppercase; }
+#find-2 td { padding: 12px; border-bottom: 1px solid #f0f0f0; font-size: 0.85rem; vertical-align: top; word-wrap: break-word; overflow: hidden; }
+
+#find-2 .purpose-text { font-size: 0.75rem; color: #666; line-height: 1.3; display: block; word-break: break-all; }
+
+#find-2 .badge-list { display: flex; flex-wrap: wrap; gap: 4px; }
+#find-2 .badge { padding: 2px 8px; border-radius: 12px; font-size: 0.65rem; font-weight: 700; border: 1px solid transparent; text-transform: uppercase; }
+#find-2 .badge-perm { background: #f0ebff; color: #7C4DFF; border-color: #d9ccff; }
+#find-2 .badge-duty { background: #fff9e6; color: #947600; border-color: #ffeeb3; }
+
+#find-2 .audit-nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+#find-2 .pager-btns button { background: #7C4DFF; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+#find-2 .pager-btns button:disabled { background: #ccc; cursor: not-allowed; }
+
+
+#find-2 .btn-explain { background: #28a745; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold; }

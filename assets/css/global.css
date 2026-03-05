@@ -378,3 +378,6 @@ a:hover {
     opacity: 1;
     transform: translateY(0);
 }
+
+#summary-display { border: 2px solid #7C4DFF; border-radius: 8px; padding: 20px; background: #fff; margin-top: 10px; }
+.summary-title { font-weight: bold; color: #7C4DFF; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }

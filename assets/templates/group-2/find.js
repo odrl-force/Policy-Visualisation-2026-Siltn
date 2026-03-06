@@ -38,6 +38,23 @@
                 searchField: ['name', 'desc', 'value'],
                 onChange: applyFilters
             });
+
+            const uniquePods = [...new Set(allPolicies.map(p => {
+                const res = resourceRegistry[p.dataUri];
+                return res ? res.pod : null;
+            }).filter(Boolean))];
+
+            const podOptions = uniquePods.map(pod => ({ name: pod, value: pod }));
+
+            new TomSelect('#pod-select', {
+                plugins: ['remove_button'],
+                options: podOptions,
+                labelField: 'name',
+                valueField: 'value',
+                placeholder: 'Filter by Pod...',
+                searchField: ['name'],
+                onChange: applyFilters
+            });
         }
     }
 
@@ -64,17 +81,17 @@
     }
 
     function applyFilters() {
-        // 1. Get current filter values
         const query = document.getElementById("global-search").value.toLowerCase().trim();
         
-        // Get selected purposes from the dropdown (handles multiple selection)
         const purposeSelect = document.getElementById("purpose-select");
         const selectedPurposes = purposeSelect ? Array.from(purposeSelect.selectedOptions).map(opt => opt.value) : [];
+        
+        const podSelect = document.getElementById("pod-select");
+        const selectedPods = podSelect ? Array.from(podSelect.selectedOptions).map(opt => opt.value) : [];
 
         const activePerms = Array.from(document.querySelectorAll('[data-type="perm"]:checked')).map(e => e.dataset.val);
         const activeDuties = Array.from(document.querySelectorAll('[data-type="duty"]:checked')).map(e => e.dataset.val);
         
-        // Time & Context values
         const sLogic = document.getElementById("start-logic").value;
         const sDate = document.getElementById("start-date").value ? new Date(document.getElementById("start-date").value).getTime() : null;
         const eLogic = document.getElementById("end-logic").value;
@@ -82,36 +99,30 @@
         const locVal = document.getElementById("filter-location").value.toLowerCase();
         const usageVal = parseInt(document.getElementById("filter-usage").value);
 
-        // 2. Filter the master list
         filteredPolicies = allPolicies.filter(p => {
             const res = resourceRegistry[p.dataUri] || { name: "", desc: "", pod: "", fullUri: p.dataUri };
             const consumerRaw = p.consumer.toLowerCase();
-            const c = p.constraints || {};
             const dates = getAuditDates(p);
+            const c = p.constraints || {};
 
-            // --- PURPOSE MATCHING LOGIC ---
+            const mPod = selectedPods.length === 0 || selectedPods.includes(res.pod);
+
             const policyPurposes = p.constraints?.purpose || [];
-            // If nothing is selected in the dropdown, we show everything.
-            // If purposes are selected, the policy must contain at least one of the selected purposes.
             const mPurpose = selectedPurposes.length === 0 || 
                             selectedPurposes.some(sp => policyPurposes.includes(sp));
 
-            // Global Search (URI-friendly)
             const mSearch = p.id.toLowerCase().includes(query) || 
                             res.name.toLowerCase().includes(query) || 
                             res.fullUri.toLowerCase().includes(query) ||
                             consumerRaw.includes(query) ||
                             (res.desc && res.desc.toLowerCase().includes(query));
 
-            // Permissions and Duties
             const mPerm = activePerms.length === 0 || activePerms.some(k => p.permissions[k]);
             const mDuty = activeDuties.length === 0 || (p.duties && activeDuties.some(k => p.duties[k]));
             
-            // Location and Usage
             const mLoc = !locVal || (c.Location && c.Location.toLowerCase().includes(locVal));
             const mUsage = isNaN(usageVal) || (c.Usage && parseInt(c.Usage) <= usageVal);
 
-            // Temporal Logic
             let mStart = true;
             if (sDate && sLogic !== 'any') {
                 if (sLogic === 'after') mStart = dates.start >= sDate;
@@ -125,8 +136,7 @@
                 else if (eLogic === 'exact') mEnd = dates.end === eDate;
             }
 
-            // Return true only if ALL conditions are met
-            return mPurpose && mSearch && mPerm && mDuty && mLoc && mUsage && mStart && mEnd;
+            return mPod && mPurpose && mSearch && mPerm && mDuty && mLoc && mUsage && mStart && mEnd;
         });
 
         currentPage = 1; 

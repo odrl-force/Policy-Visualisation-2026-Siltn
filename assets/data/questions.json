@@ -232,7 +232,7 @@
     "title": "Edit a policy",
     "type": "create",
     "sidebar": {
-      "instructions": "Jane Doe is temporarily staying at the <b>Care Center ‘The Tree’</b>. Their current access to her medical information was set up for a short period.\n\n Extend the duration from <b>1 month to the end of this year</b>. The care center should continue to keep current permissions."
+      "instructions": "Jane Doe is temporarily staying at the <b>Care Center ‘The Tree’</b>. Their current access to her medical information was set up for a short period. Update the policy so that their access last <b>until the end of the year</b>."
     },
     "body": {
       "policyType": "Offer",
@@ -275,7 +275,7 @@
     "title": "Edit a policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Jane Doe is temporarily staying at the <b>Care Center ‘The Tree’</b>. Their current access to her medical information was set up for a short period.\n\n Extend the duration from <b>1 month to the end of this year</b>. The care center should continue to keep current permissions."    },
+      "instructions": "Jane Doe is temporarily staying at the <b>Care Center ‘The Tree’</b>. Their current access to her medical information was set up for a short period. Update the policy so that their access last <b>until the end of the year</b>."    },
     "body": {}
   },
   {
@@ -375,7 +375,7 @@
     "title": "Create a policy",
     "type": "create",
     "sidebar": {
-      "instructions": "Your mother (Jane Doe), is filing an insurance claim for a foot injury.<br><b>AG Health Insurance</b> need a policy that allows them to <b>view</b> the medical documents that relates to her <b>foot injury</b>, for <b>one month</b>. They should not be able to modify any files or manage access, And delete all data when the access ends. They proposed a policy that would give them <b>more access than needed</b> review the policy and make changes to make it match the requirements.",
+      "instructions": "Your mother (Jane Doe), is filing an insurance claim for a foot injury.<br><b>AG Health Insurance</b> need a policy that allows them to <b>view</b> the medical documents that relates to her <b>foot injury</b> for <b>one month</b>. They should not be able to modify any files or manage access, and delete all data when the access ends. They proposed a policy that would give them <b>more access than needed</b> review the policy and make changes to make it match the requirements.",
       "params": [
         {
           "label": "AG Health Insurance",
@@ -448,7 +448,7 @@
     "title": "Create a policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Your mother (Jane Doe), is filing an insurance claim for a foot injury.<br><b>AG Health Insurance</b> need a policy that allows them to <b>view</b> the medical documents that relates to her <b>foot injury</b>, for <b>one month</b>. They should not be able to modify any files or manage access, And delete all data when the access ends. They proposed a policy that would give them <b>more access than needed</b> review the policy and make changes to make it match the requirements.",
+      "instructions": "Your mother (Jane Doe), is filing an insurance claim for a foot injury.<br><b>AG Health Insurance</b> need a policy that allows them to <b>view</b> the medical documents that relates to her <b>foot injury</b> for <b>one month</b>. They should not be able to modify any files or manage access, and delete all data when the access ends. They proposed a policy that would give them <b>more access than needed</b> review the policy and make changes to make it match the requirements.",
       "params": [
         {
           "label": "X‑ray image of Jane Doe’s foot (2026)",
@@ -621,19 +621,19 @@
     "title": "Edit a policy",
     "type": "create",
     "sidebar": {
-      "instructions": "While moving you switched districts. Update the city access so <b>only the new district (City of Bruges)</b> can access your <b>district registration</b> information.<br>Restrict the scope to the relevant registration file. The city actors should only be able to <b>view</b> this information; they must not change it or manage access.",
+      "instructions": "While moving you switched districts. Update the access of <b>Lotus delivery</b> so only they can only access <b>your shopping history</b> inside <b>west-flanders</b>.",
       "params": [
         {
-          "label": "City of Ghent – Old District",
-          "value": "https://solidweb.me/city-of-ghent/profile/card"
+          "label": "Food delivery Lotus",
+          "value": "https://solidweb.me/food-delivery-lotus/profile/card"
         },
         {
           "label": "City of Bruges – New District",
           "value": "https://solidweb.me/city-of-bruges/profile/card"
         },
         {
-          "label": "Registration information for the local district (Alice)",
-          "value": "https://solidweb.me/AliceSmith/Personal/Housing/New_Home_Childhood/District_Registration.ttl"
+          "label": "Shopping history",
+          "value": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db"
         },
         {
           "label": "Purpose – Legal compliance",
@@ -679,27 +679,25 @@
     },
     "body": {
       "policyType": "Offer",
-      "name": "City access to district registration",
+      "name": "Lotus - Access shopping history",
       "id": "edit-0003",
-      "description": "Restrict city access to new district",
       "provider": "https://solidweb.me/AliceSmith/profile/card#me",
-      "consumer": "https://solidweb.me/city-of-ghent/profile/card",
-      "dataUri": "https://solidweb.me/AliceSmith/Personal/Housing/New_Home_Childhood/District_Registration.ttl",
+      "consumer": "https://solidweb.me/food-delivery-lotus/profile/card",
+      "dataUri": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db",
       "permissions": {
         "permRead": true,
-        "permAdd": false,
+        "permAdd": true,
         "permModify": false,
         "permManage": false
       },
       "constraints": {
         "purpose": [
           "dpv:LegalCompliance",
-          "dpv:EnforceSecurity"
+          "dpv:AccountManagement",
+          "dpv:Marketing"
         ],
         "useStartTime": true,
-        "StartTime": "2026-03-01T00:00",
-        "useEndTime": false,
-        "EndTime": "",
+        "StartTime": "2026-01-01T00:00",
         "useLocation": true,
         "Location": "http://Europe/Belgium/East-Flanders"
       }
@@ -710,19 +708,19 @@
     "title": "Edit a policy",
     "type": "review",
     "sidebar": {
-      "instructions": "While moving you switched districts. Update the city access so <b>only the new district (City of Bruges)</b> can access your <b>district registration</b> information.<br>Restrict the scope to the relevant registration file. The city actors should only be able to <b>view</b> this information; they must not change it or manage access.",
+      "instructions": "While moving you switched districts. Update the access of Lotus delivery so only they can only access your shopping data inside west-flanders.",
       "params": [
         {
-          "label": "City of Ghent – Old District",
-          "value": "https://solidweb.me/city-of-ghent/profile/card"
+          "label": "Food delivery Lotus",
+          "value": "https://solidweb.me/food-delivery-lotus/profile/card"
         },
         {
           "label": "City of Bruges – New District",
           "value": "https://solidweb.me/city-of-bruges/profile/card"
         },
         {
-          "label": "Registration information for the local district (Alice)",
-          "value": "https://solidweb.me/AliceSmith/Personal/Housing/New_Home_Childhood/District_Registration.ttl"
+          "label": "Shopping history",
+          "value": "https://solidweb.me/AliceSmith/Personal/Commercial/Shopping_History.db"
         },
         {
           "label": "Purpose – Legal compliance",

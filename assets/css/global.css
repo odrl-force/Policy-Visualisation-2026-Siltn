@@ -164,7 +164,13 @@ main.informative button:hover {
     border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
+
+.footer-nav button:hover{
+    background-color: #6d3dee;
+}
+
 .footer-nav button:disabled {
     opacity: 0.5;
     cursor: not-allowed;

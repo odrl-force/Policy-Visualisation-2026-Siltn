@@ -52,7 +52,7 @@
       },
       "constraints": {
         "purpose": [
-          "all"
+          "all:all"
         ],
         "useStartTime": true,
         "StartTime": "2020-01-11T09:23",

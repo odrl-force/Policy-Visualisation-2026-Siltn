@@ -1,136 +1,106 @@
-<form id="policyForm">
-  <h1>CREATE VERSION 2</h1>
-  <div class="single-line">
-    <div>
-      <label>URL</label>
-      <input required type="url" id="url" placeholder="https://example.com/ids/policy/" />
-    </div>
-
-    <div>  
-      <label>UUID</label>
-      <input required type="text" id="uuid" disabled value="ee606c4b-beff-4f5b-a8cc-8b0a5a526b4e" />
-    </div>
-    
-    <div>
-      <label>Policy Type</label>
-      <select id="policyType">
-        <option value="Offer">Offer</option>
-        <option value="Contract">Contract</option>
-        <option value="Agreement">Agreement</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="single-line">
-    <div>
-      <label>Data Provider</label>
-      <input required type="url" id="provider" placeholder="e.g. http://dataprovider" />
-    </div>
-    <div>
-      <label>Data Consumer</label>
-      <input required type="url" id="consumer" placeholder="e.g. http://dataconsumer" />
-    </div>
-  </div>
-
-  <label>Data URI</label>
-  <input required type="url" id="dataUri" placeholder="e.g. http://example.com/ids/data/abc" />
-
-    <h3>Restrictions</h3>
-    
-    <div id="restrictions">
-
-      <div>  
-        <label>Application <input type="checkbox" id="useApplication" /></label>
-        <input class="field" type="url" id="Application" placeholder="ee606c4b-beff-4f5b-a8cc-8b0a5a526b4e"/>
+<div id="create-2">
+  <h1>Policy editor</h1>
+  <div class="fields-container">
+    <div class="field-item" id="item-dataUri">
+      <div class="field-label">Data URI</div>
+      <div class="field-desc">The identifier for the specific data resource.</div>
+      <div class="field-actions">
+        <button class="edit-btn" data-edit="dataUri">Edit</button>
+        <button class="help-btn" data-help="dataUri">?</button>
       </div>
+    </div>
 
-      <div>  
-        <label>Connector <input type="checkbox" id="useConnector" /></label>
-        <input class="field"type="url" id="Connector" placeholder="ee606c4b-beff-4f5b-a8cc-8b0a5a526b4e"/>
+    <div class="field-item" id="item-actors">
+      <div class="field-label">Actors & Type</div>
+      <div class="field-desc">Define Provider, Consumer, and Policy Type.</div>
+      <div class="field-actions">
+        <button class="edit-btn" data-edit="actors">Edit</button>
+        <button class="help-btn" data-help="actors">?</button>
       </div>
+    </div>
 
-      <div>  
-        <label>Number of Usage <input type="checkbox" id="useUsage" /></label>
-        <input class="field"type="number" id="Usage" placeholder="e.g. 10" min="1"/>
-      </div>
-
-      <div>  
-      <label>Time Duration <input type="checkbox" id="useDuration" /></label>
-      <div class="field" id="Duration">
-        <div class="single-line">
-          <div>
-            <label>Year</label>
-            <input type="number" id="DurationYear" placeholder="e.g. 1" min="0"/>
-          </div>
-          <div>
-            <label>Month</label>
-            <input type="number" id="DurationMonth" placeholder="e.g. 1"min="0"/>
-          </div>
-          <div>
-            <label>Day</label>
-            <input type="number" id="DurationDay" placeholder="e.g. 1"min="0"/>
-          </div>
-          <div>
-            <label>Hour</label>
-            <input type="number" id="DurationHour" placeholder="e.g. 1"min="0"/>
-          </div>
+    <div class="field-item" id="item-permissions">
+        <div class="field-label">Permissions</div>
+        <div class="field-desc">Allowed actions like Read, Add, or Modify.</div>
+        <div class="field-actions">
+          <button class="edit-btn" data-edit="permissions">Edit</button>
+          <button class="help-btn" data-help="permissions">?</button>
         </div>
       </div>
+
+    <div class="field-item" id="item-purposes">
+      <div class="field-label">Purposes</div>
+      <div class="field-desc">Specific use cases allowed for this data.</div>
+      <div class="field-actions">
+        <button class="edit-btn" data-edit="purposes">Edit</button>
+        <button class="help-btn" data-help="purposes">?</button>
+      </div>
     </div>
 
-      <div>
-        <label>Start Time <input type="checkbox" id="useStartTime" /></label>
-        <input type="datetime-local" id="StartTime" class="field"/>
+    <div class="field-item" id="item-temporal">
+      <div class="field-label">Temporal Limits</div>
+      <div class="field-desc">Fixed dates or access duration limits.</div>
+      <div class="field-actions">
+        <button class="edit-btn" data-edit="temporal">Edit</button>
+        <button class="help-btn" data-help="temporal">?</button>
       </div>
-
-      <div>
-        <label>End Time <input type="checkbox" id="useEndTime" /></label>
-        <input type="datetime-local" id="EndTime" class="field"/>
-      </div>
-
-      <div>  
-        <label>Event <input type="checkbox" id="useEvent" /></label>
-        <input type="url" id="Event" placeholder="http://example.com/event/eventname" class="field"/>
-      </div>
-
-      <div>  
-        <label>Location <input type="checkbox" id="useLocation" /></label>
-        <input type="url" id="Location" placeholder="http://example.com/location/locationName" class="field"/>
-      </div>
-
-      <div>  
-        <label>Purpose <input type="checkbox" id="usePurpose" /></label>
-        <select name="purpose" id="Purpose" class="field">
-          <option value="purpose1">Purpose1</option>
-          <option value="purpose2">Purpose2</option>
-          <option value="purpose3">Purpose3</option>
-          <option value="purpose4">Purpose4</option>
-        </select>
-      </div>
-
     </div>
 
+    <div class="field-item" id="item-duties">
+      <div class="field-label">Duties</div>
+      <div class="field-desc">Mandatory obligations for the data recipient.</div>
+      <div class="field-actions">
+        <button class="edit-btn" data-edit="duties">Edit</button>
+        <button class="help-btn" data-help="duties">?</button>
+      </div>
+    </div>
 
-  <h3>Duties</h3>
-  <div class="single-line">
-    <button type="button" id="addPreDuty">Add Pre Duty</button>
-    <button type="button" id="addPostDuty">Add Post Duty</button>
+    <div class="field-item" id="item-semantics">
+      <div class="field-label">Semantics</div>
+      <div class="field-desc">Optional Name, ID, and description metadata.</div>
+      <div class="field-actions">
+        <button class="edit-btn" data-edit="semantics">Edit</button>
+        <button class="help-btn" data-help="semantics">?</button>
+      </div>
+    </div>
+
+    <div class="field-item" id="item-location">
+      <div class="field-label">Location</div>
+      <div class="field-desc">Limit access to a specific location.</div>
+      <div class="field-actions">
+        <button class="edit-btn" data-edit="location">Edit</button>
+        <button class="help-btn" data-help="location">?</button>
+      </div>
+    </div>
+
+    <div class="field-item" id="item-usage">
+        <div class="field-label">Usage Count</div>
+        <div class="field-desc">Limit total number of allowed accesses.</div>
+        <div class="field-actions">
+          <button class="edit-btn" data-edit="usage">Edit</button>
+          <button class="help-btn" data-help="usage">?</button>
+        </div>
+    </div>
   </div>
 
-  <div class="single-line"> 
-    <button type="submit" id="createPolicy">Generate Policy</button>
-  </div>
-</form>
-<div id="policyTranslation">
-  <h3>Policy summary</h3>
-  <p>A data provider is an party that is issuing the rule.
-Here the provider is myCompany party.
-This party is either the Data Owner or the Data Provider
-of the specified data asset.
-In this Policy OFFER example, the permission rule allows the
-Data Consumer to use the target asset.The identifier of this
-policy and the target asset are http://example.com/policy/myPolicy
-and http://example.com/data/sample, respectively.</p>
+    <button id="createPolicy">Generate Policy</button>
+
+    <div id="summary-display">
+        <div class="summary-title">Selected Rule Explanation</div>
+        <div id="summary-content" class="empty">Detailed summary will appear here.</div>
+    </div>
+
+  <dialog id="create-2-dialog">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="create-2-modal-title" style="margin:0;">Edit</h3>
+        <button id="create-2-close" style="background:none; border:none; cursor:pointer; font-size:1.4rem;">✕</button>
+      </div>
+      <div class="modal-body" id="create-2-modal-body"></div>
+      <div class="modal-footer">
+        <button id="create-2-cancel" class="secondary-btn">Cancel</button>
+        <button id="create-2-save" class="primary-btn">Save</button>
+      </div>
+    </div>
+  </dialog>
 </div>
-
-<!-- Load the template-specific script -->

@@ -120,14 +120,13 @@
 
     //save to localStorage
     localStorage.setItem(`question-${q.question}`, JSON.stringify(data));
-
-    const policyTranslation = document.getElementById("policyTranslation");
-    policyTranslation.style.display = "block"
-
-    policyTranslation.innerHTML = generatePolicyText(data);
+    
+    const summary = document.getElementById("summary-content");
+    summary.innerHTML = generatePolicyText(data);
+    summary.scrollIntoView({ behavior: 'smooth' });
     const nextBtn = document.getElementById("nextButton");
     if (nextBtn) nextBtn.disabled = false;
-
+    
   });
 
 })();

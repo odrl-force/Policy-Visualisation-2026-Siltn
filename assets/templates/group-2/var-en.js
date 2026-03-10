@@ -609,3 +609,116 @@ function generatePolicyText(p) {
       </div>
     `;
 }
+
+const escapeAttr = (s='') => (s+'').replaceAll('"','&quot;');
+
+function getHelp(k, state) {
+    const h = {
+        dataUri: "The <b>Data URI</b> is the unique technical address of the data you want to share or request.",
+        actors: "<b>Offer</b>: You are the provider giving data.<br><b>Request</b>: You are the consumer asking for data.",
+        temporal: "<b>End Date</b>: Access stops on this specific day.<br><b>Duration</b>: Access lasts for a set amount of time after the user first opens the data.",
+        purposes: "Select specific reasons (like 'Research' or 'Marketing') for which the data may be used.",
+                permissions: "ToDo.",
+        duties: "ToDo.",
+        semantics: "ToDo.",
+        location: "ToDo.",
+        usage: "ToDo."
+    };
+    return h[k] || "No extra information available for this field.";
+}
+
+function renderEditor(k, state) {
+    switch(k) {
+        case 'actors':
+        return `
+            <div class="inline-grid">
+            <label><input type="radio" name="pT" value="Offer" ${state.policyType==='Offer'?'checked':''}> Offer (You give)</label>
+            <label><input type="radio" name="pT" value="Request" ${state.policyType==='Request'?'checked':''}> Request (You ask)</label>
+            </div>
+            <label>Provider (Source)</label><input type="url" id="in-prov" value="${escapeAttr(state.provider)}">
+            <label>Consumer (Recipient)</label><input type="url" id="in-cons" value="${escapeAttr(state.consumer)}">`;
+        case 'purposes':
+        const isAll = state.constraints.purpose.includes('all:all');
+        return `
+            <button type="button" id="toggle-all" class="purpose-toggle-btn ${isAll?'active':''}">
+            ${isAll ? '✓ No Purpose Limitations (All Allowed)' : 'Allow All Purposes'}
+            </button>
+            <div id="ts-wrap" style="${isAll?'display:none':''}; margin-top:10px;">
+            <label>Restrict to Specific Purposes</label><select id="purposesSelect" multiple></select>
+            </div>`;
+        case 'temporal':
+        const mode = state.constraints.EndTime ? 'endtime' : 'duration';
+        return `
+            <label>Start Time (Optional: when the policy becomes active)</label>
+            <input type="datetime-local" id="in-start" value="${state.constraints.StartTime}">
+            <div class="inline-grid" style="margin:15px 0;">
+            <label><input type="radio" name="tM" value="endtime" ${mode==='endtime'?'checked':''}> Fixed End Date</label>
+            <label><input type="radio" name="tM" value="duration" ${mode==='duration'?'checked':''}> Duration after first use</label>
+            </div>
+            <div id="wrap-end" style="display:${mode==='endtime'?'block':'none'}">
+            <label>End Date & Time</label><input type="datetime-local" id="in-end" value="${state.constraints.EndTime}">
+            </div>
+            <div id="wrap-dur" style="display:${mode==='duration'?'block':'none'}">
+            <label>Time allowed (Y/M/D/H)</label>
+            <div class="duration-grid">
+                <div><input type="number" id="in-dy" min=0 value="${state.constraints.DurationYear}"> <small>Years</small></div>
+                <div><input type="number" id="in-dm" min=0 value="${state.constraints.DurationMonth}"> <small>Months</small></div>
+                <div><input type="number" id="in-dd" min=0 value="${state.constraints.DurationDay}"> <small>Days</small></div>
+                <div><input type="number" id="in-dh" min=0 value="${state.constraints.DurationHour}"> <small>Hours</small></div>
+            </div>
+            </div>`;
+        case 'semantics':
+        return `<label>Policy Name</label><input type="text" id="in-name" value="${escapeAttr(state.name)}" placeholder="e.g. Research Data Sharing">
+                <label>Unique ID</label><input type="text" id="in-id" value="${escapeAttr(state.id)}" placeholder="e.g. policy-123">
+                <label>Detailed Description</label><textarea id="in-desc" rows="3">${state.description}</textarea>`;
+        case 'duties':
+        return `<label>Consumer Obligations</label>
+                <div style="display:flex; flex-direction:column; gap:8px;">
+                ${Object.keys(state.duties).map(d => `<label style="font-weight:normal;"><input type="checkbox" id="d-${d}" ${state.duties[d]?'checked':''}> ${d.charAt(0).toUpperCase() + d.slice(1)}</label>`).join('')}
+                </div>`;
+        case 'dataUri': return `<label>Data URI</label><input type="url" id="in-uri" value="${escapeAttr(state.dataUri)}" placeholder="https://...">`;
+        case 'usage': return `<label>Maximum Number of Usages</label><input type="number" min=0 id="in-use" value="${state.constraints.Usage||''}">`;
+        case 'permissions':
+        return `<label>Allowed Actions</label>
+                <div class="inline-grid">${Object.keys(state.permissions).map(p => `<label style="font-weight:normal;"><input type="checkbox" id="p-${p}" ${state.permissions[p]?'checked':''}> ${p.replace('perm','')}</label>`).join('')}</div>`;
+        case 'location': return `<label>Location URI</label><input type="url" id="in-location" value="${escapeAttr(state.constraints.Location)}" placeholder="http://...">`;
+    }
+}
+
+function errorModal(message) {
+    document.querySelector('.modal-footer').style.display = 'none';
+    document.querySelector('#create-2-modal-title').textContent = "Some items requite attention";
+    document.querySelector('#create-2-modal-body').innerHTML = `<div class="help-text" style="line-height:1.5;">${message}</div>`;
+    document.getElementById('create-2-dialog').showModal();
+}
+
+const validatePolicy = (state) => {
+    const errors = [];
+
+    if (!state.dataUri || state.dataUri.trim() === "") {
+        errors.push("<b>Data URI</b>: Is required to identify the target resource.</br>");
+    }
+
+    if (!state.provider) {
+        errors.push("<b>Actors & Type</b>: (Owner) must be specified.</br>");
+    }
+    if (!state.consumer) {
+        errors.push("<b>Actors & Type</b>: A Consumer (Grantee) must be specified.</br>");
+    }
+
+    const hasPermission = Object.values(state.permissions).some(val => val === true);
+    if (!hasPermission) {
+        errors.push("<b>Permissions</b>: At least one permission (Read, Add, Modify, or Manage) must be selected.</br>");
+    }
+
+    if (!state.constraints.purpose || state.constraints.purpose.length === 0) {
+        errors.push("<b>Purpose</b>: At least one purpose has to be selected.</br>");
+    }
+
+    if (errors.length > 0) {
+        errorModal(errors.join("\n")); 
+        return false;
+    }
+
+    return true;
+};

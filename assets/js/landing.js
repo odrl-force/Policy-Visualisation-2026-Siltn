@@ -4,15 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const params = new URLSearchParams(window.location.search);
 
-    if(localStorage.getItem("userId") == null){
-        lang = params.get("lang") || "en";
-        const group = params.get("group") || "1";
-        const userId = params.get("userid") || "guest";
-        
-        localStorage.setItem("lang", lang.toLowerCase());
-        localStorage.setItem("group", group);
-        localStorage.setItem("userId", userId);
-    }
+    lang = params.get("lang") || "en";
+    const group = params.get("group") || "1";
+    const userId = params.get("userid") || "guest";
+    
+    localStorage.setItem("lang", lang.toLowerCase());
+    localStorage.setItem("group", group);
+    localStorage.setItem("userId", userId);
 
     lang = localStorage.getItem("lang");
 

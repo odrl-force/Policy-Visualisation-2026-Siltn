@@ -123,7 +123,7 @@
     "title": "Create a policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Your mother (Jane Doe), needs help handling her permissions.\n\nCreate a policy that temporarily gives You (Alice Smith) full control over <b>all data of Jane Doe's Pod</b>. You must be able to <b>view</b>, <b>add</b>, and <b>update</b> information across her entire pod, and also <b>manage</b> the access for a short period. Apply this policy to the <b>entire pod</b>, including her personal information, medical documents, legal files, and public materials.\n\nUse the purpose <b>Account Management</b>. Limit the access strictly to a <b>2‑month</b> window and do not include any other actors.",
+      "instructions": "Your mother (Jane Doe), needs help handling her permissions. Create a policy that would temporarily give You (Alice Smith) full control over <b>all data of Jane Doe's Pod</b>. You must be able to <b>view</b>, <b>add</b>, and <b>update</b> information across her entire pod, and also <b>manage</b> the access for a short period. Apply this policy to the <b>entire pod</b>, including her personal information, medical documents, legal files, and public materials.\n\nUse the purpose <b>Account Management</b>. Limit the access strictly to a <b>2‑month</b> window and do not include any other actors.",
       "params": [
         {
           "label": "All data of Jane Doe (entire pod)",

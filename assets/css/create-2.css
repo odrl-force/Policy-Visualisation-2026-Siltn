@@ -57,6 +57,8 @@
 #create-2 .field-item:hover{ transform: translateY(-2px);}
 #create-2 .field-item.status-required { border-bottom-color: #ff4d4d; }
 #create-2 .field-item.status-filled { border-bottom-color: #2ecc71; }
+#create-2 .field-item.status-required:hover { border-color: #ff4d4d; background-color: #ffe7e7;}
+#create-2 .field-item.status-filled:hover { border-color: #2ecc71; background-color: #deffec;}
 
 #create-2 .field-label { font-weight: bold; font-size: 1.1rem; margin-bottom: 8px; color: #333; }
 #create-2 .field-desc { font-size: 0.9rem; color: #666; flex-grow: 1; margin-bottom: 15px; }

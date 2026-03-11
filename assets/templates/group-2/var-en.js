@@ -614,20 +614,32 @@ const escapeAttr = (s='') => (s+'').replaceAll('"','&quot;');
 
 function getHelp(k, state) {
     const h = {
-        dataUri: "The <b>Data URI</b> is the unique technical address of the data you want to share or request.",
-        actors: "<b>Offer</b>: You are the provider giving data.<br><b>Request</b>: You are the consumer asking for data.",
-        temporal: "<b>End Date</b>: Access stops on this specific day.<br><b>Duration</b>: Access lasts for a set amount of time after the user first opens the data.",
-        purposes: "Select specific reasons (like 'Research' or 'Marketing') for which the data may be used.",
-                permissions: "ToDo.",
-        duties: "ToDo.",
-        semantics: "ToDo.",
-        location: "ToDo.",
-        usage: "ToDo."
+        dataUri: "This defines the exact subject of the policy. It ensures that all rules and conditions are applied strictly to the identified resource and no other.",
+        actors: "This identifies the participants in the agreement. It specifies the provider and the consumer, while clarifying if the policy is an offer of access or a formal request.",
+        temporal: "This applies a schedule to the agreement. Access is granted for a fixed duration or until a specific expiration point is reached, after which permission is revoked.",
+        purposes: "This restricts usage to a predefined goal. The recipient agrees to interact with the information only for the stated purpose and no other secondary objectives.",
+        permissions: "This establishes the limits of interaction. It determines whether the recipient may view, contribute, modify, or manage administrative rights for the resource.",
+        duties: "These are mandatory requirements for the recipient. This may include post-use deletion, ensuring the information remains unidentifiable, or providing notification upon access.",
+        semantics: "These details assist in the categorization and retrieval of the policy. Names, IDs, and summaries are used for administrative tracking and organizational records.",
+        location: "This ensures that the resource is only accessible from authorized regions or physical boundaries, preventing usage outside of those designated zones.",
+        usage: "This limits the volume of use. Once the specified number of access events has been reached, the policy is considered exhausted and the permission expires."
     };
     return h[k] || "No extra information available for this field.";
 }
 
 function renderEditor(k, state) {
+    const permissionLabels = {
+        permRead: { label: 'Read Data', summary: 'View the resource' },
+        permAdd: { label: 'Add Data', summary: 'Contribute information' },
+        permModify: { label: 'Modify Data', summary: 'Edit existing entries' },
+        permManage: { label: 'Manage Permissions', summary: 'Administer access rights' }
+    };
+    const dutyLabels = {
+        delete: { label: 'Delete data', summary: 'Remove after use' },
+        anonymize: { label: 'Anonymize data', summary: 'Obscure identity' },
+        encrypt: { label: 'Encrypt data', summary: 'Secure information' },
+        notify: { label: 'Notify on access', summary: 'Alert provider' }
+    };
     switch(k) {
         case 'actors':
         return `
@@ -672,15 +684,35 @@ function renderEditor(k, state) {
                 <label>Unique ID</label><input type="text" id="in-id" value="${escapeAttr(state.id)}" placeholder="e.g. policy-123">
                 <label>Detailed Description</label><textarea id="in-desc" rows="3">${state.description}</textarea>`;
         case 'duties':
-        return `<label>Consumer Obligations</label>
-                <div style="display:flex; flex-direction:column; gap:8px;">
-                ${Object.keys(state.duties).map(d => `<label style="font-weight:normal;"><input type="checkbox" id="d-${d}" ${state.duties[d]?'checked':''}> ${d.charAt(0).toUpperCase() + d.slice(1)}</label>`).join('')}
-                </div>`;
+        return `
+            <label>Consumer Obligations</label>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+                ${Object.keys(state.duties).map(d => {
+                    const info = dutyLabels[d] || { label: d, summary: '' };
+                    return `
+                        <label style="font-weight:normal; display: flex; align-items: center; gap: 8px;">
+                            <input type="checkbox" id="d-${d}" ${state.duties[d] ? 'checked' : ''}> 
+                            <strong>${info.label}:</strong> 
+                            <span style="color: #666; font-size: 0.9em;">${info.summary}</span>
+                        </label>`;
+                }).join('')}
+            </div>`;
         case 'dataUri': return `<label>Data URI</label><input type="url" id="in-uri" value="${escapeAttr(state.dataUri)}" placeholder="https://...">`;
         case 'usage': return `<label>Maximum Number of Usages</label><input type="number" min=0 id="in-use" value="${state.constraints.Usage||''}">`;
         case 'permissions':
-        return `<label>Allowed Actions</label>
-                <div class="inline-grid">${Object.keys(state.permissions).map(p => `<label style="font-weight:normal;"><input type="checkbox" id="p-${p}" ${state.permissions[p]?'checked':''}> ${p.replace('perm','')}</label>`).join('')}</div>`;
+        return `
+            <label>Allowed Actions</label>
+            <div class="inline-grid" style="display: flex; flex-direction: column; gap: 4px;">
+                ${Object.keys(state.permissions).map(p => {
+                    const info = permissionLabels[p] || { label: p, summary: '' };
+                    return `
+                        <label style="font-weight:normal; display: flex; align-items: center; gap: 8px;">
+                            <input type="checkbox" id="p-${p}" ${state.permissions[p] ? 'checked' : ''}> 
+                            <strong>${info.label}:</strong> 
+                            <span style="color: #666; font-size: 0.9em;">${info.summary}</span>
+                        </label>`;
+                }).join('')}
+            </div>`;
         case 'location': return `<label>Location URI</label><input type="url" id="in-location" value="${escapeAttr(state.constraints.Location)}" placeholder="http://...">`;
     }
 }

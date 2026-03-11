@@ -50,7 +50,7 @@
   const modalTitle = $('#create-2-modal-title');
   let currentEditor = null;
 
-  function openModal(kind, isHelp = false) {
+function openModal(kind, isHelp = false) {
     currentEditor = kind;
     $('.modal-footer').style.display = isHelp ? 'none' : 'flex';
     modalTitle.textContent = isHelp ? "Info: " + kind : "Edit " + kind;
@@ -58,17 +58,90 @@
     
     dialog.showModal();
 
-    if (kind === 'purposes' && !isHelp && window.TomSelect) {
-      const filtered = (window.PURPOSES?.options || []).filter(o => o.value !== 'all:all');
-      new TomSelect($('#purposesSelect', modalBody), {
-        plugins: ['remove_button'],
-        options: filtered, 
-        optgroups: window.PURPOSES?.groups || [],
-        optgroupField: 'group', labelField: 'name', valueField: 'value',
-        items: state.constraints.purpose.filter(v => v !== 'all:all')
-      });
+    if (kind === 'purposes' && !isHelp) {
+        renderPurposeTables();
+        
+        const searchInput = $('#purpose-search');
+        searchInput.oninput = (e) => {
+            renderPurposeTables(e.target.value.toLowerCase());
+        };
     }
-  }
+}
+
+function renderPurposeTables(query = '') {
+    const selectedContainer = $('#selected-purposes');
+    const availableContainer = $('#available-purposes');
+    if (!selectedContainer || !availableContainer) return;
+
+    const selectedValues = state.constraints.purpose || [];
+    const allOptions = window.PURPOSES?.options || [];
+    const allGroups = window.PURPOSES?.groups || [];
+
+    selectedContainer.innerHTML = '';
+    availableContainer.innerHTML = '';
+
+    const matchesQuery = (opt) => {
+        if (!query) return true;
+        return opt.name.toLowerCase().includes(query) || 
+               opt.desc.toLowerCase().includes(query) || 
+               opt.group.toLowerCase().includes(query) || 
+               opt.value.toLowerCase().includes(query);
+    };
+
+    const seenValues = new Set();
+    allOptions.forEach(opt => {
+        if (selectedValues.includes(opt.value) && opt.value !== 'all:all' && !seenValues.has(opt.value)) {
+            if (matchesQuery(opt)) {
+                selectedContainer.appendChild(createPurposeRow(opt, true, query));
+            }
+            seenValues.add(opt.value);
+        }
+    });
+
+    allGroups.forEach(group => {
+        const groupOptions = allOptions.filter(o => 
+            o.group === group.value && 
+            !selectedValues.includes(o.value) && 
+            o.value !== 'all:all' &&
+            matchesQuery(o)
+        );
+
+        if (groupOptions.length > 0) {
+            const header = document.createElement('div');
+            header.className = 'purpose-group-header';
+            header.textContent = group.label;
+            availableContainer.appendChild(header);
+
+            groupOptions.forEach(opt => {
+                availableContainer.appendChild(createPurposeRow(opt, false, query));
+            });
+        }
+    });
+}
+
+function createPurposeRow(opt, isSelected, query) {
+    const row = document.createElement('div');
+    row.className = 'purpose-row';
+    row.innerHTML = `
+        <div class="purpose-info">
+            <strong>${opt.name}</strong>
+            <div class="purpose-desc">${opt.desc}</div>
+        </div>
+        <span class="action-icon">${isSelected ? '−' : '+'}</span>
+    `;
+    
+    row.onclick = () => {
+        if (isSelected) {
+            state.constraints.purpose = state.constraints.purpose.filter(v => v !== opt.value);
+        } else {
+            if (!state.constraints.purpose.includes(opt.value)) {
+                state.constraints.purpose.push(opt.value);
+            }
+        }
+        renderPurposeTables(query);
+    };
+    return row;
+}
 
   modalBody.addEventListener('change', (e) => {
     if (e.target.name === 'pT') {
@@ -97,8 +170,13 @@
       state.policyType = Array.from($$('input[name="pT"]', b)).find(r => r.checked).value;
       state.provider = $('#in-prov', b).value; state.consumer = $('#in-cons', b).value;
     } else if (currentEditor === 'purposes') {
-      const isAll = $('#toggle-all', b).classList.contains('active');
-      state.constraints.purpose = isAll ? ['all:all'] : $('#purposesSelect', b).tomselect.getValue();
+        const isAll = $('#toggle-all', modalBody).classList.contains('active');
+        
+        if (isAll) {
+            state.constraints.purpose = ['all:all'];
+        } else {
+            state.constraints.purpose = state.constraints.purpose.filter(v => v !== 'all:all');
+        }
     } else if (currentEditor === 'temporal') {
       state.constraints.StartTime = $('#in-start', b).value;
       const mode = Array.from($$('input[name="tM"]', b)).find(r => r.checked).value;
@@ -108,7 +186,7 @@
         state.constraints.DurationYear = $('#in-dy', b).value; state.constraints.DurationMonth = $('#in-dm', b).value;
         state.constraints.DurationDay = $('#in-dd', b).value; state.constraints.DurationHour = $('#in-dh', b).value;
       }
-    } else if (currentEditor === 'semantics') {
+    }else if (currentEditor === 'semantics') {
       state.name = $('#in-name', b).value; state.id = $('#in-id', b).value; state.description = $('#in-desc', b).value;
     } else if (currentEditor === 'duties') {
       Object.keys(state.duties).forEach(d => state.duties[d] = $(`#d-${d}`, b).checked);

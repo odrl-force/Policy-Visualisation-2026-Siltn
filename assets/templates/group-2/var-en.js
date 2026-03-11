@@ -348,7 +348,7 @@ var PURPOSES = {
             group: 'ResearchAndDevelopment', 
             value: 'dpv:CommercialResearch', 
             name: 'CommercialResearch', 
-            desc: 'Conducting research in a commercial setting or with intention to commercialise e.g. in a company or sponsored by a company.' 
+            desc: 'Conducting research in a commercial setting or with intention to commercialise.' 
         },
         { 
             group: 'ResearchAndDevelopment', 
@@ -650,14 +650,26 @@ function renderEditor(k, state) {
             <label>Provider (Source)</label><input type="url" id="in-prov" value="${escapeAttr(state.provider)}">
             <label>Consumer (Recipient)</label><input type="url" id="in-cons" value="${escapeAttr(state.consumer)}">`;
         case 'purposes':
-        const isAll = state.constraints.purpose.includes('all:all');
-        return `
-            <button type="button" id="toggle-all" class="purpose-toggle-btn ${isAll?'active':''}">
-            ${isAll ? '✓ No Purpose Limitations (All Allowed)' : 'Allow All Purposes'}
-            </button>
-            <div id="ts-wrap" style="${isAll?'display:none':''}; margin-top:10px;">
-            <label>Restrict to Specific Purposes</label><select id="purposesSelect" multiple></select>
-            </div>`;
+            const isAll = state.constraints.purpose.includes('all:all');
+            return `
+                <button type="button" id="toggle-all" class="purpose-toggle-btn ${isAll ? 'active' : ''}">
+                    ${isAll ? '✓ No Purpose Limitations (All Allowed)' : 'Allow All Purposes'}
+                </button>
+                <div id="ts-wrap" style="${isAll ? 'display:none' : 'display:block'};">
+                    <div class="purpose-search-wrap">
+                        <input type="text" id="purpose-search" placeholder="Filter by name, group, or description...">
+                    </div>
+                    <div class="dual-list-container">
+                        <div class="list-column">
+                            <label>Authorized Purposes</label>
+                            <div id="selected-purposes" class="purpose-table"></div>
+                        </div>
+                        <div class="list-column">
+                            <label>Available Options</label>
+                            <div id="available-purposes" class="purpose-table"></div>
+                        </div>
+                    </div>
+                </div>`;
         case 'temporal':
         const mode = state.constraints.EndTime ? 'endtime' : 'duration';
         return `

@@ -23,7 +23,7 @@ function buildBody(){
     body.userId = userId;
     body.questions = [];
     body.reviews = [];
-    for (let i = 1; i <= questions[questions.length -1].question; i++) {
+    for (let i = 0; i <= questions[questions.length -1].question; i++) {
         let question;
         let review = {};
         question = JSON.parse(localStorage.getItem(`question-${i}`));

@@ -12,7 +12,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const res = await fetch("assets/data/questions.json");
     const questions = await res.json();
-    let currentIndex = 0;
+
+    const savedQNumber = parseInt(localStorage.getItem("question")) || 0;
+
+    // Find the index of the first entry that matches the saved question number
+    currentIndex = questions.findIndex(q => q.question === savedQNumber);
+
+    // Fallback: if not found, start at the beginning
+    if (currentIndex === -1) currentIndex = 0;
 
     async function loadQuestion(index) {
         const q = questions[index];
@@ -24,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         // Save q globally for template JS
         window.q = q;
-
+        localStorage.setItem("question", q.question);
         // Update header & progress
         headerLabel.textContent = `Question ${q.question} / ${questions[questions.length -1].question}`;
         progressFill.style.width = `${(index / questions.length) * 100}%`;

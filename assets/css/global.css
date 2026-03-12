@@ -103,7 +103,6 @@ main.informative {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    text-align: center;
     padding: 2rem;
     min-height: calc(100vh - 80px);
     box-sizing: border-box;

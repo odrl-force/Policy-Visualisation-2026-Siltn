@@ -71,6 +71,7 @@
 
     if (!oneChecked) {
       checkboxes[0].reportValidity();
+      return;
     }
 
     const form = e.target;

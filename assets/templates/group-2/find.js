@@ -4,10 +4,12 @@
     let resourceRegistry = {};
     let currentPage = 1;
     const itemsPerPage = 15;
+    const lang = localStorage.getItem('lang') || 'en';
 
     async function init() {
         const [dRes, pRes] = await Promise.all([
-            fetch("assets/data/data.json"), fetch("assets/data/policies.json")
+            fetch(`assets/data/data-${lang}.json`),
+            fetch(`assets/data/policies-${lang}.json`)
         ]);
         const data = await dRes.json();
         allPolicies = await pRes.json();
@@ -151,18 +153,41 @@
             const res = resourceRegistry[p.dataUri] || { name: "External", desc: p.dataUri, pod: "N/A" };
             const pNames = (p.constraints?.purpose || []).map(s => s.split(':').pop()).join(', ');
             
-            const badges = [];
-            Object.keys(p.permissions).filter(k => p.permissions[k]).forEach(k => badges.push(`<span class="badge badge-perm">${k.replace('perm','')}</span>`));
-            if(p.duties) Object.keys(p.duties).filter(k => p.duties[k]).forEach(k => badges.push(`<span class="badge badge-duty">${k}</span>`));
+const badges = [];
+
+        const translations = {
+            read: { en: 'Read', nl: 'Lezen' },
+            add: { en: 'Add', nl: 'Toevoegen' },
+            modify: { en: 'Modify', nl: 'Bewerken' },
+            manage: { en: 'Manage', nl: 'Beheren' },
+            delete: { en: 'Delete', nl: 'Verwijderen' },
+            anonymize: { en: 'Anonymize', nl: 'Anonimiseren' },
+            encrypt: { en: 'Encrypt', nl: 'Encrypteren' },
+            notify: { en: 'Notify', nl: 'Melden' }
+        };
+
+        Object.keys(p.permissions).filter(k => p.permissions[k]).forEach(k => {
+            const key = k.replace('perm', '').toLowerCase();
+            const label = lang === 'en' ? (translations[key]?.en || key) : (translations[key]?.nl || key);
+            badges.push(`<span class="badge badge-perm">${label}</span>`);
+        });
+
+        if (p.duties) {
+            Object.keys(p.duties).filter(k => p.duties[k]).forEach(k => {
+                const key = k.toLowerCase();
+                const label = lang === 'en' ? (translations[key]?.en || key) : (translations[key]?.nl || key);
+                badges.push(`<span class="badge badge-duty">${label}</span>`);
+            });
+        }
 
             return `
                 <tr>
                     <td><code>${p.id}</code></td>
                     <td><span class="res-pod">Pod: ${res.pod}</span><br><strong>${res.name}</strong><br><small>${res.desc || ''}</small></td>
                     <td><code>${p.consumer.split('/')[3]}</code></td>
-                    <td><span class="purpose-text">${pNames || 'General'}</span></td>
+                    <td><span class="purpose-text">${pNames || (lang === 'en' ? 'General' : 'Algemeen')}</span></td>
                     <td><div class="badge-list">${badges.join('')}</div></td>
-                    <td><button class="btn-explain" data-id="${p.id}">Explain</button></td>
+                    <td><button class="btn-explain" data-id="${p.id}">${lang === 'en' ? 'Explain' : 'Uitleg'}</button></td>
                 </tr>
             `;
         }).join('');
@@ -177,8 +202,12 @@
             };
         });
 
-        document.getElementById("page-label").innerText = `Page ${currentPage} of ${Math.ceil(filteredPolicies.length / itemsPerPage) || 1}`;
-        document.getElementById("status-text").innerText = `${filteredPolicies.length} Matches Found`;
+        document.getElementById("page-label").innerText = lang === 'en' 
+            ? `Page ${currentPage} of ${Math.ceil(filteredPolicies.length / itemsPerPage) || 1}` 
+            : `Pagina ${currentPage} van ${Math.ceil(filteredPolicies.length / itemsPerPage) || 1}`;
+        document.getElementById("status-text").innerText = lang === 'en' 
+            ? `${filteredPolicies.length} Matches Found`
+            : `${filteredPolicies.length} Matches Gevonden`;
     }
     init();
 })();

@@ -1,0 +1,382 @@
+[
+  {
+    "name": "JaneDoe",
+    "description": "Hoofdmap met alle persoonlijke, privé- en openbare gegevens van Jane Doe.",
+    "children": [
+      {
+        "name": "Personal",
+        "description": "Persoonlijke informatie en documenten van Jane Doe.",
+        "children": [
+          {
+            "name": "Contact",
+            "description": "Contactgegevens van Jane Doe gebruikt voor communicatie en identificatie.",
+            "children": [
+              {
+                "name": "address.ttl",
+                "description": "Officieel domicilieadres van Jane Doe."
+              },
+              {
+                "name": "email.txt",
+                "description": "Primair e-mailadres of Jane Doe."
+              },
+              {
+                "name": "phone.ttl",
+                "description": "Jane Doe’s telefoonnummer en contactgegevens."
+              },
+              {
+                "name": "emergency_contacts.json",
+                "description": "Contactpersonen in noodgevallen."
+              }
+            ]
+          },
+          {
+            "name": "General",
+            "description": "Officiële identiteits- en profielgegevens.",
+            "children": [
+              {
+                "name": "ID_card.pdf",
+                "description": "Scan van Jane Doe’s national ID card."
+              },
+              {
+                "name": "BirthCert.pdf",
+                "description": "Jane Doe’s geboorteakte."
+              },
+              {
+                "name": "Nationality.ttl",
+                "description": "Document met Jane Doe’s nationality."
+              }
+            ]
+          },
+          {
+            "name": "Medical",
+            "description": "Alle medische gegevens van Jane Doe, organized by year.",
+            "children": [
+              {
+                "name": "2020",
+                "description": "Medische dossiers voor het jaar 2020.",
+                "children": []
+              },
+              {
+                "name": "2021",
+                "description": "Medische dossiers voor het jaar 2021.",
+                "children": []
+              },
+              {
+                "name": "2022",
+                "description": "Medische dossiers voor het jaar 2022.",
+                "children": []
+              },
+              {
+                "name": "2023",
+                "description": "Medische dossiers voor het jaar 2023.",
+                "children": []
+              },
+              {
+                "name": "2024",
+                "description": "Medische dossiers voor het jaar 2024.",
+                "children": []
+              },
+              {
+                "name": "2025",
+                "description": "Medische dossiers voor het jaar 2025.",
+                "children": []
+              },
+              {
+                "name": "2026",
+                "description": "Medische dossiers voor het jaar 2026.",
+                "children": [
+                  {
+                    "name": "Foot_XRay.png",
+                    "description": "Röntgenfoto van Jane Doe’s foot."
+                  },
+                  {
+                    "name": "Nursing_Log.json",
+                    "description": "Zorgnotities en verslagen van verpleegbezoeken."
+                  },
+                  {
+                    "name": "Medication_Schedule.pdf",
+                    "description": "Voorgeschreven medicatieschema voor Jane Doe."
+                  },
+                  {
+                    "name": "Physio_Notes.ttl",
+                    "description": "Kinesitherapienotities voor Jane Doe."
+                  },
+                  {
+                    "name": "Blood_Pressure_Jan.csv",
+                    "description": "Bloeddrukmetingen voor januari 2026."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Legal",
+            "description": "Juridische documenten en overeenkomsten.",
+            "children": [
+              {
+                "name": "PowerOfAttorney.pdf",
+                "description": "Wettelijke volmacht voor een andere persoon om op te treden namens Jane Doe’s behalf."
+              },
+              {
+                "name": "Will_Draft.pdf",
+                "description": "Ontwerpversie van Jane Doe’s last will."
+              },
+              {
+                "name": "Insurance_Contracts",
+                "description": "Folder containing insurance-related documents."
+              }
+            ]
+          },
+          {
+            "name": "Preferences",
+            "description": "Persoonlijke voorkeuren zoals voeding of cultuur.",
+            "children": [
+              {
+                "name": "Dietary_Needs.json",
+                "description": "Dieetvoorschriften en voorkeuren."
+              },
+              {
+                "name": "Religious_Affiliation.ttl",
+                "description": "Religieuze overtuigingen of affiliaties van Jane Doe."
+              }
+            ]
+          },
+          {
+            "name": "Statistics",
+            "description": "Gezondheids- en activiteitsstatistieken voor Jane Doe.",
+            "children": [
+              {
+                "name": "Daily_Steps.json",
+                "description": "Dagelijkse stappentellingen en bewegingsgegevens."
+              },
+              {
+                "name": "Sleep_Data.csv",
+                "description": "Slaapcycli en duurgegevens."
+              }
+            ]
+          },
+          {
+            "name": "Commercial",
+            "description": "Commerciële en loyaliteitsgerelateerde persoonlijke documenten.",
+            "children": [
+              {
+                "name": "Receipts_Digital",
+                "description": "Verzameling digitale kassabonnen."
+              },
+              {
+                "name": "Shopping_History.db",
+                "description": "Database met aankoopgeschiedenis."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Private",
+        "description": "Gevoelige privébestanden enkel toegankelijk voor Jane Doe.",
+        "children": [
+          {
+            "name": "Finances",
+            "description": "Financiële documenten zoals pensioen- of belastinggegevens.",
+            "children": [
+              {
+                "name": "Pension_Statements.pdf",
+                "description": "Overzicht van pensioenbijdragen en afschriften."
+              },
+              {
+                "name": "Bank_Tax_Records.json",
+                "description": "Bankgerelateerde belastingdocumenten."
+              }
+            ]
+          },
+          {
+            "name": "Passwords_Vault.txt",
+            "description": "Zeer gevoelige wachtwoordopslag."
+          }
+        ]
+      },
+      {
+        "name": "Public",
+        "description": "Bestanden bedoeld voor publieke zichtbaarheid.",
+        "children": [
+          {
+            "name": "Public_Profile.ttl",
+            "description": "Publieke profielinformatie."
+          },
+          {
+            "name": "Avatar.png",
+            "description": "Publieke avatar van Jane Doe."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "AliceSmith",
+    "description": "Hoofdmap met alle persoonlijke, privé- en openbare gegevens van Alice Smith.",
+    "children": [
+      {
+        "name": "Personal",
+        "description": "Persoonlijke informatie en documenten van Alice Smith.",
+        "children": [
+          {
+            "name": "Housing",
+            "description": "Documenten voor de huurgeschiedenis en woonadministratie.",
+            "children": [
+              {
+                "name": "Old_Rental_Gent",
+                "description": "Documenten met betrekking tot het vorige appartement van Alice in Gent.",
+                "children": [
+                  {
+                    "name": "Lease_2022.pdf",
+                    "description": "Huurcontract voor het oude appartement van Alice in Gent."
+                  },
+                  {
+                    "name": "Deposit_Receipt.png",
+                    "description": "Bewijs van betaling van de huurwaarborg."
+                  },
+                  {
+                    "name": "Landlord_Comm.log",
+                    "description": "Communicatielogboek met de verhuurder."
+                  }
+                ]
+              },
+              {
+                "name": "New_Home_Childhood",
+                "description": "Bestanden for Alice’s nieuwe huis.",
+                "children": [
+                  {
+                    "name": "Deed_Transfer.pdf",
+                    "description": "Officieel document van de eigendomsoverdracht voor de nieuwe woning."
+                  },
+                  {
+                    "name": "District_Registration.ttl",
+                    "description": "Registratiegegevens voor de lokale gemeente."
+                  },
+                  {
+                    "name": "Utility_Setup.json",
+                    "description": "Details voor de aansluiting van nutsvoorzieningen op het nieuwe adres."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Commercial",
+            "description": "Commerciële en loyaliteitsgerelateerde persoonlijke documenten.",
+            "children": [
+              {
+                "name": "Loyalty_Cards.json",
+                "description": "Digital loyalty card information."
+              },
+              {
+                "name": "Shopping_History.db",
+                "description": "Database met aankoopgeschiedenis."
+              },
+              {
+                "name": "Subscription_List.json",
+                "description": "List of service subscriptions."
+              },
+              {
+                "name": "Receipts_Digital",
+                "description": "Verzameling digitale kassabonnen."
+              }
+            ]
+          },
+          {
+            "name": "Work",
+            "description": "Employment and payroll documents.",
+            "children": [
+              {
+                "name": "Employment_Contract.pdf",
+                "description": "Arbeidsovereenkomst van Alice Smith."
+              },
+              {
+                "name": "Payslips_2026.zip",
+                "description": "Loonbrieven voor het jaar 2026."
+              }
+            ]
+          },
+          {
+            "name": "Medical",
+            "description": "Medical data belonging to Alice Smith.",
+            "children": [
+              {
+                "name": "General_Health_Profile.ttl",
+                "description": "Samenvatting van het algemeen gezondheidsprofiel."
+              },
+              {
+                "name": "Dentist_Jan_2026.pdf",
+                "description": "Verslag tandartsafspraak van januari 2026."
+              },
+              {
+                "name": "Prenatal_Archive",
+                "description": "Archief van prenatale medische documenten."
+              }
+            ]
+          },
+          {
+            "name": "Contact",
+            "description": "Contactgegevens van Alice Smith.",
+            "children": [
+              {
+                "name": "address.ttl",
+                "description": "Officieel domicilieadres van Alice Smith."
+              },
+              {
+                "name": "email.txt",
+                "description": "Primair e-mailadres."
+              },
+              {
+                "name": "phone.ttl",
+                "description": "Telefoonnummer en contactgegevens."
+              },
+              {
+                "name": "emergency_contacts.json",
+                "description": "Lijst met contactpersonen voor noodgevallen van Alice."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Private",
+        "description": "Zeer gevoelige privébestanden, uitsluitend toegankelijk voor Alice Smith.",
+        "children": [
+          {
+            "name": "Taxes",
+            "description": "Belastinggerelateerde privédocumenten.",
+            "children": [
+              {
+                "name": "Return_2025.pdf",
+                "description": "Belastingaangifte voor 2025."
+              }
+            ]
+          },
+          {
+            "name": "Bank_Credentials",
+            "description": "Map met gevoelige bankgegevens."
+          }
+        ]
+      },
+      {
+        "name": "Public",
+        "description": "Bestanden bestemd voor publieke zichtbaarheid.",
+        "children": [
+          {
+            "name": "CV_Public.pdf",
+            "description": "Openbaar cv van Alice Smith."
+          },
+          {
+            "name": "Portfolio.link",
+            "description": "Link naar portfolio of verwijzing naar de startpagina."
+          },
+          {
+            "name": "shared",
+            "description": "Gedeelde map van Alice en haar vrienden."
+          }
+        ]
+      }
+    ]
+  }
+]

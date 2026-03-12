@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     localStorage.setItem("group", group);
     localStorage.setItem("lang", lang);
 
-    const res = await fetch("assets/data/questions.json");
+    const res = await fetch("assets/data/questions-nl.json");
     const questions = await res.json();
 
     const savedQNumber = parseInt(localStorage.getItem("question")) || 0;
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     async function loadQuestion(index) {
         const q = questions[index];
         if (!q) {
-            const lang = localStorage.getItem("lang") || "en";
+            const lang = localStorage.getItem("lang") || "nl";
             window.location.href = `final.html`;
             return;
         }
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         window.q = q;
         localStorage.setItem("question", q.question);
         // Update header & progress
-        headerLabel.textContent = `Question ${q.question} / ${questions[questions.length -1].question}`;
+        headerLabel.textContent = `Vraag ${q.question} / ${questions[questions.length -1].question}`;
         progressFill.style.width = `${(index / questions.length) * 100}%`;
 
         // Load main template
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             const templateRes = await fetch(templateUrl);
             main.innerHTML = await templateRes.text();
         } catch (err) {
-            main.innerHTML = `<p>Error loading template: ${err.message}</p>`;
+            main.innerHTML = `<p>Probleem let het laden van de data: ${err.message}</p>`;
             return;
         }
 
@@ -65,20 +65,20 @@ document.addEventListener("DOMContentLoaded", async () => {
             <select id="actors" name="actors" multiple="multiple">
                 ${q.sidebar.select.options.map(opt => `<option value="${opt}">${opt}</option>`).join('')}
             </select>
-            <button id="submitTask">Submit Task</button>
+            <button id="submitTask">Taak indienen</button>
             `;
         }
 
         if (q.sidebar?.params) {
             sidebarHtml += `<div class="params-container">`;
-            sidebarHtml += `<p class="params-title">Reference Data (Click to copy):</p>`;
+            sidebarHtml += `<p class="params-title">Referentiegegevens (klik om te kopiëren):</p>`;
             
             q.sidebar.params.forEach(p => {
                 sidebarHtml += `
                     <div class="param-item" onclick="copyText('${p.value}', this)" data-label="${p.label}">
                         <span class="param-label">${p.label}</span>
                         <code class="param-value">${p.value}</code>
-                        <span class="copy-status">Copied!</span>
+                        <span class="copy-status">Gekopieerd!</span>
                     </div>
                 `;
             });

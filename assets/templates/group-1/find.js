@@ -7,14 +7,16 @@
     let currentView = "file";
     let uriToDescriptionMap = {}; 
     const BASE_URI = "https://solidweb.me";
+    const lang = localStorage.getItem('lang') || 'en';
 
     async function loadData() {
         try {
             const [dataRes, polyRes] = await Promise.all([
-                fetch("assets/data/data.json"),
-                fetch("assets/data/policies.json")
+                fetch(`assets/data/data-${lang}.json`),
+                fetch(`assets/data/policies-${lang}.json`)
             ]);
             const data = await dataRes.json();
+            console.log(data);
             allPolicies = await polyRes.json();
             fullStructure = Array.isArray(data) ? data : [data];
             buildUriMap(fullStructure, "");
@@ -66,13 +68,13 @@
 
         switch (currentView) {
             case "file":
-                leftThead.innerHTML = `<th>Filename</th><th>Access Level</th><th>Actions</th>`;
-                if (rightLabelHeader) rightLabelHeader.innerText = "Consumer";
+                leftThead.innerHTML = lang === 'en' ? `<th>Filename</th><th>Access Level</th><th>Actions</th>` : `<th>Bestandsnaam</th><th>Toegangsniveau</th><th>Acties</th>`;
+                if (rightLabelHeader) rightLabelHeader.innerText = lang === 'en' ? "Consumer" : "Consument";
                 renderFiles();
                 break;
             case "person":
-                leftThead.innerHTML = `<th>Consumer</th><th>Access Level</th><th>Action</th>`;
-                if (rightLabelHeader) rightLabelHeader.innerText = "Context";
+                leftThead.innerHTML = lang === 'en' ? `<th>Consumer</th><th>Access Level</th><th>Action</th>` : `<th>Consument</th><th>Toegangsniveau</th><th>Actie</th>`;
+                if (rightLabelHeader) rightLabelHeader.innerText = lang === 'en' ? "Context" : "Context";
                 renderPersons();
                 break;
         }
@@ -92,29 +94,31 @@
                 const tier = getHighestTierRecursive(item, navigationStack);
                 const isFolder = item.children && Array.isArray(item.children);
                 const row = document.createElement("tr");
-                row.innerHTML = `
-                    <td><strong>${item.name}</strong></td>
-                    <td>
-                        <div class="flex-wrapper">
-                            <div aria-hidden="true" class="dot ${tier.color}"></div>
-                            <span>${tier.label}</span>
-                        </div>
-                    </td>
-                    <td>
-                        <button class="policy-btn" data-idx="${index}">Check Access</button>
-                        ${isFolder ? `<button class="enter-btn" data-idx="${index}">Open</button>` : ''}
-                    </td>`;
+                    row.innerHTML = `
+                        <td><strong>${item.name}</strong></td>
+                        <td>
+                            <div class="flex-wrapper">
+                                <div aria-hidden="true" class="dot ${tier.color}"></div>
+                                <span>${lang === 'en' ? tier.label : tier.labelNl || tier.label}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="policy-btn" data-idx="${index}">${lang === 'en' ? 'Check Access' : 'Bekijk'}</button>
+                            ${isFolder ? `<button class="enter-btn" data-idx="${index}">${lang === 'en' ? 'Open' : 'Openen'}</button>` : ''}
+                        </td>`;
                 tbody.appendChild(row);
             });
         } else {
-            tbody.innerHTML = '<tr><td class="empty-placeholder" colspan="3">No files in this folder.</td></tr>';
+            tbody.innerHTML = lang === 'en' 
+                ? '<tr><td class="empty-placeholder" colspan="3">No files in this folder.</td></tr>' 
+                : '<tr><td class="empty-placeholder" colspan="3">Geen bestanden in deze map.</td></tr>';
         }
     }
 
     function renderPersons() {
         const tbody = document.querySelector("#files-table tbody");
         const pathEl = document.getElementById("path");
-        pathEl.innerHTML = "<strong>Global Permissions Index</strong>";
+        pathEl.innerHTML = lang === 'en' ? "<strong>Global Permissions Index</strong>" : "<strong>Algemene Toegangsindex</strong>";
         tbody.innerHTML = "";
 
         const aggregatedUsers = aggregatePoliciesByUser(allPolicies);
@@ -129,7 +133,6 @@
                 else if (p.permissions.permAdd) maxRank = Math.max(maxRank, 2);
                 else if (p.permissions.permRead) maxRank = Math.max(maxRank, 1);
             });
-            const tiers = { 0: { label: "No Policies", color: "grey" }, 1: { label: "Can View", color: "green" }, 2: { label: "Can Add", color: "yellow" }, 3: { label: "Can Edit", color: "orange" }, 4: { label: "Full Control", color: "red" } };
             const tier = tiers[maxRank];
 
             const row = document.createElement("tr");
@@ -141,7 +144,7 @@
                         <span>${tier.label}</span>
                     </div>
                 </td>
-                <td><button class="view-person-btn" data-idx="${index}">View</button></td>
+                <td><button class="view-person-btn" data-idx="${index}">${lang === 'en' ? 'View' : 'Bekijk'}</button></td>
             `;
             tbody.appendChild(row);
         });
@@ -153,10 +156,12 @@
         const itemUri = getItemUri(item, navigationStack);
         const relevant = allPolicies.filter(p => itemUri.startsWith(p.dataUri));
 
-        policyTitle.innerHTML = `Access Rules: ${item.name}`;
+        policyTitle.innerHTML = lang === 'en' ? `Access Rules: ${item.name}` : `Policies: ${item.name}`;
 
         if (relevant.length === 0) {
-            tbody.innerHTML = '<tr><td class="empty-placeholder" colspan="6">No policies regarding this file.</td></tr>';
+            tbody.innerHTML = lang === 'en' 
+                ? '<tr><td class="empty-placeholder" colspan="6">No policies regarding this file.</td></tr>' 
+                : '<tr><td class="empty-placeholder" colspan="6">Geen policies voor dit bestand.</td></tr>';
             return;
         }
 
@@ -182,7 +187,7 @@
                 <td>${user.perms.Manage ? '🚨' : ''}</td>
                 <td>
                     <button class="main-action-btn" data-u-idx="${uIdx}">
-                        ${hasMany ? `Rules (${user.policies.length})` : 'Explain'}
+                        ${hasMany ? (lang === 'en' ? `Rules (${user.policies.length})` : `Regels (${user.policies.length})`) : (lang === 'en' ? 'Explain' : 'Uitleg')}
                     </button>
                 </td>`;
             tbody.appendChild(row);
@@ -229,7 +234,7 @@
                 <td>${policies.some(p => p.permissions.permManage) ? '🚨' : ''}</td>
                 <td>
                     <button class="main-action-btn" data-u-idx="${rIdx}">
-                        ${hasMany ? `Rules (${policies.length})` : 'Explain'}
+                        ${lang === 'en' ? (hasMany ? `Rules (${policies.length})` : 'Explain') : (hasMany ? `Regels (${policies.length})` : 'Uitleg')}
                     </button>
                 </td>`;
             tbody.appendChild(row);
@@ -247,7 +252,7 @@
                         <td>${p.permissions.permAdd ? '✅' : ''}</td>
                         <td>${p.permissions.permModify ? '✅' : ''}</td>
                         <td>${p.permissions.permManage ? '🚨' : ''}</td>
-                        <td><button class="sub-explain-btn" data-u-idx="${rIdx}" data-p-idx="${pIdx}">Explain</button></td>`;
+                        <td><button class="sub-explain-btn" data-u-idx="${rIdx}" data-p-idx="${pIdx}">${lang === 'en' ? 'Explain' : 'Uitleg'}</button></td>`;
                     tbody.appendChild(subRow);
                 });
             }
@@ -278,7 +283,7 @@
                 <td>${p.permissions.permAdd ? '✅' : ''}</td>
                 <td>${p.permissions.permModify ? '✅' : ''}</td>
                 <td>${p.permissions.permManage ? '🚨' : ''}</td>
-                <td><button class="sub-explain-btn" data-u-idx="${uIdx}" data-p-idx="${pIdx}">Explain</button></td>`;
+                <td><button class="sub-explain-btn" data-u-idx="${uIdx}" data-p-idx="${pIdx}">${lang === 'en' ? 'Explain' : 'Uitleg'}</button></td>`;
             tbody.appendChild(subRow);
         });
     }
@@ -328,7 +333,7 @@
                 const subRows = document.querySelectorAll(`.user-child-${uIdx}`);
                 const isHidden = subRows[0].style.display === "none";
                 subRows.forEach(r => r.style.display = isHidden ? "table-row" : "none");
-                e.target.innerText = isHidden ? "Hide" : `Rules (${contextData.length})`;
+                e.target.innerText = lang === 'en' ? (isHidden ? "Hide" : `Rules (${contextData.length})`) : (isHidden ? "Verberg" : `Regels (${contextData.length})`);
             } else {
                 updateSummary(contextData[0]);
             }
@@ -397,13 +402,6 @@
             else if (p.permissions.permAdd) maxRank = Math.max(maxRank, 2);
             else if (p.permissions.permRead) maxRank = Math.max(maxRank, 1);
         });
-        const tiers = {
-            0: { label: "No Policies", color: "grey" },
-            1: { label: "Can View", color: "green" },
-            2: { label: "Can Add", color: "yellow" },
-            3: { label: "Can Edit", color: "orange" },
-            4: { label: "Full Control", color: "red" }
-        };
         return tiers[maxRank];
     }
 
@@ -417,7 +415,7 @@
             span.onclick = action;
             return span;
         };
-        pathEl.appendChild(createBreadcrumb("Home", () => { navigationStack = []; renderFiles(); resetPolicies(); }));
+        pathEl.appendChild(createBreadcrumb(lang === 'en' ? "Home" : "Start", () => { navigationStack = []; renderFiles(); resetPolicies(); }));
         navigationStack.forEach((folder, index) => {
             const sep = document.createElement("span");
             sep.innerText = " > ";
@@ -431,9 +429,9 @@
     }
 
     function resetPolicies() {
-        document.getElementById("policy-title").innerHTML = '<th colspan="6">Access Rules: No Selection</th>';
-        document.getElementById("policy-body").innerHTML = '<tr><td class="empty-placeholder" colspan="6">Select an item to view permissions.</td></tr>';
-        document.getElementById("summary-display").innerHTML = '<div class="summary-title">Selected Rule Explanation</div><div id="summary-content" class="empty">Detailed summary will appear here.</div>';
+        document.getElementById("policy-title").innerHTML = lang === 'en' ? '<th colspan="6">Access Rules: No Selection</th>' : '<th colspan="6">Policies: Geen selectie</th>';
+        document.getElementById("policy-body").innerHTML = lang === 'en' ? '<tr><td class="empty-placeholder" colspan="6">Select an item to view permissions.</td></tr>' : '<tr><td class="empty-placeholder" colspan="6">Selecteer een item om machtigingen te bekijken.</td></tr>';
+        document.getElementById("summary-display").innerHTML = lang === 'en' ? '<div class="summary-title">Selected Rule Explanation</div><div id="summary-content" class="empty">Detailed summary will appear here.</div>' : '<div class="summary-title">Uitleg van geselecteerde policy</div><div id="summary-content" class="empty">Gedetailleerde samenvatting verschijnt hier.</div>';
         window.currentPolicyView = null;
         window.currentPersonView = null;
     }

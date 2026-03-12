@@ -1,0 +1,126 @@
+<form id="policyForm">
+
+  <h3>Basis</h3>
+
+  <label for="dataUri" class="required">Gegevens URI</label>
+  <input required type="url" id="dataUri" placeholder="e.g. http://example.com/ids/data/abc" />
+
+  <div>
+    <label>Type Policy</label>
+    <select id="policyType">
+      <option value="Offer">Aanbod</option>
+      <option value="Request">Verzoek</option>
+    </select>
+  </div>
+  <div class="single-line">
+    <div>
+      <label for="provider" class="required">Gegevensaanbieder</label>
+      <input required type="url" id="provider" placeholder="e.g. http://gegevensaanbieder" />
+    </div>
+    <div>
+      <label for="consumer" class="required">Gegevensconsument</label>
+      <input required type="url" id="consumer" placeholder="e.g. http://gegevensconsument" />
+    </div>
+  </div>
+
+  <label class="required">Permissions</label>
+  <div class="single-line" id="permissions">
+    <label for="permRead">Gegevens lezen <input type="checkbox" id="permRead" name="permission"/></label>
+    <label for="permAdd">Gegevens toevoegen <input type="checkbox" id="permAdd" name="permission"/></label>
+    <label for="permModify">Gegevens wijzigen <input type="checkbox" id="permModify" name="permission"/></label>
+    <label for="permManage">Machtigingen beheren <input type="checkbox" id="permManage" name="permission"/></label>
+  </div>
+
+  <h3>Semantics</h3>
+ 
+  <div class="single-line">
+    <div>
+      <label>Naam</label>
+      <input type="text" id="name" placeholder="PolicyNaam" />
+    </div>
+
+    <div>  
+      <label>Id</label>
+      <input type="text" id="id" placeholder="Policy-1" />
+    </div>
+
+  </div>
+
+  <div>  
+    <label>Beschrijving</label>
+    <textarea id="description" placeholder="lorem ipsum dolor sit amet,"></textarea>
+  </div>
+
+  <h3>Beperkingen</h3>
+  
+  <div id="constraints">
+
+  <div>  
+    <label for="purpose" class="required">Doel</label>
+      <select name="purpose" id="purpose" class="field" multiple required placeholder="Kies doelen...">
+        </select>
+  </div>
+
+  <div>  
+    <label>Looptijd <input type="checkbox" id="useDuration"/></label>
+    <div class="field" id="Duration">
+      <div class="single-line">
+        <div>
+          <label for="DurationYear">Jaar</label>
+          <input type="number" id="DurationYear" placeholder="bijv. 1" min="0" value="0"/>
+        </div>
+        <div>
+          <label for="DurationMonth">Maand(en)</label>
+          <input type="number" id="DurationMonth" placeholder="bijv. 1" min="0" max="11" value="0"/>
+        </div>
+        <div>
+          <label for="DurationDay">Dag(en)</label>
+          <input type="number" id="DurationDay" placeholder="bijv. 1" min="0" max="30" value="0"/>
+        </div>
+        <div>
+          <label for="DurationHour">Uur</label>
+          <input type="number" id="DurationHour" placeholder="bijv. 1" min="0" max="23" value="0"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div>
+      <label>Start Tijd <input type="checkbox" id="useStartTime" /></label>
+      <input type="datetime-local" id="StartTime" class="field"/>
+    </div>
+
+    <div>
+      <label>Eind Tijd <input type="checkbox" id="useEndTime" /></label>
+      <input type="datetime-local" id="EndTime" class="field"/>
+    </div>
+
+    <div>  
+      <label>Locatie <input type="checkbox" id="useLocation" /></label>
+      <input type="url" id="Location" placeholder="http://example.com/locatie/locatieNaam" class="field"/>
+    </div>
+
+    <div>  
+      <label>Aantal keren gebruik <input type="checkbox" id="useUsage" /></label>
+      <input class="field" type="number" id="Usage" placeholder="bijv. 10" min="1"/>
+    </div>
+  </div>
+
+  <h3>Verplichtingen</h3>
+
+  <div id="duties">
+    <label for="delete">Gegevens verwijderen<input type="checkbox" id="delete"/></label>
+    <label for="anonymize">Gegevens anonimiseren<input type="checkbox" id="anonymize"/></label>
+    <label for="encrypt">Gegevens versleutelen<input type="checkbox" id="encrypt"/></label>
+    <label for="notify">Melding bij toegang<input type="checkbox" id="notify"/></label>
+  </div>
+
+  <div class="single-line"> 
+      <button type="submit" id="createPolicy">Policy genereren</button>
+    </div>
+</form>
+
+<div id="summary-display">
+    <div class="summary-title">Uitleg geselecteerde regel</div>
+    <div id="summary-content" class="empty">Gedetailleerde samenvatting verschijnt hier.</div>
+</div>

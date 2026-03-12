@@ -1,0 +1,95 @@
+<div id="create-2">
+ <h1>Policy-editor</h1>
+ <div class="fields-container">
+ <div class="field-item" id="item-dataUri">
+ <div class="field-label">Data-URI</div>
+ <div class="field-desc">De unieke identificator voor de specifieke resource.</div>
+ <div class="field-actions">
+ <button class="edit-btn" data-edit="dataUri">Bewerken</button>
+ <button class="help-btn" data-help="dataUri">?</button>
+ </div>
+ </div>
+ <div class="field-item" id="item-actors">
+ <div class="field-label">Actoren & Type</div>
+ <div class="field-desc">De betrokken entiteiten en hun toegewezen rollen.</div>
+ <div class="field-actions">
+ <button class="edit-btn" data-edit="actors">Bewerken</button>
+ <button class="help-btn" data-help="actors">?</button>
+ </div>
+ </div>
+ <div class="field-item" id="item-permissions">
+ <div class="field-label">Rechten</div>
+ <div class="field-desc">De toegestane acties die aan de deelnemer worden verleend.</div>
+ <div class="field-actions">
+ <button class="edit-btn" data-edit="permissions">Bewerken</button>
+ <button class="help-btn" data-help="permissions">?</button>
+ </div>
+ </div>
+ <div class="field-item" id="item-purposes">
+ <div class="field-label">Doeleinden</div>
+ <div class="field-desc">Het beoogde doel voor toegang tot de informatie.</div>
+ <div class="field-actions">
+ <button class="edit-btn" data-edit="purposes">Bewerken</button>
+ <button class="help-btn" data-help="purposes">?</button>
+ </div>
+ </div>
+ <div class="field-item" id="item-temporal">
+ <div class="field-label">Tijdslimieten</div>
+ <div class="field-desc">De specifieke periode waarin toegang geldig blijft.</div>
+ <div class="field-actions">
+ <button class="edit-btn" data-edit="temporal">Bewerken</button>
+ <button class="help-btn" data-help="temporal">?</button>
+ </div>
+ </div>
+ <div class="field-item" id="item-duties">
+ <div class="field-label">Plichten</div>
+ <div class="field-desc">Verplichtingen die nodig zijn om geldige toegang te behouden.</div>
+ <div class="field-actions">
+ <button class="edit-btn" data-edit="duties">Bewerken</button>
+ <button class="help-btn" data-help="duties">?</button>
+ </div>
+ </div>
+ <div class="field-item" id="item-semantics">
+ <div class="field-label">Semantiek</div>
+ <div class="field-desc">Beschrijvende metadata voor intern policybeheer.</div>
+ <div class="field-actions">
+ <button class="edit-btn" data-edit="semantics">Bewerken</button>
+ <button class="help-btn" data-help="semantics">?</button>
+ </div>
+ </div>
+ <div class="field-item" id="item-location">
+ <div class="field-label">Locatie</div>
+ <div class="field-desc">Geografische beperkingen op informatie-toegang.</div>
+ <div class="field-actions">
+ <button class="edit-btn" data-edit="location">Bewerken</button>
+ <button class="help-btn" data-help="location">?</button>
+ </div>
+ </div>
+ <div class="field-item" id="item-usage">
+ <div class="field-label">Gebruiksteller</div>
+ <div class="field-desc">Een numerieke limiet op het aantal toegestane interacties.</div>
+ <div class="field-actions">
+ <button class="edit-btn" data-edit="usage">Bewerken</button>
+ <button class="help-btn" data-help="usage">?</button>
+ </div>
+ </div>
+ </div>
+ <button id="createPolicy">Policy genereren</button>
+ <div id="summary-display">
+ <div class="summary-title">Uitleg van geselecteerde regel</div>
+ <div id="summary-content" class="empty">Gedetailleerde samenvatting verschijnt hier.</div>
+ </div>
+ <dialog id="create-2-dialog">
+ <div class="modal">
+ <div class="modal-header">
+ <h3 id="create-2-modal-title" style="margin:0;">Bewerken</h3>
+ <button id="create-2-close" style="background:none; border:none; cursor:pointer; font-size:1.4rem;">✕</button>
+ </div>
+ <div class="modal-body" id="create-2-modal-body"></div>
+ <div class="modal-footer">
+ <button id="create-2-cancel" class="secondary-btn">Annuleren</button>
+ <button id="create-2-save" class="primary-btn">Opslaan</button>
+ </div>
+ </div>
+ </dialog>
+</div>

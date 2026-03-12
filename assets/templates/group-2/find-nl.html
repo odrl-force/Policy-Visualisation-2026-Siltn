@@ -1,0 +1,108 @@
+<div id="find-2">
+    <div class="audit-controls">
+        <div class="ctrl-lane">
+            <div class="field-stack flex-2">
+                <span class="label">Algmeen zoeken (Volledige URI, ID of Naam)</span>
+                <input type="text" id="global-search" placeholder="Paste URI or search name...">
+            </div>
+            <div class="field-stack flex-3">
+                <span class="label">Doel filter</span>
+                <select id="purpose-select" multiple></select>
+            </div>
+        </div>
+
+        <hr class="ctrl-divider">
+        <div class="single-line">
+                <div class="field-stack">
+                <span class="label">Toegangsniveaus</span>
+                    <div class="option-row">
+                        <label><input type="checkbox" class="filter-check" data-type="perm" data-val="permRead"> Lezen</label>
+                        <label><input type="checkbox" class="filter-check" data-type="perm" data-val="permAdd"> Toevoegen</label>
+                        <label><input type="checkbox" class="filter-check" data-type="perm" data-val="permModify"> Bewerken</label>
+                        <label><input type="checkbox" class="filter-check" data-type="perm" data-val="permManage"> Beheren</label>
+                </div>
+            </div>
+            <div class="field-stack">
+                <span class="label">Obligations</span>
+                <div class="option-row">
+                    <label><input type="checkbox" class="filter-check" data-type="duty" data-val="delete"> Verwijderen</label>
+                    <label><input type="checkbox" class="filter-check" data-type="duty" data-val="anonymize"> Anonymiseren</label>
+                    <label><input type="checkbox" class="filter-check" data-type="duty" data-val="encrypt"> Encrypteren</label>
+                    <label><input type="checkbox" class="filter-check" data-type="duty" data-val="notify"> Melden</label>
+                </div>
+            </div>
+
+            <div class="field-stack">
+                <span class="label">Pod Filter</span>
+                <select id="pod-select" multiple placeholder="Selecteer pods..."></select>
+            </div>
+        </div>
+
+        <hr class="ctrl-divider">
+
+        <div class="ctrl-lane context-lane">
+            <div class="field-stack">
+                <span class="label">Startbeperking</span>
+                <div class="input-group">
+                    <select id="start-logic">
+                        <option value="any">Onbeperkt</option>
+                        <option value="after">Na</option>
+                        <option value="before">Vóór</option>
+                        <option value="exact">Op datum</option>
+                    </select>
+                    <input type="date" id="start-date">
+                </div>
+            </div>
+            <div class="field-stack">
+                <span class="label">Einde / Geldigheid</span>
+                <div class="input-group">
+                    <select id="end-logic">
+                        <option value="any">Onbeperkt</option>
+                        <option value="after">Na</option>
+                        <option value="before">Vóór</option>
+                        <option value="exact">Op datum</option>
+                    </select>
+                    <input type="date" id="end-date">
+                </div>
+            </div>
+            <div class="field-stack">
+                <span class="label">Locatie</span>
+                <input type="text" id="filter-location" placeholder="e.g. Belgium">
+            </div>
+            <div class="field-stack">
+                <span class="label">Maximaal gebruik</span>
+                <input type="number" id="filter-usage" placeholder="0">
+            </div>
+        </div>
+    </div>
+
+    <div class="audit-results">
+        <table id="master-table">
+            <thead>
+                <tr>
+                    <th style="width: 80px;">ID</th>
+                    <th style="width: 25%;">Broncontext</th>
+                    <th style="width: 15%;">Consument</th>
+                    <th style="width: 18%;">Doeleinden</th>
+                    <th>Rechten & Plichten</th>
+                    <th style="width: 100px;">Audit</th>
+                </tr>
+            </thead>
+            <tbody id="audit-tbody"></tbody>
+        </table>
+    </div>
+
+    <div class="audit-nav">
+        <div id="status-text">0 regels gevonden</div>
+        <div class="pager-btns">
+            <button id="prev-btn">Vorige</button>
+            <span id="page-label">Pagina 1</span>
+            <button id="next-btn">Volgende</button>
+        </div>
+    </div>
+
+    <div id="summary-display">
+        <div class="summary-title">Uitleg van geselecteerde policy</div>
+        <div id="summary-content" class="empty">Gedetailleerde samenvatting verschijnt hier.</div>
+    </div>
+</div>

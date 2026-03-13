@@ -7,11 +7,11 @@
       "instructions": "This is an example of a fully completed policy. This example shows how Jane Doe granted her husband (Bob Smith) <b>full access</b> to <b>all</b> her private files. The husband can <b>view, add, and modify</b> all private documents. No purpose limitations, time constraints, or location restrictions apply. This example is ONLY provided so you understand what a complete and valid policy can look like. Do not change anything in this example.",
       "params": [
         {
-          "label": "Husband (example actor)",
+          "label": "Husband (Bob Smith)",
           "value": "https://solidweb.me/BobSmith/profile/card"
         },
         {
-          "label": "All private files of Jane Doe (very sensitive)",
+          "label": "All private files of Jane Doe",
           "value": "https://solidweb.me/JaneDoe/Private"
         },
         {
@@ -19,7 +19,7 @@
           "value": "https://solidweb.me/JaneDoe/Private/Finances"
         },
         {
-          "label": "Passwords vault (highly sensitive)",
+          "label": "Passwords vault of Jane Doe",
           "value": "https://solidweb.me/JaneDoe/Private/Passwords_Vault.txt"
         },
         {
@@ -42,7 +42,7 @@
       "id": "example-0000",
       "description": "Example: Husband has full access to all private files of Jane Doe without restrictions.",
       "provider": "https://solidweb.me/JaneDoe/profile/card",
-      "consumer": "https://solidweb.me/BobSmoth/profile/card",
+      "consumer": "https://solidweb.me/BobSmith/profile/card",
       "dataUri": "https://solidweb.me/JaneDoe/Private",
       "permissions": {
         "permRead": true,
@@ -55,11 +55,7 @@
           "all:all"
         ],
         "useStartTime": true,
-        "StartTime": "2020-01-11T09:23",
-        "useEndTime": false,
-        "EndTime": "",
-        "useLocation": false,
-        "Location": ""
+        "StartTime": "2020-01-11T09:23"
       }
     }
   },
@@ -83,23 +79,35 @@
           "value": "https://solidweb.me/JaneDoe"
         },
         {
+          "label": "All data of Alice Smith (entire pod)",
+          "value": "https://solidweb.me/AliceSmith"
+        },
+        {
           "label": "Personal information and documents of Jane Doe",
           "value": "https://solidweb.me/JaneDoe/Personal"
         },
         {
-          "label": "Private files belonging to Jane Doe (sensitive)",
+          "label": "Personal information and documents of Alice Smith",
+          "value": "https://solidweb.me/AliceSmith/Personal"
+        },
+        {
+          "label": "Private files belonging to Jane Doe",
           "value": "https://solidweb.me/JaneDoe/Private"
+        },
+        {
+          "label": "Private files belonging to Alice Smith",
+          "value": "https://solidweb.me/AliceSmith/Private"
         },
         {
           "label": "Purpose – Account Management",
           "value": "dpv:AccountManagement"
         },
         {
-          "label": "Purpose – Organisation Governance (related)",
+          "label": "Purpose – Organisation Governance",
           "value": "dpv:OrganisationGovernance"
         },
         {
-          "label": "Purpose – Advertising (not relevant)",
+          "label": "Purpose – Advertising",
           "value": "dpv:Advertising"
         },
         {
@@ -126,8 +134,48 @@
       "instructions": "Your mother (Jane Doe), needs help handling her permissions. Create a policy that would temporarily give You (Alice Smith) full control over <b>all data of Jane Doe's Pod</b>. You must be able to <b>view</b>, <b>add</b>, and <b>update</b> information across her entire pod, and also <b>manage</b> the access for a short period. Apply this policy to the <b>entire pod</b>, including her personal information, medical documents, legal files, and public materials.\n\nUse the purpose <b>Account Management</b>. Limit the access strictly to a <b>2‑month</b> window and do not include any other actors.",
       "params": [
         {
+          "label": "You (Alice Smith)",
+          "value": "https://solidweb.me/AliceSmith/profile/card"
+        },
+        {
+          "label": "Mother (Jane Doe)",
+          "value": "https://solidweb.me/JaneDoe/profile/card"
+        },
+        {
           "label": "All data of Jane Doe (entire pod)",
           "value": "https://solidweb.me/JaneDoe"
+        },
+        {
+          "label": "All data of Alice Smith (entire pod)",
+          "value": "https://solidweb.me/AliceSmith"
+        },
+        {
+          "label": "Personal information and documents of Jane Doe",
+          "value": "https://solidweb.me/JaneDoe/Personal"
+        },
+        {
+          "label": "Personal information and documents of Alice Smith",
+          "value": "https://solidweb.me/AliceSmith/Personal"
+        },
+        {
+          "label": "Private files belonging to Jane Doe",
+          "value": "https://solidweb.me/JaneDoe/Private"
+        },
+        {
+          "label": "Private files belonging to Alice Smith",
+          "value": "https://solidweb.me/AliceSmith/Private"
+        },
+        {
+          "label": "Purpose – Account Management",
+          "value": "dpv:AccountManagement"
+        },
+        {
+          "label": "Purpose – Organisation Governance",
+          "value": "dpv:OrganisationGovernance"
+        },
+        {
+          "label": "Purpose – Advertising",
+          "value": "dpv:Advertising"
         },
         {
           "label": "Location – Europe",
@@ -150,38 +198,42 @@
     "title": "Create a policy",
     "type": "create",
     "sidebar": {
-      "instructions": "Your mother Jane Doe is following physical therapy at <b>MoveWell Clinic</b>. The physiotherapist needs to review her <b>2026 medical records</b> and record new sessions.\n\nCreate a policy that allows the <b>physiotherapist from MoveWell Clinic</b> to <b>view</b> all medical documents from 2026, <b>add</b> new therapy notes, and <b>adjust</b> existing therapy notes if corrections are needed. The physiotherapist must <b>not</b> be able to delete records or change who else has access. Apply the policy to the <b>relevant 2026 medical folder and therapy notes</b> only. Give her access until the <b>end of the year</b>.",
+      "instructions": "Your mother Jane Doe is following physical therapy at <b>MoveWell Clinic</b>. The physiotherapist needs to review her <b>2026 medical records</b> for and record new sessions for the purpose of healthcare service management.\n\nCreate a policy that allows the <b>physiotherapist from MoveWell Clinic</b> to <b>view</b> all medical documents from 2026, <b>add</b> new therapy notes, and <b>adjust</b> existing therapy notes if corrections are needed. The physiotherapist must <b>not</b> be able to change who else has access. Apply the policy to the <b>relevant 2026 medical folder and therapy notes</b> only. Give her access until the <b>end of the year</b>.",
       "params": [
         {
-          "label": "Physiotherapist from MoveWell Clinic",
-          "value": "https://solidweb.me/physio-movewell/profile/card"
-        },
-        {
-          "label": "Doctor Van der Velden (related)",
+          "label": "Doctor Van der Velden (GP)",
           "value": "https://solidweb.me/doctor-van-der-velden/profile/card"
         },
         {
-          "label": "Nurse Evy (home care, related)",
-          "value": "https://solidweb.me/nurse-evy/profile/card"
+          "label": "You (Alice Smith)",
+          "value": "https://solidweb.me/AliceSmith/profile/card"
         },
         {
-          "label": "Medical documents of Jane Doe for the year 2026",
-          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026"
+          "label": "Physiotherapist (MoveWell Clinic)",
+          "value": "https://solidweb.me/physio-movewell/profile/card"
+        },
+        {
+          "label": "Nurse Evy (home care)",
+          "value": "https://solidweb.me/nurse-evy/profile/card"
         },
         {
           "label": "Physical therapy notes for Jane Doe (2026)",
           "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Physio_Notes.ttl"
         },
         {
+          "label": "Medical documents of Jane Doe for the year 2026",
+          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026"
+        },
+        {
+          "label": "Purpose – Optimisation of care",
+          "value": "sector-health:Optimisation"
+        },
+        {
           "label": "Purpose – Healthcare service management",
           "value": "sector-health:HealthcareServiceManagement"
         },
         {
-          "label": "Purpose – Optimisation of care (related)",
-          "value": "sector-health:Optimisation"
-        },
-        {
-          "label": "Purpose – Advertising (not relevant)",
+          "label": "Purpose – Advertising",
           "value": "dpv:Advertising"
         },
         {
@@ -205,11 +257,43 @@
     "title": "Create a policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Your mother Jane Doe is following physical therapy at <b>MoveWell Clinic</b>. The physiotherapist needs to review her <b>2026 medical records</b> and record new sessions.\n\nCreate a policy that allows the <b>physiotherapist from MoveWell Clinic</b> to <b>view</b> all medical documents from 2026, <b>add</b> new therapy notes, and <b>adjust</b> existing therapy notes if corrections are needed. The physiotherapist must <b>not</b> be able to delete records or change who else has access. Apply the policy to the <b>relevant 2026 medical folder and therapy notes</b> only. Give her access until the <b>end of the year</b>.",
+      "instructions": "Your mother Jane Doe is following physical therapy at <b>MoveWell Clinic</b>. The physiotherapist needs to review her <b>2026 medical records</b> for and record new sessions for the purpose of healthcare service management.\n\nCreate a policy that allows the <b>physiotherapist from MoveWell Clinic</b> to <b>view</b> all medical documents from 2026, <b>add</b> new therapy notes, and <b>adjust</b> existing therapy notes if corrections are needed. The physiotherapist must <b>not</b> be able to change who else has access. Apply the policy to the <b>relevant 2026 medical folder and therapy notes</b> only. Give her access until the <b>end of the year</b>.",
       "params": [
+        {
+          "label": "Doctor Van der Velden (GP)",
+          "value": "https://solidweb.me/doctor-van-der-velden/profile/card"
+        },
+        {
+          "label": "You (Alice Smith)",
+          "value": "https://solidweb.me/AliceSmith/profile/card"
+        },
+        {
+          "label": "Physiotherapist (MoveWell Clinic)",
+          "value": "https://solidweb.me/physio-movewell/profile/card"
+        },
+        {
+          "label": "Nurse Evy (home care)",
+          "value": "https://solidweb.me/nurse-evy/profile/card"
+        },
+        {
+          "label": "Physical therapy notes for Jane Doe (2026)",
+          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Physio_Notes.ttl"
+        },
         {
           "label": "Medical documents of Jane Doe for the year 2026",
           "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026"
+        },
+        {
+          "label": "Purpose – Optimisation of care",
+          "value": "sector-health:Optimisation"
+        },
+        {
+          "label": "Purpose – Healthcare service management",
+          "value": "sector-health:HealthcareServiceManagement"
+        },
+        {
+          "label": "Purpose – Advertising",
+          "value": "dpv:Advertising"
         },
         {
           "label": "Location – Europe",
@@ -283,27 +367,51 @@
     "title": "Create a policy",
     "type": "create",
     "sidebar": {
-      "instructions": "Jane Doe has agreed to participate in a local research effort in her city. <br>Create a policy that allows the <b>research team (via her primary doctor)</b> to <b>view</b> relevant information from her medical records for the next year. They should not be able to change or manage access. Apply this policy to her <b>medical data</b> in general, without including private or unrelated personal folders. Use the purpose <b>Research and Development</b>. Also make sure her data is used <b>anonymously</b>.",
+      "instructions": "Jane Doe has agreed to participate in a local research effort in her city. <br>Create a policy that allows the <b>research team via her primary doctor (Doctor Van der Velden)</b> to <b>view</b> relevant information from her medical records for the <b>entire year</b>. They should not be able to change or manage access. Apply this policy to her <b>medical data</b> in general, without including private or unrelated personal folders. Use the purpose <b>Research and Development</b>. Also make sure her data is used <b>anonymously</b>.",
       "params": [
+        {
+          "label": "You (Alice Smith)",
+          "value": "https://solidweb.me/AliceSmith/profile/card"
+        },
+        {
+          "label": "Physiotherapist (MoveWell Clinic)",
+          "value": "https://solidweb.me/physio-movewell/profile/card"
+        },
         {
           "label": "Doctor Van der Velden (research contact)",
           "value": "https://solidweb.me/doctor-van-der-velden/profile/card"
+        },
+        {
+          "label": "Nurse Evy (home care)",
+          "value": "https://solidweb.me/nurse-evy/profile/card"
+        },
+        {
+          "label": "Medical documents of Jane Doe for the year 2026",
+          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026"
+        },
+        {
+          "label": "Medical documents of Alice Smith for the year 2026",
+          "value": "https://solidweb.me/AliceSmith/Personal/Medical/2026"
+        },
+        {
+          "label": "All medical data of Alice Smith",
+          "value": "https://solidweb.me/AliceSmith/Personal/Medical"
         },
         {
           "label": "All medical data of Jane Doe",
           "value": "https://solidweb.me/JaneDoe/Personal/Medical"
         },
         {
+          "label": "Purpose – Academic research",
+          "value": "dpv:AcademicResearch"
+        },
+        {
           "label": "Purpose – Research and Development",
           "value": "sector-health:ResearchDevelopment"
         },
         {
-          "label": "Purpose – Academic research (related)",
-          "value": "dpv:AcademicResearch"
-        },
-        {
-          "label": "Purpose – Marketing (not relevant)",
-          "value": "dpv:Marketing"
+          "label": "Purpose – HealthcareServiceManagement",
+          "value": "sector-health:HealthcareServiceManagement"
         },
         {
           "label": "Location – Europe",
@@ -326,27 +434,51 @@
     "title": "Create a policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Jane Doe has agreed to participate in a local research effort in her city. <br>Create a policy that allows the <b>research team (via her primary doctor)</b> to <b>view</b> relevant information from her medical records for the next year. They should not be able to change or manage access. Apply this policy to her <b>medical data</b> in general, without including private or unrelated personal folders. Use the purpose <b>Research and Development</b>. Also make sure her data is used <b>anonymously</b>.",
+      "instructions": "Jane Doe has agreed to participate in a local research effort in her city. <br>Create a policy that allows the <b>research team via her primary doctor (Doctor Van der Velden)</b> to <b>view</b> relevant information from her medical records for the <b>entire year</b>. They should not be able to change or manage access. Apply this policy to her <b>medical data</b> in general, without including private or unrelated personal folders. Use the purpose <b>Research and Development</b>. Also make sure her data is used <b>anonymously</b>.",
       "params": [
+        {
+          "label": "You (Alice Smith)",
+          "value": "https://solidweb.me/AliceSmith/profile/card"
+        },
+        {
+          "label": "Physiotherapist (MoveWell Clinic)",
+          "value": "https://solidweb.me/physio-movewell/profile/card"
+        },
         {
           "label": "Doctor Van der Velden (research contact)",
           "value": "https://solidweb.me/doctor-van-der-velden/profile/card"
+        },
+        {
+          "label": "Nurse Evy (home care)",
+          "value": "https://solidweb.me/nurse-evy/profile/card"
+        },
+        {
+          "label": "Medical documents of Jane Doe for the year 2026",
+          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026"
+        },
+        {
+          "label": "Medical documents of Alice Smith for the year 2026",
+          "value": "https://solidweb.me/AliceSmith/Personal/Medical/2026"
+        },
+        {
+          "label": "All medical data of Alice Smith",
+          "value": "https://solidweb.me/AliceSmith/Personal/Medical"
         },
         {
           "label": "All medical data of Jane Doe",
           "value": "https://solidweb.me/JaneDoe/Personal/Medical"
         },
         {
+          "label": "Purpose – Academic research",
+          "value": "dpv:AcademicResearch"
+        },
+        {
           "label": "Purpose – Research and Development",
           "value": "sector-health:ResearchDevelopment"
         },
         {
-          "label": "Purpose – Academic research (related)",
-          "value": "dpv:AcademicResearch"
-        },
-        {
-          "label": "Purpose – Marketing (not relevant)",
-          "value": "dpv:Marketing"
+          "label": "Purpose – HealthcareServiceManagement",
+          "value": "sector-health:HealthcareServiceManagement"
         },
         {
           "label": "Location – Europe",
@@ -372,7 +504,7 @@
       "instructions": "Jane Doe no longer receives home nursing from <b>Wit‑Gele Kruis</b>.<br>Find and list any existing policy that would still allow Wit‑Gele Kruis to access her records.",
       "select": {
         "title": "Policies",
-        "options": ["p-0048", "p-0049", "p-0083", "p-0120", "p-0130", "p-0132", "p-0137", "p-0156", "p-0166", "p-0173", "p-0191", "p-0214", "p-0218", "p-0226", "p-0295", "p-0300", "p-0306", "p-0309", "p-0345", "p-0350", "p-0352", "p-0363", "p-0377", "p-0401", "p-0402"]
+        "options": ["p-0003", "p-0007", "p-0010", "p-0013", "p-0014", "p-0015", "p-0016", "p-0020", "p-0021", "p-0025", "p-0031", "p-0032", "p-0049"]
       }
     },
     "body": {}
@@ -391,8 +523,12 @@
     "title": "Create a policy",
     "type": "create",
     "sidebar": {
-      "instructions": "Your mother (Jane Doe), is filing an insurance claim for a foot injury.<br><b>AG Health Insurance</b> need a policy that allows them to <b>view</b> the medical documents that relates to her <b>foot injury</b> for <b>one month</b>. They should not be able to modify any files or manage access, and delete all data when the access ends. They proposed a policy that would give them <b>more access than needed</b> review the policy and make changes to make it match the requirements.",
+      "instructions": "Your mother (Jane Doe), is filing an insurance claim for a foot injury.<br><b>AG Health Insurance</b> need a policy that allows them to <b>view</b> the medical documents that relates to her <b>foot injury</b> for <b>one month</b>. They should not be able to <b>add</b> or <b>modify</b> any files. They should also <b>delete all data</b> when the access ends. They proposed a policy that would give them <b>more access than needed</b> review the policy and make changes to make it match the requirements.",
       "params": [
+        {
+          "label": "You (Alice Smith)",
+          "value": "https://solidweb.me/AliceSmith/profile/card"
+        },
         {
           "label": "AG Health Insurance",
           "value": "https://solidweb.me/insurance-ag-health/profile/card"
@@ -464,8 +600,12 @@
     "title": "Create a policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Your mother (Jane Doe), is filing an insurance claim for a foot injury.<br><b>AG Health Insurance</b> need a policy that allows them to <b>view</b> the medical documents that relates to her <b>foot injury</b> for <b>one month</b>. They should not be able to modify any files or manage access, and delete all data when the access ends. They proposed a policy that would give them <b>more access than needed</b> review the policy and make changes to make it match the requirements.",
+      "instructions": "Your mother (Jane Doe), is filing an insurance claim for a foot injury.<br><b>AG Health Insurance</b> need a policy that allows them to <b>view</b> the medical documents that relates to her <b>foot injury</b> for <b>one month</b>. They should not be able to <b>add</b> or <b>modify</b> any files. They should also <b>delete all data</b> when the access ends. They proposed a policy that would give them <b>more access than needed</b> review the policy and make changes to make it match the requirements.",
       "params": [
+        {
+          "label": "You (Alice Smith)",
+          "value": "https://solidweb.me/AliceSmith/profile/card"
+        },
         {
           "label": "AG Health Insurance",
           "value": "https://solidweb.me/insurance-ag-health/profile/card"
@@ -555,19 +695,23 @@
     "title": "Create a policy",
     "type": "create",
     "sidebar": {
-      "instructions": "Create a new policy so Mr. Lambert retains access <b>only</b> to your <b>contact information</b> for the next <b>six months</b>.<br>He should be able to <b>view</b> your address and phone number etc. so he can reach you for any closing matters, but he should not be able to change your details or manage access.",
+      "instructions": "Create a new policy so Mr. Lambert (former landlord) retains access <b>only</b> to your <b>contact information</b> for the next <b>six months</b>.He should have <b>view</b> access so he can see your address, phone number, and related details for <b>legal compliance</b> purposes.",
       "params": [
+        {
+          "label": "You (Alice Smith)",
+          "value": "https://solidweb.me/AliceSmith/profile/card"
+        },
         {
           "label": "Mr. Lambert (former landlord)",
           "value": "https://solidweb.me/landlord-mr-lambert/profile/card"
         },
         {
-          "label": "Official contact information of Alice Smith",
-          "value": "https://solidweb.me/AliceSmith/Personal/Contact"
-        },
-        {
           "label": "Official home address of Alice Smith",
           "value": "https://solidweb.me/AliceSmith/Personal/Contact/address.ttl"
+        },
+        {
+          "label": "Official contact information of Alice Smith",
+          "value": "https://solidweb.me/AliceSmith/Personal/Contact"
         },
         {
           "label": "Phone number and contact data for Alice Smith",
@@ -606,19 +750,23 @@
     "title": "Create a policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Create a new policy so Mr. Lambert retains access <b>only</b> to your <b>contact information</b> for the next <b>six months</b>.<br>He should be able to <b>view</b> your address and phone number etc. so he can reach you for any closing matters, but he should not be able to change your details or manage access.",
+      "instructions": "Create a new policy so Mr. Lambert (former landlord) retains access <b>only</b> to your <b>contact information</b> for the next <b>six months</b>.He should have <b>view</b> access so he can see your address, phone number, and related details for <b>legal compliance</b> purposes.",
       "params": [
+        {
+          "label": "You (Alice Smith)",
+          "value": "https://solidweb.me/AliceSmith/profile/card"
+        },
         {
           "label": "Mr. Lambert (former landlord)",
           "value": "https://solidweb.me/landlord-mr-lambert/profile/card"
         },
         {
-          "label": "Official contact information of Alice Smith",
-          "value": "https://solidweb.me/AliceSmith/Personal/Contact"
-        },
-        {
           "label": "Official home address of Alice Smith",
           "value": "https://solidweb.me/AliceSmith/Personal/Contact/address.ttl"
+        },
+        {
+          "label": "Official contact information of Alice Smith",
+          "value": "https://solidweb.me/AliceSmith/Personal/Contact"
         },
         {
           "label": "Phone number and contact data for Alice Smith",
@@ -810,7 +958,7 @@
       "instructions": "Your mother (Jane Doe) gave a lot of people permission to contact her. List <b>all</b> actors who have access to her contact information.",
       "params": [
         {
-          "label": "Person – Jane Doe",
+          "label": "Mother (Jane Doe)",
           "value": "https://solidweb.me/JaneDoe/profile/card"
         },
         {
@@ -820,7 +968,7 @@
       ],
       "select": {
         "title": "Actors",
-        "options": []
+        "options": ["acme-corp", "ah-belgium", "AliceSmith", "bolcom", "bpost", "carecenter-the-tree", "carol-green", "carrefour-belgium", "city-of-bruges", "city-of-ghent", "colruyt", "coolblue", "countrybank", "delhaize", "dietician-green-plate", "doctor-van-der-velden", "farmfresh-veggies", "food-delivery-lotus", "insurance-ag-health", "insurance-kbc-home", "landlord-mr-lambert", "nurse-evy", "okay-delivery", "physio-movewell", "ugent-research", "wit-gele-kruis"]
       }
     },
     "body": {}
@@ -833,7 +981,7 @@
       "instructions": "Your mother (Jane Doe) gave a lot of people permission to contact her. List <b>all</b> actors who have access to her contact information.",
       "params": [
         {
-          "label": "Person – Jane Doe",
+          "label": "Mother (Jane Doe)",
           "value": "https://solidweb.me/JaneDoe/profile/card"
         },
         {
@@ -852,7 +1000,7 @@
       "instructions": "Some policies may unintentionally grant highly intrusive permissions. Review all existing policies and identify any that allow an actor to <b>manage</b> access. Managing access is a powerful capability and often <b>unnecessary</b> for most actors. Select <b>all</b> policies that include this intrusive permission.",
       "select": {
         "title": "Policies",
-        "options": []
+        "options": ["p-0001",  "p-0042",  "p-0075",  "p-0090",  "p-0108",  "p-0122",  "p-0137",  "p-0153",  "p-0160",  "p-0164",  "p-0167",  "p-0168",  "p-0169",  "p-0170",  "p-0170"]
       }
     },
     "body": {}
@@ -884,7 +1032,7 @@
       ],
       "select": {
         "title": "Actors",
-        "options": []
+        "options": ["acme-corp", "ah-belgium", "AliceSmith", "bolcom", "bpost", "carecenter-the-tree", "carol-green", "carrefour-belgium", "city-of-bruges", "city-of-ghent", "colruyt", "coolblue", "countrybank", "delhaize", "dietician-green-plate", "doctor-van-der-velden", "farmfresh-veggies", "food-delivery-lotus", "insurance-ag-health", "insurance-kbc-home", "landlord-mr-lambert", "nurse-evy", "okay-delivery", "physio-movewell", "ugent-research", "wit-gele-kruis"]
       }
     },
     "body": {}
@@ -916,11 +1064,11 @@
       "instructions": "Alice's former landlord (Mr. Lambert) may still have limited access for follow‑up administrative matters after she moved out. Figure out for <b>how long</b> he can still have Alice's <b>contact information</b>.",
       "params": [
         {
-          "label": "Landlord – Mr. Lambert",
+          "label": "Mr. Lambert (former landlord)",
           "value": "https://solidweb.me/landlord-mr-lambert/profile/card"
         },
         {
-          "label": "Person – Alice Smith",
+          "label": "You (Alice Smith)",
           "value": "https://solidweb.me/AliceSmith/profile/card"
         },
         {
@@ -929,8 +1077,8 @@
         }
       ],
       "select": {
-        "title": "Durations",
-        "options": []
+        "title": "Months",
+        "options": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "24"]
       }
     },
     "body": {}
@@ -943,11 +1091,11 @@
       "instructions": "Alice's former landlord (Mr. Lambert) may still have limited access for follow‑up administrative matters after she moved out. Figure out for <b>how long</b> he can still have Alice's <b>contact information</b>.",
       "params": [
         {
-          "label": "Landlord – Mr. Lambert",
+          "label": "Mr. Lambert (former landlord)",
           "value": "https://solidweb.me/landlord-mr-lambert/profile/card"
         },
         {
-          "label": "Person – Alice Smith",
+          "label": "You (Alice Smith)",
           "value": "https://solidweb.me/AliceSmith/profile/card"
         },
         {
@@ -966,11 +1114,11 @@
       "instructions": "As perviously mentioned Alice's former landlord (Mr. Lambert) can still contact her if nessecary. What are the <b>purposes</b> he could contact her for?",
       "params": [
         {
-          "label": "Landlord – Mr. Lambert",
+          "label": "Mr. Lambert (former landlord)",
           "value": "https://solidweb.me/landlord-mr-lambert/profile/card"
         },
         {
-          "label": "Person – Alice Smith",
+          "label": "You (Alice Smith)",
           "value": "https://solidweb.me/AliceSmith/profile/card"
         },
         {
@@ -980,7 +1128,7 @@
       ],
       "select": {
         "title": "Purposes",
-        "options": []
+        "options": ["AccountManagement", "CustomerCare", "HealthcareServiceManagement", "LegalCompliance", "Marketing"]
       }
     },
     "body": {}
@@ -993,11 +1141,11 @@
       "instructions": "As perviously mentioned Alice's former landlord (Mr. Lambert) can still contact her if nessecary. What are the <b>purposes</b> he could contact her for?",
       "params": [
         {
-          "label": "Landlord – Mr. Lambert",
+          "label": "Mr. Lambert (former landlord)",
           "value": "https://solidweb.me/landlord-mr-lambert/profile/card"
         },
         {
-          "label": "Person – Alice Smith",
+          "label": "You (Alice Smith)",
           "value": "https://solidweb.me/AliceSmith/profile/card"
         },
         {
@@ -1016,7 +1164,7 @@
       "instructions": "Editing permissions can significantly impact data integrity and privacy. List every actor who has <b>modify</b> permissions on <b>any file</b>. These permissions allow the actor to alter existing content. List <b>all actors</b> who can modify at least one file.",
       "select": {
         "title": "Actors",
-        "options": []
+        "options": ["acme-corp", "acme-smartwatch", "ah-belgium", "AliceSmith", "bolcom", "bpost", "carecenter-the-tree", "carol-green", "carrefour-belgium", "city-of-bruges", "city-of-ghent", "colruyt", "coolblue", "countrybank", "dave-black", "delhaize", "dentist-bruges-smile", "dietician-green-plate", "doctor-van-der-velden", "doctor-verbeeck", "farmfresh-veggies", "food-delivery-lotus", "GhentDataCollection", "insurance-ag-health", "insurance-kbc-home", "landlord-mr-lambert", "nurse-evy", "okay-delivery", "physio-movewell", "ugent-research", "wit-gele-kruis"]
       }
     },
     "body": {}
@@ -1035,15 +1183,15 @@
     "title": "Find duties of UGent regarding Alice Smith's medical data",
     "type": "find",
     "sidebar": {
-      "instructions": "UGent may access and process of your (Alice Smith) medical information. Duties determine what UGent must do when handling this data. List <b>all duties</b> Ugent has to follow in order to use <b>your medical data</b> in studies.",
+      "instructions": "UGent may access and process of <b>your</b> (Alice Smith) medical information. Duties determine what UGent must do when handling this data. List <b>all duties</b> Ugent has to follow in order to use <b>your medical data</b> in studies.",
       "params": [
         {
-          "label": "Actor – UGent",
-          "value": "https://solidweb.me/ugent/profile/card"
+          "label": "UGent-research",
+          "value": "https://solidweb.me/ugent-research/profile/card"
         },
         {
-          "label": "Actor – you (Alice Smith)",
-          "value": "https://solidweb.me/ugent/profile/card"
+          "label": "You (Alice Smith)",
+          "value": "https://solidweb.me/AliceSmith/profile/card"
         },
         {
           "label": "Medical data of Alice Smith",
@@ -1052,7 +1200,7 @@
       ],
       "select": {
         "title": "Duties",
-        "options": ["Delete", "Anonymize", "Notify", "Encrypt"]
+        "options": ["Anonymize", "Delete", "Encrypt", "Notify"]
       }
     },
     "body": {}
@@ -1062,15 +1210,15 @@
     "title": "Find duties of UGent regarding Alice Smith's medical data",
     "type": "review",
     "sidebar": {
-      "instructions": "UGent may access and process of your (Alice Smith) medical information. Duties determine what UGent must do when handling this data. List <b>all duties</b> Ugent has to follow in order to use <b>your medical data</b> in studies.",
+      "instructions": "UGent may access and process of <b>your</b> (Alice Smith) medical information. Duties determine what UGent must do when handling this data. List <b>all duties</b> Ugent has to follow in order to use <b>your medical data</b> in studies.",
       "params": [
         {
-          "label": "Actor – UGent",
-          "value": "https://solidweb.me/ugent/profile/card"
+          "label": "UGent-research",
+          "value": "https://solidweb.me/ugent-research/profile/card"
         },
         {
-          "label": "Actor – you (Alice Smith)",
-          "value": "https://solidweb.me/ugent/profile/card"
+          "label": "You (Alice Smith)",
+          "value": "https://solidweb.me/AliceSmith/profile/card"
         },
         {
           "label": "Medical data of Alice Smith",
@@ -1085,16 +1233,20 @@
     "title": "Find who can contact Alice only from inside Belgium",
     "type": "find",
     "sidebar": {
-      "instructions": "Some policies include geographic restrictions that limit access to actors' physical location'. List all actors who can only access your (Alice Smith) <b>contact information</b> while they are inside <b>Belgium</b>.",
+      "instructions": "Some policies include geographic restrictions that limit access to actors' physical location'. List all actors who can only access <b>your</b> (Alice Smith) <b>contact information</b> while they are inside <b>Belgium</b>.",
       "params": [
+        {
+          "label": "All contact information of AliceSmith",
+          "value": "https://solidweb.me/AliceSmith/Personal/Contact"
+        },
         {
           "label": "Location – Belgium",
           "value": "http://Europe/Belgium"
         }
       ],
       "select": {
-        "title": "Policies",
-        "options": []
+        "title": "Actors",
+        "options": ["acme-corp", "ah-belgium", "AliceSmith", "bolcom", "bpost", "carecenter-the-tree", "carol-green", "carrefour-belgium", "city-of-bruges", "city-of-ghent", "colruyt", "coolblue", "countrybank", "delhaize", "dietician-green-plate", "doctor-van-der-velden", "farmfresh-veggies", "food-delivery-lotus", "insurance-ag-health", "insurance-kbc-home", "landlord-mr-lambert", "nurse-evy", "okay-delivery", "physio-movewell", "ugent-research", "wit-gele-kruis"]
       }
     },
     "body": {}
@@ -1104,8 +1256,12 @@
     "title": "Find who can contact Alice only from inside Belgium",
     "type": "review",
     "sidebar": {
-      "instructions": "Some policies include geographic restrictions that limit access to actors' physical location'. List all actors who can only access your (Alice Smith) <b>contact information</b> while they are inside <b>Belgium</b>.",
+      "instructions": "Some policies include geographic restrictions that limit access to actors' physical location'. List all actors who can only access <b>your</b> (Alice Smith) <b>contact information</b> while they are inside <b>Belgium</b>.",
       "params": [
+        {
+          "label": "All contact information of AliceSmith",
+          "value": "https://solidweb.me/AliceSmith/Personal/Contact"
+        },
         {
           "label": "Location – Belgium",
           "value": "http://Europe/Belgium"
@@ -1128,7 +1284,7 @@
       ],
       "select": {
         "title": "Files",
-        "options": []
+        "options": ["2025", "2026", "BirthCert.pdf", "Contact (Alice)", "Contact (Jane)", "Daily_Steps.json", "Employment_Contract.pdf", "ID_card.pdf", "Medical", "Sleep_Data.csv"]
       }
     },
     "body": {}

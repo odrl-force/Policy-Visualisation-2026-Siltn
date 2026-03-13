@@ -523,7 +523,9 @@ function generatePolicyText(p) {
             <ul>
                 ${purposes.map(pt => {
                     const option = PURPOSES.options.find(opt => opt.value === pt);
-                    return `<li>${option ? option.desc : pt}</li>`;
+                    return option
+                        ? `<li><b>${option.name}</b> – ${option.desc}</li>`
+                        : `<li>${pt}</li>`;
                 }).join('')}
             </ul>`;
     }

@@ -198,7 +198,7 @@
     "title": "Create a policy",
     "type": "create",
     "sidebar": {
-      "instructions": "Your mother Jane Doe is following physical therapy at <b>MoveWell Clinic</b>. The physiotherapist needs to review her <b>2026 medical records</b> for and record new sessions for the purpose of healthcare service management.\n\nCreate a policy that allows the <b>physiotherapist from MoveWell Clinic</b> to <b>view</b> all medical documents from 2026, <b>add</b> new therapy notes, and <b>adjust</b> existing therapy notes if corrections are needed. The physiotherapist must <b>not</b> be able to change who else has access. Apply the policy to the <b>relevant 2026 medical folder and therapy notes</b> only. Give her access until the <b>end of the year</b>.",
+      "instructions": "Your mother (Jane Doe) is following physical therapy at <b>MoveWell Clinic</b>. The physiotherapist needs to review her <b>2026 medical records</b> for and record new sessions for the purpose of healthcare service management.\n\nCreate a policy that allows the <b>physiotherapist from MoveWell Clinic</b> to <b>view</b> all medical documents from 2026, <b>add</b> new therapy notes, and <b>adjust</b> existing therapy notes if corrections are needed. The physiotherapist must <b>not</b> be able to change who else has access. Apply the policy to the <b>relevant 2026 medical folder and therapy notes</b> only. Give her access until the <b>end of the year</b>.",
       "params": [
         {
           "label": "Doctor Van der Velden (GP)",
@@ -257,7 +257,7 @@
     "title": "Create a policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Your mother Jane Doe is following physical therapy at <b>MoveWell Clinic</b>. The physiotherapist needs to review her <b>2026 medical records</b> for and record new sessions for the purpose of healthcare service management.\n\nCreate a policy that allows the <b>physiotherapist from MoveWell Clinic</b> to <b>view</b> all medical documents from 2026, <b>add</b> new therapy notes, and <b>adjust</b> existing therapy notes if corrections are needed. The physiotherapist must <b>not</b> be able to change who else has access. Apply the policy to the <b>relevant 2026 medical folder and therapy notes</b> only. Give her access until the <b>end of the year</b>.",
+      "instructions": "Your mother (Jane Doe) is following physical therapy at <b>MoveWell Clinic</b>. The physiotherapist needs to review her <b>2026 medical records</b> for and record new sessions for the purpose of healthcare service management.\n\nCreate a policy that allows the <b>physiotherapist from MoveWell Clinic</b> to <b>view</b> all medical documents from 2026, <b>add</b> new therapy notes, and <b>adjust</b> existing therapy notes if corrections are needed. The physiotherapist must <b>not</b> be able to change who else has access. Apply the policy to the <b>relevant 2026 medical folder and therapy notes</b> only. Give her access until the <b>end of the year</b>.",
       "params": [
         {
           "label": "Doctor Van der Velden (GP)",
@@ -856,7 +856,7 @@
           "value": "http://Europe/Belgium/West-Flanders/Bruges"
         },
         {
-          "label": "Location – Bruges",
+          "label": "Location – Ghent",
           "value": "http://Europe/Belgium/West-Flanders/Ghent"
         }
       ]
@@ -943,7 +943,7 @@
           "value": "http://Europe/Belgium/West-Flanders/Bruges"
         },
         {
-          "label": "Location – Bruges",
+          "label": "Location – Ghent",
           "value": "http://Europe/Belgium/West-Flanders/Ghent"
         }
       ]

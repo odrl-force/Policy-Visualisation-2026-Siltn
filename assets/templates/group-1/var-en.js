@@ -612,4 +612,4 @@ function generatePolicyText(p) {
     `;
 }
 
-const tiers = { 0: { label: "No Policies", color: "grey" }, 1: { label: "Can View", color: "green" }, 2: { label: "Can Add", color: "yellow" }, 3: { label: "Can Edit", color: "orange" }, 4: { label: "Full Control", color: "red" } };
+tiers = { 0: { label: "No Policies", color: "grey" }, 1: { label: "Can View", color: "green" }, 2: { label: "Can Add", color: "yellow" }, 3: { label: "Can Edit", color: "orange" }, 4: { label: "Full Control", color: "red" } };

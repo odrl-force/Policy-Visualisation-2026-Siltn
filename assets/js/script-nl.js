@@ -92,6 +92,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     if(multi) {
       new TomSelect("#actors", {
         plugins: ['remove_button'],
+        onItemAdd: function() {
+            this.setTextboxValue('');
+            this.refreshOptions();
+        }
       });
     }
       

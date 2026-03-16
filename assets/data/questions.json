@@ -367,7 +367,7 @@
     "title": "Create a policy",
     "type": "create",
     "sidebar": {
-      "instructions": "Jane Doe has agreed to participate in a local research effort in her city. <br>Create a policy that allows the <b>research team via her primary doctor (Doctor Van der Velden)</b> to <b>view</b> relevant information from her medical records for the <b>entire year</b>. They should not be able to change or manage access. Apply this policy to her <b>medical data</b> in general, without including private or unrelated personal folders. Use the purpose <b>Research and Development</b>. Also make sure her data is used <b>anonymously</b>.",
+      "instructions": "Jane Doe has agreed to participate in a local research effort in her city. <br>Create a policy that allows the <b>research team via her primary doctor (Doctor Van der Velden)</b> to <b>view</b> relevant information from <b>all</b> her medical records for the <b>entire year</b>. They should not be able to change or manage access. Apply this policy to her <b>medical data</b> in general, without including private or unrelated personal folders. Use the purpose <b>Research and Development</b>. Also make sure her data is used <b>anonymously</b>.",
       "params": [
         {
           "label": "You (Alice Smith)",
@@ -384,14 +384,6 @@
         {
           "label": "Nurse Evy (home care)",
           "value": "https://solidweb.me/nurse-evy/profile/card"
-        },
-        {
-          "label": "Medical documents of Jane Doe for the year 2026",
-          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026"
-        },
-        {
-          "label": "Medical documents of Alice Smith for the year 2026",
-          "value": "https://solidweb.me/AliceSmith/Personal/Medical/2026"
         },
         {
           "label": "All medical data of Alice Smith",
@@ -434,7 +426,7 @@
     "title": "Create a policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Jane Doe has agreed to participate in a local research effort in her city. <br>Create a policy that allows the <b>research team via her primary doctor (Doctor Van der Velden)</b> to <b>view</b> relevant information from her medical records for the <b>entire year</b>. They should not be able to change or manage access. Apply this policy to her <b>medical data</b> in general, without including private or unrelated personal folders. Use the purpose <b>Research and Development</b>. Also make sure her data is used <b>anonymously</b>.",
+      "instructions": "Jane Doe has agreed to participate in a local research effort in her city. <br>Create a policy that allows the <b>research team via her primary doctor (Doctor Van der Velden)</b> to <b>view</b> relevant information from <b>all</b> her medical records for the <b>entire year</b>. They should not be able to change or manage access. Apply this policy to her <b>medical data</b> in general, without including private or unrelated personal folders. Use the purpose <b>Research and Development</b>. Also make sure her data is used <b>anonymously</b>.",
       "params": [
         {
           "label": "You (Alice Smith)",
@@ -451,14 +443,6 @@
         {
           "label": "Nurse Evy (home care)",
           "value": "https://solidweb.me/nurse-evy/profile/card"
-        },
-        {
-          "label": "Medical documents of Jane Doe for the year 2026",
-          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026"
-        },
-        {
-          "label": "Medical documents of Alice Smith for the year 2026",
-          "value": "https://solidweb.me/AliceSmith/Personal/Medical/2026"
         },
         {
           "label": "All medical data of Alice Smith",
@@ -520,7 +504,7 @@
   },
   {
     "question": 6,
-    "title": "Create a policy",
+    "title": "Edit a policy",
     "type": "create",
     "sidebar": {
       "instructions": "Your mother (Jane Doe), is filing an insurance claim for a foot injury.<br><b>AG Health Insurance</b> need a policy that allows them to <b>view</b> the medical documents that relates to her <b>foot injury</b> for <b>one month</b>. They should not be able to <b>add</b> or <b>modify</b> any files. They should also <b>delete all data</b> when the access ends. They proposed a policy that would give them <b>more access than needed</b> review the policy and make changes to make it match the requirements.",
@@ -597,7 +581,7 @@
   },
   {
     "question": 6,
-    "title": "Create a policy",
+    "title": "Edit a policy",
     "type": "review",
     "sidebar": {
       "instructions": "Your mother (Jane Doe), is filing an insurance claim for a foot injury.<br><b>AG Health Insurance</b> need a policy that allows them to <b>view</b> the medical documents that relates to her <b>foot injury</b> for <b>one month</b>. They should not be able to <b>add</b> or <b>modify</b> any files. They should also <b>delete all data</b> when the access ends. They proposed a policy that would give them <b>more access than needed</b> review the policy and make changes to make it match the requirements.",
@@ -1023,7 +1007,7 @@
       "params": [
         {
           "label": "Jane Doe's email",
-          "value": "https://solidweb.me/JaneDoe/Personal/Contact/email.ttl"
+          "value": "https://solidweb.me/JaneDoe/Personal/Contact/email.txt"
         },
         {
           "label": "Purpose – Marketing",
@@ -1046,7 +1030,7 @@
       "params": [
         {
           "label": "Jane Doe's email",
-          "value": "https://solidweb.me/JaneDoe/Personal/Contact/email.ttl"
+          "value": "https://solidweb.me/JaneDoe/Personal/Contact/email.txt"
         },
         {
           "label": "Purpose – Marketing",

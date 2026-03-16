@@ -10,7 +10,7 @@
   document.getElementById("policyType").addEventListener("change", togglePolicyType);
   togglePolicyType();
   
-  document.getElementById("provider").value = "https://AliceSmith/profile/card";
+  document.getElementById("provider").value = "https://solidweb.me/AliceSmith/profile/card";
   
   // Accesible multi select
   const purposeSelect = new TomSelect('#purpose', {

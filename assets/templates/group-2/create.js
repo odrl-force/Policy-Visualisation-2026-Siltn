@@ -3,7 +3,7 @@
   if (!root) return;
   const start = Date.now();
 
-  const ME_URI = "https://AliceSmith/profile/card#me";
+  const ME_URI = "https://solidweb.me/AliceSmith/profile/card";
 
   const state = {
     permissions: { permRead: false, permAdd: false, permModify: false, permManage: false },

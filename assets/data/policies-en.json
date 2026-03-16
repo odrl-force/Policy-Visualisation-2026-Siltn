@@ -2462,7 +2462,7 @@
         "dpv:CustomerCare", "dpv:LegalCompliance"
       ],
       "DurationMonth": "6",
-      "StartTime": "2021-07-01T09:00",
+      "StartTime": "2026-02-01T09:00",
       "Location": "http://Europe/Belgium"
     },
     "dataUri": "https://solidweb.me/AliceSmith/Personal/Contact",

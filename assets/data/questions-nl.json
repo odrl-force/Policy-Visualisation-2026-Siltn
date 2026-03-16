@@ -368,7 +368,7 @@
     "title": "Maak een policy",
     "type": "create",
     "sidebar": {
-        "instructions": "Jane Doe heeft ermee ingestemd om deel te nemen aan een lokaal onderzoeksproject in haar stad. <br>Maak een policy die het <b>onderzoeksteam via haar huisarts (Doctor Van der Velden)</b> toelaat om <b>relevante informatie uit haar medische dossiers te bekijken</b> gedurende het <b>volledige jaar</b>. Ze mogen geen toegang wijzigen of beheren. Pas deze policy toe op haar <b>medische data</b> in het algemeen, zonder private of niet-gerelateerde persoonlijke mappen op te nemen. Gebruik het doel <b>Research and Development</b>. Zorg er ook voor dat haar data <b>anoniem</b> wordt gebruikt.",
+        "instructions": "Jane Doe heeft ermee ingestemd om deel te nemen aan een lokaal onderzoeksproject in haar stad. <br>Maak een policy die het <b>onderzoeksteam via haar huisarts (Doctor Van der Velden)</b> toelaat om <b>relevante informatie uit <b>al</b> haar medische dossiers te bekijken</b> gedurende het <b>volledige jaar</b>. Ze mogen geen toegang wijzigen of beheren. Pas deze policy toe op haar <b>medische data</b> in het algemeen, zonder private of niet-gerelateerde persoonlijke mappen op te nemen. Gebruik het doel <b>Research and Development</b>. Zorg er ook voor dat haar data <b>anoniem</b> wordt gebruikt.",
         "params": [
         {
           "label": "Jij (Alice Smith)",
@@ -385,14 +385,6 @@
         {
           "label": "Verpleegkundige Evy (thuiszorg)",
           "value": "https://solidweb.me/nurse-evy/profile/card"
-        },
-        {
-          "label": "Medische documenten van Jane Doe voor het jaar 2026",
-          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026"
-        },
-        {
-          "label": "Medische documenten van Alice Smith voor het jaar 2026",
-          "value": "https://solidweb.me/AliceSmith/Personal/Medical/2026"
         },
         {
           "label": "Alle mediche data van Alice Smith",
@@ -435,7 +427,7 @@
     "title": "Maak een policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Jane Doe heeft ermee ingestemd om deel te nemen aan een lokaal onderzoeksproject in haar stad. <br>Maak een policy die het <b>onderzoeksteam via haar huisarts (Doctor Van der Velden)</b> toelaat om <b>relevante informatie uit haar medische dossiers te bekijken</b> gedurende het <b>volledige jaar</b>. Ze mogen geen toegang wijzigen of beheren. Pas deze policy toe op haar <b>medische data</b> in het algemeen, zonder private of niet-gerelateerde persoonlijke mappen op te nemen. Gebruik het doel <b>Research and Development</b>. Zorg er ook voor dat haar data <b>anoniem</b> wordt gebruikt.",
+      "instructions": "Jane Doe heeft ermee ingestemd om deel te nemen aan een lokaal onderzoeksproject in haar stad. <br>Maak een policy die het <b>onderzoeksteam via haar huisarts (Doctor Van der Velden)</b> toelaat om <b>relevante informatie uit <b>al</b> haar medische dossiers te bekijken</b> gedurende het <b>volledige jaar</b>. Ze mogen geen toegang wijzigen of beheren. Pas deze policy toe op haar <b>medische data</b> in het algemeen, zonder private of niet-gerelateerde persoonlijke mappen op te nemen. Gebruik het doel <b>Research and Development</b>. Zorg er ook voor dat haar data <b>anoniem</b> wordt gebruikt.",
       "params": [
         {
           "label": "Jij (Alice Smith)",
@@ -452,14 +444,6 @@
         {
           "label": "Verpleegkundige Evy (thuiszorg)",
           "value": "https://solidweb.me/nurse-evy/profile/card"
-        },
-        {
-          "label": "Medische documenten van Jane Doe voor het jaar 2026",
-          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026"
-        },
-        {
-          "label": "Medische documenten van Alice Smith voor het jaar 2026",
-          "value": "https://solidweb.me/AliceSmith/Personal/Medical/2026"
         },
         {
           "label": "Alle mediche data van Alice Smith",
@@ -521,7 +505,7 @@
   },
   {
     "question": 6,
-    "title": "Maak een policy",
+    "title": "Bewerk een policy",
     "type": "create",
     "sidebar": {
         "instructions": "Je moeder (Jane Doe) dient een verzekeringsclaim in voor een voetblessure.<br><b>AG Health Insurance</b> heeft een policy nodig die hen toelaat om <b>de medische documenten die betrekking hebben op haar voetblessure te bekijken</b> gedurende <b>één maand</b>. Ze mogen <b>geen</b> bestanden <b>toevoegen</b> of <b>wijzigen</b>. Ze moeten ook <b>alle data verwijderen</b> wanneer de toegang eindigt. Ze hebben een policy voorgesteld die hen <b>meer toegang geeft dan nodig</b> bekijk de policy en pas ze aan zodat ze voldoet aan de vereisten.",
@@ -598,7 +582,7 @@
   },
   {
     "question": 6,
-    "title": "Create a policy",
+    "title": "Bewerk een policy",
     "type": "review",
     "sidebar": {
         "instructions": "Je moeder (Jane Doe) dient een verzekeringsclaim in voor een voetblessure.<br><b>AG Health Insurance</b> heeft een policy nodig die hen toelaat om <b>de medische documenten die betrekking hebben op haar voetblessure te bekijken</b> gedurende <b>één maand</b>. Ze mogen <b>geen</b> bestanden <b>toevoegen</b> of <b>wijzigen</b>. Ze moeten ook <b>alle data verwijderen</b> wanneer de toegang eindigt. Ze hebben een policy voorgesteld die hen <b>meer toegang geeft dan nodig</b> bekijk de policy en pas ze aan zodat ze voldoet aan de vereisten.",
@@ -1024,7 +1008,7 @@
       "params": [
         {
           "label": "Jane Doe's email",
-          "value": "https://solidweb.me/JaneDoe/Personal/Contact/email.ttl"
+          "value": "https://solidweb.me/JaneDoe/Personal/Contact/email.txt"
         },
         {
           "label": "Doel – Marketing",
@@ -1047,7 +1031,7 @@
       "params": [
         {
           "label": "Jane Doe's email",
-          "value": "https://solidweb.me/JaneDoe/Personal/Contact/email.ttl"
+          "value": "https://solidweb.me/JaneDoe/Personal/Contact/email.txt"
         },
         {
           "label": "Doel – Marketing",

@@ -4,7 +4,7 @@
     "title": "Voorbeeld Policy (Niets aanpassen)",
     "type": "create",
     "sidebar": {
-      "instructions": "Dit is een voorbeeld van een volledig ingevulde policy. Dit voorbeeld toont hoe Jane Doe haar echtgenoot (Bob Smith) <b>volledige toegang</b> gaf tot <b>al</b> haar private documenten. De echtgenoot kan <b>alle</b> private documenten bekijken, toevoegen en wijzigen. Er gelden geen purpose limitations, time constraints of Locatie restrictions. Dit voorbeeld wordt ENKEL gegeven zodat je begrijpt hoe een complete en geldige policy eruit kan zien. Pas niets aan in dit voorbeeld.",
+      "instructions": "Dit is een voorbeeld van een volledig ingevulde policy. Dit voorbeeld toont hoe Jane Doe haar echtgenoot (Bob Smith) <b>volledige toegang</b> gaf tot <b>al</b> haar private documenten. De echtgenoot kan <b>alle</b> private documenten bekijken, toevoegen en wijzigen. Er gelden geen purpose limitations, time constraints of Locatie restrictions. Dit voorbeeld wordt ENKEL gegeven zodat je begrijpt hoe een complete en geldige policy eruit kan zien. Pas niets aan in dit voorbeeld. <br><br><b>Genereer</b> de policy om naar de 1e vraag te gaan",
       "params": [
         {
           "label": "Echtgenote (Bob Smith)",

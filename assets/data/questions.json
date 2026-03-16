@@ -4,7 +4,7 @@
     "title": "Example Policy (Do Not Modify)",
     "type": "create",
     "sidebar": {
-      "instructions": "This is an example of a fully completed policy. This example shows how Jane Doe granted her husband (Bob Smith) <b>full access</b> to <b>all</b> her private files. The husband can <b>view, add, and modify</b> all private documents. No purpose limitations, time constraints, or location restrictions apply. This example is ONLY provided so you understand what a complete and valid policy can look like. Do not change anything in this example.",
+      "instructions": "This is an example of a fully completed policy. This example shows how Jane Doe granted her husband (Bob Smith) <b>full access</b> to <b>all</b> her private files. The husband can <b>view, add, and modify</b> all private documents. No purpose limitations, time constraints, or location restrictions apply. This example is ONLY provided so you understand what a complete and valid policy can look like. Do not change anything in this example. <br><br><b>Generate</b> this policy to go to the 1st question",
       "params": [
         {
           "label": "Husband (Bob Smith)",

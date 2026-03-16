@@ -104,7 +104,6 @@ main.informative {
     align-items: center;
     flex-grow: 1;
     padding: 2rem;
-    min-height: calc(100vh - 80px);
     box-sizing: border-box;
 }
 
@@ -177,6 +176,7 @@ main.informative button:hover {
 
 /* -----  Progress Bar ----- */
 .progress-bar {
+    display: flex;
     flex-grow: 1;
     height: 10px;
     background-color: #e0e0e0;
@@ -185,10 +185,17 @@ main.informative button:hover {
     margin-right: 1rem;
 }
 .progress-fill {
-    width: 10%;
+    width: 0%;
     height: 100%;
     background-color: #7C4DFF;
     transition: width 0.3s ease, background-color 0.3s ease;
+}
+.progress-new{
+    width: 0%;
+    height: 100%;
+    background-color: #2ecc71;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    position: relative;
 }
 
 /* -----  Links ----- */
@@ -386,3 +393,15 @@ a:hover {
 
 #summary-display { border: 2px solid #7C4DFF; border-radius: 8px; padding: 20px; background: #fff; margin-top: 10px; }
 .summary-title { font-weight: bold; color: #7C4DFF; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+
+#startButton{
+    margin: 10px;
+}
+
+#nextButton{
+    background-color: #2ecc71;
+}
+
+#nextButton:disabled{
+    background-color: #7C4DFF;
+}

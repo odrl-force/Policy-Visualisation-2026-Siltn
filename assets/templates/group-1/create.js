@@ -125,8 +125,10 @@
     const summary = document.getElementById("summary-content");
     summary.innerHTML = generatePolicyText(data);
     summary.scrollIntoView({ behavior: 'smooth' });
-    const nextBtn = document.getElementById("nextButton");
-    if (nextBtn) nextBtn.disabled = false;
+    //const nextBtn = document.getElementById("nextButton");
+    nextState = false;
+    toggleNextButton();
+    //if (nextBtn) nextBtn.disabled = false;
     
   });
 

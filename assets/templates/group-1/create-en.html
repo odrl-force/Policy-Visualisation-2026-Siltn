@@ -1,49 +1,63 @@
 <form id="policyForm">
 
-  <h3>Base</h3>
+  <div>
+    <h3>Base</h3>
+    <p class="section-desc">Core information identifying the data and the parties involved.</p>
+  </div>
 
-  <label for="dataUri" class="required">Data URI</label>
-  <input required type="url" id="dataUri" placeholder="e.g. http://example.com/ids/data/abc" />
+  <div>
+    <label for="dataUri" class="required">Data URI</label>
+    <p class="field-desc">The unique identifier for the specific resource.</p>
+    <input required type="url" id="dataUri" placeholder="e.g. http://example.com/ids/data/abc" />
+  </div>
 
   <div>
     <label>Policy Type</label>
+    <p class="field-desc">Is this a formal offer or a request for access?</p>
     <select id="policyType">
       <option value="Offer">Offer</option>
       <option value="Request">Request</option>
     </select>
   </div>
+
   <div class="single-line">
     <div>
       <label for="provider" class="required">Data Provider</label>
+      <p class="field-desc">The entity providing the data.</p>
       <input required type="url" id="provider" placeholder="e.g. http://dataprovider" />
     </div>
     <div>
       <label for="consumer" class="required">Data Consumer</label>
+      <p class="field-desc">The entity requesting/receiving the data.</p>
       <input required type="url" id="consumer" placeholder="e.g. http://dataconsumer" />
     </div>
   </div>
 
-  <label class="required">Permissions</label>
-  <div class="single-line" id="permissions">
-    <label for="permRead">Read Data <input type="checkbox" id="permRead" name="permission"/></label>
-    <label for="permAdd">Add Data <input type="checkbox" id="permAdd" name="permission"/></label>
-    <label for="permModify">Modify Data <input type="checkbox" id="permModify" name="permission"/></label>
-    <label for="permManage">Manage Permissions <input type="checkbox" id="permManage" name="permission"/></label>
+  <div>
+    <label class="required">Permissions</label>
+    <p class="field-desc">The authorized actions granted to the participant.</p>
+    <div class="single-line" id="permissions">
+      <label for="permRead">Read Data <input type="checkbox" id="permRead" name="permission"/></label>
+      <label for="permAdd">Add Data <input type="checkbox" id="permAdd" name="permission"/></label>
+      <label for="permModify">Modify Data <input type="checkbox" id="permModify" name="permission"/></label>
+      <label for="permManage">Manage Permissions <input type="checkbox" id="permManage" name="permission"/></label>
+    </div>
   </div>
 
-  <h3>Semantics</h3>
- 
+  <div>
+    <h3>Semantics</h3>
+    <p class="section-desc">Descriptive metadata for internal policy management.</p>
+  </div>
+  
   <div class="single-line">
     <div>
       <label>Name</label>
       <input type="text" id="name" placeholder="PolicyName" />
     </div>
-
     <div>  
       <label>Id</label>
       <input type="text" id="id" placeholder="Policy-1" />
     </div>
-
   </div>
 
   <div>  
@@ -51,18 +65,22 @@
     <textarea id="description" placeholder="lorem ipsum dolor sit amet,"></textarea>
   </div>
 
-  <h3>Constraints</h3>
+  <div>
+    <h3>Constraints</h3>
+    <p class="section-desc">The specific rules and limits applied to this data access.</p>
+  </div>
   
   <div id="constraints">
-
-  <div>  
-    <label for="purpose" class="required">Purpose</label>
-      <select name="purpose" id="purpose" class="field" multiple required placeholder="Select purposes...">
-        </select>
-  </div>
+    <div>  
+      <label for="purpose" class="required">Purpose</label>
+      <p class="field-desc">The intended objective for accessing the information.</p>
+      <select name="purpose" id="purpose" class="field" multiple required>
+      </select>
+    </div>
 
     <div>  
-    <label>Time Duration <input type="checkbox" id="useDuration"/></label>
+      <label>Time Duration <input type="checkbox" id="useDuration"/></label>
+      <p class="field-desc">The specific timeframe for which access remains valid.</p>
     <div class="field" id="Duration">
       <div class="single-line">
         <div>
@@ -87,37 +105,43 @@
 
     <div>
       <label>Start Time <input type="checkbox" id="useStartTime" /></label>
+      <p class="field-desc">A specific date access starts.</p>
       <input type="datetime-local" id="StartTime" class="field"/>
     </div>
 
     <div>
       <label>End Time <input type="checkbox" id="useEndTime" /></label>
+      <p class="field-desc">A specific data access ends.</p>
       <input type="datetime-local" id="EndTime" class="field"/>
     </div>
 
     <div>  
       <label>Location <input type="checkbox" id="useLocation" /></label>
+      <p class="field-desc">Geographical restrictions on information access.</p>
       <input type="url" id="Location" placeholder="http://example.com/location/locationName" class="field"/>
     </div>
 
     <div>  
       <label>Number of Usage <input type="checkbox" id="useUsage" /></label>
-      <input class="field"type="number" id="Usage" placeholder="e.g. 10" min="1"/>
+      <p class="field-desc">A numerical cap on the number of interactions allowed.</p>
+      <input class="field" type="number" id="Usage" placeholder="e.g. 10" min="1"/>
     </div>
   </div>
 
-  <h3>Duties</h3>
-
-  <div id="duties">
-    <label for="delete">Delete data<input type="checkbox" id="delete"/></label>
-    <label for="anonymize">Anonymize data<input type="checkbox" id="anonymize"/></label>
-    <label for="encrypt">Encrypt data<input type="checkbox" id="encrypt"/></label>
-    <label for="notify">Notify on access<input type="checkbox" id="notify"/></label>
+  <div>
+    <h3>Duties</h3>
+    <p class="section-desc">Obligations required to maintain valid access.</p>
+    <div id="duties">
+      <label for="delete">Delete data<input type="checkbox" id="delete"/></label>
+      <label for="anonymize">Anonymize data<input type="checkbox" id="anonymize"/></label>
+      <label for="encrypt">Encrypt data<input type="checkbox" id="encrypt"/></label>
+      <label for="notify">Notify on access<input type="checkbox" id="notify"/></label>
+    </div>
   </div>
-
   <div class="single-line"> 
     <button type="submit" id="createPolicy">Generate Policy</button>
   </div>
+
 </form>
     <div id="summary-display">
         <div class="summary-title">Selected Rule Explanation</div>

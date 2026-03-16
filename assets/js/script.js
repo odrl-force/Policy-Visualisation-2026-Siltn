@@ -1,3 +1,6 @@
+let nextState = false;
+let length = 1
+
 document.addEventListener("DOMContentLoaded", async () => {
     const main = document.querySelector(".main-content");
     const sidebar = document.querySelector(".sidebar-inner");
@@ -33,6 +36,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         window.q = q;
         localStorage.setItem("question", q.question);
         // Update header & progress
+        length = questions[questions.length -1].question;
         headerLabel.textContent = `Question ${q.question} / ${questions[questions.length -1].question}`;
         progressFill.style.width = `${(index / questions.length) * 100}%`;
 
@@ -109,7 +113,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     } else {
         let start = Date.now();
         sidebarSubmit.onclick = () => {
-        nextButton.disabled = false;
+        nextState = false
+        toggleNextButton();
+        //nextButton.disabled = false;
         const data = {};
         for(i = 0; i < multi.selectedOptions.length; i++){
             data[i] = multi.selectedOptions[i].value;
@@ -141,7 +147,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   nextButton.addEventListener("click", () => {
     currentIndex++;
-    nextButton.disabled = true;
+    nextState = true
+    toggleNextButton();
+    //nextButton.disabled = true;
     loadQuestion(currentIndex);
   });
 
@@ -168,4 +176,15 @@ function copyText(text, element) {
     }).catch(err => {
         console.error('Failed to copy: ', err);
     });
+}
+
+function toggleNextButton(){
+    const progressNew = document.getElementById("progressNew");
+    nextButton.disabled = nextState;
+    if(!nextState){
+        progressNew.style.width = `${(1 / length) * 50}%`;
+    }
+    else{
+        progressNew.style.width = `0%`;
+    }
 }

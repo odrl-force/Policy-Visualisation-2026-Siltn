@@ -247,8 +247,10 @@ function createPurposeRow(opt, isSelected, query) {
 
     savePolicy(state);
 
-    const nextBtn = document.getElementById("nextButton");
-    if (nextBtn) nextBtn.disabled = false;
+    //const nextBtn = document.getElementById("nextButton");
+    //if (nextBtn) nextBtn.disabled = false;
+    nextState = false;
+    toggleNextButton();
   };
 
   $$('.edit-btn').forEach(btn => btn.onclick = () => openModal(btn.dataset.edit));

@@ -17,9 +17,14 @@
 
 <!-- Main content -->
 <main class="informative">
-    <h1>Thank you for participating!</h1>
-    <p>We appreciate your time and effort in completing the study.</p>
-    <button id="qualtricsButton">Go to Qualtrics Survey</button>
+    <h1 id="thankYouHeader">Thank you for participating!</h1>
+    <p id="thankYouSubtext">We appreciate your time and effort in completing the study.</p>
+    
+    <div class="survey-box" style="margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 8px;">
+        <p id="surveyInstruction">You’re almost done! Please answer <b>two final questions</b> about your experience.</p>
+        <p><strong id="timeLabel">Estimated time:</strong> <span id="timeValue">Less than 1 minute</span></p>
+        <button id="qualtricsButton" class="cta-button">Complete Final 2 Questions</button>
+    </div>
 </main>
 
 </body>

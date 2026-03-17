@@ -2514,5 +2514,44 @@
       "delete": true
     },
     "createdAt": "2026-01-02"
+  },
+  {
+    "name": "KU leuven – read Daily Steps (research)",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/KU-leuven-research/profile/card",
+    "permissions": {
+      "permRead": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:ScientificResearch"
+      ],
+      "DurationYear": "1",
+      "StartTime": "2024-10-15T11:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Statistics/Daily_Steps.json",
+    "id": "p-0156",
+    "duties": {
+      "anonymize": true
+    },
+    "createdAt": "2026-03-04"
+  },
+  {
+    "name": "Smartwatch – upload only to Statistics",
+    "provider": "https://solidweb.me/AliceSmith/profile/card",
+    "consumer": "https://solidweb.me/acme-smartwatch/profile/card",
+    "permissions": {
+      "permRead": false,
+      "permAdd": true
+    },
+    "constraints": {
+      "purpose": [
+        "dpv:ServiceProvision"
+      ],
+
+      "StartTime": "2025-11-11T08:00"
+    },
+    "dataUri": "https://solidweb.me/AliceSmith/Personal/Statistics",
+    "id": "p-0157"
   }
 ]

@@ -82,68 +82,74 @@
         return { start: norm(s), end: norm(e) };
     }
 
-    function applyFilters() {
-        const query = document.getElementById("global-search").value.toLowerCase().trim();
+function applyFilters() {
+    const query = document.getElementById("global-search").value.toLowerCase().trim();
+    
+    const purposeSelect = document.getElementById("purpose-select");
+    const selectedPurposes = purposeSelect ? Array.from(purposeSelect.selectedOptions).map(opt => opt.value) : [];
+    
+    const podSelect = document.getElementById("pod-select");
+    const selectedPods = podSelect ? Array.from(podSelect.selectedOptions).map(opt => opt.value) : [];
+
+    const activePerms = Array.from(document.querySelectorAll('[data-type="perm"]:checked')).map(e => e.dataset.val);
+    const activeDuties = Array.from(document.querySelectorAll('[data-type="duty"]:checked')).map(e => e.dataset.val);
+    
+    const sLogic = document.getElementById("start-logic").value;
+    const sDate = document.getElementById("start-date").value ? new Date(document.getElementById("start-date").value).getTime() : null;
+    const eLogic = document.getElementById("end-logic").value;
+    const eDate = document.getElementById("end-date").value ? new Date(document.getElementById("end-date").value).getTime() : null;
+    const locVal = document.getElementById("filter-location").value.toLowerCase();
+    const usageVal = parseInt(document.getElementById("filter-usage").value);
+
+    filteredPolicies = allPolicies.filter(p => {
+        const res = resourceRegistry[p.dataUri] || { name: "", desc: "", pod: "", fullUri: p.dataUri };
+        const consumerRaw = p.consumer.toLowerCase();
+        const dates = getAuditDates(p);
+        const c = p.constraints || {};
+
+        const mPod = selectedPods.length === 0 || selectedPods.includes(res.pod);
+
+        const policyPurposes = p.constraints?.purpose || [];
+        const mPurpose = selectedPurposes.length === 0 || 
+                        selectedPurposes.some(sp => policyPurposes.includes(sp));
+
+        const policyUriLow = res.fullUri.toLowerCase();
         
-        const purposeSelect = document.getElementById("purpose-select");
-        const selectedPurposes = purposeSelect ? Array.from(purposeSelect.selectedOptions).map(opt => opt.value) : [];
-        
-        const podSelect = document.getElementById("pod-select");
-        const selectedPods = podSelect ? Array.from(podSelect.selectedOptions).map(opt => opt.value) : [];
-
-        const activePerms = Array.from(document.querySelectorAll('[data-type="perm"]:checked')).map(e => e.dataset.val);
-        const activeDuties = Array.from(document.querySelectorAll('[data-type="duty"]:checked')).map(e => e.dataset.val);
-        
-        const sLogic = document.getElementById("start-logic").value;
-        const sDate = document.getElementById("start-date").value ? new Date(document.getElementById("start-date").value).getTime() : null;
-        const eLogic = document.getElementById("end-logic").value;
-        const eDate = document.getElementById("end-date").value ? new Date(document.getElementById("end-date").value).getTime() : null;
-        const locVal = document.getElementById("filter-location").value.toLowerCase();
-        const usageVal = parseInt(document.getElementById("filter-usage").value);
-
-        filteredPolicies = allPolicies.filter(p => {
-            const res = resourceRegistry[p.dataUri] || { name: "", desc: "", pod: "", fullUri: p.dataUri };
-            const consumerRaw = p.consumer.toLowerCase();
-            const dates = getAuditDates(p);
-            const c = p.constraints || {};
-
-            const mPod = selectedPods.length === 0 || selectedPods.includes(res.pod);
-
-            const policyPurposes = p.constraints?.purpose || [];
-            const mPurpose = selectedPurposes.length === 0 || 
-                            selectedPurposes.some(sp => policyPurposes.includes(sp));
-
-            const mSearch = p.id.toLowerCase().includes(query) || 
+        const isSubstring = p.id.toLowerCase().includes(query) || 
                             res.name.toLowerCase().includes(query) || 
-                            res.fullUri.toLowerCase().includes(query) ||
+                            policyUriLow.includes(query) ||
                             consumerRaw.includes(query) ||
                             (res.desc && res.desc.toLowerCase().includes(query));
 
-            const mPerm = activePerms.length === 0 || activePerms.some(k => p.permissions[k]);
-            const mDuty = activeDuties.length === 0 || (p.duties && activeDuties.some(k => p.duties[k]));
-            
-            const mLoc = !locVal || (c.Location && c.Location.toLowerCase().includes(locVal));
-            const mUsage = isNaN(usageVal) || (c.Usage && parseInt(c.Usage) <= usageVal);
+        const isParentPolicy = query.startsWith("http") && query.startsWith(policyUriLow);
 
-            let mStart = true;
-            if (sDate && sLogic !== 'any') {
-                if (sLogic === 'after') mStart = dates.start >= sDate;
-                else if (sLogic === 'before') mStart = dates.start <= sDate;
-                else if (sLogic === 'exact') mStart = dates.start === sDate;
-            }
-            let mEnd = true;
-            if (eDate && eLogic !== 'any') {
-                if (eLogic === 'after') mEnd = dates.end >= eDate;
-                else if (eLogic === 'before') mEnd = dates.end <= eDate;
-                else if (eLogic === 'exact') mEnd = dates.end === eDate;
-            }
+        const mSearch = isSubstring || isParentPolicy;
 
-            return mPod && mPurpose && mSearch && mPerm && mDuty && mLoc && mUsage && mStart && mEnd;
-        });
+        const mPerm = activePerms.length === 0 || activePerms.some(k => p.permissions[k]);
+        const mDuty = activeDuties.length === 0 || (p.duties && activeDuties.some(k => p.duties[k]));
+        
+        const mLoc = !locVal || (c.Location && c.Location.toLowerCase().includes(locVal));
+        const mUsage = isNaN(usageVal) || (c.Usage && parseInt(c.Usage) <= usageVal);
 
-        currentPage = 1; 
-        render();
-    }
+        let mStart = true;
+        if (sDate && sLogic !== 'any') {
+            if (sLogic === 'after') mStart = dates.start >= sDate;
+            else if (sLogic === 'before') mStart = dates.start <= sDate;
+            else if (sLogic === 'exact') mStart = dates.start === sDate;
+        }
+        let mEnd = true;
+        if (eDate && eLogic !== 'any') {
+            if (eLogic === 'after') mEnd = dates.end >= eDate;
+            else if (eLogic === 'before') mEnd = dates.end <= eDate;
+            else if (eLogic === 'exact') mEnd = dates.end === eDate;
+        }
+
+        return mPod && mPurpose && mSearch && mPerm && mDuty && mLoc && mUsage && mStart && mEnd;
+    });
+
+    currentPage = 1; 
+    render();
+}
 
     function render() {
         const tbody = document.getElementById("audit-tbody");

@@ -625,42 +625,42 @@
   },
   {
     "question": 7,
-    "title": "Find all people who can contact Jane Doe",
+    "title": "Find all people who can view Jane Doe's daily steps",
     "type": "find",
     "sidebar": {
-      "instructions": "Your mother (Jane Doe) gave a lot of people permission to contact her. List <b>all</b> actors who have access to her contact information.",
+      "instructions": "Your mother (Jane Doe) gave some people permission to view her daily steps. List <b>all</b> actors that are allowed to view her daily steps.",
       "params": [
-        {
-          "label": "Mother (Jane Doe)",
-          "value": "https://solidweb.me/JaneDoe/profile/card"
-        },
-        {
-          "label": "All contact information of JaneDoe",
-          "value": "https://solidweb.me/JaneDoe/Personal/Contact"
-        }
+      {
+        "label": "Daily steps Alice Smith",
+        "value": "https://solidweb.me/AliceSmith/Personal/Statistics/Daily_Steps.json"
+      },
+      {
+        "label": "Daily seps Jane Doe",
+        "value": "https://solidweb.me/JaneDoe/Personal/Statistics/Daily_Steps.json"
+      }
       ],
       "select": {
         "title": "Actors",
-        "options": ["acme-corp", "ah-belgium", "AliceSmith", "bolcom", "bpost", "carecenter-the-tree", "carol-green", "carrefour-belgium", "city-of-bruges", "city-of-ghent", "colruyt", "coolblue", "countrybank", "delhaize", "dietician-green-plate", "doctor-van-der-velden", "farmfresh-veggies", "food-delivery-lotus", "insurance-ag-health", "insurance-kbc-home", "landlord-mr-lambert", "nurse-evy", "okay-delivery", "physio-movewell", "ugent-research", "wit-gele-kruis"]
+        "options": ["acme-corp", "acme-smartwatch", "AliceSmith", "carol-green", "KU-leuven-research", "ugent-research"]
       }
     },
     "body": {}
   },
     {
     "question": 7,
-    "title": "Find all people who can contact Jane Doe",
+    "title": "Find all people who can view Jane Doe's daily steps",
     "type": "review",
     "sidebar": {
-      "instructions": "Your mother (Jane Doe) gave a lot of people permission to contact her. List <b>all</b> actors who have access to her contact information.",
+      "instructions": "Your mother (Jane Doe) gave some people permission to view her daily steps. List <b>all</b> actors that are allowed to view her daily steps.",
       "params": [
-        {
-          "label": "Mother (Jane Doe)",
-          "value": "https://solidweb.me/JaneDoe/profile/card"
-        },
-        {
-          "label": "All contact information of JaneDoe",
-          "value": "https://solidweb.me/JaneDoe/Personal/Contact"
-        }
+      {
+        "label": "Daily steps Alice Smith",
+        "value": "https://solidweb.me/AliceSmith/Personal/Statistics/Daily_Steps.json"
+      },
+      {
+        "label": "Daily seps Jane Doe",
+        "value": "https://solidweb.me/JaneDoe/Personal/Statistics/Daily_Steps.json"
+      }
       ]
     },
     "body": {}

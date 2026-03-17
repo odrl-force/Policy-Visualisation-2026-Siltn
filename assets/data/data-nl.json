@@ -316,6 +316,20 @@
             ]
           },
           {
+            "name": "Statistics",
+            "description": "Gezondheids- en activiteitsstatistieken voor Alice Smith.",
+            "children": [
+              {
+                "name": "Daily_Steps.json",
+                "description": "Dagelijkse stappentellingen en bewegingsgegevens."
+              },
+              {
+                "name": "Sleep_Data.csv",
+                "description": "Slaapcycli en duurgegevens."
+              }
+            ]
+          },
+          {
             "name": "Contact",
             "description": "Contactgegevens van Alice Smith.",
             "children": [

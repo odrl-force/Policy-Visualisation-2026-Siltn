@@ -628,7 +628,7 @@ const escapeAttr = (s='') => (s+'').replaceAll('"','&quot;');
 
 function getHelp(k, state) {
     const h = {
-        dataUri: "Dit definieert het exacte onderwerp van de policy. Het zorgt ervoor dat alle regels en voorwaarden strikt worden toegepast op de geïdentificeerde bron en op geen enkele andere.",
+        dataUri: "Dit definieert het exacte onderwerp van de policy. Het zorgt ervoor dat alle regels en voorwaarden strikt worden toegepast op de geïdentificeerde gegevens en op geen enkele andere.",
         actors: "Dit identificeert de deelnemers aan de overeenkomst. Het specificeert de aanbieder en de consument, en verduidelijkt of de policy een aanbod van toegang is of een formeel verzoek.",
         temporal: "Dit koppelt een tijdschema aan de overeenkomst. Toegang wordt verleend voor een vaste duur of tot een specifiek vervalpunt is bereikt, waarna de toestemming wordt ingetrokken.",
         purposes: "Dit beperkt het gebruik tot een vooraf bepaald doel. De ontvanger gaat ermee akkoord om de informatie alleen te gebruiken voor het gestelde doel en niet voor secundaire doelstellingen.",

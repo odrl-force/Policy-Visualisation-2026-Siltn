@@ -156,40 +156,46 @@
         const itemUri = getItemUri(item, navigationStack);
         const relevant = allPolicies.filter(p => itemUri.startsWith(p.dataUri));
 
-        policyTitle.innerHTML = lang === 'en' ? `Access Rules: ${item.name}` : `Policies: ${item.name}`;
+        policyTitle.innerHTML = lang === 'en'
+            ? `Access Rules: ${item.name}`
+            : `Policies: ${item.name}`;
 
         if (relevant.length === 0) {
-            tbody.innerHTML = lang === 'en' 
-                ? '<tr><td class="empty-placeholder" colspan="6">No policies regarding this file.</td></tr>' 
+            tbody.innerHTML = lang === 'en'
+                ? '<tr><td class="empty-placeholder" colspan="6">No policies regarding this file.</td></tr>'
                 : '<tr><td class="empty-placeholder" colspan="6">Geen policies voor dit bestand.</td></tr>';
             return;
         }
 
         tbody.innerHTML = "";
         const aggregatedUsers = aggregatePoliciesByUser(relevant);
-        
         aggregatedUsers.sort((a, b) => a.name.localeCompare(b.name));
 
         aggregatedUsers.forEach((user, uIdx) => {
             const row = document.createElement("tr");
             row.className = "user-main-row";
+
             const hasMany = user.policies.length > 1;
-            
+
             const allPurposes = [...new Set(user.policies.flatMap(p => p.constraints.purpose || []))];
             let purposeDisplay = allPurposes.length > 0 ? allPurposes[0].split(':')[1] : "Any Purpose";
             if (allPurposes.length > 1) purposeDisplay = `${allPurposes[0].split(':')[1]} + ${allPurposes.length - 1}`;
 
             row.innerHTML = `
-                <td><strong>${user.name}</strong><span>${purposeDisplay}</span></td>
-                <td>${user.perms.Read ? '✅' : ''}</td>
-                <td>${user.perms.Add ? '✅' : ''}</td>
-                <td>${user.perms.Edit ? '✅' : ''}</td>
-                <td>${user.perms.Manage ? '🚨' : ''}</td>
+                <td>
+                    <strong>${user.name}</strong>
+                    <span>${purposeDisplay}</span>
+                </td>
+                <td>${permBadges(user.perms)}</td>
                 <td>
                     <button class="main-action-btn" data-u-idx="${uIdx}">
-                        ${hasMany ? (lang === 'en' ? `Rules (${user.policies.length})` : `Regels (${user.policies.length})`) : (lang === 'en' ? 'Explain' : 'Uitleg')}
+                        ${hasMany ? (lang === 'en'
+                            ? `Rules (${user.policies.length})`
+                            : `Regels (${user.policies.length})`)
+                            : (lang === 'en' ? 'Explain' : 'Uitleg')}
                     </button>
                 </td>`;
+
             tbody.appendChild(row);
 
             if (hasMany) renderSubRows(user.policies, uIdx, tbody, itemUri);
@@ -201,7 +207,7 @@
     function renderPoliciesForPerson(user) {
         const policyTitle = document.getElementById("policy-title");
         const tbody = document.getElementById("policy-body");
-        
+
         policyTitle.innerHTML = `Access for User: ${user.name}`;
         tbody.innerHTML = "";
 
@@ -216,45 +222,43 @@
         sortedUris.forEach((uri, rIdx) => {
             const policies = resourceMap[uri];
             const hasMany = policies.length > 1;
+
             const fileName = uri.split('/').pop();
             const podName = uri.split('/')[3] || "Root";
             const description = uriToDescriptionMap[uri] || "External Pod Resource";
 
             const row = document.createElement("tr");
             row.className = "user-main-row";
+
             row.innerHTML = `
                 <td>
                     <strong>${fileName}</strong>
                     <small style="display:block; color:#666;">Pod: ${podName}</small>
                     <i style="font-size: 0.8em; color:#888;">${description}</i>
                 </td>
-                <td>${policies.some(p => p.permissions.permRead) ? '✅' : ''}</td>
-                <td>${policies.some(p => p.permissions.permAdd) ? '✅' : ''}</td>
-                <td>${policies.some(p => p.permissions.permModify) ? '✅' : ''}</td>
-                <td>${policies.some(p => p.permissions.permManage) ? '🚨' : ''}</td>
+
+                <td>
+                    ${permBadges({
+                        Read:   policies.some(p => p.permissions.permRead),
+                        Add:    policies.some(p => p.permissions.permAdd),
+                        Edit:   policies.some(p => p.permissions.permModify),
+                        Manage: policies.some(p => p.permissions.permManage)
+                    })}
+                </td>
+
                 <td>
                     <button class="main-action-btn" data-u-idx="${rIdx}">
-                        ${lang === 'en' ? (hasMany ? `Rules (${policies.length})` : 'Explain') : (hasMany ? `Regels (${policies.length})` : 'Uitleg')}
+                        ${lang === 'en'
+                            ? (hasMany ? `Rules (${policies.length})` : 'Explain')
+                            : (hasMany ? `Regels (${policies.length})` : 'Uitleg')}
                     </button>
-                </td>`;
+                </td>
+            `;
+
             tbody.appendChild(row);
 
             if (hasMany) {
-                policies.forEach((p, pIdx) => {
-                    const subRow = document.createElement("tr");
-                    subRow.className = `sub-policy-row user-child-${rIdx}`;
-                    subRow.style.display = "none";
-                    const purpose = p.constraints.purpose ? p.constraints.purpose[0].split(':')[1] : "General Access";
-                    
-                    subRow.innerHTML = `
-                        <td style="padding-left: 20px;"><em>${purpose}</em></td>
-                        <td>${p.permissions.permRead ? '✅' : ''}</td>
-                        <td>${p.permissions.permAdd ? '✅' : ''}</td>
-                        <td>${p.permissions.permModify ? '✅' : ''}</td>
-                        <td>${p.permissions.permManage ? '🚨' : ''}</td>
-                        <td><button class="sub-explain-btn" data-u-idx="${rIdx}" data-p-idx="${pIdx}">${lang === 'en' ? 'Explain' : 'Uitleg'}</button></td>`;
-                    tbody.appendChild(subRow);
-                });
+                renderSubRows(policies, rIdx, tbody);
             }
         });
 
@@ -266,7 +270,7 @@
             const subRow = document.createElement("tr");
             subRow.className = `sub-policy-row user-child-${uIdx}`;
             subRow.style.display = "none";
-            
+
             let sourceTitle = p.name || "Access Rule";
             if (itemUri) {
                 const isDirect = p.dataUri === itemUri;
@@ -274,16 +278,33 @@
                 sourceTitle = isDirect ? "Direct Permission" : `From ${folderName}`;
             }
 
-            const allPurposes = p.constraints.purpose || [];
-            let purposeDisplay = allPurposes.length > 0 ? allPurposes[0].split(':')[1] : "Any Purpose";
+            const purposes = p.constraints.purpose || [];
+            const purposeDisplay =
+                purposes.length > 0 ? purposes[0].split(':')[1] : "Any Purpose";
 
             subRow.innerHTML = `
-                <td style="padding-left: 20px;"><strong>${sourceTitle}</strong><span>${purposeDisplay}</span></td>
-                <td>${p.permissions.permRead ? '✅' : ''}</td>
-                <td>${p.permissions.permAdd ? '✅' : ''}</td>
-                <td>${p.permissions.permModify ? '✅' : ''}</td>
-                <td>${p.permissions.permManage ? '🚨' : ''}</td>
-                <td><button class="sub-explain-btn" data-u-idx="${uIdx}" data-p-idx="${pIdx}">${lang === 'en' ? 'Explain' : 'Uitleg'}</button></td>`;
+                <td style="padding-left: 20px;">
+                    <strong>${sourceTitle}</strong>
+                    <span>${purposeDisplay}</span>
+                </td>
+
+                <!-- SINGLE COLUMN WITH BADGES -->
+                <td>
+                    ${permBadges({
+                        Read:   p.permissions.permRead,
+                        Add:    p.permissions.permAdd,
+                        Edit:   p.permissions.permModify,
+                        Manage: p.permissions.permManage
+                    })}
+                </td>
+
+                <td>
+                    <button class="sub-explain-btn" data-u-idx="${uIdx}" data-p-idx="${pIdx}">
+                        ${lang === 'en' ? 'Explain' : 'Uitleg'}
+                    </button>
+                </td>
+            `;
+
             tbody.appendChild(subRow);
         });
     }

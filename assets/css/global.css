@@ -193,7 +193,7 @@ main.informative button:hover {
 .progress-new{
     width: 0%;
     height: 100%;
-    background-color: #2ecc71;
+    background-color: #28a745;
     transition: width 0.3s ease, background-color 0.3s ease;
     position: relative;
 }
@@ -399,7 +399,7 @@ a:hover {
 }
 
 #nextButton{
-    background-color: #2ecc71;
+    background-color: #28a745;
 }
 
 #nextButton:disabled{

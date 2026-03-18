@@ -624,3 +624,14 @@ function generatePolicyText(p) {
     `;
 }
 tiers = { 0: { label: "Geen Policies", color: "grey" }, 1: { label: "Lezen", color: "green" }, 2: { label: "Toevoegen", color: "yellow" }, 3: { label: "Bewerken", color: "orange" }, 4: { label: "Beheren", color: "red" } };
+
+function permBadges(perms) {
+    return `
+        <div class="badge-list">
+            ${perms.Read   ? `<span class="badge green">Lezen</span>`   : '' }
+            ${perms.Add    ? `<span class="badge yellow">Toevoegen</span>`   : '' }
+            ${perms.Edit   ? `<span class="badge orange">Bewerken</span>`  : '' }
+            ${perms.Manage ? `<span class="badge red">Beheren</span>`   : '' }
+        </div>
+    `;
+}

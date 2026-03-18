@@ -613,3 +613,14 @@ function generatePolicyText(p) {
 }
 
 tiers = { 0: { label: "No Policies", color: "grey" }, 1: { label: "Can View", color: "green" }, 2: { label: "Can Add", color: "yellow" }, 3: { label: "Can Edit", color: "orange" }, 4: { label: "Full Control", color: "red" } };
+
+function permBadges(perms) {
+    return `
+        <div class="badge-list">
+            ${perms.Read   ? `<span class="badge green">Read</span>`   : '' }
+            ${perms.Add    ? `<span class="badge yellow">Add</span>`   : '' }
+            ${perms.Edit   ? `<span class="badge orange">Edit</span>`  : '' }
+            ${perms.Manage ? `<span class="badge red">Manage</span>`   : '' }
+        </div>
+    `;
+}

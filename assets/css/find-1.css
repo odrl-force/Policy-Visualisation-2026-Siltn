@@ -49,8 +49,8 @@
 }
 
 /* ----- Conors ----- */
-#find-1 .dot.green  { background-color: #2E8540; }
 #find-1 .dot.grey  { background-color: #999999; }
+#find-1 .dot.green  { background-color: #2E8540; }
 #find-1 .dot.yellow { background-color: #F6A600; }
 #find-1 .dot.orange { background-color: #D97904; }
 #find-1 .dot.red    { background-color: #C62828; }
@@ -72,6 +72,7 @@
     top: 0;
     z-index: 10;
     border-left: none;
+    font-size: 0.8em;
 }
 
 #policies table tr:nth-child(1) th {
@@ -90,9 +91,10 @@
     padding: 0.75rem;
     vertical-align: middle;
     border-bottom: 1px solid #e0e0e0;
-}
-#find-1 td:last-child {
     white-space: nowrap;
+}
+#find-1 td:first-child {
+    white-space: wrap;
 }
 
 #find-1 tr {
@@ -200,3 +202,37 @@
   display: block;
 }
 
+#find-1 .badge-list {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+#find-1 .badge {
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+}
+
+#find-1 .badge.green  {
+    background: #E6F4EA;
+    color: #2E8540;
+}
+
+#find-1 .badge.yellow {
+    background: #FFF4CC;
+    color: #A66A00;
+}
+
+#find-1 .badge.orange {
+    background: #FFE3C2;
+    color: #D97904;
+}
+
+#find-1 .badge.red {
+    background: #F9D4D4;
+    color: #C62828;
+}

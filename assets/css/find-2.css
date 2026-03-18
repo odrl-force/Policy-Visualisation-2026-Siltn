@@ -39,7 +39,7 @@
 
 #find-2 .audit-results { background: white; border: 1px solid #e1e4e8; border-radius: 10px; max-height: 400px; overflow-y: auto; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
 
-#find-2 table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+#find-2 table { width: 100%; border-collapse: collapse; }
 #find-2 th { background: #7C4DFF; color: white; padding: 12px; font-size: 0.75rem; position: sticky; top: 0; z-index: 10; text-align: left; text-transform: uppercase; }
 #find-2 td { padding: 12px; border-bottom: 1px solid #f0f0f0; font-size: 0.85rem; vertical-align: top; word-wrap: break-word; overflow: hidden; }
 
@@ -56,3 +56,32 @@
 
 
 #find-2 .btn-explain { background: #28a745; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold; }
+/* === MAIN WRAP FIX === */
+#find-2 .audit-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* All horizontal lanes should wrap on smaller widths */
+#find-2 .ctrl-lane,
+#find-2 .context-lane {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+/* Fix option rows so they actually wrap */
+#find-2 .option-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+    width: max-content;
+}
+
+/* Context lane must NOT be grid if we want wrap */
+#find-2 .context-lane {
+    flex-direction: row;
+    align-items: flex-end;
+}

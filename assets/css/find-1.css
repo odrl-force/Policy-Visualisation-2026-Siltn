@@ -90,6 +90,8 @@
     padding: 0.75rem;
     vertical-align: middle;
     border-bottom: 1px solid #e0e0e0;
+}
+#find-1 td:last-child {
     white-space: nowrap;
 }
 

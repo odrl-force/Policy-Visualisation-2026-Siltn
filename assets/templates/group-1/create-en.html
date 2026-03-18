@@ -7,13 +7,13 @@
 
   <div>
     <label for="dataUri" class="required">Data URI</label>
-    <p class="field-desc">The unique identifier for the specific resource.</p>
+    <p class="field-desc">The shared resource.</p>
     <input required type="url" id="dataUri" placeholder="e.g. http://example.com/ids/data/abc" />
   </div>
 
   <div>
     <label>Policy Type</label>
-    <p class="field-desc">Is this a formal offer or a request for access?</p>
+    <p class="field-desc">Request or offer access?</p>
     <select id="policyType">
       <option value="Offer">Offer</option>
       <option value="Request">Request</option>
@@ -23,12 +23,12 @@
   <div class="single-line">
     <div>
       <label for="provider" class="required">Data Provider</label>
-      <p class="field-desc">The entity providing the data.</p>
+      <p class="field-desc">Who provides access.</p>
       <input required type="url" id="provider" placeholder="e.g. http://dataprovider" />
     </div>
     <div>
       <label for="consumer" class="required">Data Consumer</label>
-      <p class="field-desc">The entity requesting/receiving the data.</p>
+      <p class="field-desc">Who reveives access.</p>
       <input required type="url" id="consumer" placeholder="e.g. http://dataconsumer" />
     </div>
   </div>

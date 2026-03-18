@@ -4,23 +4,23 @@
     "title": "Voorbeeld Policy (Niets aanpassen)",
     "type": "create",
     "sidebar": {
-      "instructions": "Dit is een voorbeeld van een volledig ingevulde policy. Dit voorbeeld toont hoe Jane Doe haar echtgenoot (Bob Smith) <b>volledige toegang</b> gaf tot <b>al</b> haar private documenten. De echtgenoot kan <b>alle</b> private documenten bekijken, toevoegen en wijzigen. Er gelden geen purpose limitations, time constraints of Locatie restrictions. Dit voorbeeld wordt ENKEL gegeven zodat je begrijpt hoe een complete en geldige policy eruit kan zien. Pas niets aan in dit voorbeeld. <br><br><b>Genereer</b> de policy om naar de 1e vraag te gaan",
+      "instructions": "Dit is een voorbeeld van een volledig ingevulde policy. Dit voorbeeld toont hoe Jane Doe haar echtgenoot (Bob Smith) <b>volledige toegang</b> gaf tot <b>al</b> haar private documenten. De echtgenoot kan <b>alle</b> private documenten bekijken, toevoegen en wijzigen. Er gelden geen purpose limitations, time constraints of Locatie restrictions. Dit voorbeeld wordt ENKEL gegeven zodat je begrijpt hoe een complete en geldige policy eruit kan zien. Pas niets aan in dit voorbeeld. <br><br>Scroll naar beneden in dit veld om de gebruikte gegevens te bekijken.<br><br><b>Genereer</b> de policy om naar de 1e vraag te gaan",
       "params": [
-        {
-          "label": "Echtgenote (Bob Smith)",
-          "value": "https://solidweb.me/BobSmith/profile/card"
-        },
         {
           "label": "Alle private documenten van Jane Doe",
           "value": "https://solidweb.me/JaneDoe/Private"
         },
         {
-          "label": "Private financiële documenten van Jane Doe",
-          "value": "https://solidweb.me/JaneDoe/Private/Finances"
+          "label": "Echtgenote (Bob Smith)",
+          "value": "https://solidweb.me/BobSmith/profile/card"
         },
         {
-          "label": "Passwords vault van Jane Doe",
-          "value": "https://solidweb.me/JaneDoe/Private/Passwords_Vault.txt"
+          "label": "Moeder (Jane Doe)",
+          "value": "https://solidweb.me/JaneDoe/profile/card"
+        },
+        {
+          "label": "Doel - Alle",
+          "value": "All:All"
         },
         {
           "label": "Locatie – Europa",
@@ -64,16 +64,8 @@
     "title": "Maak een policy",
     "type": "create",
     "sidebar": {
-      "instructions": "Je moeder (Jane Doe) heeft hulp nodig bij het beheren van haar permissies. Maak een policy die jou (Alice Smith) tijdelijk volledige controle geeft over <b>alle data van de pod van Jane Doe</b>. Je moet informatie over haar volledige pod kunnen <b>bekijken</b>, <b>toevoegen</b> en <b>updaten</b>, en ook <b>de toegang kunnen beheren</b> gedurende een korte periode. Pas deze policy toe op de <b>volledige pod</b>, inclusief haar persoonlijke informatie, medische documenten, juridische documenten en publieke materialen.\n\nGebruik het doel <b>Account Management</b>. Beperk de toegang strikt tot een periode van <b>2 maanden</b> en voeg geen andere actoren toe.",
+      "instructions": "Je moeder (Jane Doe) heeft hulp nodig bij het beheren van haar permissies. Maak een policy die jou (Alice Smith) tijdelijk volledige controle geeft over <b>alle data van de pod van Jane Doe</b>. Je moet informatie over haar volledige pod kunnen <b>bekijken</b>, <b>toevoegen</b> en <b>updaten</b>, en ook <b>de toegang kunnen beheren</b> gedurende een korte periode. Pas deze policy toe op de <b>volledige pod</b>, inclusief haar persoonlijke informatie, medische documenten, juridische documenten en publieke materialen.\n\nGebruik het doel <b>Account Management</b>. Beperk de toegang strikt tot een periode van <b>2 maanden</b> en voeg geen andere actoren toe.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
-        {
-          "label": "Jij (Alice Smith)",
-          "value": "https://solidweb.me/AliceSmith/profile/card"
-        },
-        {
-          "label": "Moeder (Jane Doe)",
-          "value": "https://solidweb.me/JaneDoe/profile/card"
-        },
         {
           "label": "Alle data van Jane Doe (volledige pod)",
           "value": "https://solidweb.me/JaneDoe"
@@ -83,20 +75,12 @@
           "value": "https://solidweb.me/AliceSmith"
         },
         {
-          "label": "Persoonlijke informatie en documenten van Jane Doe",
-          "value": "https://solidweb.me/JaneDoe/Personal"
+          "label": "Jij (Alice Smith)",
+          "value": "https://solidweb.me/AliceSmith/profile/card"
         },
         {
-          "label": "Persoonlijke informatie en documenten van Alice Smith",
-          "value": "https://solidweb.me/AliceSmith/Personal"
-        },
-        {
-          "label": "Private documenten van Jane Doe",
-          "value": "https://solidweb.me/JaneDoe/Private"
-        },
-        {
-          "label": "Private documenten vab Alice Smith",
-          "value": "https://solidweb.me/AliceSmith/Private"
+          "label": "Moeder (Jane Doe)",
+          "value": "https://solidweb.me/JaneDoe/profile/card"
         },
         {
           "label": "Doel – Account Management",
@@ -131,16 +115,8 @@
     "title": "Maan een policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Je moeder (Jane Doe) heeft hulp nodig bij het beheren van haar permissies. Maak een policy die jou (Alice Smith) tijdelijk volledige controle geeft over <b>alle data van de pod van Jane Doe</b>. Je moet informatie over haar volledige pod kunnen <b>bekijken</b>, <b>toevoegen</b> en <b>updaten</b>, en ook <b>de toegang kunnen beheren</b> gedurende een korte periode. Pas deze policy toe op de <b>volledige pod</b>, inclusief haar persoonlijke informatie, medische documenten, juridische documenten en publieke materialen.\n\nGebruik het doel <b>Account Management</b>. Beperk de toegang strikt tot een periode van <b>2 maanden</b> en voeg geen andere actoren toe.",
+      "instructions": "Je moeder (Jane Doe) heeft hulp nodig bij het beheren van haar permissies. Maak een policy die jou (Alice Smith) tijdelijk volledige controle geeft over <b>alle data van de pod van Jane Doe</b>. Je moet informatie over haar volledige pod kunnen <b>bekijken</b>, <b>toevoegen</b> en <b>updaten</b>, en ook <b>de toegang kunnen beheren</b> gedurende een korte periode. Pas deze policy toe op de <b>volledige pod</b>, inclusief haar persoonlijke informatie, medische documenten, juridische documenten en publieke materialen.\n\nGebruik het doel <b>Account Management</b>. Beperk de toegang strikt tot een periode van <b>2 maanden</b> en voeg geen andere actoren toe.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
-        {
-          "label": "Jij (Alice Smith)",
-          "value": "https://solidweb.me/AliceSmith/profile/card"
-        },
-        {
-          "label": "Moeder (Jane Doe)",
-          "value": "https://solidweb.me/JaneDoe/profile/card"
-        },
         {
           "label": "Alle data van Jane Doe (volledige pod)",
           "value": "https://solidweb.me/JaneDoe"
@@ -150,20 +126,12 @@
           "value": "https://solidweb.me/AliceSmith"
         },
         {
-          "label": "Persoonlijke informatie en documenten van Jane Doe",
-          "value": "https://solidweb.me/JaneDoe/Personal"
+          "label": "Jij (Alice Smith)",
+          "value": "https://solidweb.me/AliceSmith/profile/card"
         },
         {
-          "label": "Persoonlijke informatie en documenten van Alice Smith",
-          "value": "https://solidweb.me/AliceSmith/Personal"
-        },
-        {
-          "label": "Private documenten van Jane Doe",
-          "value": "https://solidweb.me/JaneDoe/Private"
-        },
-        {
-          "label": "Private documenten vab Alice Smith",
-          "value": "https://solidweb.me/AliceSmith/Private"
+          "label": "Moeder (Jane Doe)",
+          "value": "https://solidweb.me/JaneDoe/profile/card"
         },
         {
           "label": "Doel – Account Management",
@@ -198,8 +166,16 @@
     "title": "Maak een policy",
     "type": "create",
     "sidebar": {
-      "instructions": "Je moeder (Jane Doe) volgt kinesitherapie bij de <b>MoveWell Clinic</b>. De kinesist moet haar <b>medische documenten van 2026</b> kunnen inkijken en nieuwe sessies registreren voor het doel van healthcare service management.\n\nMaak een policy die de <b>kinesitherapeut van MoveWell Clinic</b> toelaat om <b>alle medische documenten van 2026 te bekijken</b>, <b>nieuwe therapienotities toe te voegen</b> en <b>bestaande therapienotities aan te passen</b> indien correcties nodig zijn. De kinesist mag <b>niet</b> veranderen wie er nog toegang heeft. Pas de policy enkel toe op de <b>relevante medische map van 2026 en de therapienotities</b>. Geef toegang tot <b>het einde van het jaar</b>.",
+      "instructions": "Je moeder (Jane Doe) volgt kinesitherapie bij de <b>MoveWell Clinic</b>. De kinesist moet haar <b>medische documenten van 2026</b> kunnen inkijken en nieuwe sessies registreren voor het doel van <b>healthcare service management.</b>\n\nMaak een policy die de <b>kinesitherapeut van MoveWell Clinic</b> toelaat om <b>alle medische documenten van 2026 te bekijken</b>, <b>nieuwe therapienotities toe te voegen</b> en <b>bestaande therapienotities aan te passen</b> indien correcties nodig zijn. De kinesist mag <b>niet</b> veranderen wie er nog toegang heeft. Pas de policy enkel toe op de <b>relevante medische map van 2026 en de therapienotities</b>. Geef toegang tot <b>het einde van het jaar</b>.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
+        {
+          "label": "Therapienotities voor Jane Doe (2026)",
+          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Physio_Notes.ttl"
+        },
+        {
+          "label": "Mediche documenten van Jane Doe voor het jaar 2026",
+          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026"
+        },
         {
           "label": "Doctor Van der Velden (huisarts)",
           "value": "https://solidweb.me/doctor-van-der-velden/profile/card"
@@ -215,14 +191,6 @@
         {
           "label": "Verpleegkundige Evy (thuiszorg)",
           "value": "https://solidweb.me/nurse-evy/profile/card"
-        },
-        {
-          "label": "Therapienotities voor Jane Doe (2026)",
-          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Physio_Notes.ttl"
-        },
-        {
-          "label": "Mediche documenten van Jane Doe voor het jaar 2026",
-          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026"
         },
         {
           "label": "Doel – Optimisation of care",
@@ -257,8 +225,16 @@
     "title": "Maak een policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Je moeder (Jane Doe) volgt kinesitherapie bij de <b>MoveWell Clinic</b>. De kinesist moet haar <b>medische documenten van 2026</b> kunnen inkijken en nieuwe sessies registreren voor het doel van healthcare service management.\n\nMaak een policy die de <b>kinesitherapeut van MoveWell Clinic</b> toelaat om <b>alle medische documenten van 2026 te bekijken</b>, <b>nieuwe therapienotities toe te voegen</b> en <b>bestaande therapienotities aan te passen</b> indien correcties nodig zijn. De kinesist mag <b>niet</b> veranderen wie er nog toegang heeft. Pas de policy enkel toe op de <b>relevante medische map van 2026 en de therapienotities</b>. Geef toegang tot <b>het einde van het jaar</b>.",
+      "instructions": "Je moeder (Jane Doe) volgt kinesitherapie bij de <b>MoveWell Clinic</b>. De kinesist moet haar <b>medische documenten van 2026</b> kunnen inkijken en nieuwe sessies registreren voor het doel van <b>healthcare service management.</b>\n\nMaak een policy die de <b>kinesitherapeut van MoveWell Clinic</b> toelaat om <b>alle medische documenten van 2026 te bekijken</b>, <b>nieuwe therapienotities toe te voegen</b> en <b>bestaande therapienotities aan te passen</b> indien correcties nodig zijn. De kinesist mag <b>niet</b> veranderen wie er nog toegang heeft. Pas de policy enkel toe op de <b>relevante medische map van 2026 en de therapienotities</b>. Geef toegang tot <b>het einde van het jaar</b>.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
+        {
+          "label": "Therapienotities voor Jane Doe (2026)",
+          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Physio_Notes.ttl"
+        },
+        {
+          "label": "Mediche documenten van Jane Doe voor het jaar 2026",
+          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026"
+        },
         {
           "label": "Doctor Van der Velden (huisarts)",
           "value": "https://solidweb.me/doctor-van-der-velden/profile/card"
@@ -274,14 +250,6 @@
         {
           "label": "Verpleegkundige Evy (thuiszorg)",
           "value": "https://solidweb.me/nurse-evy/profile/card"
-        },
-        {
-          "label": "Therapienotities voor Jane Doe (2026)",
-          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Physio_Notes.ttl"
-        },
-        {
-          "label": "Mediche documenten van Jane Doe voor het jaar 2026",
-          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026"
         },
         {
           "label": "Doel – Optimisation of care",
@@ -316,8 +284,16 @@
     "title": "Maak een policy",
     "type": "create",
     "sidebar": {
-      "instructions": "Jane Doe heeft ermee ingestemd om deel te nemen aan een lokaal onderzoeksproject in haar stad. <br>Maak een policy die het <b>onderzoeksteam via haar huisarts (Doctor Van der Velden)</b> toelaat om <b>relevante informatie uit <b>al</b> haar medische dossiers te bekijken</b> gedurende het <b>volledige jaar</b>. Ze mogen geen toegang wijzigen of beheren. Pas deze policy toe op haar <b>medische data</b> in het algemeen, zonder private of niet-gerelateerde persoonlijke mappen op te nemen. Gebruik het doel <b>Research and Development</b>. Zorg er ook voor dat haar data <b>anoniem</b> wordt gebruikt en dat ze deze alleen kunnen gebruiken in <b>Brugge</b>",
+      "instructions": "Jane Doe heeft ermee ingestemd om deel te nemen aan een lokaal onderzoeksproject in haar stad. <br>Maak een policy die het <b>onderzoeksteam via haar huisarts (Doctor Van der Velden)</b> toelaat om <b>relevante informatie</b> uit <b>al</b> haar medische dossiers te bekijken</b> gedurende het <b>volledige jaar</b>. Ze mogen geen toegang wijzigen of beheren. Pas deze policy toe op haar <b>medische data</b> in het algemeen, zonder private of niet-gerelateerde persoonlijke mappen op te nemen. Gebruik het doel <b>Research and Development</b>. Zorg er ook voor dat haar data <b>anoniem</b> wordt gebruikt en dat ze deze alleen kunnen gebruiken in <b>Brugge</b><br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
+        {
+          "label": "Alle mediche data van Alice Smith",
+          "value": "https://solidweb.me/AliceSmith/Personal/Medical"
+        },
+        {
+          "label": "Alle mediche data van Jane Doe",
+          "value": "https://solidweb.me/JaneDoe/Personal/Medical"
+        },
         {
           "label": "Jij (Alice Smith)",
           "value": "https://solidweb.me/AliceSmith/profile/card"
@@ -333,14 +309,6 @@
         {
           "label": "Verpleegkundige Evy (thuiszorg)",
           "value": "https://solidweb.me/nurse-evy/profile/card"
-        },
-        {
-          "label": "Alle mediche data van Alice Smith",
-          "value": "https://solidweb.me/AliceSmith/Personal/Medical"
-        },
-        {
-          "label": "Alle mediche data van Jane Doe",
-          "value": "https://solidweb.me/JaneDoe/Personal/Medical"
         },
         {
           "label": "Doel – Academic research",
@@ -375,8 +343,16 @@
     "title": "Maak een policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Jane Doe heeft ermee ingestemd om deel te nemen aan een lokaal onderzoeksproject in haar stad. <br>Maak een policy die het <b>onderzoeksteam via haar huisarts (Doctor Van der Velden)</b> toelaat om <b>relevante informatie uit <b>al</b> haar medische dossiers te bekijken</b> gedurende het <b>volledige jaar</b>. Ze mogen geen toegang wijzigen of beheren. Pas deze policy toe op haar <b>medische data</b> in het algemeen, zonder private of niet-gerelateerde persoonlijke mappen op te nemen. Gebruik het doel <b>Research and Development</b>. Zorg er ook voor dat haar data <b>anoniem</b> wordt gebruikt en dat ze deze alleen kunnen gebruiken in <b>Brugge</b>",
+      "instructions": "Jane Doe heeft ermee ingestemd om deel te nemen aan een lokaal onderzoeksproject in haar stad. <br>Maak een policy die het <b>onderzoeksteam via haar huisarts (Doctor Van der Velden)</b> toelaat om <b>relevante informatie</b> uit <b>al</b> haar medische dossiers te bekijken</b> gedurende het <b>volledige jaar</b>. Ze mogen geen toegang wijzigen of beheren. Pas deze policy toe op haar <b>medische data</b> in het algemeen, zonder private of niet-gerelateerde persoonlijke mappen op te nemen. Gebruik het doel <b>Research and Development</b>. Zorg er ook voor dat haar data <b>anoniem</b> wordt gebruikt en dat ze deze alleen kunnen gebruiken in <b>Brugge</b><br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
+        {
+          "label": "Alle mediche data van Alice Smith",
+          "value": "https://solidweb.me/AliceSmith/Personal/Medical"
+        },
+        {
+          "label": "Alle mediche data van Jane Doe",
+          "value": "https://solidweb.me/JaneDoe/Personal/Medical"
+        },
         {
           "label": "Jij (Alice Smith)",
           "value": "https://solidweb.me/AliceSmith/profile/card"
@@ -392,14 +368,6 @@
         {
           "label": "Verpleegkundige Evy (thuiszorg)",
           "value": "https://solidweb.me/nurse-evy/profile/card"
-        },
-        {
-          "label": "Alle mediche data van Alice Smith",
-          "value": "https://solidweb.me/AliceSmith/Personal/Medical"
-        },
-        {
-          "label": "Alle mediche data van Jane Doe",
-          "value": "https://solidweb.me/JaneDoe/Personal/Medical"
         },
         {
           "label": "Doel – Academic research",
@@ -434,7 +402,13 @@
     "title": "Vind policies die verwijderd moeten worden",
     "type": "find",
     "sidebar": {
-      "instructions": "Jane Doe ontvangt geen thuisverpleging meer van het <b>Wit‑Gele Kruis</b>.<br>Zoek en lijst all bestaande policies op die het Wit‑Gele Kruis nog toegang zou geven tot haar dossiers.",
+      "instructions": "Jane Doe ontvangt geen thuisverpleging meer van het <b>Wit‑Gele Kruis</b>.<br>Zoek en lijst all bestaande policies op die het Wit‑Gele Kruis nog toegang zou geven tot haar dossiers.<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "params": [
+        {
+          "label": "Wit-Gele Kruis",
+          "value": "https://solidweb.me/wit-gele-kruis/profile/card"
+        }
+      ],
       "select": {
         "title": "Policies",
         "options": ["p-0003", "p-0007", "p-0010", "p-0013", "p-0014", "p-0015", "p-0016", "p-0020", "p-0021", "p-0025", "p-0031", "p-0032", "p-0049"]
@@ -447,7 +421,13 @@
     "title": "Vind policies die verwijderd moeten worden",
     "type": "review",
     "sidebar": {
-      "instructions": "Jane Doe ontvangt geen thuisverpleging meer van het <b>Wit‑Gele Kruis</b>.<br>Zoek en lijst all bestaande policies op die het Wit‑Gele Kruis nog toegang zou geven tot haar dossiers."
+      "instructions": "Jane Doe ontvangt geen thuisverpleging meer van het <b>Wit‑Gele Kruis</b>.<br>Zoek en lijst all bestaande policies op die het Wit‑Gele Kruis nog toegang zou geven tot haar dossiers.<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "params": [
+        {
+          "label": "Wit-Gele Kruis",
+          "value": "https://solidweb.me/wit-gele-kruis/profile/card"
+        }
+      ]
     },
     "body": {}
   },
@@ -456,24 +436,24 @@
     "title": "Bewerk een policy",
     "type": "create",
     "sidebar": {
-        "instructions": "Je moeder (Jane Doe) dient een verzekeringsclaim in voor een voetblessure.<br><b>AG Health Insurance</b> heeft een policy nodig die hen toelaat om <b>de medische documenten die betrekking hebben op haar voetblessure te bekijken</b> gedurende <b>één maand</b>. Ze mogen <b>geen</b> bestanden <b>toevoegen</b> of <b>wijzigen</b>. Ze moeten ook <b>alle data verwijderen</b> wanneer de toegang eindigt. Ze hebben een policy voorgesteld die hen <b>meer toegang geeft dan nodig</b> bekijk de policy en pas ze aan zodat ze voldoet aan de vereisten.",
+        "instructions": "Je moeder (Jane Doe) dient een verzekeringsclaim in voor een voetblessure.<br><b>AG Health Insurance</b> heeft een policy nodig die hen toelaat om <b>de medische documenten die betrekking hebben op haar voetblessure te bekijken</b> gedurende <b>één maand</b>. Ze mogen <b>geen</b> bestanden <b>toevoegen</b> of <b>wijzigen</b>. Ze moeten ook <b>alle data verwijderen</b> wanneer de toegang eindigt. Ze hebben een policy voorgesteld die hen <b>meer toegang geeft dan nodig</b> bekijk de policy en pas ze aan zodat ze voldoet aan de vereisten.<br><br>De nodige gegevens kan je hieronder terugvinden",
         "params": [
-        {
-          "label": "Jij (Alice Smith)",
-          "value": "https://solidweb.me/AliceSmith/profile/card"
-        },
-        {
-          "label": "AG Health Insurance",
-          "value": "https://solidweb.me/insurance-ag-health/profile/card"
-        },
-        {
-          "label": "X‑ray foto van Jane Doe’s voet (2026)",
-          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Foot_XRay.png"
-        },
-        {
-          "label": "Notities van verpleegkundigen (2026)",
-          "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Nursing_Log.json"
-        },
+          {
+            "label": "X‑ray foto van Jane Doe’s voet (2026)",
+            "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Foot_XRay.png"
+          },
+          {
+            "label": "Notities van verpleegkundigen (2026)",
+            "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Nursing_Log.json"
+          },
+          {
+            "label": "Jij (Alice Smith)",
+            "value": "https://solidweb.me/AliceSmith/profile/card"
+          },
+          {
+            "label": "AG Health Insurance",
+            "value": "https://solidweb.me/insurance-ag-health/profile/card"
+          },
         {
           "label": "Doel – Insurance management",
           "value": "sector-health:InsuranceManagement"
@@ -533,16 +513,8 @@
     "title": "Bewerk een policy",
     "type": "review",
     "sidebar": {
-        "instructions": "Je moeder (Jane Doe) dient een verzekeringsclaim in voor een voetblessure.<br><b>AG Health Insurance</b> heeft een policy nodig die hen toelaat om <b>de medische documenten die betrekking hebben op haar voetblessure te bekijken</b> gedurende <b>één maand</b>. Ze mogen <b>geen</b> bestanden <b>toevoegen</b> of <b>wijzigen</b>. Ze moeten ook <b>alle data verwijderen</b> wanneer de toegang eindigt. Ze hebben een policy voorgesteld die hen <b>meer toegang geeft dan nodig</b> bekijk de policy en pas ze aan zodat ze voldoet aan de vereisten.",
+        "instructions": "Je moeder (Jane Doe) dient een verzekeringsclaim in voor een voetblessure.<br><b>AG Health Insurance</b> heeft een policy nodig die hen toelaat om <b>de medische documenten die betrekking hebben op haar voetblessure te bekijken</b> gedurende <b>één maand</b>. Ze mogen <b>geen</b> bestanden <b>toevoegen</b> of <b>wijzigen</b>. Ze moeten ook <b>alle data verwijderen</b> wanneer de toegang eindigt. Ze hebben een policy voorgesteld die hen <b>meer toegang geeft dan nodig</b> bekijk de policy en pas ze aan zodat ze voldoet aan de vereisten.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
-        {
-          "label": "Jij (Alice Smith)",
-          "value": "https://solidweb.me/AliceSmith/profile/card"
-        },
-        {
-          "label": "AG Health Insurance",
-          "value": "https://solidweb.me/insurance-ag-health/profile/card"
-        },
         {
           "label": "X‑ray foto van Jane Doe’s voet (2026)",
           "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Foot_XRay.png"
@@ -550,6 +522,14 @@
         {
           "label": "Notities van verpleegkundigen (2026)",
           "value": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Nursing_Log.json"
+        },
+        {
+          "label": "Jij (Alice Smith)",
+          "value": "https://solidweb.me/AliceSmith/profile/card"
+        },
+        {
+          "label": "AG Health Insurance",
+          "value": "https://solidweb.me/insurance-ag-health/profile/card"
         },
         {
           "label": "Doel – Insurance management",
@@ -628,7 +608,7 @@
     "title": "Vind alle mensen die Jane Doe haar dagelijkse stappen mogen bekijken",
     "type": "find",
     "sidebar": {
-      "instructions": "Je moeder (Jane Doe) heeft sommige mensen toestemming gegeven om haar dagelijkse stappen te bekijken. Lijst <b>alle</b> actoren op die haar dagenlijkse stappen kunnen <b>bekijken</b>.",
+      "instructions": "Je moeder (Jane Doe) heeft sommige mensen toestemming gegeven om haar dagelijkse stappen te bekijken. Lijst <b>alle</b> actoren op die haar dagenlijkse stappen kunnen <b>bekijken</b>.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
       {
         "label": "Dagelijkse stappen Alice Smith",
@@ -651,7 +631,7 @@
     "title": "Vind alle mensen die Jane Doe haar dagelijkse stappen mogen bekijken",
     "type": "review",
     "sidebar": {
-      "instructions": "Je moeder (Jane Doe) heeft sommige mensen toestemming gegeven om haar dagelijkse stappen te bekijken. Lijst <b>alle</b> actoren op die haar dagenlijkse stappen kunnen <b>bekijken</b>.",
+      "instructions": "Je moeder (Jane Doe) heeft sommige mensen toestemming gegeven om haar dagelijkse stappen te bekijken. Lijst <b>alle</b> actoren op die haar dagenlijkse stappen kunnen <b>bekijken</b>.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
       {
         "label": "Dagelijkse stappen Alice Smith",
@@ -689,52 +669,10 @@
   },
   {
     "question": 9,
-    "title": "Vind wie Jane Doe's email mag gebruiken voor marketing",
-    "type": "find",
-    "sidebar": {
-      "instructions": "Je moeder (Jane Doe) heeft veel mensen toegang gegeven tot haar e‑mail. Alleen sommigen mogen die gebruiken voor <b>marketing</b>. Lijst <b>alle actoren</b> op die Jane Doe marketing‑e-mails mogen sturen.",
-      "params": [
-        {
-          "label": "Jane Doe's email",
-          "value": "https://solidweb.me/JaneDoe/Personal/Contact/email.txt"
-        },
-        {
-          "label": "Doel – Marketing",
-          "value": "dpv:Marketing"
-        }
-      ],
-      "select": {
-        "title": "Actors",
-        "options": ["acme-corp", "ah-belgium", "AliceSmith", "bolcom", "bpost", "carecenter-the-tree", "carol-green", "carrefour-belgium", "city-of-bruges", "city-of-ghent", "colruyt", "coolblue", "countrybank", "delhaize", "dietician-green-plate", "doctor-van-der-velden", "farmfresh-veggies", "food-delivery-lotus", "insurance-ag-health", "insurance-kbc-home", "landlord-mr-lambert", "nurse-evy", "okay-delivery", "physio-movewell", "ugent-research", "wit-gele-kruis"]
-      }
-    },
-    "body": {}
-  },
-    {
-    "question": 9,
-    "title": "Vind wie Jane Doe's email mag gebruiken voor marketing",
-    "type": "review",
-    "sidebar": {
-      "instructions": "Je moeder (Jane Doe) heeft veel mensen toegang gegeven tot haar e‑mail. Alleen sommigen mogen die gebruiken voor <b>marketing</b>. Lijst <b>alle actoren</b> op die Jane Doe marketing‑e-mails mogen sturen.",
-      "params": [
-        {
-          "label": "Jane Doe's email",
-          "value": "https://solidweb.me/JaneDoe/Personal/Contact/email.txt"
-        },
-        {
-          "label": "Doel – Marketing",
-          "value": "dpv:Marketing"
-        }
-      ]
-    },
-    "body": {}
-  },
-  {
-    "question": 10,
     "title": "Ontdek hoe lang de verhuurder contact kan opnemen met Alice",
     "type": "find",
     "sidebar": {
-      "instructions": "De voormalige verhuurder van Alice (Mr. Lambert) kan mogelijk nog beperkte toegang hebben voor administratieve opvolging nadat ze verhuisd is. Zoek uit <b>hoe lang</b> hij nog toegang heeft tot de <b>contactinformatie</b> van Alice",
+      "instructions": "De voormalige verhuurder van Alice (Mr. Lambert) kan mogelijk nog beperkte toegang hebben voor administratieve opvolging nadat ze verhuisd is. Zoek uit <b>hoe lang</b> hij nog toegang heeft tot de <b>contactinformatie</b> van Alice<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Mr. Lambert (voormalige verhuurder)",
@@ -757,11 +695,11 @@
     "body": {}
   },
   {
-    "question": 10,
+    "question": 9,
     "title": "Ontdek hoe lang de verhuurder contact kan opnemen met Alice",
     "type": "review",
     "sidebar": {
-      "instructions": "De voormalige verhuurder van Alice (Mr. Lambert) kan mogelijk nog beperkte toegang hebben voor administratieve opvolging nadat ze verhuisd is. Zoek uit <b>hoe lang</b> hij nog toegang heeft tot de <b>contactinformatie</b> van Alice",
+      "instructions": "De voormalige verhuurder van Alice (Mr. Lambert) kan mogelijk nog beperkte toegang hebben voor administratieve opvolging nadat ze verhuisd is. Zoek uit <b>hoe lang</b> hij nog toegang heeft tot de <b>contactinformatie</b> van Alice<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Mr. Lambert (voormalige verhuurder)",
@@ -780,11 +718,11 @@
     "body": {}
   },
   {
-    "question": 11,
+    "question": 10,
     "title": "Vind de doelen waarvoor de verhuurder Alice mag contacteren",
     "type": "find",
     "sidebar": {
-      "instructions": "Zoals eerder vermeld kan de voormalige verhuurder van Alice (Mr. Lambert) haar nog contacteren indien nodig. Wat zijn de <b>doelen</b> waarvoor hij haar zou mogen contacteren?",
+      "instructions": "Zoals eerder vermeld kan de voormalige verhuurder van Alice (Mr. Lambert) haar nog contacteren indien nodig. Wat zijn de <b>doelen</b> waarvoor hij haar zou mogen contacteren?<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Mr. Lambert (voormalige verhuurder)",
@@ -807,11 +745,11 @@
     "body": {}
   },
   {
-    "question": 11,
+    "question": 10,
     "title": "Vind de doelen waarvoor de verhuurder Alice mag contacteren",
     "type": "review",
     "sidebar": {
-      "instructions": "Zoals eerder vermeld kan de voormalige verhuurder van Alice (Mr. Lambert) haar nog contacteren indien nodig. Wat zijn de <b>doelen</b> waarvoor hij haar zou mogen contacteren?",
+      "instructions": "Zoals eerder vermeld kan de voormalige verhuurder van Alice (Mr. Lambert) haar nog contacteren indien nodig. Wat zijn de <b>doelen</b> waarvoor hij haar zou mogen contacteren?<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Mr. Lambert (voormalige verhuurder)",
@@ -830,33 +768,11 @@
     "body": {}
   },
   {
-    "question": 12,
-    "title": "Vind de actoren die bestanden mogen aanpassen",
-    "type": "find",
-    "sidebar": {
-      "instructions": "Het bewerken van permissies kan een grote impact hebben op de integriteit en privacy van data. Lijst elke actor op die <b>wijzig‑</b>permissies heeft op <b>om het even welk document</b>. Deze permissies laten een actor toe om bestaande inhoud aan te passen. Lijst <b>alle actoren</b> op die minstens één document kunnen wijzigen.",
-      "select": {
-        "title": "Actoren",
-        "options": ["acme-corp", "acme-smartwatch", "ah-belgium", "AliceSmith", "bolcom", "bpost", "carecenter-the-tree", "carol-green", "carrefour-belgium", "city-of-bruges", "city-of-ghent", "colruyt", "coolblue", "countrybank", "dave-black", "delhaize", "dentist-bruges-smile", "dietician-green-plate", "doctor-van-der-velden", "doctor-verbeeck", "farmfresh-veggies", "food-delivery-lotus", "GhentDataCollection", "insurance-ag-health", "insurance-kbc-home", "landlord-mr-lambert", "nurse-evy", "okay-delivery", "physio-movewell", "ugent-research", "wit-gele-kruis"]
-      }
-    },
-    "body": {}
-  },
-  {
-    "question": 12,
-    "title": "Vind de actoren die bestanden mogen aanpassen",
-    "type": "review",
-    "sidebar": {
-      "instructions": "Het bewerken van permissies kan een grote impact hebben op de integriteit en privacy van data. Lijst elke actor op die <b>wijzig‑</b>permissies heeft op <b>om het even welk document</b>. Deze permissies laten een actor toe om bestaande inhoud aan te passen. Lijst <b>alle actoren</b> op die minstens één document kunnen wijzigen."
-    },
-    "body": {}
-  },
-  {
-    "question": 13,
+    "question": 11,
     "title": "Vind de verplichtingen van de UGent met betrekking tot de medische gegevens van Alice Smith.",
     "type": "find",
     "sidebar": {
-      "instructions": "UGent mag toegang hebben tot en verwerking doen van <b>jouw</b> (Alice Smith) medische informatie. Verplichtingen bepalen wat UGent moet doen bij het omgaan met deze data. Lijst <b>alle verplichtingen</b> op die UGent moet volgen om <b>jouw medische data</b> te mogen gebruiken in studies.",
+      "instructions": "UGent mag toegang hebben tot en verwerking doen van <b>jouw</b> (Alice Smith) medische informatie. Verplichtingen bepalen wat UGent moet doen bij het omgaan met deze data. Lijst <b>alle verplichtingen</b> op die UGent moet volgen om <b>jouw medische data</b> te mogen gebruiken in studies.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "UGent-research",
@@ -879,11 +795,11 @@
     "body": {}
   },
   {
-    "question": 13,
+    "question": 11,
     "title": "Vind de verplichtingen van de UGent met betrekking tot de medische gegevens van Alice Smith.",
     "type": "review",
     "sidebar": {
-      "instructions": "UGent mag toegang hebben tot en verwerking doen van <b>jouw</b> (Alice Smith) medische informatie. Verplichtingen bepalen wat UGent moet doen bij het omgaan met deze data. Lijst <b>alle verplichtingen</b> op die UGent moet volgen om <b>jouw medische data</b> te mogen gebruiken in studies.",
+      "instructions": "UGent mag toegang hebben tot en verwerking doen van <b>jouw</b> (Alice Smith) medische informatie. Verplichtingen bepalen wat UGent moet doen bij het omgaan met deze data. Lijst <b>alle verplichtingen</b> op die UGent moet volgen om <b>jouw medische data</b> te mogen gebruiken in studies.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "UGent-research",
@@ -902,11 +818,11 @@
     "body": {}
   },
   {
-    "question": 14,
+    "question": 12,
     "title": "Zoek wie alleen vanuit België contact kan opnemen met Alice",
     "type": "find",
     "sidebar": {
-      "instructions": "Sommige policies bevatten geografische beperkingen die de toegang beperken tot de fysieke locatie van actoren. Lijst alle actoren op die enkel toegang hebben tot <b>jouw</b> (Alice Smith) <b>contactinformatie</b> wanneer zij zich binnen <b>België</b> bevinden.",
+      "instructions": "Sommige policies bevatten geografische beperkingen die de toegang beperken tot de fysieke locatie van actoren. Lijst alle actoren op die enkel toegang hebben tot <b>jouw</b> (Alice Smith) <b>contactinformatie</b> wanneer zij zich binnen <b>België</b> bevinden.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Alle contactgegevens van Alice Smith",
@@ -925,11 +841,11 @@
     "body": {}
   },
   {
-    "question": 14,
+    "question": 12,
     "title": "Zoek wie alleen vanuit België contact kan opnemen met Alice",
     "type": "review",
     "sidebar": {
-      "instructions": "Sommige policies bevatten geografische beperkingen die de toegang beperken tot de fysieke locatie van actoren. Lijst alle actoren op die enkel toegang hebben tot <b>jouw</b> (Alice Smith) <b>contactinformatie</b> wanneer zij zich binnen <b>België</b> bevinden.",
+      "instructions": "Sommige policies bevatten geografische beperkingen die de toegang beperken tot de fysieke locatie van actoren. Lijst alle actoren op die enkel toegang hebben tot <b>jouw</b> (Alice Smith) <b>contactinformatie</b> wanneer zij zich binnen <b>België</b> bevinden.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Alle contactgegevens van Alice Smith",

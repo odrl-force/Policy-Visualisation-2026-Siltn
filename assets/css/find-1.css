@@ -6,7 +6,7 @@
     border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
-    padding: 10px;
+    padding: 0.5em;
 }
 
 #find-1 button:hover {
@@ -17,13 +17,6 @@
     display: flex;
     gap: 1rem;
     height: 40vh;
-}
-
-#find-1 .flex-wrapper {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    line-height: 1;
 }
 
 #find-1 .scrollable {
@@ -64,7 +57,8 @@
 
 /* -----  Table ----- */
 #find-1 table {
-    width: 100%;
+    width: min-content;
+    min-width: 100%;
     border-collapse: collapse;
     font-size: 0.95rem;
 }
@@ -96,6 +90,7 @@
     padding: 0.75rem;
     vertical-align: middle;
     border-bottom: 1px solid #e0e0e0;
+    white-space: nowrap;
 }
 
 #find-1 tr {
@@ -202,3 +197,4 @@
   margin-top: 3px;
   display: block;
 }
+

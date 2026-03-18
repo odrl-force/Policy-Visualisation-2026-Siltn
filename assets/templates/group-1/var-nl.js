@@ -623,4 +623,4 @@ function generatePolicyText(p) {
       </div>
     `;
 }
-tiers = { 0: { label: "Geen Policies", color: "grey" }, 1: { label: "Lezen", color: "green" }, 2: { label: "Toevoegen", color: "yellow" }, 3: { label: "Edit", color: "orange" }, 4: { label: "Admin", color: "red" } };
+tiers = { 0: { label: "Geen Policies", color: "grey" }, 1: { label: "Lezen", color: "green" }, 2: { label: "Toevoegen", color: "yellow" }, 3: { label: "Bewerken", color: "orange" }, 4: { label: "Beheren", color: "red" } };

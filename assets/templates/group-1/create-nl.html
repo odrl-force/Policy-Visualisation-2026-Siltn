@@ -7,13 +7,13 @@
 
   <div>
     <label for="dataUri" class="required">Gegevens URI</label>
-    <p class="field-desc">De unieke identificator voor de specifieke resource.</p>
+    <p class="field-desc">Het gedeelde bestand.</p>
     <input required type="url" id="dataUri" placeholder="e.g. http://example.com/ids/data/abc" />
   </div>
 
   <div>
     <label>Type Policy</label>
-    <p class="field-desc">Bepaalt of dit een formeel aanbod is of een verzoek om toegang.</p>
+    <p class="field-desc">Toegang aanbieden of verzoeken.</p>
     <select id="policyType">
       <option value="Offer">Aanbod</option>
       <option value="Request">Verzoek</option>
@@ -23,12 +23,12 @@
   <div class="single-line">
     <div>
       <label for="provider" class="required">Gegevensaanbieder</label>
-      <p class="field-desc">De entiteit die de gegevens aanbiedt.</p>
+      <p class="field-desc">Wie geeft toegang.</p>
       <input required type="url" id="provider" placeholder="e.g. http://gegevensaanbieder" />
     </div>
     <div>
       <label for="consumer" class="required">Gegevensconsument</label>
-      <p class="field-desc">De entiteit die de gegevens ontvangt of gebruikt.</p>
+      <p class="field-desc">Wie krijgt toegang.</p>
       <input required type="url" id="consumer" placeholder="e.g. http://gegevensconsument" />
     </div>
   </div>
@@ -73,7 +73,7 @@
   <div id="constraints">
     <div>  
       <label for="purpose" class="required">Doel</label>
-      <p class="field-desc">Het beoogde doel voor toegang tot de informatie.</p>
+      <p class="field-desc">Het doel waarvoor toegang tot de informatie verleend word.</p>
       <select name="purpose" id="purpose" class="field" multiple required placeholder="Kies doelen..."></select>
     </div>
 

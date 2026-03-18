@@ -280,7 +280,14 @@
         }
       ]
     },
-    "body": {}
+    "body": {
+      "policyType": "Request",
+      "dataUri": "https://solidweb.me/JaneDoe",
+      "constraints": {
+        "useDuration": true,
+        "DurationMonth": "2"
+      }
+    }
   },
   {
     "question": 3,
@@ -331,14 +338,7 @@
         }
       ]
     },
-    "body": {
-      "policyType": "Request",
-      "dataUri": "https://solidweb.me/JaneDoe/",
-      "constraints": {
-        "useDuration": true,
-        "DurationMonth": "2"
-      }
-    }
+    "body": {}
   },
   {
     "question": 4,

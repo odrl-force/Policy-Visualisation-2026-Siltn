@@ -40,7 +40,7 @@
       "policyType": "Offer",
       "name": "Volledige toegang voor bob smith",
       "id": "example-0000",
-      "description": "Example: Echthenote heeft volledige toegang tot alle private documenten van Jane Doe zonder beperkingen..",
+      "description": "Example: Echtgenoot heeft volledige toegang tot alle private documenten van Jane Doe zonder beperkingen..",
       "provider": "https://solidweb.me/JaneDoe/profile/card",
       "consumer": "https://solidweb.me/BobSmith/profile/card",
       "dataUri": "https://solidweb.me/JaneDoe/Private",

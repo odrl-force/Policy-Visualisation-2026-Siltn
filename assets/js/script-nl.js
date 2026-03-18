@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (currentIndex === -1) currentIndex = 0;
 
     async function loadQuestion(index) {
+        document.querySelector(".sidebar").scrollTop = 0;
+        document.querySelector(".main-content").scrollTop = 0;
         const q = questions[index];
         if (!q) {
             const lang = localStorage.getItem("lang") || "nl";

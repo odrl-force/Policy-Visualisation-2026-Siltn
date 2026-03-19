@@ -4,14 +4,14 @@
     "title": "Voorbeeld Policy (Niets aanpassen)",
     "type": "create",
     "sidebar": {
-      "instructions": "Dit is een voorbeeld van een volledig ingevulde policy. Dit voorbeeld toont hoe Jane Doe haar echtgenoot (Bob Smith) <b>volledige toegang</b> gaf tot <b>al</b> haar private documenten. De echtgenoot kan <b>alle</b> private documenten bekijken, toevoegen en wijzigen. Er gelden geen purpose limitations, time constraints of Locatie restrictions. Dit voorbeeld wordt ENKEL gegeven zodat je begrijpt hoe een complete en geldige policy eruit kan zien. Pas niets aan in dit voorbeeld. <br><br>Scroll naar beneden in dit veld om de gebruikte gegevens te bekijken.<br><br><b>Genereer</b> de policy om naar de 1e vraag te gaan",
+      "instructions": "Dit is een voorbeeld van een volledig ingevulde policy. Dit voorbeeld toont hoe Jane Doe haar echtgenoot (Bob Smith) <b>volledige toegang</b> gaf tot <b>al</b> haar private documenten. De echtgenoot kan <b>alle</b> private documenten bekijken, toevoegen en wijzigen. Er gelden geen purpose limitations, time constraints of locatiebeperkingen. Dit voorbeeld wordt ENKEL gegeven zodat je begrijpt hoe een complete en geldige policy eruit kan zien. Pas niets aan in dit voorbeeld. <br><br>Scroll naar beneden in dit veld om de gebruikte gegevens te bekijken.<br><br><b>Genereer</b> de policy om naar de 1e vraag te gaan",
       "params": [
         {
           "label": "Alle private documenten van Jane Doe",
           "value": "https://solidweb.me/JaneDoe/Private"
         },
         {
-          "label": "Echtgenote (Bob Smith)",
+          "label": "Echtgenoot (Bob Smith)",
           "value": "https://solidweb.me/BobSmith/profile/card"
         },
         {
@@ -40,7 +40,7 @@
       "policyType": "Offer",
       "name": "Volledige toegang voor bob smith",
       "id": "example-0000",
-      "description": "Example: Echtgenoot heeft volledige toegang tot alle private documenten van Jane Doe zonder beperkingen..",
+      "description": "Example: Echtgenoot heeft volledige toegang tot alle private documenten van Jane Doe zonder beperkingen.",
       "provider": "https://solidweb.me/JaneDoe/profile/card",
       "consumer": "https://solidweb.me/BobSmith/profile/card",
       "dataUri": "https://solidweb.me/JaneDoe/Private",
@@ -64,7 +64,7 @@
     "title": "Bewerk een policy",
     "type": "create",
     "sidebar": {
-      "instructions": "Sinds je moeder verhuisd is naar Care Center ‘The Tree’, beslis je om terug naar huis te verhuizen en te stoppen met huren.<br><b>Mr. Lambert (je vorige verhuurder)</b> heeft toegang tot documenten die te maken hebben met je oude huurwoning in Gent. Aangezien je verhuist, heeft hij die toegang niet meer nodig. <b>Update</b> de policy zodat zijn toegang eindigt <b>op het einde van deze maand</b>."
+      "instructions": "Sinds je moeder verhuist is naar Care Center ‘The Tree’, beslis je om terug naar huis te verhuizen en te stoppen met huren.<br><b>Mr. Lambert (je vorige verhuurder)</b> heeft toegang tot documenten die te maken hebben met je oude huurwoning in Gent. Aangezien je bent verhuisd, heeft hij die toegang niet meer nodig. <b>Update</b> de policy zodat zijn toegang eindigt <b>op het einde van deze maand</b>."
     },
     "body": {
       "policyType": "Offer",
@@ -99,7 +99,7 @@
     "title": "Bewerk een policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Sinds je moeder verhuisd is naar Care Center ‘The Tree’, beslis je om terug naar huis te verhuizen en te stoppen met huren.<br><b>Mr. Lambert (je vorige verhuurder)</b> heeft toegang tot documenten die te maken hebben met je oude huurwoning in Gent. Aangezien je verhuist, heeft hij die toegang niet meer nodig. <b>Update</b> de policy zodat zijn toegang eindigt <b>op het einde van deze maand</b>."
+      "instructions": "Sinds je moeder verhuist is naar Care Center ‘The Tree’, beslis je om terug naar huis te verhuizen en te stoppen met huren.<br><b>Mr. Lambert (je vorige verhuurder)</b> heeft toegang tot documenten die te maken hebben met je oude huurwoning in Gent. Aangezien je bent verhuisd, heeft hij die toegang niet meer nodig. <b>Update</b> de policy zodat zijn toegang eindigt <b>op het einde van deze maand</b>."
     },
     "body": {}
   },
@@ -108,7 +108,7 @@
     "title": "Bewerk een policy",
     "type": "create",
     "sidebar": {
-        "instructions": "Je moeder (Jane Doe) dient een verzekeringsclaim in voor een voetblessure.<br><b>AG Health Insurance</b> heeft een policy nodig die hen toelaat om <b>de medische documenten die betrekking hebben op haar voetblessure te bekijken</b> gedurende <b>één maand</b>. Ze mogen <b>geen</b> bestanden <b>toevoegen</b> of <b>wijzigen</b>. Ze moeten ook <b>alle data verwijderen</b> wanneer de toegang eindigt. Ze hebben een policy voorgesteld die hen <b>meer toegang geeft dan nodig</b> bekijk de policy en pas ze aan zodat ze voldoet aan de vereisten.<br><br>De nodige gegevens kan je hieronder terugvinden",
+        "instructions": "Je moeder (Jane Doe) dient een verzekeringsclaim in voor een voetblessure.<br><b>AG Health Insurance</b> heeft een policy nodig die hen toelaat om <b>de medische documenten die betrekking hebben op haar voetblessure te bekijken</b> gedurende <b>één maand</b>. Ze mogen <b>geen</b> bestanden <b>toevoegen</b> of <b>wijzigen</b>. Ze moeten ook <b>alle data verwijderen</b> wanneer de toegang eindigt. Ze hebben een policy voorgesteld die hen <b>meer toegang geeft dan nodig</b>. Bekijk de policy en pas ze aan zodat ze voldoet aan de vereisten.<br><br>De nodige gegevens kan je hieronder terugvinden",
         "params": [
           {
             "label": "X‑ray foto van Jane Doe’s voet (2026)",
@@ -185,7 +185,7 @@
     "title": "Bewerk een policy",
     "type": "review",
     "sidebar": {
-        "instructions": "Je moeder (Jane Doe) dient een verzekeringsclaim in voor een voetblessure.<br><b>AG Health Insurance</b> heeft een policy nodig die hen toelaat om <b>de medische documenten die betrekking hebben op haar voetblessure te bekijken</b> gedurende <b>één maand</b>. Ze mogen <b>geen</b> bestanden <b>toevoegen</b> of <b>wijzigen</b>. Ze moeten ook <b>alle data verwijderen</b> wanneer de toegang eindigt. Ze hebben een policy voorgesteld die hen <b>meer toegang geeft dan nodig</b> bekijk de policy en pas ze aan zodat ze voldoet aan de vereisten.<br><br>De nodige gegevens kan je hieronder terugvinden",
+        "instructions": "Je moeder (Jane Doe) dient een verzekeringsclaim in voor een voetblessure.<br><b>AG Health Insurance</b> heeft een policy nodig die hen toelaat om <b>de medische documenten die betrekking hebben op haar voetblessure te bekijken</b> gedurende <b>één maand</b>. Ze mogen <b>geen</b> bestanden <b>toevoegen</b> of <b>wijzigen</b>. Ze moeten ook <b>alle data verwijderen</b> wanneer de toegang eindigt. Ze hebben een policy voorgesteld die hen <b>meer toegang geeft dan nodig</b>. Bekijk de policy en pas ze aan zodat ze voldoet aan de vereisten.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "X‑ray foto van Jane Doe’s voet (2026)",
@@ -236,7 +236,7 @@
     "title": "Maak een policy",
     "type": "create",
     "sidebar": {
-      "instructions": "Je moeder (Jane Doe) heeft hulp nodig bij het beheren van haar permissies. Maak een policy van het type <b>verzoek</b> die jou (Alice Smith) tijdelijk volledige controle geeft over <b>alle data van de pod van Jane Doe</b>. Je moet informatie over haar volledige pod kunnen <b>bekijken</b>, <b>toevoegen</b> en <b>updaten</b>, en ook <b>de toegang kunnen beheren</b> gedurende een korte periode. Pas deze policy toe op de <b>volledige pod</b>.\n\nGebruik het doel <b>Account Management</b>. <br><br>De Data URI en duratie zijn al ingevuld .<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "Je moeder (Jane Doe) heeft hulp nodig bij het beheren van haar permissies. Maak een policy van het type <b>verzoek</b> die jou (Alice Smith) tijdelijk volledige controle geeft over <b>alle data van de pod van Jane Doe</b>. Je moet informatie over haar volledige pod kunnen <b>bekijken</b>, <b>toevoegen</b> en <b>updaten</b>, en ook <b>de toegang kunnen beheren</b> gedurende een korte periode. Pas deze policy toe op de <b>volledige pod</b>.\n\nGebruik het doel <b>Account Management</b>. <br><br>De Data URI en duur zijn al ingevuld .<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Alle data van Jane Doe (volledige pod)",
@@ -291,10 +291,10 @@
   },
   {
     "question": 3,
-    "title": "Maan een policy",
+    "title": "Maak een policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Je moeder (Jane Doe) heeft hulp nodig bij het beheren van haar permissies. Maak een policy van het type <b>verzoek</b> die jou (Alice Smith) tijdelijk volledige controle geeft over <b>alle data van de pod van Jane Doe</b>. Je moet informatie over haar volledige pod kunnen <b>bekijken</b>, <b>toevoegen</b> en <b>updaten</b>, en ook <b>de toegang kunnen beheren</b> gedurende een korte periode. Pas deze policy toe op de <b>volledige pod</b>.\n\nGebruik het doel <b>Account Management</b>. <br><br>De Data URI en duratie zijn al ingevuld .<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "Je moeder (Jane Doe) heeft hulp nodig bij het beheren van haar permissies. Maak een policy van het type <b>verzoek</b> die jou (Alice Smith) tijdelijk volledige controle geeft over <b>alle data van de pod van Jane Doe</b>. Je moet informatie over haar volledige pod kunnen <b>bekijken</b>, <b>toevoegen</b> en <b>updaten</b>, en ook <b>de toegang kunnen beheren</b> gedurende een korte periode. Pas deze policy toe op de <b>volledige pod</b>.\n\nGebruik het doel <b>Account Management</b>. <br><br>De Data URI en duur zijn al ingevuld .<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Alle data van Jane Doe (volledige pod)",
@@ -345,7 +345,7 @@
     "title": "Maak een policy",
     "type": "create",
     "sidebar": {
-      "instructions": "Jane Doe heeft ermee ingestemd om deel te nemen aan een lokaal onderzoeksproject in haar stad. <br>Maak een policy van het type <b>aanbod</b> die het <b>onderzoeksteam via haar huisarts (Doctor Van der Velden)</b> toelaat om <b>relevante informatie</b> uit <b>al</b> haar medische dossiers te bekijken</b> gedurende het <b>volledige jaar</b>. Ze mogen geen toegang wijzigen of beheren. Pas deze policy toe op haar <b>medische data</b> in het algemeen, zonder private of niet-gerelateerde persoonlijke mappen op te nemen. Gebruik het doel <b>Research and Development</b>. Zorg er ook voor dat haar data <b>anoniem</b> wordt gebruikt en dat ze deze alleen kunnen gebruiken in <b>Brugge</b><br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "Jane Doe heeft ermee ingestemd om deel te nemen aan een lokaal onderzoeksproject in haar stad. <br>Maak een policy van het type <b>aanbod</b> die het <b>onderzoeksteam via haar huisarts (Doctor Van der Velden)</b> toelaat om <b>relevante informatie</b> uit <b>al</b> haar medische dossiers te bekijken</b> gedurende het <b>volledige jaar</b>. Ze mogen geen toegang <b>wijzigen of beheren</b>. Pas deze policy toe op haar <b>medische data</b> in het algemeen, zonder private of niet-gerelateerde persoonlijke mappen op te nemen. Gebruik het doel <b>Research and Development</b>. Zorg er ook voor dat haar data <b>anoniem</b> wordt verwerkt en dat ze deze alleen kunnen gebruiken in <b>Brugge</b><br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Alle medische data van Alice Smith",
@@ -364,7 +364,7 @@
           "value": "https://solidweb.me/physio-movewell/profile/card"
         },
         {
-          "label": "Doctor Van der Velden (onderzoeks contact)",
+          "label": "Doctor Van der Velden (onderzoekscontact)",
           "value": "https://solidweb.me/doctor-van-der-velden/profile/card"
         },
         {
@@ -404,7 +404,7 @@
     "title": "Maak een policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Jane Doe heeft ermee ingestemd om deel te nemen aan een lokaal onderzoeksproject in haar stad. <br>Maak een policy van het type <b>aanbod</b> die het <b>onderzoeksteam via haar huisarts (Doctor Van der Velden)</b> toelaat om <b>relevante informatie</b> uit <b>al</b> haar medische dossiers te bekijken</b> gedurende het <b>volledige jaar</b>. Ze mogen geen toegang wijzigen of beheren. Pas deze policy toe op haar <b>medische data</b> in het algemeen, zonder private of niet-gerelateerde persoonlijke mappen op te nemen. Gebruik het doel <b>Research and Development</b>. Zorg er ook voor dat haar data <b>anoniem</b> wordt gebruikt en dat ze deze alleen kunnen gebruiken in <b>Brugge</b><br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "Jane Doe heeft ermee ingestemd om deel te nemen aan een lokaal onderzoeksproject in haar stad. <br>Maak een policy van het type <b>aanbod</b> die het <b>onderzoeksteam via haar huisarts (Doctor Van der Velden)</b> toelaat om <b>relevante informatie</b> uit <b>al</b> haar medische dossiers te bekijken</b> gedurende het <b>volledige jaar</b>. Ze mogen geen toegang <b>wijzigen of beheren</b>. Pas deze policy toe op haar <b>medische data</b> in het algemeen, zonder private of niet-gerelateerde persoonlijke mappen op te nemen. Gebruik het doel <b>Research and Development</b>. Zorg er ook voor dat haar data <b>anoniem</b> wordt verwerkt en dat ze deze alleen kunnen gebruiken in <b>Brugge</b><br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Alle medische data van Alice Smith",
@@ -423,7 +423,7 @@
           "value": "https://solidweb.me/physio-movewell/profile/card"
         },
         {
-          "label": "Doctor Van der Velden (onderzoeks contact)",
+          "label": "Doctor Van der Velden (onderzoekscontact)",
           "value": "https://solidweb.me/doctor-van-der-velden/profile/card"
         },
         {
@@ -463,7 +463,7 @@
     "title": "Vind policies die verwijderd moeten worden",
     "type": "find",
     "sidebar": {
-      "instructions": "Jane Doe ontvangt geen thuisverpleging meer van het <b>Wit‑Gele Kruis</b>.<br>Zoek en lijst all bestaande policies op die het Wit‑Gele Kruis nog toegang zou geven tot haar dossiers.<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "Jane Doe ontvangt geen thuisverpleging meer van het <b>Wit‑Gele Kruis</b>.<br>Zoek en lijst alle bestaande policies op die het Wit‑Gele Kruis nog toegang zou geven tot haar dossiers.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Wit-Gele Kruis",
@@ -482,7 +482,7 @@
     "title": "Vind policies die verwijderd moeten worden",
     "type": "review",
     "sidebar": {
-      "instructions": "Jane Doe ontvangt geen thuisverpleging meer van het <b>Wit‑Gele Kruis</b>.<br>Zoek en lijst all bestaande policies op die het Wit‑Gele Kruis nog toegang zou geven tot haar dossiers.<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "Jane Doe ontvangt geen thuisverpleging meer van het <b>Wit‑Gele Kruis</b>.<br>Zoek en lijst alle bestaande policies op die het Wit‑Gele Kruis nog toegang zou geven tot haar dossiers.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Wit-Gele Kruis",
@@ -497,7 +497,7 @@
     "title": "Vind alle mensen die Jane Doe haar dagelijkse stappen mogen bekijken",
     "type": "find",
     "sidebar": {
-      "instructions": "Je moeder (Jane Doe) heeft sommige mensen toestemming gegeven om haar dagelijkse stappen te bekijken. <br><br><i>/JaneDoe/Personal/Statistics/Daily_Steps.json</i><br><br> Lijst <b>alle</b> actoren op die haar dagenlijkse stappen kunnen <b>bekijken</b>.<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "Je moeder (Jane Doe) heeft sommige mensen toestemming gegeven om haar dagelijkse stappen te bekijken. <br><br><i>/JaneDoe/Personal/Statistics/Daily_Steps.json</i><br><br> Lijst <b>alle</b> actoren op die haar dagelijkse stappen kunnen <b>bekijken</b>.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
       {
         "label": "Dagelijkse stappen Alice Smith",
@@ -520,7 +520,7 @@
     "title": "Vind alle mensen die Jane Doe haar dagelijkse stappen mogen bekijken",
     "type": "review",
     "sidebar": {
-      "instructions": "Je moeder (Jane Doe) heeft sommige mensen toestemming gegeven om haar dagelijkse stappen te bekijken. <br><br><i>/JaneDoe/Personal/Statistics/Daily_Steps.json</i><br><br> Lijst <b>alle</b> actoren op die haar dagenlijkse stappen kunnen <b>bekijken</b>.<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "Je moeder (Jane Doe) heeft sommige mensen toestemming gegeven om haar dagelijkse stappen te bekijken. <br><br><i>/JaneDoe/Personal/Statistics/Daily_Steps.json</i><br><br> Lijst <b>alle</b> actoren op die haar dagelijkse stappen kunnen <b>bekijken</b>.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
       {
         "label": "Dagelijkse stappen Alice Smith",
@@ -536,23 +536,23 @@
   },
   {
     "question": 7,
-    "title": "Vind intrusieve policies (Beheers rechten)",
+    "title": "Vind intrusieve policies (beheersrechten)",
     "type": "find",
     "sidebar": {
-        "instructions": "Sommige policies kunnen onbedoeld zeer ingrijpende permissies geven. Bekijk alle bestaande policies en identificeer elke policy die een actor toelaat om toegang te <b>beheren</b>. Het beheren van toegang is zeer krachtig en vaak <b>niet nodig</b> voor de meeste actoren. Selecteer <b>alle</b> policies die deze ingrijpende permission bevatten.",
+        "instructions": "Sommige policies kunnen onbedoeld zeer ingrijpende permissies geven. Bekijk alle bestaande policies en identificeer elke policy die een actor toelaat om toegang te kunnen <b>beheren</b>. Het beheren van toegang is zeer krachtig en vaak <b>niet nodig</b> voor de meeste actoren. Selecteer <b>alle</b> policies die deze ingrijpende permission bevatten.",
         "select": {
         "title": "Policies",
-        "options": ["p-0001",  "p-0042",  "p-0075",  "p-0090",  "p-0108",  "p-0122",  "p-0137",  "p-0153",  "p-0160",  "p-0164",  "p-0167",  "p-0168",  "p-0169",  "p-0170",  "p-0170"]
+        "options": ["p-0001",  "p-0042",  "p-0075",  "p-0090",  "p-0108",  "p-0122",  "p-0137",  "p-0153",  "p-0160",  "p-0164",  "p-0167",  "p-0168",  "p-0169",  "p-0170",  "p-0171"]
       }
     },
     "body": {}
   },
   {
     "question": 7,
-    "title": "Vind intrusieve policies (Beheers rechten)",
+    "title": "Vind intrusieve policies (beheersrechten)",
     "type": "review",
     "sidebar": {
-        "instructions": "Sommige policies kunnen onbedoeld zeer ingrijpende permissies geven. Bekijk alle bestaande policies en identificeer elke policy die een actor toelaat om toegang te <b>beheren</b>. Het beheren van toegang is zeer krachtig en vaak <b>niet nodig</b> voor de meeste actoren. Selecteer <b>alle</b> policies die deze ingrijpende permission bevatten."
+        "instructions": "Sommige policies kunnen onbedoeld zeer ingrijpende permissies geven. Bekijk alle bestaande policies en identificeer elke policy die een actor toelaat om toegang te kunnen <b>beheren</b>. Het beheren van toegang is zeer krachtig en vaak <b>niet nodig</b> voor de meeste actoren. Selecteer <b>alle</b> policies die deze ingrijpende permission bevatten."
     },
     "body": {}
   },
@@ -561,7 +561,7 @@
     "title": "Ontdek hoe lang de verhuurder contact kan opnemen met Alice",
     "type": "find",
     "sidebar": {
-      "instructions": "De voormalige verhuurder van Alice (Mr. Lambert) kan mogelijk nog beperkte toegang hebben voor administratieve opvolging nadat ze verhuisd is. Zoek uit <b>hoe lang</b> hij nog toegang heeft tot de <b>contactinformatie</b> van Alice<br><br><i>/AliceSmith/Personal/Contact</i><br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "De voormalige verhuurder van Alice (Mr. Lambert) kan mogelijk nog beperkte toegang hebben voor administratieve opvolging nadat ze verhuist is. Zoek uit <b>hoe lang</b> hij nog toegang heeft tot de <b>contactinformatie</b> van Alice<br><br><i>/AliceSmith/Personal/Contact</i><br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Mr. Lambert (voormalige verhuurder)",
@@ -572,7 +572,7 @@
           "value": "https://solidweb.me/AliceSmith/profile/card"
         },
         {
-          "label": "Alice Smith's contact informatie",
+          "label": "Alice Smith's contactinformatie",
           "value": "https://solidweb.me/AliceSmith/Personal/Contact"
         }
       ],
@@ -588,7 +588,7 @@
     "title": "Ontdek hoe lang de verhuurder contact kan opnemen met Alice",
     "type": "review",
     "sidebar": {
-      "instructions": "De voormalige verhuurder van Alice (Mr. Lambert) kan mogelijk nog beperkte toegang hebben voor administratieve opvolging nadat ze verhuisd is. Zoek uit <b>hoe lang</b> hij nog toegang heeft tot de <b>contactinformatie</b> van Alice<br><br><i>/AliceSmith/Personal/Contact</i><br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "De voormalige verhuurder van Alice (Mr. Lambert) kan mogelijk nog beperkte toegang hebben voor administratieve opvolging nadat ze verhuist is. Zoek uit <b>hoe lang</b> hij nog toegang heeft tot de <b>contactinformatie</b> van Alice<br><br><i>/AliceSmith/Personal/Contact</i><br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Mr. Lambert (voormalige verhuurder)",
@@ -599,7 +599,7 @@
           "value": "https://solidweb.me/AliceSmith/profile/card"
         },
         {
-          "label": "Alice Smith's contact informatie",
+          "label": "Alice Smith's contactinformatie",
           "value": "https://solidweb.me/AliceSmith/Personal/Contact"
         }
       ]
@@ -622,7 +622,7 @@
           "value": "https://solidweb.me/AliceSmith/profile/card"
         },
         {
-          "label": "Alice Smith's contact informatie",
+          "label": "Alice Smith's contactinformatie",
           "value": "https://solidweb.me/AliceSmith/Personal/Contact"
         }
       ],
@@ -649,7 +649,7 @@
           "value": "https://solidweb.me/AliceSmith/profile/card"
         },
         {
-          "label": "Alice Smith's contact informatie",
+          "label": "Alice Smith's contactinformatie",
           "value": "https://solidweb.me/AliceSmith/Personal/Contact"
         }
       ]
@@ -711,7 +711,7 @@
     "title": "Zoek wie alleen vanuit België contact kan opnemen met Alice",
     "type": "find",
     "sidebar": {
-      "instructions": "Sommige policies bevatten geografische beperkingen die de toegang beperken tot de fysieke locatie van actoren. Lijst alle actoren op die enkel toegang hebben tot <b>jouw</b> (Alice Smith) <b>contactinformatie</b> wanneer zij zich binnen <b>België</b> bevinden.<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "Sommige policies bevatten geografische beperkingen die de toegang beperken tot de fysieke locatie van actoren. Lijst alle actoren op die enkel <b>jouw</b> (Alice Smith) <b>contactinformatie</b> mogen bekijken wanneer zij zich binnen <b>België</b> bevinden.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Alle contactgegevens van Alice Smith",
@@ -723,7 +723,7 @@
         }
       ],
       "select": {
-        "title": "Actors",
+        "title": "Actoren",
         "options": ["acme-corp", "ah-belgium", "AliceSmith", "bolcom", "bpost", "carecenter-the-tree", "carol-green", "carrefour-belgium", "city-of-bruges", "city-of-ghent", "colruyt", "coolblue", "countrybank", "delhaize", "dietician-green-plate", "doctor-van-der-velden", "farmfresh-veggies", "food-delivery-lotus", "insurance-ag-health", "insurance-kbc-home", "landlord-mr-lambert", "nurse-evy", "okay-delivery", "physio-movewell", "ugent-research", "wit-gele-kruis"]
       }
     },
@@ -734,7 +734,7 @@
     "title": "Zoek wie alleen vanuit België contact kan opnemen met Alice",
     "type": "review",
     "sidebar": {
-      "instructions": "Sommige policies bevatten geografische beperkingen die de toegang beperken tot de fysieke locatie van actoren. Lijst alle actoren op die enkel toegang hebben tot <b>jouw</b> (Alice Smith) <b>contactinformatie</b> wanneer zij zich binnen <b>België</b> bevinden.<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "Sommige policies bevatten geografische beperkingen die de toegang beperken tot de fysieke locatie van actoren. Lijst alle actoren op die enkel <b>jouw</b> (Alice Smith) <b>contactinformatie</b> mogen bekijken wanneer zij zich binnen <b>België</b> bevinden.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Alle contactgegevens van Alice Smith",

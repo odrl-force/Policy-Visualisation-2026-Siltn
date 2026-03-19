@@ -108,7 +108,7 @@
     "title": "Edit a policy",
     "type": "create",
     "sidebar": {
-      "instructions": "Your mother (Jane Doe), is filing an insurance claim for a foot injury.<br><b>AG Health Insurance</b> need a policy that allows them to <b>view</b> the medical documents that relates to her <b>foot injury</b> for <b>one month</b>. They should not be able to <b>add</b> or <b>modify</b> any files. They should also <b>delete all data</b> when the access ends. They proposed a policy that would give them <b>more access than needed</b> review the policy and make changes to make it match the requirements.<br><br>The required data can be found below",
+      "instructions": "Your mother (Jane Doe), is filing an insurance claim for a foot injury.<br><b>AG Health Insurance</b> need a policy that allows them to <b>view</b> the medical documents that relate to her <b>foot injury</b> for <b>one month</b>. They should not be able to <b>add</b> or <b>modify</b> any files. They should also <b>delete all data</b> when the access ends. They proposed a policy that would give them <b>more access than needed</b> review the policy and make changes to make it match the requirements.<br><br>The required data can be found below",
       "params": [
         {
           "label": "X‑ray image of Jane Doe’s foot (2026)",
@@ -185,7 +185,7 @@
     "title": "Edit a policy",
     "type": "review",
     "sidebar": {
-      "instructions": "Your mother (Jane Doe), is filing an insurance claim for a foot injury.<br><b>AG Health Insurance</b> need a policy that allows them to <b>view</b> the medical documents that relates to her <b>foot injury</b> for <b>one month</b>. They should not be able to <b>add</b> or <b>modify</b> any files. They should also <b>delete all data</b> when the access ends. They proposed a policy that would give them <b>more access than needed</b> review the policy and make changes to make it match the requirements.<br><br>The required data can be found below",
+      "instructions": "Your mother (Jane Doe), is filing an insurance claim for a foot injury.<br><b>AG Health Insurance</b> need a policy that allows them to <b>view</b> the medical documents that relate to her <b>foot injury</b> for <b>one month</b>. They should not be able to <b>add</b> or <b>modify</b> any files. They should also <b>delete all data</b> when the access ends. They proposed a policy that would give them <b>more access than needed</b> review the policy and make changes to make it match the requirements.<br><br>The required data can be found below",
       "params": [
         {
           "label": "X‑ray image of Jane Doe’s foot (2026)",
@@ -504,7 +504,7 @@
         "value": "https://solidweb.me/AliceSmith/Personal/Statistics/Daily_Steps.json"
       },
       {
-        "label": "Daily seps Jane Doe",
+        "label": "Daily steps Jane Doe",
         "value": "https://solidweb.me/JaneDoe/Personal/Statistics/Daily_Steps.json"
       }
       ],
@@ -527,7 +527,7 @@
         "value": "https://solidweb.me/AliceSmith/Personal/Statistics/Daily_Steps.json"
       },
       {
-        "label": "Daily seps Jane Doe",
+        "label": "Daily steps Jane Doe",
         "value": "https://solidweb.me/JaneDoe/Personal/Statistics/Daily_Steps.json"
       }
       ]
@@ -611,7 +611,7 @@
     "title": "Find purposes for which the landlord may contact Alice",
     "type": "find",
     "sidebar": {
-      "instructions": "As perviously mentioned Alice's former landlord (Mr. Lambert) can still contact her if nessecary. What are the <b>purposes</b> he could contact her for?<br><br><i>/AliceSmith/Personal/Contact</i><br><br>The required data can be found below",
+      "instructions": "As previously mentioned Alice's former landlord (Mr. Lambert) can still contact her if necessary. What are the <b>purposes</b> he could contact her for?<br><br><i>/AliceSmith/Personal/Contact</i><br><br>The required data can be found below",
       "params": [
         {
           "label": "Alice Smith's contact information",
@@ -638,7 +638,7 @@
     "title": "Find purposes for which the landlord may contact Alice",
     "type": "review",
     "sidebar": {
-      "instructions": "As perviously mentioned Alice's former landlord (Mr. Lambert) can still contact her if nessecary. What are the <b>purposes</b> he could contact her for?<br><br><i>/AliceSmith/Personal/Contact</i><br><br>The required data can be found below",
+      "instructions": "As previously mentioned Alice's former landlord (Mr. Lambert) can still contact her if necessary. What are the <b>purposes</b> he could contact her for?<br><br><i>/AliceSmith/Personal/Contact</i><br><br>The required data can be found below",
       "params": [
         {
           "label": "Alice Smith's contact information",

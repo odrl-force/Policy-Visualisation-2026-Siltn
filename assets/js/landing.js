@@ -42,6 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
             <div style="margin: 20px 0; padding: 15px; background-color: white; border-radius: 8px; border-left: 5px solid #0a8bdb;">
                 <p>If something feels confusing or difficult, please report it (space will be given).</p>
             </div>
+
+            <div style="margin: 20px 0; padding: 15px; background-color: white; border-radius: 8px; border-left: 5px solid #ff4d4d;">
+                <p>If you're stuck on a question you can skip it by clicking on "Give up".</p>
+            </div>
         `,
         nl: `
             <p><strong>Het Scenario: Het beheren van de digitale gegevens van uw familie</strong></p>
@@ -61,6 +65,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             <div style="margin: 20px 0; padding: 15px; background-color: white; border-radius: 8px; border-left: 5px solid #0a8bdb;">
                 <p>Als iets onduidelijk of moeilijk aanvoelt, gelieve dit dan te melden (er is hiervoor ruimte voorzien).</p>
+            </div>
+
+            <div style="margin: 20px 0; padding: 15px; background-color: white; border-radius: 8px; border-left: 5px solid #ff4d4d;">
+                <p>Als je vast zit op een vraag kan je deze overslaan door op "opgeven" te klikken.</p>
             </div>
         `
     };

@@ -497,7 +497,7 @@
     "title": "Vind alle mensen die Jane Doe haar dagelijkse stappen mogen bekijken",
     "type": "find",
     "sidebar": {
-      "instructions": "Je moeder (Jane Doe) heeft sommige mensen toestemming gegeven om haar dagelijkse stappen te bekijken. Lijst <b>alle</b> actoren op die haar dagenlijkse stappen kunnen <b>bekijken</b>.<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "Je moeder (Jane Doe) heeft sommige mensen toestemming gegeven om haar dagelijkse stappen te bekijken. <br><br><i>/JaneDoe/Personal/Statistics/Daily_Steps.json</i><br><br> Lijst <b>alle</b> actoren op die haar dagenlijkse stappen kunnen <b>bekijken</b>.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
       {
         "label": "Dagelijkse stappen Alice Smith",
@@ -520,7 +520,7 @@
     "title": "Vind alle mensen die Jane Doe haar dagelijkse stappen mogen bekijken",
     "type": "review",
     "sidebar": {
-      "instructions": "Je moeder (Jane Doe) heeft sommige mensen toestemming gegeven om haar dagelijkse stappen te bekijken. Lijst <b>alle</b> actoren op die haar dagenlijkse stappen kunnen <b>bekijken</b>.<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "Je moeder (Jane Doe) heeft sommige mensen toestemming gegeven om haar dagelijkse stappen te bekijken. <br><br><i>/JaneDoe/Personal/Statistics/Daily_Steps.json</i><br><br> Lijst <b>alle</b> actoren op die haar dagenlijkse stappen kunnen <b>bekijken</b>.<br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
       {
         "label": "Dagelijkse stappen Alice Smith",
@@ -561,7 +561,7 @@
     "title": "Ontdek hoe lang de verhuurder contact kan opnemen met Alice",
     "type": "find",
     "sidebar": {
-      "instructions": "De voormalige verhuurder van Alice (Mr. Lambert) kan mogelijk nog beperkte toegang hebben voor administratieve opvolging nadat ze verhuisd is. Zoek uit <b>hoe lang</b> hij nog toegang heeft tot de <b>contactinformatie</b> van Alice<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "De voormalige verhuurder van Alice (Mr. Lambert) kan mogelijk nog beperkte toegang hebben voor administratieve opvolging nadat ze verhuisd is. Zoek uit <b>hoe lang</b> hij nog toegang heeft tot de <b>contactinformatie</b> van Alice<br><br><i>/AliceSmith/Personal/Contact</i><br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Mr. Lambert (voormalige verhuurder)",
@@ -588,7 +588,7 @@
     "title": "Ontdek hoe lang de verhuurder contact kan opnemen met Alice",
     "type": "review",
     "sidebar": {
-      "instructions": "De voormalige verhuurder van Alice (Mr. Lambert) kan mogelijk nog beperkte toegang hebben voor administratieve opvolging nadat ze verhuisd is. Zoek uit <b>hoe lang</b> hij nog toegang heeft tot de <b>contactinformatie</b> van Alice<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "De voormalige verhuurder van Alice (Mr. Lambert) kan mogelijk nog beperkte toegang hebben voor administratieve opvolging nadat ze verhuisd is. Zoek uit <b>hoe lang</b> hij nog toegang heeft tot de <b>contactinformatie</b> van Alice<br><br><i>/AliceSmith/Personal/Contact</i><br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Mr. Lambert (voormalige verhuurder)",
@@ -611,7 +611,7 @@
     "title": "Vind de doelen waarvoor de verhuurder Alice mag contacteren",
     "type": "find",
     "sidebar": {
-      "instructions": "Zoals eerder vermeld kan de voormalige verhuurder van Alice (Mr. Lambert) haar nog contacteren indien nodig. Wat zijn de <b>doelen</b> waarvoor hij haar zou mogen contacteren?<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "Zoals eerder vermeld kan de voormalige verhuurder van Alice (Mr. Lambert) haar nog contacteren indien nodig. Wat zijn de <b>doelen</b> waarvoor hij haar zou mogen contacteren?<br><br><i>/AliceSmith/Personal/Contact</i><br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Mr. Lambert (voormalige verhuurder)",
@@ -638,7 +638,7 @@
     "title": "Vind de doelen waarvoor de verhuurder Alice mag contacteren",
     "type": "review",
     "sidebar": {
-      "instructions": "Zoals eerder vermeld kan de voormalige verhuurder van Alice (Mr. Lambert) haar nog contacteren indien nodig. Wat zijn de <b>doelen</b> waarvoor hij haar zou mogen contacteren?<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "Zoals eerder vermeld kan de voormalige verhuurder van Alice (Mr. Lambert) haar nog contacteren indien nodig. Wat zijn de <b>doelen</b> waarvoor hij haar zou mogen contacteren?<br><br><i>/AliceSmith/Personal/Contact</i><br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "Mr. Lambert (voormalige verhuurder)",
@@ -661,7 +661,7 @@
     "title": "Vind de verplichtingen van de UGent met betrekking tot de medische gegevens van Alice Smith.",
     "type": "find",
     "sidebar": {
-      "instructions": "UGent mag toegang hebben tot en verwerking doen van <b>jouw</b> (Alice Smith) medische informatie. Verplichtingen bepalen wat UGent moet doen bij het omgaan met deze data. Lijst <b>alle verplichtingen</b> op die UGent moet volgen om <b>jouw medische data</b> te mogen gebruiken in studies.<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "UGent mag toegang hebben tot en verwerking doen van <b>jouw</b> (Alice Smith) medische informatie. Verplichtingen bepalen wat UGent moet doen bij het omgaan met deze data. Lijst <b>alle verplichtingen</b> op die UGent moet volgen om <b>jouw medische data</b> te mogen gebruiken in studies.<br><br><i>/AliceSmith/Personal/Medical</i><br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "UGent-research",
@@ -688,7 +688,7 @@
     "title": "Vind de verplichtingen van de UGent met betrekking tot de medische gegevens van Alice Smith.",
     "type": "review",
     "sidebar": {
-      "instructions": "UGent mag toegang hebben tot en verwerking doen van <b>jouw</b> (Alice Smith) medische informatie. Verplichtingen bepalen wat UGent moet doen bij het omgaan met deze data. Lijst <b>alle verplichtingen</b> op die UGent moet volgen om <b>jouw medische data</b> te mogen gebruiken in studies.<br><br>De nodige gegevens kan je hieronder terugvinden",
+      "instructions": "UGent mag toegang hebben tot en verwerking doen van <b>jouw</b> (Alice Smith) medische informatie. Verplichtingen bepalen wat UGent moet doen bij het omgaan met deze data. Lijst <b>alle verplichtingen</b> op die UGent moet volgen om <b>jouw medische data</b> te mogen gebruiken in studies.<br><br><i>/AliceSmith/Personal/Medical</i><br><br>De nodige gegevens kan je hieronder terugvinden",
       "params": [
         {
           "label": "UGent-research",

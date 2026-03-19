@@ -197,6 +197,13 @@ main.informative button:hover {
     transition: width 0.3s ease, background-color 0.3s ease;
     position: relative;
 }
+.progress-skip{
+    width: 0%;
+    height: 100%;
+    background-color: #ff4d4d;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    position: relative;
+}
 
 /* -----  Links ----- */
 a {
@@ -400,8 +407,17 @@ a:hover {
 
 #nextButton{
     background-color: #28a745;
+    margin: 10px;
 }
 
 #nextButton:disabled{
     background-color: #7C4DFF;
+}
+
+#skipButton{
+    background-color: #ff4d4d;
+}
+
+i{
+    font-size: 0.8em;
 }

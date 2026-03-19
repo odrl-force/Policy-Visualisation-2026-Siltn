@@ -497,7 +497,7 @@
     "title": "Find all people who can view Jane Doe's daily steps",
     "type": "find",
     "sidebar": {
-      "instructions": "Your mother (Jane Doe) gave some people permission to view her daily steps. List <b>all</b> actors that are allowed to view her daily steps.<br><br>The required data can be found below",
+      "instructions": "Your mother (Jane Doe) gave some people permission to view her daily steps. <br><br><i>/JaneDoe/Personal/Statistics/Daily_Steps.json</i><br><br> List <b>all</b> actors that are allowed to view her daily steps.<br><br>The required data can be found below",
       "params": [
       {
         "label": "Daily steps Alice Smith",
@@ -520,7 +520,7 @@
     "title": "Find all people who can view Jane Doe's daily steps",
     "type": "review",
     "sidebar": {
-      "instructions": "Your mother (Jane Doe) gave some people permission to view her daily steps. List <b>all</b> actors that are allowed to view her daily steps.<br><br>The required data can be found below",
+      "instructions": "Your mother (Jane Doe) gave some people permission to view her daily steps. <br><br><i>/JaneDoe/Personal/Statistics/Daily_Steps.json</i><br><br> List <b>all</b> actors that are allowed to view her daily steps.<br><br>The required data can be found below",
       "params": [
       {
         "label": "Daily steps Alice Smith",
@@ -561,7 +561,7 @@
     "title": "Find how long the landlord can contact Alice",
     "type": "find",
     "sidebar": {
-      "instructions": "Alice's former landlord (Mr. Lambert) may still have limited access for follow‑up administrative matters after she moved out. Figure out for <b>how long</b> he can still have Alice's <b>contact information</b>.<br><br>The required data can be found below",
+      "instructions": "Alice's former landlord (Mr. Lambert) may still have limited access for follow‑up administrative matters after she moved out. Figure out for <b>how long</b> he can still have Alice's <b>contact information</b>.<br><br><i>/AliceSmith/Personal/Contact</i><br><br>The required data can be found below",
       "params": [
         {
           "label": "Alice Smith's contact information",
@@ -588,7 +588,7 @@
     "title": "Find how long the landlord can contact Alice",
     "type": "review",
     "sidebar": {
-      "instructions": "Alice's former landlord (Mr. Lambert) may still have limited access for follow‑up administrative matters after she moved out. Figure out for <b>how long</b> he can still have Alice's <b>contact information</b>.<br><br>The required data can be found below",
+      "instructions": "Alice's former landlord (Mr. Lambert) may still have limited access for follow‑up administrative matters after she moved out. Figure out for <b>how long</b> he can still have Alice's <b>contact information</b>.<br><br><i>/AliceSmith/Personal/Contact</i><br><br>The required data can be found below",
       "params": [
         {
           "label": "Alice Smith's contact information",
@@ -611,7 +611,7 @@
     "title": "Find purposes for which the landlord may contact Alice",
     "type": "find",
     "sidebar": {
-      "instructions": "As perviously mentioned Alice's former landlord (Mr. Lambert) can still contact her if nessecary. What are the <b>purposes</b> he could contact her for?<br><br>The required data can be found below",
+      "instructions": "As perviously mentioned Alice's former landlord (Mr. Lambert) can still contact her if nessecary. What are the <b>purposes</b> he could contact her for?<br><br><i>/AliceSmith/Personal/Contact</i><br><br>The required data can be found below",
       "params": [
         {
           "label": "Alice Smith's contact information",
@@ -638,7 +638,7 @@
     "title": "Find purposes for which the landlord may contact Alice",
     "type": "review",
     "sidebar": {
-      "instructions": "As perviously mentioned Alice's former landlord (Mr. Lambert) can still contact her if nessecary. What are the <b>purposes</b> he could contact her for?<br><br>The required data can be found below",
+      "instructions": "As perviously mentioned Alice's former landlord (Mr. Lambert) can still contact her if nessecary. What are the <b>purposes</b> he could contact her for?<br><br><i>/AliceSmith/Personal/Contact</i><br><br>The required data can be found below",
       "params": [
         {
           "label": "Alice Smith's contact information",
@@ -661,7 +661,7 @@
     "title": "Find duties of UGent regarding Alice Smith's medical data",
     "type": "find",
     "sidebar": {
-      "instructions": "UGent may access and process of <b>your</b> (Alice Smith) medical information. Duties determine what UGent must do when handling this data. List <b>all duties</b> Ugent has to follow in order to use <b>your medical data</b> in studies.<br><br>The required data can be found below",
+      "instructions": "UGent may access and process of <b>your</b> (Alice Smith) medical information. Duties determine what UGent must do when handling this data. List <b>all duties</b> Ugent has to follow in order to use <b>your medical data</b> in studies.<br><br><i>/AliceSmith/Personal/Medical</i><br><br>The required data can be found below",
       "params": [
         {
           "label": "UGent-research",
@@ -688,7 +688,7 @@
     "title": "Find duties of UGent regarding Alice Smith's medical data",
     "type": "review",
     "sidebar": {
-      "instructions": "UGent may access and process of <b>your</b> (Alice Smith) medical information. Duties determine what UGent must do when handling this data. List <b>all duties</b> Ugent has to follow in order to use <b>your medical data</b> in studies.<br><br>The required data can be found below",
+      "instructions": "UGent may access and process of <b>your</b> (Alice Smith) medical information. Duties determine what UGent must do when handling this data. List <b>all duties</b> Ugent has to follow in order to use <b>your medical data</b> in studies.<br><br><i>/AliceSmith/Personal/Medical</i><br><br>The required data can be found below",
       "params": [
         {
           "label": "UGent-research",

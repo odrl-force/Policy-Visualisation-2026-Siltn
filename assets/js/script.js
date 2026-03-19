@@ -1,5 +1,6 @@
 let nextState = false;
-let length = 1
+let length = 1;
+let start = Date.now();
 
 document.addEventListener("DOMContentLoaded", async () => {
     const main = document.querySelector(".main-content");
@@ -7,6 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const headerLabel = document.querySelector(".header-label");
     const nextButton = document.getElementById("nextButton");
     const progressFill = document.getElementById("progressFill");
+    const skipButton = document.getElementById("skipButton");
 
     let group = localStorage.getItem("group") || "1";
     let lang = localStorage.getItem("lang") || "en";
@@ -99,13 +101,22 @@ document.addEventListener("DOMContentLoaded", async () => {
     if(multi) {
       new TomSelect("#actors", {
         plugins: ['remove_button'],
+        placeholder: "awnser here...",
         onItemAdd: function() {
             this.setTextboxValue('');
             this.refreshOptions();
         }
       });
     }
-      
+    
+    if(q.type == "review"){
+        skipButton.disabled = true;
+    }
+    else{
+        skipButton.disabled = false;
+    }
+
+    start = Date.now();
     // Show/hide submit button
     const sidebarSubmit = document.getElementById("submitTask");
     if (!sidebarSubmit) {
@@ -114,17 +125,16 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("submitTask").style.display = "none";
       }
     } else {
-        let start = Date.now();
         sidebarSubmit.onclick = () => {
-        nextState = false
-        toggleNextButton();
-        //nextButton.disabled = false;
-        const data = {};
-        for(i = 0; i < multi.selectedOptions.length; i++){
-            data[i] = multi.selectedOptions[i].value;
-        }
-        data["length"] = (Date.now() - start) / 1000;
-        localStorage.setItem(`question-${q.question}`, JSON.stringify(data));
+            nextState = false
+            toggleNextButton();
+            //nextButton.disabled = false;
+            const data = {};
+            for(i = 0; i < multi.selectedOptions.length; i++){
+                data[i] = multi.selectedOptions[i].value;
+            }
+            data["length"] = (Date.now() - start) / 1000;
+            localStorage.setItem(`question-${q.question}`, JSON.stringify(data));
         };
     }
 
@@ -156,6 +166,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadQuestion(currentIndex);
   });
 
+
+  document.getElementById("skipButton").addEventListener("click", () =>{
+    let data = {};
+    data["skipped"] = true;
+    data["length"] = (Date.now() - start) / 1000;
+    localStorage.setItem(`question-${q.question}`, JSON.stringify(data));
+    nextState = false;
+    toggleNextButton(true);
+  });
+
   // Initial load
   loadQuestion(currentIndex);
 });
@@ -181,13 +201,22 @@ function copyText(text, element) {
     });
 }
 
-function toggleNextButton(){
+function toggleNextButton(skip = false){
     const progressNew = document.getElementById("progressNew");
+    const progressSkip = document.getElementById("progressSkip");
     nextButton.disabled = nextState;
     if(!nextState){
-        progressNew.style.width = `${(1 / length) * 50}%`;
+        if(skip){
+            progressSkip.style.width = `${(1 / length) * 50}%`;
+            progressNew.style.width = `0%`;
+        }
+        else{
+            progressNew.style.width = `${(1 / length) * 50}%`;
+            progressSkip.style.width = `0%`;
+        }
     }
     else{
         progressNew.style.width = `0%`;
+        progressSkip.style.width = `0%`;
     }
 }

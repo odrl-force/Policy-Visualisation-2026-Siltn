@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             <div style="margin: 20px 0; padding: 15px; background-color: white; border-radius: 8px; border-left: 5px solid #ff4d4d;">
                 <p>If you're stuck on a question you can skip it by clicking on "Give up".</p>
+                <p>If you wan't to give up entirely please just skipp all questions instead of leaving. Since I only receive data when you submit the final question.</p>
             </div>
         `,
         nl: `
@@ -69,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             <div style="margin: 20px 0; padding: 15px; background-color: white; border-radius: 8px; border-left: 5px solid #ff4d4d;">
                 <p>Als je vast zit op een vraag kan je deze overslaan door op "opgeven" te klikken.</p>
+                <p>Als je helemaal wilt stoppen, gelieve alle vragen "op te geven" in plaats van de site af te sluiten. Aangezien de antwoorden alleen verzameld worden bij het voltooien van de laatste vraag.</p>
             </div>
         `
     };

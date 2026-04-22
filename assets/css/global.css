@@ -107,6 +107,16 @@ main.informative {
     box-sizing: border-box;
 }
 
+#odrlMapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 2rem;
+    box-sizing: border-box; 
+}
+
 main.informative h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -117,7 +127,7 @@ main.informative p {
     margin-bottom: 2rem;
 }
 
-main.informative button {
+button {
     padding: 0.8rem 2rem;
     background-color: #7C4DFF;
     color: #fff;
@@ -125,14 +135,19 @@ main.informative button {
     border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
+    width: fit-content;
+    margin: 5px;
 }
-main.informative button:hover {
+button:hover {
     background-color: #6d3dee;
 }
 
 .single-line {
     display: flex;
     gap: 1rem;
+    flex: 1;
+    min-height: 0;
+    min-width: 50%;
 }
 
 .single-line > div {
@@ -420,4 +435,55 @@ a:hover {
 
 i{
     font-size: 0.8em;
+}
+
+#odrlMapper {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px); /* Subtracts header height */
+    padding: 1rem;
+    box-sizing: border-box;
+    gap: 1rem;
+}
+
+#simpleformat, #odrl-container {
+    flex: 1;
+    height: 90%;
+    background-color: #ffffff;
+    border: 1px solid #dcdde1;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    overflow: auto;
+}
+
+#simpleformat {
+    resize: none;
+    outline: none;
+    color: #2f3640;
+    border-left: 4px solid #7C4DFF;
+}
+
+#simpleformat:focus {
+    border-color: #7C4DFF;
+}
+
+#odrl {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #202542;
+}
+
+#generate {
+    width: 200px;
+    height: 50px;
+    font-size: 1.1rem;
+    transition: transform 0.1s ease;
+}
+
+#generate:active {
+    transform: scale(0.98);
 }

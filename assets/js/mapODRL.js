@@ -20,8 +20,8 @@ function transformToODRL(input) {
     const constraints = [];
     if (input.constraints.purpose && !input.constraints.purpose.includes("all:all")) {
         constraints.push({
-            leftOperand: "purpose",
-            operator: "eq",
+            leftOperand: "dpv-odrl:Purpose",
+            operator: "isAnyOf",
             rightOperand: input.constraints.purpose
         });
     }
@@ -68,10 +68,10 @@ function transformToODRL(input) {
     }
 
     const dutyMap = {
-        delete: "delete",
-        anonymize: "anonymize",
-        encrypt: "encrypt",
-        notify: "inform"
+        delete: "odrl:delete",
+        anonymize: "odrl:anonymize",
+        encrypt: "odrl:encrypt",
+        notify: "odrl:inform"
     };
 
     const duties = Object.keys(input.duties)
@@ -83,7 +83,8 @@ function transformToODRL(input) {
             "http://www.w3.org/ns/odrl.jsonld",
             {
                 "dpv": "https://w3id.org/dpv#",
-                "dpv-health": "https://w3id.org/dpv/2.2/sector/health#"
+                "dpv-odrl": "https://w3id.org/dpv/mappings/odrl#",
+                "sector-health": "https://w3id.org/dpv/sector/health#"
             }
         ],
         "@type": input.policyType || "Offer",
@@ -96,6 +97,7 @@ function transformToODRL(input) {
             "constraint": constraints.length > 0 ? constraints : undefined,
             "duty": duties.length > 0 ? duties : undefined
         }],
+        "profile": "https://w3id.org/dpv/mappings/odrl#",
         "rdfs:label": input.name,
         "description": input.description
     };

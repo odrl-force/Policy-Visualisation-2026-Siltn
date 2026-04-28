@@ -16,7 +16,36 @@
 
 <main id="odrlMapper">
     <div class="single-line">
-        <textarea id="simpleformat" placeholder="Paste your JSON here..."></textarea>
+        <textarea id="simpleformat" placeholder="Paste your JSON here...">{
+    "permissions": {
+        "permRead": true,
+        "permAdd": true,
+        "permModify": false,
+        "permManage": false
+    },
+    "constraints": {
+        "purpose": [
+            "sector-health:InsuranceManagement",
+            "dpv:Marketing"
+        ],
+        "EndTime": "2027-12-31T23:59",
+        "StartTime": "2026-04-22T07:55"
+    },
+    "duties": {
+        "delete": false,
+        "anonymize": false,
+        "encrypt": false,
+        "notify": false
+    },
+    "length": 3.733,
+    "name": "",
+    "id": "p-1482",
+    "description": "",
+    "dataUri": "https://solidweb.me/JaneDoe/Personal/Medical/2026/Broken_foot",
+    "provider": "https://solidweb.me/JaneDoe/profile/card",
+    "consumer": "https://solidweb.me/insurance-ag-health/profile/card",
+    "policyType": "Offer"
+}</textarea>
         
         <div id="odrl-container">
             <pre id="odrl"></pre>

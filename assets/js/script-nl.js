@@ -20,10 +20,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const savedQNumber = parseInt(localStorage.getItem("question")) || 0;
 
-    // Find the index of the first entry that matches the saved question number
     currentIndex = questions.findIndex(q => q.question === savedQNumber);
 
-    // Fallback: if not found, start at the beginning
     if (currentIndex === -1) currentIndex = 0;
 
     async function loadQuestion(index) {
@@ -36,15 +34,13 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
-        // Save q globally for template JS
         window.q = q;
         localStorage.setItem("question", q.question);
-        // Update header & progress
+
         length = questions[questions.length -1].question;
         headerLabel.textContent = `Vraag ${q.question} / ${questions[questions.length -1].question}`;
         progressFill.style.width = `${(index / questions.length) * 100}%`;
 
-        // Load main template
         templateUrl = "";
         if(q.type == "review"){
           templateUrl = `assets/templates/${q.type}-${lang}.html`;
@@ -60,13 +56,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
-        // Build sidebar from JSON
         let sidebarHtml = `<h2>${q.title}</h2>`;
         if (q.sidebar?.instructions) {
             sidebarHtml += `<p>${q.sidebar.instructions}</p>`;
         }
 
-        // Multiselect
         if (q.sidebar?.select) {
             sidebarHtml += `
             <label for="actors">${q.sidebar.select.title}:</label>
@@ -116,10 +110,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     start = Date.now();
-    // Show/hide submit button
+
     const sidebarSubmit = document.getElementById("submitTask");
     if (!sidebarSubmit) {
-      // No multiselect → hide button
       if (document.getElementById("submitTask")) {
         document.getElementById("submitTask").style.display = "none";
       }
@@ -127,7 +120,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         sidebarSubmit.onclick = () => {
         nextState = false
         toggleNextButton();
-        //nextButton.disabled = false;
         const data = {};
         for(i = 0; i < multi.selectedOptions.length; i++){
             data[i] = multi.selectedOptions[i].value;
@@ -161,7 +153,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     currentIndex++;
     nextState = true;
     toggleNextButton();
-    //nextButton.disabled = true;
     loadQuestion(currentIndex);
   });
 
@@ -174,15 +165,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     toggleNextButton(true);
   });
 
-
-  // Initial load
   loadQuestion(currentIndex);
 });
 
 function joinList(arr) {
     if (!arr || arr.length === 0) return "";
     if (arr.length === 1) return arr[0];
-    const arrCopy = [...arr]; // Copy to avoid mutating original
+    const arrCopy = [...arr];
     const last = arrCopy.pop();
     return arrCopy.join(", ") + " and " + last;
 }

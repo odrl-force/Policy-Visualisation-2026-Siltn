@@ -75,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
         `
     };
 
-    // Use this to inject the text
     introText.innerHTML = scenarioTexts[lang] || scenarioTexts.en;
 
     startBtn.addEventListener("click", () => {

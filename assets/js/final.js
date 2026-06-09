@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
         const res = await fetch("assets/data/questions.json");
-        // FIX: Assign to the global 'questions' variable, don't redeclare with 'const'
         questions = await res.json(); 
         postData(); 
     } catch (error) {

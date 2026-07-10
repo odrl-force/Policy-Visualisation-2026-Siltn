@@ -1,4 +1,7 @@
 let questions; // Global variable
+let pod = "https://example.org/pod/";
+let DontPost = true;
+//let DontPost = false; //Enable when you changed the podurl.
 
 const translations = {
     en: {
@@ -79,17 +82,19 @@ function buildBody() {
 }
 
 function postData() {
-    fetch("https://solidweb.me/SiltnData/MasterThesisSiltn/UserStudy/", {
-        method: "POST",
-        body: JSON.stringify(buildBody()),
-        headers: { "Content-type": "application/json; charset=UTF-8" }
-    })
-    .catch(err => {
-        console.error("Fetch failed:", err);
-        const lang = localStorage.getItem("lang") || "en";
-        const msg = lang === "nl" 
+    if(!DontPost){
+        fetch(pod, {
+            method: "POST",
+            body: JSON.stringify(buildBody()),
+            headers: { "Content-type": "application/json; charset=UTF-8" }
+        })
+        .catch(err => {
+            console.error("Fetch failed:", err);
+            const lang = localStorage.getItem("lang") || "en";
+            const msg = lang === "nl" 
             ? "Er ging iets mis bij het verzenden. Herlaad de pagina of stuur een e-mail als het probleem aanhoudt."
             : "Something went wrong sending your data. Try again by reloading the page. If this persists, please send an email.";
-        alert(msg);
-    });
+            alert(msg);
+        });
+    }
 }

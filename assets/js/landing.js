@@ -9,19 +9,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const isNewUser = urlUserId && urlUserId !== storedUserId;
     const isFirstTimeGuest = !urlUserId && !storedUserId;
 
+    lang = (params.get("lang") || "en").toLowerCase();
+    group = params.get("group") || (Math.random() > 0.5 ? "1" : "2");
+    question = params.get("question") || "0";
     if (isNewUser || isFirstTimeGuest) {
-        const lang = (params.get("lang") || "en").toLowerCase();
-        const group = params.get("group") || (Math.random() > 0.5 ? "1" : "2");
         const userId = urlUserId || `guest-${Math.floor(Math.random() * 9000) + 1000}`;
 
-        localStorage.setItem("lang", lang);
-        localStorage.setItem("group", group);
         localStorage.setItem("userId", userId);
-        localStorage.setItem("question", "0");
     }
+    localStorage.setItem("lang", lang);
+    localStorage.setItem("group", group);
+    localStorage.setItem("question", question);
 
-    const lang = localStorage.getItem("lang") || "en";
-
+    lang = localStorage.getItem("lang") || "en";
+    
     const scenarioTexts = {
         en: `
             <p><strong>The Scenario: Managing Your Family’s Digital Life</strong></p>

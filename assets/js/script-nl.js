@@ -3,17 +3,29 @@ let length = 1;
 let start = Date.now();
 
 document.addEventListener("DOMContentLoaded", async () => {
+    const params = new URLSearchParams(window.location.search);
+    let lang = (params.get("lang") || localStorage.getItem("lang") || "en").toLowerCase();
+    let group = params.get("group") || localStorage.getItem("group") || (Math.random() > 0.5 ? "1" : "2");
+    let question = params.get("question") || "0";
+    localStorage.setItem("lang", lang);
+    localStorage.setItem("group", group);
+    localStorage.setItem("question", question);
+
+    if(lang=="en"){
+        let currentPath = window.location.pathname;
+        let newPath = currentPath.includes("-nl.html")
+        ? currentPath.replace("-nl.html", "-en.html")
+        : currentPath.replace("-en.html", "-nl.html");
+        window.location.pathname = newPath;
+    }
+
+
     const main = document.querySelector(".main-content");
     const sidebar = document.querySelector(".sidebar-inner");
     const headerLabel = document.querySelector(".header-label");
     const nextButton = document.getElementById("nextButton");
     const progressFill = document.getElementById("progressFill");
     const skipButton = document.getElementById("skipButton");
-
-    let group = localStorage.getItem("group") || "1";
-    let lang = localStorage.getItem("lang") || "en";
-    localStorage.setItem("group", group);
-    localStorage.setItem("lang", lang);
 
     const res = await fetch("assets/data/questions-nl.json");
     const questions = await res.json();

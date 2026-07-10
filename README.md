@@ -17,15 +17,15 @@ The selection of these specific dimensions was driven by the empirical feedback 
 The user study evaluates and benchmarks how users interact with, interpret, and navigate four distinct policy presentation layouts:
 
 ### 1. Extending PriPoCoG (Modular Creation UI)
-* **Source:** Inspired by the academic paper *Extending PriPoCoG: A Privacy Policy Editor for GDPR-Compliant Privacy Policies* (Leicht & Heisel).
+* **Source:** Inspired by the academic paper *[Extending PriPoCoG: A Privacy Policy Editor for GDPR-Compliant Privacy Policies](https://www.scitepress.org/Papers/2024/125996/125996.pdf)* (Leicht & Heisel).
 * **Layout:** A **modular, step-by-step creation wizard** that breaks down complex policy attributes into bite-sized, sequential compliance components.
 
 ### 2. ODRL-PAP Form (Monolithic Layout)
-* **Source:** Modeled after the *ODRL Policy Administration Point (PAP)* web editor (`ComplexPolicyForm`) developed by Fraunhofer IESE for the W3C ODRL data sovereignty standard.
+* **Source:** Modeled after the *[ODRL Policy Administration Point (PAP)](https://odrl-pap.mydata-control.de/)* web editor (`ComplexPolicyForm`) developed by Fraunhofer IESE for the W3C ODRL data sovereignty standard.
 * **Layout:** A **monolithic, comprehensive policy form** that captures detailed access control permissions, prohibitions, and obligations inside a single, high-density page layout.
 
 ### 3. AppAware & PrivacyBird Hybrid (Hierarchical Table UI)
-* **Source:** Derived from *AppAware: A Policy Visualization Model for Mobile Applications* (Paspatis & Tsohou), augmented with design concepts from **PrivacyBird** (Cranor et al.).
+* **Source:** Derived from *[AppAware: A Policy Visualization Model for Mobile Applications](https://www.sciencedirect.com/org/science/article/abs/pii/S2056496119000254)* (Paspatis & Tsohou), augmented with design concepts from **[PrivacyBird](https://dl.acm.org/doi/10.1145/1165734.1165735)** (Cranor et al.).
 * **Layout:** A structured **hierarchical data table**. Because the original AppAware model lacked the information depth required for this study, design paradigms from PrivacyBird were adapted into it to expand its data capacity while maintaining a clear, nested breakdown of permission levels and privacy risks.
 
 ### 4. Webstore-Based Model (Faceted Filter UI)
@@ -36,9 +36,54 @@ The user study evaluates and benchmarks how users interact with, interpret, and 
 
 ## Installation & Running Locally
 
-Because this project relies strictly on vanilla web technologies, you do not need to install complex backend dependencies. 
-
-1. **Clone the repository:**
-   ```bash
+### 1. Clone the repository:
+   ```
    git clone https://github.com/siltn/MasterThesisPolicyVisualisation.git
    cd MasterThesisPolicyVisualisation
+   ```
+
+### 2. Host the webpage:
+   
+   1. Open the folder in VS Code and run it using the **Live Server** extension:
+      * **Name:** Live Server
+      * **ID:** `ritwickdey.LiveServer`
+      * **Marketplace Link:** [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+
+
+   2.   Alternateveley http-server can be used
+   
+      ```
+      npm install http-server
+      npx http-server
+      ```
+
+
+### 3. Interface Configuration (LocalStorage):
+   The application determines which interface to display based on your browser's `localStorage` variables. You can modify these values in your browser's developer console (F12):
+   * `lang`: Choose language (`en` or `nl`)
+   * `group`: Choose test group (`1` or `2`)
+   * `question`: Set question index (value from `0` to `12`)
+
+   #### console scripts:
+
+      f12 -> console
+      ```javascript
+      localStorage.setItem('lang', 'en');      // 'en' | 'nl'
+      localStorage.setItem('group', '1');     // '1' | '2'
+      localStorage.setItem('question', '0');  // 0 through 11
+      ```
+
+   #### Url params:
+   
+   index.html
+   ```
+   ?group=1&question=0&lang=en
+   ```
+
+
+### 4. SolidPod Setup
+
+Posting to the pod is currently disabled. To test this feature, you need to update [final.js](assets/js/final.js) with two changes:
+
+1. **Insert your pod path:** Add a path to a pod you control that has public post access.
+2. **Enable posting:** Find the `DontPost` setting and change its value to `true`.
